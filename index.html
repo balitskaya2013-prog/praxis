@@ -538,12 +538,96 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 .step .d{margin-top:10px}
 .dir{padding:20px 22px 22px 0}
 .dir .n{margin-bottom:22px}
+/* ===== mobile pass ===== */
+.dia-mini,.mcta,.nav .nav-tg{display:none}
+.cm__bar{display:contents}
+@media(max-width:900px){
+ .cm__win{display:block}
+ .cm__bar{display:flex;position:sticky;top:0;z-index:6;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+ .cm__bar .cm__x,.cm__bar .cm__nav{position:static}
+ .cm__bar .cm__nav button{background:#fff;border-color:var(--line);color:var(--ink)}
+ .cm__info{padding:18px 20px 36px}
+ .cm__info>.cm__vis{margin:4px -20px;display:block}
+ .cm__info>.cm__vis .cm__visin{padding:22px 18px 26px}
+}
+@media(max-width:720px){
+ .hd .cta{display:none}
+ .burger{margin-left:auto}
+ .hd.open .nav .nav-tg{display:flex;justify-content:center;margin-top:12px;padding:14px 0;border:0;border-radius:999px;background:var(--ink);color:#fff;letter-spacing:.12em}
+ .hero-diagram{display:none}
+ .dia-mini{display:grid;gap:5px}
+ .dia-mini .r{padding:10px 13px;border:1px solid #cbd3c9;border-radius:10px;background:#e9eee6;font-size:12.5px;line-height:1.35;color:#566357}
+ .dia-mini .r b{display:block;font-weight:500;color:var(--ink);font-size:13.5px}
+ .dia-mini .r.ag{background:var(--inkbg);border-color:var(--inkbg);color:#bbc6bd}
+ .dia-mini .r.ag b{color:#fff}
+ .dia-mini .r.hu{background:#f4e5db;border-color:#ddbbab;color:#836353}
+ .dia-mini .two{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+ .dia-mini .ar{text-align:center;color:#95a58d;font-size:13px;line-height:1}
+ .hero-grid.dia{gap:24px}
+ .hero-grid.dia .hero-side .hero-acts{gap:14px 22px}
+ .band.hero{min-height:0}
+ #tabs,.cnav{display:none}
+ .board{display:block}
+ .slide,.slide[hidden]{display:flex!important;flex-direction:column;animation:none;border:0;padding:16px 16px 18px;margin:0 0 10px;background:var(--paperw);border-radius:16px;gap:0;cursor:pointer}
+ .slide .story{display:contents}
+ .slide .story .cap{order:1;font-size:11px}
+ .slide .story h3{order:2;font-size:20px;line-height:1.15;margin:8px 0 10px;max-width:none}
+ .slide .story p{order:3;display:none;font-size:13.5px;margin-bottom:10px}
+ .slide:not(:has(.case-open)){cursor:default}
+ .slide:not(:has(.case-open)) .story p{display:block}
+ .slide .data{order:4;display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
+ .slide .data>.cap,.slide .dstats,.slide .scheme{display:none}
+ .slide .bignum{font-size:34px;margin:0}
+ .slide .bignum.txt{font-size:19px;letter-spacing:-.02em;white-space:normal}
+ .slide .dcap{margin:0;font-size:12.5px;max-width:none}
+ .slide .story .pill{order:5;align-self:flex-start;margin-top:14px}
+ .dirs{grid-template-columns:1fr 1fr!important}
+ .dir{padding:14px 12px 16px 0!important;margin-right:0!important;border-right:0}
+ .dir:nth-child(odd){border-right-width:1px;border-right-style:solid;margin-right:12px!important}
+ .dir:nth-child(n+3){border-bottom:0}
+ .dir .n{margin-bottom:10px}
+ .dir h3{font-size:16px;margin-bottom:6px}
+ .dir p{font-size:13px}
+ .step{gap:8px}
+ .step .t b{font-size:26px}
+ .step p{font-size:14px}
+ .tech{grid-template-columns:1fr 1fr!important}
+ .tech>div{padding:14px 12px 14px 0!important;margin-right:0!important;border-right:0!important}
+ .tech>div:nth-child(odd){border-right:1px solid var(--line)!important;margin-right:12px!important}
+ .tech>div:nth-child(n+3){border-bottom:0!important}
+ .tech h3{font-size:15.5px;margin-bottom:6px}
+ .tech p{font-size:13px}
+ .human{padding-top:18px;gap:8px}
+ .human h3{font-size:20px}
+ .cap{font-size:11px}
+ .items summary small{font-size:12px}
+ .foot{font-size:11.5px}
+ .mcta{display:flex;position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:25;height:52px;align-items:center;justify-content:center;border-radius:999px;background:var(--ink);color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.18);transform:translateY(160%);transition:transform .3s}
+ .mcta.show{transform:none}
+}
+@media(max-width:720px){
+ .slide:not(:has(.case-open)) .story p{display:none}
+ .slide .story .pill{display:none}
+ .slide:has(.case-open)::after{content:'→';position:absolute;top:14px;right:16px;font-size:18px;color:var(--ink)}
+ .slide{position:relative}
+ .slide .story .cap{padding-right:28px}
+ .slide .story h3{font-size:18.5px;margin:6px 0 8px}
+}
+@media(max-width:720px){
+ .slide,.slide[hidden]{padding:14px 14px 15px;margin-bottom:8px}
+ .slide .bignum{font-size:30px}
+ .slide .bignum.txt{font-size:17px}
+ .step{padding:14px 0}
+ .step .t b{font-size:23px}
+ .offer{gap:10px}
+}
+@media(max-width:900px){.cm__bar{order:-5;flex:none}}
 </style>
 </head>
 <body>
 <header class="hd" id="hd"><div class="wrap">
   <a class="logo" href="#top"><i><b></b><b></b><b></b></i>praxis</a>
-  <nav class="nav" id="nav"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Форматы</a><a href="#tech">Технологии</a></nav>
+  <nav class="nav" id="nav"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Форматы</a><a href="#tech">Технологии</a><a class="nav-tg" href="https://telegram.me/adeleeeeeeeeee" target="_blank" rel="noopener">Написать в Telegram →</a></nav>
   <a class="cta" href="https://telegram.me/adeleeeeeeeeee" target="_blank" rel="noopener">Обсудить задачу</a>
   <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><i></i></button>
 </div></header>
@@ -563,7 +647,8 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 <svg class="connector" viewBox="0 0 360 45" preserveAspectRatio="none" aria-hidden="true"><path d="M180 0v20H85v25M180 20h95v25"/><path class="flow" d="M180 0v20H85v25"/></svg>
 <div class="outcomes"><div class="outcome"><b>Готовый результат</b><small>Отчёт, выполненная задача, решение в пределах лимита</small></div><div class="outcome to-human"><b>Вопрос человеку</b><small>Исключение или решение за пределами правил</small></div></div>
 <p class="diagram-foot">Автоматизируем повторяющуюся работу. Для спорных случаев заранее определяем, кто принимает решение.</p>
-</div></div>
+</div>
+  <div class="dia-mini" role="img" aria-label="Схема: данные и задачи попадают к агенту, он выдаёт результат или передаёт вопрос человеку"><div class="r"><b>Ваши данные, задачи и знания</b></div><div class="ar">↓</div><div class="r ag"><b>Агент за работой</b>разбирает, выполняет, проверяет</div><div class="ar">↓</div><div class="two"><div class="r"><b>Готовый результат</b>в пределах правил</div><div class="r hu"><b>Вопрос человеку</b>исключения</div></div></div></div>
 </div></section>
 
 <section class="sec band b-white" id="cases"><div class="wrap">
@@ -870,11 +955,16 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
  const ids=[...new Set([...document.querySelectorAll('.case-open')].map(b=>b.dataset.case))];let cur=null,last=null;
  const play=()=>m.querySelectorAll('video').forEach(v=>{v.muted=true;v.play().then(()=>v.closest('.phone')&&v.closest('.phone').classList.remove('paused')).catch(()=>{})});
  const bindPhones=()=>m.querySelectorAll('.phone').forEach(p=>p.addEventListener('click',()=>{const v=p.querySelector('video');if(v.paused){v.play();p.classList.remove('paused')}else{v.pause();p.classList.add('paused')}}));
- const render=id=>{const t=document.getElementById('case-'+id);if(!t)return;body.innerHTML='';body.appendChild(t.content.cloneNode(true));cur=id;bindPhones();play();const i=m.querySelector('.cm__info');if(i)i.scrollTop=0;history.replaceState(null,'','#case-'+id)};
+ const render=id=>{const t=document.getElementById('case-'+id);if(!t)return;body.innerHTML='';body.appendChild(t.content.cloneNode(true));cur=id;bindPhones();if(matchMedia('(max-width:900px)').matches){const v=body.querySelector('.cm__vis'),r=body.querySelector('.cm__res');if(v&&r)r.after(v)}play();const i=m.querySelector('.cm__info');if(i)i.scrollTop=0;win.scrollTop=0;history.replaceState(null,'','#case-'+id)};
  const open=id=>{last=document.activeElement;render(id);m.hidden=false;m.setAttribute('aria-hidden','false');document.body.classList.add('cm-lock');void m.offsetWidth;m.classList.add('is-open');m.querySelector('.cm__x').focus()};
  const close=()=>{m.classList.remove('is-open');document.body.classList.remove('cm-lock');m.querySelectorAll('video').forEach(v=>v.pause());setTimeout(()=>{m.hidden=true;m.setAttribute('aria-hidden','true');body.innerHTML=''},300);history.replaceState(null,'','#cases');if(last)last.focus()};
  const step=d=>{const i=ids.indexOf(cur);render(ids[(i+d+ids.length)%ids.length])};
  document.querySelectorAll('.case-open').forEach(b=>b.addEventListener('click',()=>open(b.dataset.case)));
+ const bar=document.createElement('div');bar.className='cm__bar';win.prepend(bar);bar.append(m.querySelector('.cm__nav'),m.querySelector('.cm__x'));
+ let y0=null;win.addEventListener('touchstart',e=>{y0=(e.target.closest('.cm__bar')||win.scrollTop<=0)?e.touches[0].clientY:null},{passive:true});
+ win.addEventListener('touchend',e=>{if(y0===null)return;const dy=e.changedTouches[0].clientY-y0;if(dy>90)close();y0=null},{passive:true});
+ const phone=()=>matchMedia('(max-width:720px)').matches;
+ document.querySelectorAll('.slide').forEach(sl=>{const b=sl.querySelector('.case-open');if(b)sl.addEventListener('click',e=>{if(phone()&&!e.target.closest('.case-open'))open(b.dataset.case)})});
  m.addEventListener('click',e=>{if(e.target.closest('[data-close]'))close();const s=e.target.closest('[data-step]');if(s)step(+s.dataset.step)});
  document.addEventListener('keydown',e=>{if(m.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
  const h=location.hash.match(/^#case-(.+)$/);if(h&&ids.includes(h[1]))open(h[1]);
@@ -887,6 +977,12 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
  hd.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>set(false)));
  document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
  document.addEventListener('click',e=>{if(!e.target.closest('#hd'))set(false)});})();
+</script>
+<a class="mcta" href="https://telegram.me/adeleeeeeeeeee" target="_blank" rel="noopener">Написать в Telegram →</a>
+<script>
+(()=>{const b=document.querySelector('.mcta'),hero=document.querySelector('.band.hero'),ct=document.getElementById('contact');
+ const u=()=>{const on=hero.getBoundingClientRect().bottom<60&&ct.getBoundingClientRect().top>innerHeight-40&&!document.body.classList.contains('cm-lock');b.classList.toggle('show',on)};
+ addEventListener('scroll',u,{passive:true});addEventListener('resize',u);new MutationObserver(u).observe(document.body,{attributes:true,attributeFilter:['class']});u();})();
 </script>
 </body>
 </html>
