@@ -694,6 +694,28 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 .tabs .tgroup:first-child{margin-top:0}
 @media(max-width:860px){.tgroup{display:none}}
 @media(max-width:720px){.slide:has(.case-open) .story h3{padding-right:30px}.slide .story h3{margin-top:0!important}}
+/* telegram-like mock */
+.tgx{background:#0e1621;border-radius:16px;overflow:hidden;border:1px solid #1f2c3a;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif}
+.tgx+.tgx{margin-top:0}
+.tgx__top{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#17212b;color:#fff;font-size:14px}
+.tgx__top b{display:block;font-weight:600;font-size:14px}
+.tgx__top small{display:block;color:#708499;font-size:12px}
+.tgx .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#ff7a59,#e0453a);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:12px;flex:none}
+.tgx__chat{padding:12px 12px 14px;background:#0e1621 radial-gradient(#1a2735 1px,transparent 1px) 0 0/18px 18px}
+.tgx__date{width:fit-content;margin:0 auto 10px;padding:3px 10px;border-radius:12px;background:rgba(0,0,0,.35);color:#c9d4df;font-size:12px}
+.tgx__msg{position:relative;background:#182533;color:#f5f5f5;border-radius:14px 14px 14px 4px;padding:8px 11px 20px;font-size:13.5px;line-height:1.42;max-width:100%;margin-bottom:6px}
+.tgx__msg b{font-weight:600}
+.tgx__msg.sm{padding:7px 11px 18px;width:fit-content}
+.tgx__name{color:#8774e1;font-weight:600;font-size:13.5px;margin-bottom:6px}
+.tgx__file{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13.5px}
+.tgx__file i{width:40px;height:40px;border-radius:50%;background:#5288c1;color:#fff;display:grid;place-items:center;font-style:normal;font-size:16px;flex:none}
+.tgx__file small{display:block;color:#708499;font-size:12px}
+.tgx__q{border-left:3px solid #8774e1;background:rgba(135,116,225,.13);border-radius:4px 8px 8px 4px;padding:6px 9px;margin:6px 0;font-size:13px}
+.tgx__t{position:absolute;right:10px;bottom:5px;font-size:11px;color:#6d8399}
+.tgx__kb{background:rgba(24,37,51,.85);color:#fff;border-radius:10px;padding:9px;text-align:center;font-size:13.5px;font-weight:500}
+.tgx__file>div{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:1200px){.cm .vizgrid:has(.tgx){display:grid;grid-template-columns:1fr!important;gap:14px}}
+.cm .vizgrid:has(.tgx){gap:14px}
 </style>
 </head>
 <body>
@@ -731,12 +753,12 @@ h2{font-size:clamp(28px,3.2vw,48px)}
   <div class="main" id="slides"><div class="cgroup">Яндекс Доставка</div>
 <article class="slide" role="tabpanel">
   <div class="story"><h3>Управленческая отчётность без ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в Telegram. Ежемесячная презентация собирается из рабочих данных одной кнопкой</p><button type="button" class="pill case-open" data-case="reporting">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">1–2 ч</span><span class="ar">→</span>0</div><p class="dcap">ручной сборки в день</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
+  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">5 ч</span><span class="ar">→</span>0</div><p class="dcap">на сбор отчётности</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Дашборды</b><span>откуда берутся цифры</span></li><li><i>02</i><b>Бот</b><span>сравнивает с планом и прошлой неделей</span></li><li><i>03</i><b>Telegram</b><span>сводка и презентация</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
   <div class="story"><h3>Внедрение ИИ в ежедневную работу команды</h3><p>Помогаем сотрудникам использовать ИИ в повседневных задачах: даём готовые инструменты, подключаем знания компании и обучаем работе с ними</p><button type="button" class="pill case-open" data-case="ai-adoption">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Использование ИИ</span><div class="bignum">×5</div><p class="dcap">за полгода</p><div class="dstats"><div><b>×1,5</b><span>быстрее разработка</span></div><div><b>9 команд</b><span>в пилоте</span></div></div></div>
+  <div class="data"><span class="cap">Использование ИИ</span><div class="bignum">×5</div><p class="dcap">за полгода</p><div class="dstats"><div><b>×1,5</b><span>быстрее разработка</span></div><div><b>×2</b><span>быстрее задачи вне разработки</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Умения</b><span>общие для всех команд</span></li><li><i>02</i><b>Обучение</b><span>на задачах самих людей</span></li><li><i>03</i><b>Замер</b><span>кто как пользуется</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
@@ -747,7 +769,7 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 <div class="cgroup">Yango Delivery</div>
 <article class="slide" role="tabpanel" hidden>
   <div class="story"><h3>ИИ-помощник для управления бизнесом</h3><p>Помощник находит отклонения в 25 странах, считает варианты и сам меняет цены и доплаты в пределах лимита. Что выше лимита, решает человек</p><button type="button" class="pill case-open" data-case="marketplace-manager">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">при прежнем числе рынков</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×2</b><span>быстрее решения</span></div></div></div>
+  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">команды при той же эффективности бизнеса</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×5</b><span>быстрее решения</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Цифры</b><span>финансы и операции</span></li><li><i>02</i><b>Причина</b><span>что сломалось и почему</span></li><li><i>03</i><b>Действие</b><span>сам в пределах лимита</span></li></ol><p class="branch">↳ Если нужно больше лимита, решает человек</p></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
@@ -905,9 +927,9 @@ h2{font-size:clamp(28px,3.2vw,48px)}
   <div class="cm__info">
     <span class="cm__kind">Yango Delivery, 2026, Управление операциями</span>
     <h3 class="cm__title" id="cmTitle">ИИ-помощник для управления бизнесом</h3>
-    <div class="cm__tags"><span>25 стран</span><span>×2 быстрее</span><span>Тарифы и бонусы</span></div>
+    <div class="cm__tags"><span>25 стран</span><span>×5 быстрее</span><span>Тарифы и бонусы</span></div>
     <p class="cm__lede">Система получает актуальные данные о работе сервиса в 25 странах и находит участки, требующие внимания. Затем оценивает возможные действия: изменить цену услуги, размер доплат исполнителям или доступность курьеров. Для каждого варианта рассчитывает сценарий. В пределах согласованных полномочий система может выполнить действие сама, решения за пределами лимитов передаёт человеку</p>
-    <div class="cm__res"><div><strong>25 стран</strong><span>Решение работает</span><small>одни правила для всех рынков</small></div><div><strong>−60 %</strong><span>Размер команды</span><small>при прежнем количестве рынков</small></div><div><strong>×2</strong><span>Быстрее принимаются решения</span><small>от замеченной проблемы до изменения</small></div></div>
+    <div class="cm__res"><div><strong>25 стран</strong><span>Решение работает</span><small>одни правила для всех рынков</small></div><div><strong>−60 %</strong><span>Размер команды</span><small>эффективность бизнеса не упала</small></div><div><strong>×5</strong><span>Быстрее принимаются решения</span><small>от замеченной проблемы до изменения</small></div></div>
     <h4>Для кого</h4><p>Для бизнеса, где цены, скидки и бонусы исполнителям меняют вручную каждый день. Обычно один менеджер ведёт три-четыре рынка, всё утро сидит в дашбордах, а от проблемы до изменения проходит неделя</p>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Смотрит цифры</b><span>Дашборды, что меняли в настройках, задачи в трекере, записи встреч. Сравнивает с прошлой неделей и с планом</span></li><li><i>02</i><b>Ищет причину</b><span>Не хватает курьеров, упал спрос, дорогие субсидии или что-то ещё. Показывает, на каких цифрах это видно</span></li><li><i>03</i><b>Предлагает и считает</b><span>Сначала спрашивает, считать ли, потом показывает, сколько это даст и сколько стоит</span></li><li><i>04</i><b>Готовит и проверяет</b><span>В пределах лимита применяет изменение сам, остальное передаёт человеку. Через пару недель сверяет, что получилось на деле</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
@@ -923,7 +945,7 @@ h2{font-size:clamp(28px,3.2vw,48px)}
     <span class="cm__kind">Yango Delivery, 2026, Работа с курьерами</span>
     <h3 class="cm__title" id="cmTitle">Возвращение исполнителей к работе</h3>
     <div class="cm__tags"><span>WhatsApp</span><span>6 стран</span><span>$1 против ≈ $20</span></div>
-    <p class="cm__lede">Помощник ведёт переписку в WhatsApp: спрашивает о причинах перерыва, отвечает на вопросы об условиях работы, тарифах и выплатах. Вместо одинаковой массовой рассылки человек получает разговор по своей ситуации. Решение запущено в шести странах, эффект проверили сравнением с контрольной группой</p>
+    <p class="cm__lede">Помощник ведёт переписку в WhatsApp: спрашивает о причинах перерыва, отвечает на вопросы об условиях работы, тарифах и выплатах. Вместо одинаковой массовой рассылки человек получает разговор по своей ситуации. Решение запущено в шести странах и переписывается на испанском, французском и английском. Эффект проверили сравнением с контрольной группой</p>
     <div class="cm__res"><div><strong>6 стран</strong><span>Запуск сразу во всех шести</span><small>Боливия, Колумбия, Гана, Кот-д’Ивуар, Сенегал, Замбия</small></div><div><strong>+14 %</strong><span>Общий прирост вернувшихся курьеров</span><small>A/B-тест: 20,8 % в тесте против 18,3 % в контроле</small></div><div><strong>$1 против ≈ $20</strong><span>Привлечение через помощника против обычного</span><small>расходы на модель за одного вернувшегося</small></div></div>
     <h4>Для кого</h4><p>Для бизнеса с полевыми исполнителями: курьеры, водители, клиенты. Люди уходят после смены тарифов, поломки транспорта или непонятного требования в приложении, и компания замолкает: колл-центра для них нет, рассылок для ушедших нет. Вернуть ушедшего дешевле, чем привлечь нового, если поговорить с ним про его город, тарифы и выплаты</p>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Выборка</b><span>Каждый день из данных платформы собирается список ушедших: сколько дней не выходил, город, транспорт</span></li><li><i>02</i><b>Диалог</b><span>Агент пишет первым от имени компании и спрашивает, что случилось. Отвечает про тарифы, комиссии, партнёров и выплаты на языке страны, с цифрами конкретного города</span></li><li><i>03</i><b>Эскалация</b><span>Спорный вопрос или жалобу передаёт человеку вместе с историей переписки</span></li><li><i>04</i><b>Замер</b><span>Курьеры заранее делятся на тест и контроль. Эффект считается по возвратам и часам на линии</span></li></ol>
@@ -932,31 +954,24 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 </template>
 <template id="case-reporting">
   <div class="cm__vis"><div class="cm__visin"><div class="vizgrid">
-<div class="tg">
-<div class="hd"><i></i><div>Delivery AI Reports<small>каждый день, 11:00</small></div></div>
-<div class="bub">
-<div class="file"><i>↓</i><div>delivery_daily.html<small>168 KB</small></div></div>
-<b>📦 Доставка, вчера</b>
-<div class="q"><b>Россия</b><br/>Доставки <span>к плану</span> −3,1 %, <span>к неделе</span> +2,9 %<br/>Доход <span>к плану</span> +1,4 %, <span>к неделе</span> +0,8 %</div>
-<div class="q"><b>СНГ</b><br/>Доставки <span>к плану</span> +0,5 %, <span>к году</span> +10,6 %<br/>Доход <span>к плану</span> −0,7 %, <span>к неделе</span> +1,2 %</div>
-<div class="q"><b>Международные</b><br/>Доставки <span>к плану</span> −4,2 %, <span>к году</span> +30,9 %<br/>Доход <span>к плану</span> −2,3 %, <span>к неделе</span> +1,9 %</div>
-              Детали в файле
-            </div>
-<div class="ok">✅ Отчёт отправлен в 11:00</div>
-</div>
-<div class="tg">
-<div class="hd"><i></i><div>Delivery AI Reports<small>раз в месяц</small></div></div>
-<div class="bub">
-<div class="file"><i>↓</i><div>Core Int Delivery, сентябрь.html<small>4,1 MB</small></div></div>
-<b>Итоги сентября на международных рынках</b><br/>
-              Доставки −10 % к плану, +16 % к прошлому году. Доход −3 % к плану<br/><br/>
-<b>Главное</b><br/>
-              СНГ: −2 % по доставкам, в октябре растём на тарифе<br/>
-              Кот-д’Ивуар: −2 % по доставкам, экономика в плане<br/>
-              Основной недобор дохода — одна страна, причина найдена: выросли субсидии.
-              <span class="one">Отчёт ↗</span>
-</div>
-</div>
+<div class="tgx"><div class="tgx__top"><i class="av">AI</i><div><b>Delivery AI Reports</b><small>бот</small></div></div><div class="tgx__chat">
+<div class="tgx__date">7 октября</div>
+<div class="tgx__msg"><div class="tgx__name">Delivery AI Reports</div>
+<div class="tgx__file"><i>↓</i><div>delivery_daily_06_10.html<small>168,4 KB</small></div></div>
+📦 <b>Доставка, 6 октября</b><br/><b>Ключевые метрики</b>
+<div class="tgx__q"><b>Россия</b><br/>Доставки: к плану −3,1 %, к неделе +2,9 %<br/>Доход: к плану +1,4 %, к неделе +0,8 %</div>
+<div class="tgx__q"><b>СНГ</b><br/>Доставки: к плану +0,5 %, к году +10,6 %<br/>Доход: к плану −0,7 %, к неделе +1,2 %</div>
+<div class="tgx__q"><b>Международные рынки</b><br/>Доставки: к плану −4,2 %, к году +30,9 %<br/>Доход: к плану −2,3 %, к неделе +1,9 %</div>
+Детали в HTML-файле<span class="tgx__t">11:00</span></div>
+<div class="tgx__msg sm">✅ Отчёт за 06.10 отправлен в 11:00<span class="tgx__t">11:01</span></div>
+</div></div>
+<div class="tgx"><div class="tgx__top"><i class="av">AI</i><div><b>Delivery AI Reports</b><small>бот</small></div></div><div class="tgx__chat">
+<div class="tgx__date">1 октября</div>
+<div class="tgx__msg"><div class="tgx__name">Delivery AI Reports</div>
+<div class="tgx__file"><i>↓</i><div>Международные рынки, сентябрь.html<small>4,1 MB</small></div></div>
+Привет!<br/><br/><b>Итоги сентября на международных рынках</b><br/>Доставки −10 % к плану, +16 % к прошлому году<br/>Доход −3 % к плану<br/><br/><b>Главное</b><br/>СНГ: −2 % по доставкам, в октябре растём на тарифе<br/>🇨🇮 Кот-д’Ивуар: −2 % по доставкам, экономика в плане<br/>Основной недобор дохода — одна страна, причина найдена: выросли субсидии<span class="tgx__t">10:00</span></div>
+<div class="tgx__kb">Отчёт ↗</div>
+</div></div>
 </div>
 <p class="viz-note">Цифры в ежедневном сообщении условные</p></div></div>
   <div class="cm__info">
@@ -964,7 +979,7 @@ h2{font-size:clamp(28px,3.2vw,48px)}
     <h3 class="cm__title" id="cmTitle">Управленческая отчётность без ручной сборки</h3>
     <div class="cm__tags"><span>Telegram</span><span>3 региона</span><span>Каждый день 11:00</span></div>
     <p class="cm__lede">Раньше сотрудники каждый день переносили цифры из отчётов и собирали сводку вручную. Теперь система получает данные из аналитических панелей, объединяет показатели и готовит регулярные материалы. Отчётность охватывает Россию, СНГ и международные рынки. Ежедневная сводка приходит к 11:00</p>
-    <div class="cm__res"><div><strong>1–2 ч → 0</strong><span>Ручной сборки в день</span><small>показатели приходят по расписанию</small></div><div><strong>3 региона</strong><span>В одном сообщении каждый день</span><small>Россия, СНГ, международные рынки</small></div><div><strong>1 кнопка</strong><span>Месячная презентация по бизнесу</span><small>открывается прямо из чата</small></div></div>
+    <div class="cm__res"><div><strong>5 ч → 0</strong><span>На сбор отчётности</span><small>показатели приходят по расписанию</small></div><div><strong>3 региона</strong><span>В одном сообщении каждый день</span><small>Россия, СНГ, международные рынки</small></div><div><strong>1 кнопка</strong><span>Месячная презентация по бизнесу</span><small>открывается прямо из чата</small></div></div>
     <h4>Для кого</h4><p>Для руководителей и команд, которые начинают утро с пяти дашбордов, а итоги месяца собирают в презентацию по два дня. При этом цифры в чате, презентации и дашборде часто не сходятся</p>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Каждое утро</b><span>Бот берёт вчерашние цифры из дашбордов: доставки, оборот, доход. Сравнивает с планом, прошлой неделей и прошлым годом и присылает одним сообщением. Детали — в приложенном файле</span></li><li><i>02</i><b>Раз в месяц</b><span>Собирает презентацию по бизнесу: итоги месяца, где недобрали к плану и почему, что делаем дальше. Сверху короткая выжимка, ниже кнопка «Отчёт»</span></li><li><i>03</i><b>Проверка</b><span>Если источник не ответил, бот не шлёт отчёт с дырой, а пишет в чат, что сбор не прошёл</span></li><li><i>04</i><b>Подтверждение</b><span>После отправки отмечается в чате: отчёт за такое-то число ушёл в 11:00</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
@@ -996,9 +1011,9 @@ h2{font-size:clamp(28px,3.2vw,48px)}
   <div class="cm__info">
     <span class="cm__kind">Яндекс Доставка, 2026, Внедрение в командах</span>
     <h3 class="cm__title" id="cmTitle">Внедрение ИИ в ежедневную работу команды</h3>
-    <div class="cm__tags"><span>Роли</span><span>База знаний</span><span>9 команд в пилоте</span></div>
-    <p class="cm__lede">Собрали общий набор готовых действий для повторяющихся задач, удобный доступ к помощникам и базу знаний на 1 800+ заметок. Начали с девяти команд: обучали сотрудников, разбирали реальные задачи и измеряли, сколько рабочего времени освобождается. После пилота программу расширили на другие команды Доставки</p>
-    <div class="cm__res"><div><strong>×5</strong><span>Использование ИИ в командах</span><small>за полгода</small></div><div><strong>×1,5</strong><span>Быстрее разработка</span><small>по данным проекта</small></div><div><strong>9 команд</strong><span>В пилоте</span><small>потом программу расширили на другие команды Доставки</small></div></div>
+    <div class="cm__tags"><span>Роли</span><span>База знаний</span><span>×2 вне разработки</span></div>
+    <p class="cm__lede">Собрали общий набор готовых действий для повторяющихся задач, удобный доступ к помощникам и базу знаний на 1 800+ заметок. Обучали сотрудников, разбирали реальные задачи и измеряли, сколько рабочего времени освобождается. После пилота программу расширили на другие команды Доставки</p>
+    <div class="cm__res"><div><strong>×5</strong><span>Использование ИИ в командах</span><small>за полгода</small></div><div><strong>×1,5</strong><span>Быстрее разработка</span><small>по данным проекта</small></div><div><strong>×2</strong><span>Быстрее задачи вне разработки</span><small>у команд, которые не пишут код</small></div></div>
     <h4>Для кого</h4><p>Для компаний, где ИИ вроде бы есть, а пользуются им единицы. Каждый настраивает что-то своё, знания не передаются, а руководитель не видит, дало ли это хоть что-то</p>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Роли</b><span>Для менеджера, аналитика, бухгалтера, поддержки свой набор умений. Человек получает помощника, уже настроенного под его работу</span></li><li><i>02</i><b>Процессы</b><span>Повторяющиеся задачи команды превращаются в готовые умения: «собери отчёт», «разбери заявку», «посчитай бонусы». Сделали один раз, пользуются все</span></li><li><i>03</i><b>Знания</b><span>Метрики, регламенты, где какие данные и кто за что отвечает, собраны в одну базу. Помощник читает её первым и не задаёт одни и те же вопросы</span></li><li><i>04</i><b>Замер</b><span>У каждого проекта посчитан эффект: сколько часов и людей он освобождает. Видно, кто и как пользуется. Руководитель видит это в цифрах</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
