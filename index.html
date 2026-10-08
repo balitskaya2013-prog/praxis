@@ -674,6 +674,26 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 .contact .cbtns .ci:hover{background:#e9e9e4}
 .contact .cbtns .ci small{display:none}
 @media(max-width:720px){.contact .cbtns{flex-direction:column}.contact .cbtns .ci{border-radius:14px}.contact .cbtns .ci small{display:block}}
+/* mobile section nav + less text */
+.snav{display:none}
+@media(max-width:720px){
+ html{scroll-padding-top:112px!important}
+ .snav{display:flex;gap:6px;position:sticky;top:62px;z-index:29;overflow-x:auto;scrollbar-width:none;padding:8px 16px;background:rgba(245,244,239,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+ .snav::-webkit-scrollbar{display:none}
+ .snav a{flex:none;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;color:var(--ink);white-space:nowrap;line-height:1.2}
+ .snav a.on{background:var(--ink);border-color:var(--ink);color:#fff}
+ .hd{border-bottom-color:transparent!important}
+ .sec-head p{display:none}
+ .sec-head{margin-bottom:16px!important}
+ .step>div>p{display:none}
+ .step .d{margin-top:2px!important}
+ .offer>div>p{display:none}
+}
+/* company groups */
+.tgroup{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.tabs .tgroup:first-child{margin-top:0}
+@media(max-width:860px){.tgroup{display:none}}
+@media(max-width:720px){.slide:has(.case-open) .story h3{padding-right:30px}.slide .story h3{margin-top:0!important}}
 </style>
 </head>
 <body>
@@ -683,6 +703,7 @@ h2{font-size:clamp(28px,3.2vw,48px)}
   <a class="cta" href="#contact" data-contact>Обсудить задачу</a>
   <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><i></i></button>
 </div></header>
+<nav class="snav" id="snav" aria-label="Разделы"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Форматы</a><a href="#tech">Технологии</a><a href="#contact">Контакты</a></nav>
 <div class="sheet" id="top">
 
 <section class="hero band b-paper"><div class="wrap">
@@ -705,52 +726,53 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 
 <section class="sec band b-white" id="cases"><div class="wrap">
   <div class="sec-head"><div><div class="cap">Кейсы</div><h2>Что уже работает</h2></div></div>
-  <div class="board"><div class="side"><div class="tabs" role="tablist" id="tabs"><button type="button" class="tab on" role="tab" aria-selected="true"><span>01 Отчёты</span>Бот с цифрами по бизнесу</button><button type="button" class="tab" role="tab" aria-selected="false"><span>02 Операции</span>Агент для 25 стран</button><button type="button" class="tab" role="tab" aria-selected="false"><span>03 Команды</span>Помощник у каждого</button><button type="button" class="tab" role="tab" aria-selected="false"><span>04 Курьеры</span>Возврат ушедших</button><button type="button" class="tab" role="tab" aria-selected="false"><span>05 Претензии</span>Компенсации клиентам</button><button type="button" class="tab" role="tab" aria-selected="false"><span>06 Еврокран</span>Простои и оплаты</button><button type="button" class="tab" role="tab" aria-selected="false"><span>07 Еврокран</span>Счета и акты</button><button type="button" class="tab" role="tab" aria-selected="false"><span>08 Еврокран</span>Оплаты</button><button type="button" class="tab" role="tab" aria-selected="false"><span>09 Еврокран</span>График выездов</button></div>
+  <div class="board"><div class="side"><div class="tabs" role="tablist" id="tabs"><div class="tgroup">Яндекс Доставка</div><button type="button" class="tab on" role="tab" aria-selected="true"><span>01 Отчёты</span>Сводка и презентация</button><button type="button" class="tab" role="tab" aria-selected="false"><span>02 Команды</span>ИИ в работе команды</button><button type="button" class="tab" role="tab" aria-selected="false"><span>03 Претензии</span>Компенсации клиентам</button><div class="tgroup">Yango Delivery</div><button type="button" class="tab" role="tab" aria-selected="false"><span>04 Операции</span>Управление в 25 странах</button><button type="button" class="tab" role="tab" aria-selected="false"><span>05 Курьеры</span>Возврат ушедших</button><div class="tgroup">Еврокран</div><button type="button" class="tab" role="tab" aria-selected="false"><span>06 Собственник</span>Утро собственника</button><button type="button" class="tab" role="tab" aria-selected="false"><span>07 Бухгалтерия</span>Счета и акты</button><button type="button" class="tab" role="tab" aria-selected="false"><span>08 Финансы</span>Оплаты и долги</button><button type="button" class="tab" role="tab" aria-selected="false"><span>09 Сценарий</span>График выездов</button></div>
   <div class="cnav"><span class="pos"><b id="pos">01</b> / 09</span><div class="arrows"><button type="button" data-d="-1" aria-label="Предыдущий кейс">←</button><button type="button" data-d="1" aria-label="Следующий кейс">→</button></div></div></div>
-  <div class="main" id="slides"><div class="cgroup">Яндекс Доставка и Yango Delivery</div>
+  <div class="main" id="slides"><div class="cgroup">Яндекс Доставка</div>
 <article class="slide" role="tabpanel">
-  <div class="story"><span class="cap">Яндекс Доставка, 2026</span><h3>Управленческая отчётность без ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в Telegram. Ежемесячная презентация собирается из рабочих данных одной кнопкой</p><button type="button" class="pill case-open" data-case="reporting">Подробнее о кейсе →</button></div>
+  <div class="story"><h3>Управленческая отчётность без ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в Telegram. Ежемесячная презентация собирается из рабочих данных одной кнопкой</p><button type="button" class="pill case-open" data-case="reporting">Подробнее о кейсе →</button></div>
   <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">1–2 ч</span><span class="ar">→</span>0</div><p class="dcap">ручной сборки в день</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Дашборды</b><span>откуда берутся цифры</span></li><li><i>02</i><b>Бот</b><span>сравнивает с планом и прошлой неделей</span></li><li><i>03</i><b>Telegram</b><span>сводка и презентация</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Yango Delivery, 2026</span><h3>ИИ-помощник для управления бизнесом</h3><p>Помощник находит отклонения в 25 странах, считает варианты и сам меняет цены и доплаты в пределах лимита. Что выше лимита, решает человек</p><button type="button" class="pill case-open" data-case="marketplace-manager">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">при прежнем числе рынков</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×2</b><span>быстрее решения</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Цифры</b><span>финансы и операции</span></li><li><i>02</i><b>Причина</b><span>что сломалось и почему</span></li><li><i>03</i><b>Действие</b><span>сам в пределах лимита</span></li></ol><p class="branch">↳ Если нужно больше лимита, решает человек</p></div>
-</article>
-<article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Яндекс Доставка, 2026</span><h3>Внедрение ИИ в ежедневную работу команды</h3><p>Помогаем сотрудникам использовать ИИ в повседневных задачах: даём готовые инструменты, подключаем знания компании и обучаем работе с ними</p><button type="button" class="pill case-open" data-case="ai-adoption">Подробнее о кейсе →</button></div>
+  <div class="story"><h3>Внедрение ИИ в ежедневную работу команды</h3><p>Помогаем сотрудникам использовать ИИ в повседневных задачах: даём готовые инструменты, подключаем знания компании и обучаем работе с ними</p><button type="button" class="pill case-open" data-case="ai-adoption">Подробнее о кейсе →</button></div>
   <div class="data"><span class="cap">Использование ИИ</span><div class="bignum">×5</div><p class="dcap">за полгода</p><div class="dstats"><div><b>×1,5</b><span>быстрее разработка</span></div><div><b>9 команд</b><span>в пилоте</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Умения</b><span>общие для всех команд</span></li><li><i>02</i><b>Обучение</b><span>на задачах самих людей</span></li><li><i>03</i><b>Замер</b><span>кто как пользуется</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Yango Delivery, 2026</span><h3>Возвращение исполнителей к работе</h3><p>ИИ-помощник связывается с курьерами, которые перестали выполнять заказы. Выясняет причину ухода и помогает разобраться с вопросами, мешающими вернуться</p><button type="button" class="pill case-open" data-case="reactivation-bot">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по сравнению с контрольной группой</p><div class="dstats"><div><b>$1</b><span>через помощника</span></div><div><b>≈ $20</b><span>обычное привлечение</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы, выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на линии</span></li></ol></div>
-</article>
-<article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Яндекс Доставка, 2026</span><h3>Обработка претензий и расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и рассчитывает компенсации по правилам компании. Сотрудники подключаются к случаям, которые требуют проверки</p><button type="button" class="pill case-open" data-case="b2b-compensations">Подробнее о кейсе →</button></div>
+  <div class="story"><h3>Обработка претензий и расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и рассчитывает компенсации по правилам компании. Сотрудники подключаются к случаям, которые требуют проверки</p><button type="button" class="pill case-open" data-case="b2b-compensations">Подробнее о кейсе →</button></div>
   <div class="data"><span class="cap">Людей на процессе</span><div class="bignum"><span class="before">26</span><span class="ar">→</span>2</div><p class="dcap">сотрудника вместо 26</p><div class="dstats"><div><b>80%</b><span>заявок без человека</span></div><div><b>≈ 1 млрд ₽</b><span>компенсаций в год</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Реестр</b><span>в любом формате</span></li><li><i>02</i><b>Решение</b><span>по каждой заявке</span></li><li><i>03</i><b>Ответ</b><span>готовый реестр клиенту</span></li></ol></div>
 </article>
+<div class="cgroup">Yango Delivery</div>
+<article class="slide" role="tabpanel" hidden>
+  <div class="story"><h3>ИИ-помощник для управления бизнесом</h3><p>Помощник находит отклонения в 25 странах, считает варианты и сам меняет цены и доплаты в пределах лимита. Что выше лимита, решает человек</p><button type="button" class="pill case-open" data-case="marketplace-manager">Подробнее о кейсе →</button></div>
+  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">при прежнем числе рынков</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×2</b><span>быстрее решения</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Цифры</b><span>финансы и операции</span></li><li><i>02</i><b>Причина</b><span>что сломалось и почему</span></li><li><i>03</i><b>Действие</b><span>сам в пределах лимита</span></li></ol><p class="branch">↳ Если нужно больше лимита, решает человек</p></div>
+</article>
+<article class="slide" role="tabpanel" hidden>
+  <div class="story"><h3>Возвращение исполнителей к работе</h3><p>ИИ-помощник связывается с курьерами, которые перестали выполнять заказы. Выясняет причину ухода и помогает разобраться с вопросами, мешающими вернуться</p><button type="button" class="pill case-open" data-case="reactivation-bot">Подробнее о кейсе →</button></div>
+  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по сравнению с контрольной группой</p><div class="dstats"><div><b>$1</b><span>через помощника</span></div><div><b>≈ $20</b><span>обычное привлечение</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы, выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на линии</span></li></ol></div>
+</article>
 <div class="cgroup">Еврокран, аренда спецтехники</div>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Еврокран</span><h3>Собственник видит простои и оплаты к началу дня</h3><p>Каждое утро видно, какая техника работает, где простой, какие оплаты пришли и что нужно решить сегодня</p></div>
+  <div class="story"><h3>Собственник видит простои и оплаты к началу дня</h3><p>Каждое утро видно, какая техника работает, где простой, какие оплаты пришли и что нужно решить сегодня</p></div>
   <div class="data"><span class="cap">Результат</span><div class="bignum txt">Что решить сегодня</div><p class="dcap">простои, смены и оплаты в одном отчёте</p><div class="dstats"><div><b>Отклонения</b><span>видны сразу</span></div><div><b>Пропуски данных</b><span>помечены в отчёте</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Данные</b><span>смены, заявки, учёт</span></li><li><i>02</i><b>Сборка</b><span>по одним правилам</span></li><li><i>03</i><b>Сводка</b><span>что требует решения</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Еврокран</span><h3>Счета и акты разбираются до бухгалтера</h3><p>ИИ переносит данные из счетов и актов в подготовленные записи для бухгалтерии. Сотрудники проверяют результат вместо перепечатывания документов</p></div>
+  <div class="story"><h3>Счета и акты разбираются до бухгалтера</h3><p>ИИ переносит данные из счетов и актов в подготовленные записи для бухгалтерии. Сотрудники проверяют результат вместо перепечатывания документов</p></div>
   <div class="data"><span class="cap">Результат</span><div class="bignum txt">Без перепечатки</div><p class="dcap">документ поступает на проверку уже разобранным</p><div class="dstats"><div><b>Ошибки</b><span>отмечены</span></div><div><b>Ответственный</b><span>за согласование виден</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Почта и сканы</b><span>одна очередь</span></li><li><i>02</i><b>Разбор</b><span>поля, договор, объект</span></li><li><i>03</i><b>Проверка</b><span>бухгалтер подтверждает</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Еврокран</span><h3>Контроль оплат и задолженности клиентов</h3><p>Система сопоставляет поступившие деньги со счетами и показывает, кто оплатил полностью, кто частично, а кто задерживает платёж</p></div>
+  <div class="story"><h3>Контроль оплат и задолженности клиентов</h3><p>Система сопоставляет поступившие деньги со счетами и показывает, кто оплатил полностью, кто частично, а кто задерживает платёж</p></div>
   <div class="data"><span class="cap">Результат</span><div class="bignum txt">Статус каждого счёта</div><p class="dcap">задолженность видна без ожидания ручной сверки</p><div class="dstats"><div><b>Спорные платежи</b><span>проверяет бухгалтерия</span></div><div><b>Напоминания</b><span>согласует менеджер</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Выписка</b><span>и счета</span></li><li><i>02</i><b>Сверка</b><span>что кому пришло</span></li><li><i>03</i><b>Действие</b><span>оплачен, просрочен, напомнить</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Еврокран, сценарий</span><h3>Планирование выездов техники и бригад</h3><p>Система помогает распределить заказы между свободной техникой и бригадами. Диспетчер получает предложенный график и видит пересечения до подтверждения выезда</p></div>
+  <div class="story"><span class="cap">Сценарий</span><h3>Планирование выездов техники и бригад</h3><p>Система помогает распределить заказы между свободной техникой и бригадами. Диспетчер получает предложенный график и видит пересечения до подтверждения выезда</p></div>
   <div class="data"><span class="cap">Ожидаемый результат</span><div class="bignum txt">Один график</div><p class="dcap">заказы, техника и бригады вместе</p><div class="dstats"><div><b>Пересечения</b><span>видны до выезда</span></div><div><b>Изменения</b><span>видно, что затронуто</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Заявки</b><span>и занятость</span></li><li><i>02</i><b>План</b><span>объекты, время, ограничения</span></li><li><i>03</i><b>Проверка</b><span>диспетчер подтверждает</span></li></ol></div>
 </article></div></div>
@@ -1045,6 +1067,12 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
  addEventListener('resize',()=>{if(!p.hidden)close()});
  p.querySelectorAll('.ci').forEach(c=>c.addEventListener('click',()=>setTimeout(close,100)));
  if(matchMedia('(pointer:coarse)').matches)document.querySelectorAll('.ci').forEach(c=>c.removeAttribute('target'));})();
+</script>
+<script>
+(()=>{const n=document.getElementById('snav'),links=[...n.querySelectorAll('a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));let cur=-1;
+ const u=()=>{if(getComputedStyle(n).display==='none')return;const y=n.getBoundingClientRect().bottom+12;let k=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<=y)k=i});
+  if(k!==cur){cur=k;links.forEach((a,i)=>a.classList.toggle('on',i===k));if(k>=0){const a=links[k];n.scrollTo({left:a.offsetLeft-16,behavior:'smooth'})}}};
+ addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();})();
 </script>
 </body>
 </html>
