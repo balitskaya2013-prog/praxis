@@ -641,7 +641,6 @@ h1,h2{text-transform:none;letter-spacing:-.05em;line-height:1}
  .hd{border-bottom-color:transparent!important}
  .sec-head p{display:none}
  .sec-head{margin-bottom:16px!important}
- .step>div>p{display:none}
  .step .d{margin-top:2px!important}
  .offer>div>p{display:none}
 }
@@ -743,6 +742,7 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 @media(max-width:720px){
  .sec-head p{display:block;color:var(--soft)}
  .slide:not(:has(.case-open)) .story p{display:block}
+ .slide:not(:has(.case-open)) .dstats{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:0 0 100%;margin-top:12px;padding-top:12px}
 }
 .cm__body{display:contents}
 </style>
@@ -781,8 +781,8 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
   <div class="cnav"><span class="pos"><b id="pos">01</b> / 09</span><div class="arrows"><button type="button" data-d="-1" aria-label="Предыдущий кейс">←</button><button type="button" data-d="1" aria-label="Следующий кейс">→</button></div></div></div>
   <div class="main" id="slides"><div class="cgroup">Яндекс Доставка</div>
 <article class="slide" role="tabpanel">
-  <div class="story"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается из&nbsp;рабочих данных одной&nbsp;кнопкой</p><button type="button" class="pill case-open" data-case="reporting" aria-label="Подробнее о кейсе: Управленческая отчётность без ручной сборки">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">5 ч</span><span class="ar">→</span>0</div><p class="dcap">на&nbsp;сбор отчётности</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
+  <div class="story"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><button type="button" class="pill case-open" data-case="reporting" aria-label="Подробнее о кейсе: Управленческая отчётность без ручной сборки">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">5 ч</span><span class="ar">→</span>0</div><p class="dcap">в неделю на&nbsp;сбор отчётности</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Дашборды</b><span>откуда берутся цифры</span></li><li><i>02</i><b>Бот</b><span>сравнивает с&nbsp;планом и&nbsp;прошлой неделей</span></li><li><i>03</i><b>Telegram</b><span>сводка и&nbsp;презентация</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
@@ -803,7 +803,7 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 </article>
 <article class="slide" role="tabpanel" hidden>
   <div class="story"><h3>Возвращение исполнителей к&nbsp;работе</h3><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><button type="button" class="pill case-open" data-case="reactivation-bot" aria-label="Подробнее о кейсе: Возвращение исполнителей к работе">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по&nbsp;сравнению с&nbsp;контрольной группой</p><div class="dstats"><div><b>$1</b><span>через помощника</span></div><div><b>≈ $20</b><span>обычное привлечение</span></div></div></div>
+  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по&nbsp;сравнению с&nbsp;контрольной группой</p><div class="dstats"><div><b>$1</b><span>вернуть курьера через&nbsp;помощника</span></div><div><b>≈&nbsp;$20</b><span>привлечь нового&nbsp;курьера</span></div></div></div>
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы,&nbsp;выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на&nbsp;линии</span></li></ol></div>
 </article>
 <div class="cgroup">Еврокран, аренда спецтехники</div>
@@ -851,16 +851,16 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <section class="sec band b-white" id="formats"><div class="wrap">
   <div class="sec-head"><div><div class="cap">Услуги</div><h2>С чего начать</h2></div><p>Можно взять одну задачу, а&nbsp;можно сразу всю&nbsp;команду</p></div>
   <div class="offer"><span class="cap">Автоматизация с&nbsp;ИИ</span><div><h3>Снять рутину</h3><p>Когда понятно, что&nbsp;именно делают руками каждую&nbsp;неделю</p></div><div class="items">
-    <details><summary><span>Один процесс</span><small>1–2 недели</small></summary><div class="b">Разбираем процесс с&nbsp;тем, кто его&nbsp;ведёт, и&nbsp;передаём агенту. Проверяем на&nbsp;прошлых данных.<div class="terms"><span>Цена за&nbsp;процесс</span></div></div></details>
-    <details><summary><span>Отчёты без&nbsp;людей</span><small>2 недели</small></summary><div class="b">Отчёт и&nbsp;цифры приходят в&nbsp;чат сами, с&nbsp;выводами.<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
-    <details><summary><span>Агент разбирает задачи</span><small>Tracker, Jira</small></summary><div class="b">Агент берёт задачу из&nbsp;трекера, делает и&nbsp;пишет результат. Человек смотрит только&nbsp;спорное.<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
+    <details><summary><span>Один процесс</span><small>1–2 недели</small></summary><div class="b">Разбираем процесс с&nbsp;тем, кто его&nbsp;ведёт, и&nbsp;передаём агенту. Проверяем на&nbsp;прошлых данных<div class="terms"><span>Цена за&nbsp;процесс</span></div></div></details>
+    <details><summary><span>Отчёты без&nbsp;людей</span><small>2 недели</small></summary><div class="b">Отчёт и&nbsp;цифры приходят в&nbsp;чат сами, с&nbsp;выводами<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
+    <details><summary><span>Агент разбирает задачи</span><small>Трекер, Jira</small></summary><div class="b">Агент берёт задачу из&nbsp;трекера, делает и&nbsp;пишет результат. Человек смотрит только&nbsp;спорное<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
   </div></div>
   <div class="offer"><span class="cap">Обучение и&nbsp;внедрение ИИ&nbsp;в&nbsp;команду</span><div><h3>ИИ в&nbsp;работе команды</h3><p>Когда нужно, чтобы ИИ пользовалась вся&nbsp;команда</p></div><div class="items">
-    <details><summary><span>Помощник для&nbsp;команды</span><small>3–4 недели</small></summary><div class="b">Агент с&nbsp;доступом к&nbsp;вашим системам и&nbsp;знаниям, свои умения под&nbsp;каждую роль. Работает на&nbsp;вашем сервере или&nbsp;подписке.<div class="terms"><span>До 10 человек</span><span>Поддержка помесячно</span></div></div></details>
-    <details><summary><span>ИИ в&nbsp;команде за&nbsp;квартал</span><small>3 месяца</small></summary><div class="b">Общие умения, обучение и&nbsp;замер, кто как&nbsp;пользуется.<div class="terms"><span>10–50 человек</span></div></div></details>
+    <details><summary><span>Помощник для&nbsp;команды</span><small>3–4 недели</small></summary><div class="b">Агент с&nbsp;доступом к&nbsp;вашим системам и&nbsp;знаниям, свои умения под&nbsp;каждую роль. Работает на&nbsp;вашем сервере или&nbsp;подписке<div class="terms"><span>До 10 человек</span><span>Поддержка помесячно</span></div></div></details>
+    <details><summary><span>ИИ в&nbsp;команде за&nbsp;квартал</span><small>3 месяца</small></summary><div class="b">Общие умения, обучение и&nbsp;замер, кто как&nbsp;пользуется<div class="terms"><span>10–50 человек</span></div></div></details>
   </div></div>
   <div class="offer"><span class="cap">Агент уже есть</span><div><h3>Довести до&nbsp;запуска</h3><p>Когда пилот сделали, а&nbsp;в&nbsp;работе он&nbsp;не&nbsp;прижился</p></div><div class="items">
-    <details><summary><span>Пилот → рабочий&nbsp;процесс</span><small>3–4 недели</small></summary><div class="b">Ищем, где ломается: данные, доступы, процесс или&nbsp;люди. Если чинить нечего, так&nbsp;и&nbsp;скажем.<div class="terms"><span>Итог: продолжать или&nbsp;нет</span></div></div></details>
+    <details><summary><span>Пилот → рабочий&nbsp;процесс</span><small>3–4 недели</small></summary><div class="b">Ищем, где ломается: данные, доступы, процесс или&nbsp;люди. Если чинить нечего, так&nbsp;и&nbsp;скажем<div class="terms"><span>Итог: продолжать или&nbsp;нет</span></div></div></details>
   </div></div>
   <div class="after-offers"><a class="lnk" href="#contact" data-contact>Не знаете, с&nbsp;чего начать? Напишите</a></div>
 </div></section>
@@ -896,7 +896,7 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <ol>
 <li><i>1</i>Реестр приходит на&nbsp;почту или&nbsp;менеджеру</li>
 <li><i>2</i>Менеджер заводит тикет</li>
-<li><i>3</i>Тимлид режет Excel по&nbsp;2 000&nbsp;строк</li>
+<li><i>3</i>Тимлид режет Excel по&nbsp;2&nbsp;000&nbsp;строк</li>
 <li><i>4</i>Рассылает ссылки в&nbsp;мессенджер</li>
 <li><i>5</i>Операторы перекладывают в&nbsp;шаблон и&nbsp;заводят тикеты</li>
 <li><i>6</i>Поддержка разбирает каждый&nbsp;тикет</li>
@@ -915,15 +915,15 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <li><i>A</i>Сборка реестра с&nbsp;решениями</li>
 <li><i>A</i>Согласование и&nbsp;выплата зачётом</li>
 </ol>
-<div class="sum"><b>2 сотрудника</b> на&nbsp;исключения, <b>80 %</b> заявок без&nbsp;людей</div>
+<div class="sum"><b>2 сотрудника</b> на&nbsp;исключения, <b>80%</b> заявок без&nbsp;людей</div>
 </div>
 </div></div></div>
   <div class="cm__info">
     <span class="cm__kind">Яндекс Доставка, 2026, Процесс&nbsp;целиком</span>
     <h3 class="cm__title" id="cmTitle-case-b2b-compensations">Обработка претензий и&nbsp;расчёт компенсаций</h3>
-    <div class="cm__tags"><span>Excel → решения</span><span>80 % без&nbsp;людей</span><span>≈ 1 млрд ₽&nbsp;в&nbsp;год</span></div>
+    <div class="cm__tags"><span>Excel → решения</span><span>80% без&nbsp;людей</span><span>≈&nbsp;1&nbsp;млрд&nbsp;₽&nbsp;в&nbsp;год</span></div>
     <p class="cm__lede">Раньше сотрудники вручную разбирали реестры претензий и&nbsp;определяли размер компенсации. Теперь система извлекает сведения из&nbsp;полученных файлов, сопоставляет их&nbsp;с&nbsp;правилами компании и&nbsp;собирает результаты расчёта. Команда получает подготовленные решения вместо очереди необработанных документов</p>
-    <div class="cm__res"><div><strong>26 → 2</strong><span>Сотрудника на&nbsp;процессе</span><small>подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</small></div><div><strong>80 %</strong><span>Заявок закрываются без&nbsp;человека</span><small>через процесс проходит ≈ 1 млрд ₽ компенсаций в&nbsp;год</small></div><div><strong>100</strong><span>Корпоративных клиентов в&nbsp;одном&nbsp;контуре</span><small>у&nbsp;каждого свой формат реестра, вход&nbsp;один</small></div></div>
+    <div class="cm__res"><div><strong>26 → 2</strong><span>Сотрудника на&nbsp;процессе</span><small>подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</small></div><div><strong>80%</strong><span>Заявок закрываются без&nbsp;человека</span><small>через процесс проходит ≈&nbsp;1&nbsp;млрд&nbsp;₽ компенсаций в&nbsp;год</small></div><div><strong>100</strong><span>Корпоративных клиентов в&nbsp;одном&nbsp;контуре</span><small>у&nbsp;каждого свой формат реестра, вход&nbsp;один</small></div></div>
     <h4>Для кого</h4><p>Для компаний с&nbsp;корпоративными клиентами и&nbsp;потоком претензий: доставка, логистика, сервисы с&nbsp;SLA. Претензия приходит списком на&nbsp;тысячи строк, у&nbsp;каждого клиента свой формат, а&nbsp;деньги по&nbsp;ней ждут, пока люди перекладывают строки из&nbsp;Excel в&nbsp;тикеты и&nbsp;обратно</p>
     <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Приём</b><span>Агент читает реестр в&nbsp;любом формате, приводит к&nbsp;восьми полям, режет на&nbsp;партии и&nbsp;заводит заявки. Строки без&nbsp;номера заказа отправляет на&nbsp;дозапрос, не&nbsp;выдумывает</span></li><li><i>02</i><b>Решение</b><span>По каждой заявке восстанавливает таймлайн доставки, сверяет с&nbsp;матрицей компенсаций и&nbsp;выносит решение: компенсировать, отказать или&nbsp;на&nbsp;ручной разбор. В пределах лимита закрывает сам и&nbsp;отвечает клиенту, выше лимита передаёт&nbsp;человеку</span></li><li><i>03</i><b>Исключения</b><span>Спорные заявки разбирает человек, но&nbsp;только&nbsp;их</span></li><li><i>04</i><b>Сборка</b><span>Планировщик следит за&nbsp;статусами, собирает решения в&nbsp;единый реестр и&nbsp;отправляет менеджеру на&nbsp;согласование с&nbsp;клиентом</span></li><li><i>05</i><b>Выплата</b><span>Пороги по&nbsp;сумме, согласующие по&nbsp;цепочке, выплата зачётом на&nbsp;лицевой счёт&nbsp;клиента</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
@@ -935,9 +935,9 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <div class="bub">
 <b>Кот-д’Ивуар, неделя 28.09–04.10</b>
 <table>
-<tr><td>Доставки</td><td class="up">+2,6 %</td><td>к&nbsp;прошлой неделе</td></tr>
-<tr><td>Оборот</td><td class="up">+4,9 %</td><td>к&nbsp;прошлой неделе</td></tr>
-<tr><td>Доход</td><td class="dn">−3,6 %</td><td>к&nbsp;плану</td></tr>
+<tr><td>Доставки</td><td class="up">+2,6%</td><td>к&nbsp;прошлой неделе</td></tr>
+<tr><td>Оборот</td><td class="up">+4,9%</td><td>к&nbsp;прошлой неделе</td></tr>
+<tr><td>Доход</td><td class="dn">−3,6%</td><td>к&nbsp;плану</td></tr>
 </table>
 <b>Что заметил:</b> в&nbsp;Абиджане выросла доля заказов, которые никто не&nbsp;взял. Похоже, часть курьеров из&nbsp;такси потеряла доступ к&nbsp;доставке<br/><br/>
 <b>Предлагаю:</b><br/>
@@ -958,7 +958,7 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
     <h3 class="cm__title" id="cmTitle-case-marketplace-manager">ИИ-помощник для&nbsp;управления бизнесом</h3>
     <div class="cm__tags"><span>25 стран</span><span>×5 быстрее</span><span>Тарифы и&nbsp;бонусы</span></div>
     <p class="cm__lede">Система получает актуальные данные о&nbsp;работе сервиса в&nbsp;25 странах и&nbsp;находит участки, требующие внимания. Затем оценивает возможные действия: изменить цену услуги, размер доплат исполнителям или&nbsp;доступность курьеров. Для каждого варианта рассчитывает сценарий. В пределах согласованных полномочий система может выполнить действие сама, решения за&nbsp;пределами лимитов передаёт&nbsp;человеку</p>
-    <div class="cm__res"><div><strong>25 стран</strong><span>Решение работает</span><small>одни правила для&nbsp;всех&nbsp;рынков</small></div><div><strong>−60 %</strong><span>Размер команды</span><small>эффективность бизнеса не&nbsp;упала</small></div><div><strong>×5</strong><span>Быстрее принимаются решения</span><small>от&nbsp;замеченной проблемы до&nbsp;изменения</small></div></div>
+    <div class="cm__res"><div><strong>25 стран</strong><span>Решение работает</span><small>одни правила для&nbsp;всех&nbsp;рынков</small></div><div><strong>−60%</strong><span>Размер команды</span><small>эффективность бизнеса не&nbsp;упала</small></div><div><strong>×5</strong><span>Быстрее принимаются решения</span><small>от&nbsp;замеченной проблемы до&nbsp;изменения</small></div></div>
     <h4>Для кого</h4><p>Для бизнеса, где цены, скидки и&nbsp;бонусы исполнителям меняют вручную каждый день. Обычно один менеджер ведёт три-четыре рынка, всё утро сидит в&nbsp;дашбордах, а&nbsp;от&nbsp;проблемы до&nbsp;изменения проходит&nbsp;неделя</p>
     <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Смотрит цифры</b><span>Дашборды, что&nbsp;меняли в&nbsp;настройках, задачи в&nbsp;трекере, записи встреч. Сравнивает с&nbsp;прошлой неделей и&nbsp;с&nbsp;планом</span></li><li><i>02</i><b>Ищет причину</b><span>Не хватает курьеров, упал спрос, дорогие субсидии или&nbsp;что-то ещё. Показывает, на&nbsp;каких цифрах это&nbsp;видно</span></li><li><i>03</i><b>Предлагает и&nbsp;считает</b><span>Сначала спрашивает, считать ли, потом показывает, сколько это&nbsp;даст и&nbsp;сколько&nbsp;стоит</span></li><li><i>04</i><b>Готовит и&nbsp;проверяет</b><span>В пределах лимита применяет изменение сам, остальное передаёт человеку. Через пару недель сверяет, что&nbsp;получилось на&nbsp;деле</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
@@ -975,8 +975,8 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
     <h3 class="cm__title" id="cmTitle-case-reactivation-bot">Возвращение исполнителей к&nbsp;работе</h3>
     <div class="cm__tags"><span>WhatsApp</span><span>6 стран</span><span>$1 против ≈&nbsp;$20</span></div>
     <p class="cm__lede">Помощник ведёт переписку в&nbsp;WhatsApp: спрашивает о&nbsp;причинах перерыва, отвечает на&nbsp;вопросы об&nbsp;условиях работы, тарифах и&nbsp;выплатах. Вместо одинаковой массовой рассылки человек получает разговор по&nbsp;своей ситуации. Решение запущено в&nbsp;шести странах и&nbsp;переписывается на&nbsp;испанском, французском и&nbsp;английском. Эффект проверили сравнением с&nbsp;контрольной группой</p>
-    <div class="cm__res"><div><strong>6 стран</strong><span>Запуск сразу во&nbsp;всех&nbsp;шести</span><small>Боливия, Колумбия, Гана, Кот-д’Ивуар, Сенегал,&nbsp;Замбия</small></div><div><strong>+14 %</strong><span>Общий прирост вернувшихся&nbsp;курьеров</span><small>A/B-тест: 20,8 % в&nbsp;тесте против 18,3 %&nbsp;в&nbsp;контроле</small></div><div><strong>$1 против ≈&nbsp;$20</strong><span>Привлечение через помощника против&nbsp;обычного</span><small>расходы на&nbsp;модель за&nbsp;одного вернувшегося</small></div></div>
-    <h4>Для кого</h4><p>Для бизнеса с&nbsp;полевыми исполнителями: курьеры, водители, клиенты. Люди уходят после смены тарифов, поломки транспорта или&nbsp;непонятного требования в&nbsp;приложении, и&nbsp;компания замолкает: колл-центра для&nbsp;них нет, рассылок для&nbsp;ушедших нет. Вернуть ушедшего дешевле, чем привлечь нового, если поговорить с&nbsp;ним про его&nbsp;город, тарифы и&nbsp;выплаты</p>
+    <div class="cm__res"><div><strong>6 стран</strong><span>Запуск сразу во&nbsp;всех&nbsp;шести</span><small>Боливия, Колумбия, Гана, Кот-д’Ивуар, Сенегал,&nbsp;Замбия</small></div><div><strong>+14%</strong><span>Общий прирост вернувшихся&nbsp;курьеров</span><small>A/B-тест: 20,8% в&nbsp;тесте против 18,3%&nbsp;в&nbsp;контроле</small></div><div><strong>$1 против ≈&nbsp;$20</strong><span>Вернуть курьера против привлечь&nbsp;нового</span><small>полная стоимость одного вернувшегося&nbsp;курьера</small></div></div>
+    <h4>Для кого</h4><p>Для бизнеса с&nbsp;полевыми исполнителями: курьеры, водители. Люди уходят после смены тарифов, поломки транспорта или&nbsp;непонятного требования в&nbsp;приложении, и&nbsp;компания замолкает: колл-центра для&nbsp;них нет, рассылок для&nbsp;ушедших нет. Вернуть ушедшего дешевле, чем привлечь нового, если поговорить с&nbsp;ним про его&nbsp;город, тарифы и&nbsp;выплаты</p>
     <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Выборка</b><span>Каждый день из&nbsp;данных платформы собирается список ушедших: сколько дней не&nbsp;выходил, город,&nbsp;транспорт</span></li><li><i>02</i><b>Диалог</b><span>Агент пишет первым от&nbsp;имени компании и&nbsp;спрашивает, что&nbsp;случилось. Отвечает про тарифы, комиссии, партнёров и&nbsp;выплаты на&nbsp;языке страны, с&nbsp;цифрами конкретного&nbsp;города</span></li><li><i>03</i><b>Эскалация</b><span>Спорный вопрос или&nbsp;жалобу передаёт человеку вместе с&nbsp;историей переписки</span></li><li><i>04</i><b>Замер</b><span>Курьеры заранее делятся на&nbsp;тест и&nbsp;контроль. Эффект считается по&nbsp;возвратам и&nbsp;часам на&nbsp;линии</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
@@ -986,19 +986,19 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <div class="tgx"><div class="tgx__top"><i class="av">AI</i><div><b>Delivery AI Reports</b><small>бот</small></div></div><div class="tgx__chat">
 <div class="tgx__date">7 октября</div>
 <div class="tgx__msg"><div class="tgx__name">Delivery AI Reports</div>
-<div class="tgx__file"><i>↓</i><div>delivery_daily_06_10.html<small>168,4 KB</small></div></div>
+<div class="tgx__file"><i>↓</i><div>delivery_daily_06_10.html<small>168,4 КБ</small></div></div>
 📦 <b>Доставка, 6 октября</b><br/><b>Ключевые метрики</b>
-<div class="tgx__q"><b>Россия</b><br/>Доставки: к&nbsp;плану −3,1 %, к&nbsp;неделе +2,9&nbsp;%<br/>Доход: к&nbsp;плану +1,4 %, к&nbsp;неделе +0,8&nbsp;%</div>
-<div class="tgx__q"><b>СНГ</b><br/>Доставки: к&nbsp;плану +0,5 %, к&nbsp;году +10,6&nbsp;%<br/>Доход: к&nbsp;плану −0,7 %, к&nbsp;неделе +1,2&nbsp;%</div>
-<div class="tgx__q"><b>Международные рынки</b><br/>Доставки: к&nbsp;плану −4,2 %, к&nbsp;году +30,9&nbsp;%<br/>Доход: к&nbsp;плану −2,3 %, к&nbsp;неделе +1,9&nbsp;%</div>
+<div class="tgx__q"><b>Россия</b><br/>Доставки: к&nbsp;плану −3,1%, к&nbsp;неделе +2,9%<br/>Доход: к&nbsp;плану +1,4%, к&nbsp;неделе +0,8%</div>
+<div class="tgx__q"><b>СНГ</b><br/>Доставки: к&nbsp;плану +0,5%, к&nbsp;неделе +1,6%<br/>Доход: к&nbsp;плану −0,7%, к&nbsp;неделе +1,2%</div>
+<div class="tgx__q"><b>Международные рынки</b><br/>Доставки: к&nbsp;плану −4,2%, к&nbsp;неделе +3,9%<br/>Доход: к&nbsp;плану −2,3%, к&nbsp;неделе +1,9%</div>
 Детали в&nbsp;HTML-файле<span class="tgx__t">11:00</span></div>
 <div class="tgx__msg sm">✅ Отчёт за&nbsp;06.10 отправлен в&nbsp;11:00<span class="tgx__t">11:01</span></div>
 </div></div>
 <div class="tgx"><div class="tgx__top"><i class="av">AI</i><div><b>Delivery AI Reports</b><small>бот</small></div></div><div class="tgx__chat">
 <div class="tgx__date">1 октября</div>
 <div class="tgx__msg"><div class="tgx__name">Delivery AI Reports</div>
-<div class="tgx__file"><i>↓</i><div>Международные рынки, сентябрь.html<small>4,1 MB</small></div></div>
-Привет!<br/><br/><b>Итоги сентября на&nbsp;международных рынках</b><br/>Доставки −10 % к&nbsp;плану, +16 % к&nbsp;прошлому&nbsp;году<br/>Доход −3 %&nbsp;к&nbsp;плану<br/><br/><b>Главное</b><br/>СНГ: −2 % по&nbsp;доставкам, в&nbsp;октябре растём на&nbsp;тарифе<br/>🇨🇮 Кот-д’Ивуар: −2 % по&nbsp;доставкам, экономика в&nbsp;плане<br/>Основной недобор дохода — одна страна, причина найдена: выросли&nbsp;субсидии<span class="tgx__t">10:00</span></div>
+<div class="tgx__file"><i>↓</i><div>Международные рынки, сентябрь.html<small>4,1 МБ</small></div></div>
+Привет!<br/><br/><b>Итоги сентября на&nbsp;международных рынках</b><br/>Доставки −10% к&nbsp;плану, +16% к&nbsp;прошлому&nbsp;году<br/>Доход −3%&nbsp;к&nbsp;плану<br/><br/><b>Главное</b><br/>Латинская Америка: −2% по&nbsp;доставкам, в&nbsp;октябре растём на&nbsp;тарифе<br/>🇨🇮 Кот-д’Ивуар: −2% по&nbsp;доставкам, экономика в&nbsp;плане<br/>Основной недобор дохода — одна страна, причина найдена: выросли&nbsp;субсидии<span class="tgx__t">10:00</span></div>
 <div class="tgx__kb">Отчёт ↗</div>
 </div></div>
 </div>
@@ -1008,7 +1008,7 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
     <h3 class="cm__title" id="cmTitle-case-reporting">Управленческая отчётность без&nbsp;ручной сборки</h3>
     <div class="cm__tags"><span>Telegram</span><span>3 региона</span><span>Каждый день 11:00</span></div>
     <p class="cm__lede">Раньше сотрудники каждый день переносили цифры из&nbsp;отчётов и&nbsp;собирали сводку вручную. Теперь система получает данные из&nbsp;аналитических панелей, объединяет показатели и&nbsp;готовит регулярные материалы. Отчётность охватывает Россию, СНГ и&nbsp;международные рынки. Ежедневная сводка приходит к&nbsp;11:00</p>
-    <div class="cm__res"><div><strong>5 ч →&nbsp;0</strong><span>На сбор отчётности</span><small>показатели приходят по&nbsp;расписанию</small></div><div><strong>3 региона</strong><span>В одном сообщении каждый&nbsp;день</span><small>Россия, СНГ, международные&nbsp;рынки</small></div><div><strong>1 кнопка</strong><span>Месячная презентация по&nbsp;бизнесу</span><small>открывается прямо из&nbsp;чата</small></div></div>
+    <div class="cm__res"><div><strong>5 ч →&nbsp;0</strong><span>В неделю на&nbsp;сбор отчётности</span><small>показатели приходят по&nbsp;расписанию</small></div><div><strong>3 региона</strong><span>В одном сообщении каждый&nbsp;день</span><small>Россия, СНГ, международные&nbsp;рынки</small></div><div><strong>1 кнопка</strong><span>Месячная презентация по&nbsp;бизнесу</span><small>открывается прямо из&nbsp;чата</small></div></div>
     <h4>Для кого</h4><p>Для руководителей и&nbsp;команд, которые начинают утро с&nbsp;пяти дашбордов, а&nbsp;итоги месяца собирают в&nbsp;презентацию по&nbsp;два дня. При этом цифры в&nbsp;чате, презентации и&nbsp;дашборде часто не&nbsp;сходятся</p>
     <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Каждое утро</b><span>Бот берёт вчерашние цифры из&nbsp;дашбордов: доставки, оборот, доход. Сравнивает с&nbsp;планом, прошлой неделей и&nbsp;прошлым годом и&nbsp;присылает одним сообщением. Детали — в&nbsp;приложенном файле</span></li><li><i>02</i><b>Раз в&nbsp;месяц</b><span>Собирает презентацию по&nbsp;бизнесу: итоги месяца, где недобрали к&nbsp;плану и&nbsp;почему, что&nbsp;делаем дальше. Сверху короткая выжимка, ниже кнопка&nbsp;«Отчёт»</span></li><li><i>03</i><b>Проверка</b><span>Если источник не&nbsp;ответил, бот не&nbsp;шлёт отчёт с&nbsp;дырой, а&nbsp;пишет в&nbsp;чат, что&nbsp;сбор не&nbsp;прошёл</span></li><li><i>04</i><b>Подтверждение</b><span>После отправки отмечается в&nbsp;чате: отчёт за&nbsp;такое-то число ушёл&nbsp;в&nbsp;11:00</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
@@ -1019,11 +1019,11 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <div class="tg-hd"><i></i><div>ИИ-помощник, команда продаж<small>в&nbsp;рабочем чате</small></div></div>
 <div class="msg-me">Пришли заказы по&nbsp;Казани за&nbsp;прошлую неделю и&nbsp;что&nbsp;с&nbsp;ними не&nbsp;так</div>
 <div class="bub">
-<b>Казань, 29.09–05.10</b>
+<b>Казань, 28.09–04.10</b>
 <table>
-<tr><td>Заказы</td><td>4 812</td><td class="up">+6 % к&nbsp;неделе</td></tr>
-<tr><td>Отмены</td><td>3,9 %</td><td class="dn">+1,2 п. п</td></tr>
-<tr><td>Средний чек</td><td>1 240 ₽</td><td>без&nbsp;изменений</td></tr>
+<tr><td>Заказы</td><td>4&nbsp;812</td><td class="up">+6% к&nbsp;неделе</td></tr>
+<tr><td>Отмены</td><td>3,9%</td><td class="dn">+1,2 п.п.</td></tr>
+<tr><td>Средний чек</td><td>1&nbsp;240&nbsp;₽</td><td>без&nbsp;изменений</td></tr>
 </table>
 <b>Что не&nbsp;так:</b> отмены выросли в&nbsp;пятницу вечером, почти все — из-за&nbsp;долгого поиска курьера в&nbsp;центре. В базе знаний это&nbsp;уже было в&nbsp;августе, тогда помог бонус за&nbsp;вечерние часы<br/><br/>
             Таблица во&nbsp;вложении. Подготовить предложение по&nbsp;бонусу?
@@ -1035,16 +1035,16 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <div><b>Аналитик</b><span>выгрузки</span><span>дашборды</span><span>проверка расчётов</span></div>
 <div><b>Поддержка</b><span>разбор заявок</span><span>ответы клиентам</span><span>эскалация</span></div>
 </div>
-<div class="kb"><span><b>База знаний</b>, метрики, регламенты,&nbsp;решения</span><span><b>1 800+</b> заметок</span></div>
+<div class="kb"><span><b>База знаний</b>, метрики, регламенты,&nbsp;решения</span><span><b>1&nbsp;800+</b> заметок</span></div>
 <p class="viz-note">Пример диалога и&nbsp;цифры условные</p></div></div>
   <div class="cm__info">
     <span class="cm__kind">Яндекс Доставка, 2026, Внедрение в&nbsp;командах</span>
     <h3 class="cm__title" id="cmTitle-case-ai-adoption">Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3>
     <div class="cm__tags"><span>Роли</span><span>База знаний</span><span>×2 вне разработки</span></div>
-    <p class="cm__lede">Собрали общий набор готовых действий для&nbsp;повторяющихся задач, удобный доступ к&nbsp;помощникам и&nbsp;базу знаний на&nbsp;1 800+ заметок. Обучали сотрудников, разбирали реальные задачи и&nbsp;измеряли, сколько рабочего времени освобождается. После пилота программу расширили на&nbsp;другие команды&nbsp;Доставки</p>
+    <p class="cm__lede">Собрали общий набор готовых действий для&nbsp;повторяющихся задач, удобный доступ к&nbsp;помощникам и&nbsp;базу знаний на&nbsp;1&nbsp;800+ заметок. Обучали сотрудников, разбирали реальные задачи и&nbsp;измеряли, сколько рабочего времени освобождается. После пилота программу расширили на&nbsp;другие команды&nbsp;Доставки</p>
     <div class="cm__res"><div><strong>×5</strong><span>Использование ИИ в&nbsp;командах</span><small>за&nbsp;полгода</small></div><div><strong>×1,5</strong><span>Быстрее разработка</span><small>по&nbsp;данным проекта</small></div><div><strong>×2</strong><span>Быстрее задачи вне&nbsp;разработки</span><small>у&nbsp;команд, которые не&nbsp;пишут&nbsp;код</small></div></div>
     <h4>Для кого</h4><p>Для компаний, где ИИ вроде бы&nbsp;есть, а&nbsp;пользуются им&nbsp;единицы. Каждый настраивает что-то своё, знания не&nbsp;передаются, а&nbsp;руководитель не&nbsp;видит, дало ли это&nbsp;хоть&nbsp;что-то</p>
-    <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Роли</b><span>Для менеджера, аналитика, бухгалтера, поддержки свой набор умений. Человек получает помощника, уже настроенного под&nbsp;его&nbsp;работу</span></li><li><i>02</i><b>Процессы</b><span>Повторяющиеся задачи команды превращаются в&nbsp;готовые умения: «собери отчёт», «разбери заявку», «посчитай бонусы». Сделали один раз, пользуются&nbsp;все</span></li><li><i>03</i><b>Знания</b><span>Метрики, регламенты, где какие данные и&nbsp;кто за&nbsp;что&nbsp;отвечает, собраны в&nbsp;одну базу. Помощник читает её&nbsp;первым и&nbsp;не&nbsp;задаёт одни и&nbsp;те же&nbsp;вопросы</span></li><li><i>04</i><b>Замер</b><span>У каждого проекта посчитан эффект: сколько часов и&nbsp;людей он освобождает. Видно, кто и&nbsp;как&nbsp;пользуется. Руководитель видит это&nbsp;в&nbsp;цифрах</span></li></ol>
+    <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Роли</b><span>Для менеджера, аналитика, поддержки свой набор умений. Человек получает помощника, уже настроенного под&nbsp;его&nbsp;работу</span></li><li><i>02</i><b>Процессы</b><span>Повторяющиеся задачи команды превращаются в&nbsp;готовые умения: «собери отчёт», «разбери заявку», «посчитай бонусы». Сделали один раз, пользуются&nbsp;все</span></li><li><i>03</i><b>Знания</b><span>Метрики, регламенты, где какие данные и&nbsp;кто за&nbsp;что&nbsp;отвечает, собраны в&nbsp;одну базу. Помощник читает её&nbsp;первым и&nbsp;не&nbsp;задаёт одни и&nbsp;те же&nbsp;вопросы</span></li><li><i>04</i><b>Замер</b><span>У каждого проекта посчитан эффект: сколько часов и&nbsp;людей он освобождает. Видно, кто и&nbsp;как&nbsp;пользуется. Руководитель видит это&nbsp;в&nbsp;цифрах</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </div>
