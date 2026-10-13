@@ -25,143 +25,142 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}body{margin:0;background:#000;color:var(--ink);font:400 15px/1.55 var(--f);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}p{margin:0}
 .wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
-.cap{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cap{letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 h1,h2,h3{margin:0}
 h1,h2{font-weight:500;text-transform:uppercase;letter-spacing:-.035em;line-height:.98}
-h1{font-size:clamp(44px,8.2vw,128px)}
-h2{font-size:clamp(34px,4.6vw,68px)}
-.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:999px;padding:15px 24px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;transition:background .2s}
+
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:999px;padding:15px 24px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;transition:background .2s}
 .btn:hover{background:#333}
-.lnk{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}.lnk:hover{color:#777}
+.lnk{letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}.lnk:hover{color:#777}
 /* header */
 .hd{position:sticky;top:0;z-index:30;background:#fafafa;border-bottom:1px solid transparent;transition:border-color .2s}
 .hd.scrolled{border-bottom-color:var(--line)}
 .hd .wrap{height:62px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{display:flex;align-items:center;gap:9px;font-size:21px;font-weight:500;letter-spacing:-.04em}
+.logo{display:flex;align-items:center;gap:9px;font-weight:500;letter-spacing:-.04em}
 .logo i{display:grid;grid-template-columns:repeat(3,4px);gap:2px;align-items:end;height:18px}.logo i b{background:var(--ink);height:11px}.logo i b:nth-child(2){height:18px}.logo i b:nth-child(3){height:14px}
-.nav{display:flex;gap:34px}.nav a,.hd .cta{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#555}.nav a:hover,.hd .cta:hover{color:var(--ink)}.hd .cta{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px}
+.nav{display:flex;gap:34px}.nav a,.hd .cta{letter-spacing:.16em;text-transform:uppercase;color:#555}.nav a:hover,.hd .cta:hover{color:var(--ink)}.hd .cta{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:3px}
 /* sheet */
 .sheet{background:var(--bg);border-radius:0 0 28px 28px;overflow:hidden}
 .sec{padding:clamp(80px,9vw,140px) 0;border-top:1px solid var(--line)}
 .sec-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:end;margin-bottom:clamp(40px,5vw,64px)}
 .sec-head .cap{margin-bottom:26px}
-.sec-head p{color:var(--soft);max-width:42ch;font-size:15px}
+.sec-head p{color:var(--soft);max-width:42ch;}
 
 /* hero */
 .hero{padding:clamp(48px,7vh,96px) 0 clamp(56px,8vh,100px)}
 .hero .cap{margin-bottom:clamp(20px,3vh,30px)}
-.hero h1{font-size:clamp(46px,8.4vw,132px)}
+
 .hero h1 span{display:block}
 .hero-row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:end;margin-top:clamp(28px,4vh,44px)}
-.hero-row p{color:var(--soft);max-width:44ch;font-size:15px;margin-bottom:22px}
+.hero-row p{color:var(--soft);max-width:44ch;margin-bottom:22px}
 .hero-acts{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
 /* scenario */
 .scen{margin-top:clamp(50px,7vh,80px);border-top:1px solid var(--line);padding-top:22px}
 .scen-h{display:flex;justify-content:space-between;align-items:baseline;gap:20px;margin-bottom:22px}
-.scen-h h2{font-size:clamp(20px,1.8vw,26px);text-transform:none;letter-spacing:-.025em;margin-top:8px}
-.replay{all:unset;cursor:pointer;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+.scen-h h2{text-transform:none;letter-spacing:-.025em;margin-top:8px}
+.replay{all:unset;cursor:pointer;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
 .flow3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
 .st3{padding:24px 24px 26px;border-right:1px solid var(--line);opacity:.18;transform:translateY(8px);transition:opacity .6s,transform .6s}
 .st3:last-child{border-right:0}
 .st3.in{opacity:1;transform:none}
 .st3 .cap{display:block;margin-bottom:18px}
-.src{display:flex;gap:8px;flex-wrap:wrap}.src span{border:1px solid #ddd;border-radius:999px;padding:6px 12px;font-size:12.5px}
-.st3 p{font-size:13px;color:var(--soft);margin-top:16px}
+.src{display:flex;gap:8px;flex-wrap:wrap}.src span{border:1px solid #ddd;border-radius:999px;padding:6px 12px;}
+.st3 p{color:var(--soft);margin-top:16px}
 .paper{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.paper b{display:block;font-weight:500;font-size:14px;margin-bottom:8px}
-.paper div{display:grid;grid-template-columns:24px 1fr;font-size:13px;padding:6px 0;border-top:1px solid var(--line)}.paper div i{font-style:normal;color:var(--muted);font-size:11px}
-.paper small{display:block;margin-top:8px;font-size:12px;color:var(--soft)}
-.out{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:13px}.out:first-of-type{border-top:0}
-.out em{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;background:#111;color:#fff}
+.paper b{display:block;font-weight:500;margin-bottom:8px}
+.paper div{display:grid;grid-template-columns:24px 1fr;padding:6px 0;border-top:1px solid var(--line)}.paper div i{font-style:normal;color:var(--muted);}
+.paper small{display:block;margin-top:8px;color:var(--soft)}
+.out{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);}.out:first-of-type{border-top:0}
+.out em{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff}
 .out.q em{background:#fff;color:#111;border:1px solid #111}
 .out b{font-weight:500;display:block}.out span{color:var(--soft)}
-.scen-note{font-size:12px;color:var(--muted);margin-top:14px}
+.scen-note{color:var(--muted);margin-top:14px}
 /* cases */
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .tabs::-webkit-scrollbar{display:none}
-.tab{all:unset;box-sizing:border-box;cursor:pointer;border:1px solid #ddd;background:#fff;border-radius:14px;padding:11px 16px;font-size:13px;line-height:1.35;color:#333;transition:border-color .2s,background .2s}
-.tab span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.tab{all:unset;box-sizing:border-box;cursor:pointer;border:1px solid #ddd;background:#fff;border-radius:14px;padding:11px 16px;line-height:1.35;color:#333;transition:border-color .2s,background .2s}
+.tab span{display:block;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
 .tab:hover{border-color:#999}
 .tab.on{background:#111;border-color:#111;color:#fff}.tab.on span{color:#aaa}
 .cnav{display:flex;justify-content:space-between;align-items:center;margin:18px 0 0;padding:14px 0;border-top:1px solid var(--line)}
-.cnav .pos{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}.cnav .pos b{color:var(--ink);font-weight:500}
-.arrows{display:flex;gap:8px}.arrows button{all:unset;cursor:pointer;width:42px;height:42px;border-radius:50%;border:1px solid #ccc;display:grid;place-items:center;font-size:18px}.arrows button:hover{background:#111;color:#fff;border-color:#111}
+.cnav .pos{color:var(--muted);font-variant-numeric:tabular-nums}.cnav .pos b{color:var(--ink);font-weight:500}
+.arrows{display:flex;gap:8px}.arrows button{all:unset;cursor:pointer;width:42px;height:42px;border-radius:50%;border:1px solid #ccc;display:grid;place-items:center;}.arrows button:hover{background:#111;color:#fff;border-color:#111}
 .slide{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(30px,5vw,80px);padding:36px 0 10px;border-top:1px solid var(--line);animation:fade .45s ease}
 .slide[hidden]{display:none}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}}
-.story h3{font-size:clamp(28px,3vw,44px);font-weight:500;letter-spacing:-.035em;line-height:1.05;margin:16px 0 18px;max-width:20ch}
+.story h3{font-weight:500;letter-spacing:-.035em;line-height:1.05;margin:16px 0 18px;max-width:20ch}
 .story p{color:var(--soft);max-width:54ch}
 .story .read{margin-top:28px;padding-top:0}
 .data .cap{display:block}
-.bignum{font-size:clamp(64px,7.4vw,112px);font-weight:500;letter-spacing:-.055em;line-height:1;margin-top:14px;white-space:nowrap}
-.bignum .before{font-size:.42em;color:#999;letter-spacing:-.03em}.bignum .ar{font-size:.42em;color:#bbb;margin:0 .25em}
-.dcap{font-size:13px;color:var(--soft);margin-top:10px;max-width:30ch}
+.bignum{font-weight:500;letter-spacing:-.055em;line-height:1;margin-top:14px;white-space:nowrap}
+.bignum .before{color:#999;letter-spacing:-.03em}.bignum .ar{color:#bbb;margin:0 .25em}
+.dcap{color:var(--soft);margin-top:10px;max-width:30ch}
 .dstats{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
-.dstats b{display:block;font-weight:500;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.02em;line-height:1.2}.dstats span{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.dstats b{display:block;font-weight:500;letter-spacing:-.02em;line-height:1.2}.dstats span{display:block;color:var(--muted);margin-top:6px}
 .scheme{grid-column:1/-1;margin-top:10px}
 .scheme ol{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
 .scheme li{padding:16px 18px;border-right:1px solid var(--line);position:relative}
 .scheme li:last-child{border-right:0}
-.scheme li:not(:last-child)::after{content:'→';position:absolute;right:-9px;top:50%;transform:translateY(-50%);background:#fff;font-size:13px;color:#999;width:18px;text-align:center}
-.scheme li i{font-style:normal;font-size:10px;color:var(--muted);letter-spacing:.1em}
-.scheme li b{display:block;font-weight:500;font-size:14.5px;margin-top:6px}.scheme li span{display:block;font-size:12.5px;color:var(--soft);margin-top:3px}
-.branch{font-size:12.5px;color:var(--soft);margin-top:10px}
-.read{all:unset;cursor:pointer;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;gap:10px;border-bottom:1px solid currentColor;padding-bottom:3px}.read:hover{color:#777}
+.scheme li:not(:last-child)::after{content:'→';position:absolute;right:-9px;top:50%;transform:translateY(-50%);background:#fff;color:#999;width:18px;text-align:center}
+.scheme li i{font-style:normal;color:var(--muted);letter-spacing:.1em}
+.scheme li b{display:block;font-weight:500;margin-top:6px}.scheme li span{display:block;color:var(--soft);margin-top:3px}
+.branch{color:var(--soft);margin-top:10px}
+.read{all:unset;cursor:pointer;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;gap:10px;border-bottom:1px solid currentColor;padding-bottom:3px}.read:hover{color:#777}
 /* problems */
 .dirs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .dir{padding:28px 26px 34px 0;border-right:1px solid var(--line);margin-right:26px}
 .dir:last-child{border-right:0;margin-right:0}
-.dir .n{font-size:11px;color:var(--muted);margin-bottom:46px;display:block}
-.dir h3{font-size:clamp(19px,1.5vw,22px);font-weight:500;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px;max-width:18ch}
-.dir p{font-size:14px;color:var(--soft);max-width:34ch}
+.dir .n{color:var(--muted);margin-bottom:46px;display:block}
+.dir h3{font-weight:500;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px;max-width:18ch}
+.dir p{color:var(--soft);max-width:34ch}
 /* method */
 .steps{border-top:1px solid var(--line)}
 .step{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;padding:clamp(32px,4vw,48px) 0;border-bottom:1px solid var(--line)}
 .step .t{display:flex;gap:24px;align-items:baseline}
-.step .t i{font-style:normal;font-size:11px;color:var(--muted)}
-.step .t b{font-weight:500;text-transform:uppercase;font-size:clamp(30px,3.6vw,52px);letter-spacing:-.035em;line-height:1}
-.step h3{font-size:17px;font-weight:500;margin-bottom:8px}
-.step p{color:var(--soft);font-size:14.5px;max-width:52ch}
-.step .d{margin-top:16px;font-size:12.5px;color:var(--ink);display:flex;gap:10px}.step .d::before{content:'↳';color:var(--muted)}
+.step .t i{font-style:normal;color:var(--muted)}
+.step .t b{font-weight:500;text-transform:uppercase;letter-spacing:-.035em;line-height:1}
+.step h3{font-weight:500;margin-bottom:8px}
+.step p{color:var(--soft);max-width:52ch}
+.step .d{margin-top:16px;color:var(--ink);display:flex;gap:10px}.step .d::before{content:'↳';color:var(--muted)}
 .stay{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;padding:28px 0 0}
-.stay b{font-weight:500;font-size:17px}.stay p{color:var(--soft);font-size:14.5px;max-width:52ch}
+.stay b{font-weight:500;}.stay p{color:var(--soft);max-width:52ch}
 /* formats */
 .offer{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:40px;padding:32px 0;border-top:1px solid var(--line)}
 .offer:last-of-type{border-bottom:1px solid var(--line)}
-.offer h3{font-size:clamp(20px,1.7vw,24px);font-weight:500;letter-spacing:-.02em;margin:12px 0 10px}
-.offer>div>p{font-size:14px;color:var(--soft);max-width:36ch}
+.offer h3{font-weight:500;letter-spacing:-.02em;margin:12px 0 10px}
+.offer>div>p{color:var(--soft);max-width:36ch}
 .items details{border-top:1px solid var(--line)}.items details:first-child{border-top:0}
-.items summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto 18px;gap:16px;align-items:center;padding:16px 0;font-size:17px;letter-spacing:-.015em}
+.items summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto 18px;gap:16px;align-items:center;padding:16px 0;letter-spacing:-.015em}
 .items summary::-webkit-details-marker{display:none}
-.items summary small{font-size:11.5px;color:var(--muted)}
-.items summary::after{content:'+';font-size:20px;line-height:1;color:var(--muted);transition:transform .2s}
+.items summary small{color:var(--muted)}
+.items summary::after{content:'+';line-height:1;color:var(--muted);transition:transform .2s}
 .items details[open] summary::after{transform:rotate(45deg)}
-.items .b{padding:0 40px 20px 0;font-size:14px;color:var(--soft);max-width:66ch}
-.terms{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.terms span{border:1px solid #ddd;border-radius:999px;padding:4px 11px;font-size:11.5px;color:#555}
-.after-offers{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:28px}.after-offers p{font-size:13px;color:var(--muted)}
+.items .b{padding:0 40px 20px 0;color:var(--soft);max-width:66ch}
+.terms{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.terms span{border:1px solid #ddd;border-radius:999px;padding:4px 11px;color:#555}
+.after-offers{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:28px}.after-offers p{color:var(--muted)}
 /* tech */
 .lane{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;margin-bottom:40px}
 .lane div{padding:18px 20px;border-right:1px solid var(--line);position:relative}.lane div:last-child{border-right:0}
-.lane div:not(:last-child)::after{content:'→';position:absolute;right:-9px;top:50%;transform:translateY(-50%);background:#fff;color:#999;width:18px;text-align:center;font-size:13px}
-.lane i{font-style:normal;font-size:10px;color:var(--muted);letter-spacing:.1em}.lane b{display:block;font-weight:500;margin-top:6px}.lane span{font-size:12.5px;color:var(--soft)}
+.lane div:not(:last-child)::after{content:'→';position:absolute;right:-9px;top:50%;transform:translateY(-50%);background:#fff;color:#999;width:18px;text-align:center;}
+.lane i{font-style:normal;color:var(--muted);letter-spacing:.1em}.lane b{display:block;font-weight:500;margin-top:6px}.lane span{color:var(--soft)}
 .tech{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
 .tech>div{padding:26px 26px 30px 0;border-right:1px solid var(--line);margin-right:26px}
 .tech>div:last-child{border-right:0;margin-right:0}
 .tech .cap{display:block;margin-bottom:14px}
-.tech h3{font-size:19px;font-weight:500;letter-spacing:-.02em;margin-bottom:10px;line-height:1.2}
-.tech p{font-size:13.5px;color:var(--soft)}
-.tech dl{margin:16px 0 0;display:grid;gap:8px;font-size:12.5px}.tech dt{color:var(--muted)}.tech dd{margin:0}
+.tech h3{font-weight:500;letter-spacing:-.02em;margin-bottom:10px;line-height:1.2}
+.tech p{color:var(--soft)}
+.tech dl{margin:16px 0 0;display:grid;gap:8px;}.tech dt{color:var(--muted)}.tech dd{margin:0}
 .human{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;padding-top:36px;margin-top:10px;border-top:1px solid var(--line)}
-.human h3{font-size:clamp(24px,2.4vw,34px);font-weight:500;text-transform:uppercase;letter-spacing:-.03em;line-height:1}
-.human p{color:var(--soft);font-size:14.5px}
+.human h3{font-weight:500;text-transform:uppercase;letter-spacing:-.03em;line-height:1}
+.human p{color:var(--soft);}
 /* contact */
 .contact{color:#fff;padding:clamp(80px,9vw,130px) 0 40px}
 .contact h2{color:#fff;max-width:16ch}
 .contact .row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:end}
 .contact p{color:#aaa;max-width:42ch;margin-bottom:14px}
 .contact .btn{background:#fff;color:#000;margin-top:10px}.contact .btn:hover{background:#ddd}
-.contact .mail{display:block;margin-top:16px;font-size:12.5px;color:#888}.contact .mail a{color:#ddd;border-bottom:1px solid #444}
-.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:100px;padding-top:20px;border-top:1px solid #222;font-size:11px;color:#777}
+.contact .mail{display:block;margin-top:16px;color:#888}.contact .mail a{color:#ddd;border-bottom:1px solid #444}
+.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:100px;padding-top:20px;border-top:1px solid #222;color:#777}
 @media(max-width:1100px){.dirs,.tech{grid-template-columns:1fr 1fr}.dir:nth-child(2),.tech>div:nth-child(2){border-right:0;margin-right:0}.dir:nth-child(-n+2),.tech>div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media(max-width:860px){.nav{display:none}.hero-row,.sec-head,.offer,.step,.stay,.slide,.human,.contact .row{grid-template-columns:1fr;gap:22px}.flow3,.scheme ol,.lane{grid-template-columns:1fr}.st3,.scheme li,.lane div{border-right:0;border-bottom:1px solid var(--line)}.st3:last-child,.scheme li:last-child,.lane div:last-child{border-bottom:0}.scheme li::after,.lane div::after{display:none}.dirs,.tech{grid-template-columns:1fr}.dir,.tech>div{border-right:0;margin-right:0;border-bottom:1px solid var(--line);padding-right:0}.dir .n{margin-bottom:18px}}
 /* ---- modal, restyled to this design ---- */
@@ -172,13 +171,13 @@ h2{font-size:clamp(34px,4.6vw,68px)}
 .cc:hover,.cc:focus-visible{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(232,234,204,.35),0 24px 60px rgba(32,42,39,.25)}
 .cc:hover::after,.cc:focus-visible::after{opacity:1}
 .cc--wide{grid-column:span 2}
-.cc__meta{font-size:10px;font-weight:500;letter-spacing:.085em;text-transform:uppercase;color:#b4c2b6}
-.cc__metric{font-size:clamp(46px,4.6vw,72px);line-height:1;letter-spacing:-.06em;color:#e8eacc;margin-top:auto}
-.cc__metric small{display:block;font-size:12px;letter-spacing:0;color:#bcc8b9;margin-top:10px;line-height:1.4}
-.cc__title{font-size:clamp(19px,1.6vw,23px);line-height:1.2;letter-spacing:-.035em;font-weight:500;max-width:26ch}
+.cc__meta{font-weight:500;letter-spacing:.085em;text-transform:uppercase;color:#b4c2b6}
+.cc__metric{line-height:1;letter-spacing:-.06em;color:#e8eacc;margin-top:auto}
+.cc__metric small{display:block;letter-spacing:0;color:#bcc8b9;margin-top:10px;line-height:1.4}
+.cc__title{line-height:1.2;letter-spacing:-.035em;font-weight:500;max-width:26ch}
 .cc--wide .cc__title{max-width:34ch}
-.cc__open{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid #4b5949;font-size:12px;font-weight:500;color:#e0e6d9}
-.cc__open i{font-style:normal;font-size:22px;line-height:1;color:#e9a184;transition:transform .3s}
+.cc__open{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid #4b5949;font-weight:500;color:#e0e6d9}
+.cc__open i{font-style:normal;line-height:1;color:#e9a184;transition:transform .3s}
 .cc:hover .cc__open i{transform:rotate(90deg)}
 @media(max-width:1000px){.cc-grid{grid-template-columns:1fr 1fr}.cc--wide{grid-column:span 2}}
 @media(max-width:640px){.cc-grid{grid-template-columns:1fr}.cc--wide{grid-column:auto}.cc{min-height:240px}}
@@ -188,93 +187,93 @@ h2{font-size:clamp(34px,4.6vw,68px)}
 .cm__bg{position:absolute;inset:0;background:rgba(20,26,24,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;transition:opacity .3s}
 .cm__win{position:relative;width:min(1240px,100%);height:min(92vh,920px);display:grid;grid-template-columns:1.08fr 1fr;grid-template-rows:minmax(0,1fr);background:var(--white);color:var(--ink);border-radius:12px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.45);transform:translateY(24px) scale(.98);opacity:0;transition:transform .45s cubic-bezier(.16,1,.3,1),opacity .3s}
 .cm.is-open .cm__bg{opacity:1}.cm.is-open .cm__win{transform:none;opacity:1}
-.cm__x{position:absolute;right:14px;top:14px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--ink);font-size:20px;line-height:1;display:grid;place-items:center;cursor:pointer}
+.cm__x{position:absolute;right:14px;top:14px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--ink);line-height:1;display:grid;place-items:center;cursor:pointer}
 .cm__x:hover{background:var(--orange);border-color:var(--orange);color:#fff}
 .cm__nav{position:absolute;left:14px;bottom:14px;z-index:3;display:flex;gap:6px}
-.cm__nav button{width:40px;height:40px;border-radius:50%;border:1px solid #4b5949;background:rgba(32,42,39,.85);color:#e0e6d9;font-size:16px;cursor:pointer}
+.cm__nav button{width:40px;height:40px;border-radius:50%;border:1px solid #4b5949;background:rgba(32,42,39,.85);color:#e0e6d9;cursor:pointer}
 .cm__nav button:hover{background:var(--orange);border-color:var(--orange)}
 .cm__vis{background:var(--dark);overflow-y:auto;min-height:0;display:flex}
 .cm__visin{margin:auto;padding:36px 32px 70px;width:100%}
 .cm__info{padding:38px 40px 30px;overflow-y:auto;min-height:0;display:flex;flex-direction:column;gap:16px}
-.cm__kind{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center}
+.cm__kind{font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center}
 .cm__kind::before{content:'';width:6px;height:6px;background:var(--orange)}
-.cm__title{font-size:clamp(26px,2.4vw,36px);line-height:1.08;letter-spacing:-.05em;padding-right:40px}
+.cm__title{line-height:1.08;letter-spacing:-.05em;padding-right:40px}
 .cm__tags{display:flex;flex-wrap:wrap;gap:6px}
-.cm__tags span{font-size:11.5px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
-.cm__lede{font-size:15px;line-height:1.65;color:#3c443f}
+.cm__tags span{padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.cm__lede{line-height:1.65;color:#3c443f}
 .cm__res{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .cm__res>div{border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--paper)}
-.cm__res strong{display:block;font-weight:400;font-size:clamp(22px,2vw,30px);letter-spacing:-.05em;color:var(--orange);line-height:1.05}
-.cm__res span{display:block;font-size:12.5px;margin-top:8px;line-height:1.35}
-.cm__res small{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.35}
-.cm__info h4{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
-.cm__info>p{font-size:14px;line-height:1.65;color:#3c443f;margin-top:-6px}
+.cm__res strong{display:block;font-weight:400;letter-spacing:-.05em;color:var(--orange);line-height:1.05}
+.cm__res span{display:block;margin-top:8px;line-height:1.35}
+.cm__res small{display:block;color:var(--muted);margin-top:4px;line-height:1.35}
+.cm__info h4{font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.cm__info>p{line-height:1.65;color:#3c443f;margin-top:-6px}
 .cm__steps{list-style:none;margin:-6px 0 0;padding:0;border-top:1px solid var(--line)}
-.cm__steps li{display:grid;grid-template-columns:26px 112px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.5;align-items:baseline}
-.cm__steps i{font-style:normal;font-size:11px;color:var(--muted)}
+.cm__steps li{display:grid;grid-template-columns:26px 112px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);line-height:1.5;align-items:baseline}
+.cm__steps i{font-style:normal;color:var(--muted)}
 .cm__steps b{font-weight:500}
 .cm__act{margin-top:auto;padding-top:8px}
 body.cm-lock{overflow:hidden}
 @media(max-width:900px){.cm{padding:0}.cm__win{height:100%;border-radius:0;grid-template-columns:1fr;grid-template-rows:auto auto;overflow-y:auto}.cm__vis,.cm__info{overflow:visible}.cm__visin{padding:60px 18px 70px}.cm__res{grid-template-columns:1fr}.cm__steps li{grid-template-columns:26px 1fr}.cm__steps li span{grid-column:2}}
 /* case visual components inside the modal */
 .cm{--white:#fffefa;--line-dark:#3e4b45;--muted-dark:#b4c2b6;--text:#202523}
-.cm .back{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dark);display:inline-block;margin-bottom:clamp(28px,4vw,48px)}
+.cm .back{letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dark);display:inline-block;margin-bottom:clamp(28px,4vw,48px)}
 .cm .back:hover{color:#fff}
-.cm .viz-note{margin:14px 0 0;font-size:12px;color:var(--muted)}
+.cm .viz-note{margin:14px 0 0;color:var(--muted)}
 .cm .bars{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;align-items:end;height:220px;padding:0 4px}
 .cm .bars div{background:#2a2a2e;border-radius:8px 8px 4px 4px;position:relative;display:flex;align-items:flex-end;justify-content:center}
 .cm .bars div:last-child{background:#fff}
-.cm .bars div i{position:absolute;top:-24px;font-style:normal;font-size:13px;color:#fff;font-weight:500}
-.cm .bars div b{position:absolute;bottom:-24px;font-weight:400;font-size:11px;color:var(--muted-dark);letter-spacing:.08em}
+.cm .bars div i{position:absolute;top:-24px;font-style:normal;color:#fff;font-weight:500}
+.cm .bars div b{position:absolute;bottom:-24px;font-weight:400;color:var(--muted-dark);letter-spacing:.08em}
 .cm .bars{height:170px}
 .cm .phones{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
 .cm .phone{background:#000;border-radius:28px;overflow:hidden;position:relative;cursor:pointer;flex:0 0 auto}
 .cm .phone video{display:block;height:460px;width:auto;max-width:100%;background:#000}
-.cm .phone .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0, .cm .25);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .2s}
+.cm .phone .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.25);color:#fff;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .2s}
 .cm .phone.paused .play{opacity:1}
 .cm .phone video{height:520px}
 .cm .back{margin-bottom:22px}
 .cm .phone video{height:300px}
 .cm .ba{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .cm .ba>div{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 20px}
-.cm .ba .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between}
+.cm .ba .t{letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;display:flex;justify-content:space-between}
 .cm .ba ol{margin:0;padding:0;list-style:none}
-.cm .ba li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:13.5px;color:#2a2a2e;align-items:center;line-height:1.35}
-.cm .ba li i{font-style:normal;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;background:#ececea;color:#6f6f73}
+.cm .ba li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--line);color:#2a2a2e;align-items:center;line-height:1.35}
+.cm .ba li i{font-style:normal;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#ececea;color:#6f6f73}
 .cm .ba .after li i{background:#111;color:#fff}
 .cm .ba .after li.h i{background:#ececea;color:#6f6f73}
 .cm .ba .after{border-color:#111}
-.cm .ba .sum{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.cm .ba .sum{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted)}
 .cm .ba .sum b{color:var(--text);font-weight:500}
 .cm .ba{grid-template-columns:1fr}
 .cm .tg{background:#0b0b0c;border-radius:20px;padding:18px;border:1px solid #2a2a2e}
-.cm .tg .hd{display:flex;align-items:center;gap:10px;margin-bottom:14px;color:#fff;font-size:13px}
+.cm .tg .hd{display:flex;align-items:center;gap:10px;margin-bottom:14px;color:#fff;}
 .cm .tg .hd i{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#fff,#8a8d93);display:inline-block}
-.cm .tg .hd small{display:block;color:#8a8a90;font-size:11px}
-.cm .tg .bub{background:#1d1d20;color:#e9e9ec;border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:13.5px;line-height:1.5}
+.cm .tg .hd small{display:block;color:#8a8a90;}
+.cm .tg .bub{background:#1d1d20;color:#e9e9ec;border-radius:16px 16px 16px 4px;padding:14px 16px;line-height:1.5}
 .cm .tg .bub b{font-weight:500;color:#fff}
 .cm .tg table{width:100%;border-collapse:collapse;margin:8px 0 10px}
-.cm .tg td{padding:5px 0;border-top:1px solid #2c2c30;font-size:13px}
+.cm .tg td{padding:5px 0;border-top:1px solid #2c2c30;}
 .cm .tg td:nth-child(2), .cm .tg td:nth-child(3){text-align:right;white-space:nowrap}
 .cm .tg .up{color:#5ad27c}
 .cm .tg .dn{color:#ff7b7b}
 .cm .tg .btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
-.cm .tg .btns span{background:#26262a;color:#e9e9ec;border-radius:10px;padding:9px 6px;text-align:center;font-size:12.5px}
+.cm .tg .btns span{background:#26262a;color:#e9e9ec;border-radius:10px;padding:9px 6px;text-align:center;}
 .cm .tg .btns span.pri{background:#fff;color:#000}
 .cm .levers{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.cm .levers span{font-size:12.5px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;color:#2a2a2e}
+.cm .levers span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 11px;color:#2a2a2e}
 .cm .rhythm{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.cm .rhythm div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px;color:#2a2a2e}
-.cm .rhythm b{display:block;font-weight:500;font-size:14px;margin-bottom:3px}
+.cm .rhythm div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:#2a2a2e}
+.cm .rhythm b{display:block;font-weight:500;margin-bottom:3px}
 .cm .rhythm{grid-template-columns:1fr}
 .cm .tg+.tg{margin-top:12px}
-.cm .tg .file{display:flex;align-items:center;gap:10px;background:#26262a;border-radius:12px;padding:9px 11px;margin-bottom:10px;font-size:12.5px;color:#e9e9ec}
-.cm .tg .file i{width:30px;height:30px;border-radius:50%;background:#3a3a3f;display:grid;place-items:center;font-style:normal;font-size:13px}
-.cm .tg .file small{display:block;color:#8a8a90;font-size:11px}
-.cm .tg .q{border-left:3px solid #8a7bff;background:#24242a;border-radius:8px;padding:8px 10px;margin:6px 0;font-size:12.5px;line-height:1.45}
+.cm .tg .file{display:flex;align-items:center;gap:10px;background:#26262a;border-radius:12px;padding:9px 11px;margin-bottom:10px;color:#e9e9ec}
+.cm .tg .file i{width:30px;height:30px;border-radius:50%;background:#3a3a3f;display:grid;place-items:center;font-style:normal;}
+.cm .tg .file small{display:block;color:#8a8a90;}
+.cm .tg .q{border-left:3px solid #8a7bff;background:#24242a;border-radius:8px;padding:8px 10px;margin:6px 0;line-height:1.45}
 .cm .tg .q span{color:#9a9a9f}
-.cm .tg .one{display:block;margin-top:8px;background:#26262a;border-radius:10px;padding:10px;text-align:center;font-size:13px;color:#fff}
-.cm .tg .ok{margin-top:8px;display:inline-block;background:#1d1d20;border-radius:12px;padding:7px 12px;font-size:12.5px;color:#e9e9ec}
+.cm .tg .one{display:block;margin-top:8px;background:#26262a;border-radius:10px;padding:10px;text-align:center;color:#fff}
+.cm .tg .ok{margin-top:8px;display:inline-block;background:#1d1d20;border-radius:12px;padding:7px 12px;color:#e9e9ec}
 .cm .vizgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
 .cm .vizgrid{grid-template-columns:1fr}
 .cm .back{color:#b4c2b6}
@@ -287,18 +286,16 @@ body.cm-lock{overflow:hidden}
 .cm .tg .btns span.pri{background:#fffefa;color:var(--ink)}
 .cm .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
 .cm .roles>div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
-.cm .roles b{display:block;font-weight:500;font-size:14px;margin-bottom:8px}
-.cm .roles span{display:inline-block;font-size:12px;background:#f0f0ef;border-radius:999px;padding:4px 9px;margin:0 4px 5px 0;color:#2a2a2e}
-.cm .kb{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px;color:#2a2a2e;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.cm .roles b{display:block;font-weight:500;margin-bottom:8px}
+.cm .roles span{display:inline-block;background:#f0f0ef;border-radius:999px;padding:4px 9px;margin:0 4px 5px 0;color:#2a2a2e}
+.cm .kb{margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:#2a2a2e;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .cm .kb b{font-weight:500}
-.cm .tg .msg-me{background:#fff;color:#000;border-radius:16px 16px 4px 16px;padding:10px 13px;font-size:13.5px;margin:0 0 10px auto;max-width:82%;width:fit-content}
+.cm .tg .msg-me{background:#fff;color:#000;border-radius:16px 16px 4px 16px;padding:10px 13px;margin:0 0 10px auto;max-width:82%;width:fit-content}
 .cm .roles{grid-template-columns:1fr}
-.cm .phone')];
-  const play=p=>{const v=p.querySelector('video');v.play().then(()=>p.classList.remove('paused')).catch(()=>p.classList.add('paused'));}
 .cm .tg{background:#2b3730;border:1px solid #3e4b45;border-radius:10px;padding:16px;color:#fff}
 .cm .tg .bub,.cm .tg .q{background:#202a27}
 .cm .vizgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
-.cm .viz-note{color:#9eae96;font-size:11.5px;margin-top:12px}
+.cm .viz-note{color:#9eae96;margin-top:12px}
 .cm .phones{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .cm .phone video{height:420px}
 .cm .ba{grid-template-columns:1fr 1fr}
@@ -319,7 +316,7 @@ body.cm-lock{overflow:hidden}
 @media(max-width:900px){.cm__win{display:block!important}.cm__vis{display:block}}
 .cm .cx-videos{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .cm .phone{width:fit-content!important;position:relative}
-.cm .phone .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.25);color:#fff;font-size:11px;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .2s}
+.cm .phone .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.25);color:#fff;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .2s}
 .cm .phone.paused .play{opacity:1}
 @media(max-width:900px){.cm__win{display:flex!important;flex-direction:column}.cm__info{order:-1;padding-top:64px}.cm__vis{order:0}.cm__visin{padding:28px 18px 40px}}
 
@@ -330,30 +327,28 @@ body.cm-lock{overflow:hidden}
 .cc::after{display:none}
 .cc:hover,.cc:focus-visible{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 18px 40px rgba(32,37,35,.08)}
 .cc__meta{color:var(--muted)}
-.cc__metric{margin-top:22px;font-size:clamp(40px,3.6vw,56px);color:var(--orange);font-weight:400}
+.cc__metric{margin-top:22px;color:var(--orange);font-weight:400}
 .cc__metric small{color:var(--muted);margin-top:8px}
-.cc__title{margin-top:18px;font-size:clamp(18px,1.45vw,21px);color:var(--ink)}
+.cc__title{margin-top:18px;color:var(--ink)}
 .cc__open{margin-top:22px;border-top-color:var(--line);color:var(--ink)}
 .cc__open i{color:var(--orange)}
 .cc--wide{display:grid;grid-template-columns:1.15fr .85fr;gap:0;padding:0;background:var(--dark);color:#fff;border-color:var(--dark)}
 .cc--wide:hover{border-color:var(--dark)}
 .cc__main{display:flex;flex-direction:column;padding:26px 28px 20px}
 .cc--wide .cc__meta{color:#b4c2b6}
-.cc--wide .cc__metric{color:#e8eacc;font-size:clamp(52px,5vw,78px)}
+.cc--wide .cc__metric{color:#e8eacc;}
 .cc--wide .cc__metric small{color:#bcc8b9}
-.cc--wide .cc__title{color:#fff;font-size:clamp(20px,1.7vw,25px)}
+.cc--wide .cc__title{color:#fff;}
 .cc--wide .cc__open{color:#e0e6d9;border-top-color:#4b5949;margin-top:auto}
 .cc--wide .cc__open i{color:#e9a184}
 .cc__side{background:#2b3730;border-left:1px solid #495447;padding:26px 24px;display:flex;flex-direction:column;justify-content:center}
-.cc__stage{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #4b5949;font-size:13px;color:#e0e6d9}
+.cc__stage{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid #4b5949;color:#e0e6d9}
 .cc__stage:nth-of-type(3){border-bottom:1px solid #4b5949}
-.cc__stage em{font-style:normal;font-size:11px;color:#9eae96;text-align:right}
-.cc__foot{margin-top:16px;font-size:11px;letter-spacing:.04em;color:#a6b39d}
+.cc__stage em{font-style:normal;color:#9eae96;text-align:right}
+.cc__foot{margin-top:16px;letter-spacing:.04em;color:#a6b39d}
 @media(max-width:760px){.cc--wide{grid-template-columns:1fr}.cc__side{border-left:0;border-top:1px solid #495447}}
 .cc--wide .cc__title{margin-bottom:22px}
 html{scroll-padding-top:80px}
-
-
 
 .cm{--white:#fff;--paper:#f6f6f4;--line:#e6e6e6;--ink:#111;--muted:#7a7a7a;--orange:#111}
 .cm__bg{background:rgba(0,0,0,.6)}
@@ -364,12 +359,12 @@ html{scroll-padding-top:80px}
 .cm__x:hover,.cm__nav button:hover{background:#111;border-color:#111;color:#fff}
 .cm .tg{background:#1c1c1c;border-color:#2a2a2a}.cm .tg .bub,.cm .tg .q{background:#262626}
 .cm .ba .after{border-color:#111}.cm .ba .after li i{background:#111}
-.cm .button{display:inline-flex;align-items:center;gap:12px;background:#111;color:#fff;border-radius:999px;padding:14px 22px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
-.cm .tg .hd{position:static;height:auto;background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;display:flex;align-items:center;gap:10px;margin-bottom:14px;color:#fff;font-size:13px}
+.cm .button{display:inline-flex;align-items:center;gap:12px;background:#111;color:#fff;border-radius:999px;padding:14px 22px;letter-spacing:.16em;text-transform:uppercase}
+.cm .tg .hd{position:static;height:auto;background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none;display:flex;align-items:center;gap:10px;margin-bottom:14px;color:#fff;}
 .cm .tg .hd i{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#fff,#8a8d93);display:inline-block}
 .hero-row{margin-bottom:56px}
 
-.bignum.txt{font-size:clamp(34px,3.4vw,52px);white-space:normal;letter-spacing:-.04em;line-height:1.02;max-width:12ch}
+.bignum.txt{white-space:normal;letter-spacing:-.04em;line-height:1.02;max-width:12ch}
 @media(max-width:860px){.tabs{display:flex;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto}}
 
 html,body{overflow-x:clip}
@@ -391,12 +386,12 @@ body{background:var(--inkbg)}
 .band.b-ink .dir h3{color:#fff}
 .hd{background:var(--paperw)}
 h1,h2{text-transform:none;letter-spacing:-.05em;line-height:1}
-h2{font-size:clamp(34px,4.4vw,64px)}
-.hero h1{font-size:clamp(52px,7.4vw,118px);line-height:.96;letter-spacing:-.055em}
+
+.hero h1{line-height:.96;letter-spacing:-.055em}
 .hero h1 span{display:block}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:48px;align-items:end}
-.hero-side p{color:var(--soft);font-size:16px;max-width:40ch;margin-bottom:26px}
+.hero-side p{color:var(--soft);max-width:40ch;margin-bottom:26px}
 .hero-side .hero-acts{flex-direction:column;align-items:flex-start;gap:18px}
 .step .t b,.human h3{text-transform:none;letter-spacing:-.045em}
 /* buttons: clear feedback */
@@ -404,18 +399,18 @@ h2{font-size:clamp(34px,4.4vw,64px)}
 .btn:hover{background:var(--accent)}
 .btn:active,.pill:active,.tab:active,.arrows button:active,.replay:active{transform:scale(.97)}
 .lnk:hover,.replay:hover{color:var(--accent)}
-.pill{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:#111;color:#fff;border-radius:999px;padding:14px 22px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.pill{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:10px;margin-top:28px;background:#111;color:#fff;border-radius:999px;padding:14px 22px;letter-spacing:.16em;text-transform:uppercase}
 .pill:hover{background:var(--accent)}
 /* cases board: list on the left, case on the right */
 .board{display:grid;grid-template-columns:300px minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
 .side{position:sticky;top:84px}
 .tabs{display:flex!important;flex-direction:column;gap:6px}
-.tab{width:100%;border-radius:12px;padding:12px 16px;font-size:14px}
+.tab{width:100%;border-radius:12px;padding:12px 16px;}
 .tab.on{background:#111;border-color:#111}
 .tab.on::after{content:'→';float:right;margin-top:-18px;color:#fff}
 .cnav{border-top:0;margin-top:14px;padding:0}
 .main .slide{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);padding-top:4px;border-top:0}
-.main .story h3{font-size:clamp(26px,2.6vw,40px)}
+
 .bignum .ar,.bignum .before{color:#aaa}
 .slide .bignum{color:var(--accent)}
 .slide .bignum.txt{color:#111}
@@ -436,34 +431,33 @@ h2{font-size:clamp(34px,4.4vw,64px)}
 .band.hero{padding-top:clamp(24px,4vh,48px);padding-bottom:clamp(36px,5vh,60px)}
 .sec-head{margin-bottom:clamp(24px,3vw,40px);gap:32px}
 .sec-head .cap{margin-bottom:14px}
-h2{font-size:clamp(28px,3.2vw,48px)}
+
 .hero .cap{margin-bottom:16px}
-.hero h1{font-size:clamp(40px,5.4vw,88px);line-height:.98}
-.hero-side p{font-size:15px;margin-bottom:20px}
+.hero h1{line-height:.98}
+.hero-side p{margin-bottom:20px}
 .scen{margin-top:clamp(28px,4vh,44px);padding-top:16px}
 .scen-h{margin-bottom:14px}
-.scen-h h2{font-size:clamp(18px,1.6vw,22px);margin-top:4px}
+.scen-h h2{margin-top:4px}
 .st3{padding:18px 20px 20px}.st3 .cap{margin-bottom:12px}
-.tab{padding:9px 14px;font-size:13px}.tabs{gap:5px}
+.tab{padding:9px 14px;}.tabs{gap:5px}
 .side{top:76px}
 .slide{padding-top:0}
-.story h3,.main .story h3{font-size:clamp(24px,2.3vw,34px);margin:10px 0 12px}
+.story h3,.main .story h3{margin:10px 0 12px}
 .pill{margin-top:20px;padding:12px 20px}
-.bignum{font-size:clamp(48px,5vw,80px);margin-top:8px}
-.bignum.txt{font-size:clamp(28px,2.6vw,40px)}
+.bignum{margin-top:8px}
+
 .dstats{margin-top:16px;padding-top:14px}
 .scheme{margin-top:4px}.scheme ol{margin-top:10px}.scheme li{padding:12px 16px}
 .dir{padding:20px 22px 24px 0}.dir .n{margin-bottom:24px}
 .step{padding:clamp(20px,2.4vw,30px) 0}
-.step .t b{font-size:clamp(26px,2.8vw,40px)}
-.offer{padding:22px 0}.items summary{padding:12px 0;font-size:16px}
+
+.offer{padding:22px 0}.items summary{padding:12px 0;}
 .tech>div{padding:20px 22px 22px 0}
 .human{padding-top:24px}
 .contact{padding:clamp(56px,6vw,90px) 0 32px}.foot{margin-top:60px}
-.contact h2{font-size:clamp(32px,3.6vw,56px)}
 
 @media(max-width:1200px) and (min-width:861px){.board{grid-template-columns:230px minmax(0,1fr);gap:28px}.main .slide{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:28px}}
-.hero h1{text-transform:uppercase;letter-spacing:-.045em;font-size:clamp(48px,7vw,116px);line-height:.94}
+.hero h1{text-transform:uppercase;letter-spacing:-.045em;line-height:.94}
 .band.hero{padding-top:clamp(40px,7vh,88px);padding-bottom:calc(clamp(48px,8vh,96px) + 28px)}.band.hero>.wrap{width:100%}
 .phone,.cm .phone{background:transparent!important;border-radius:18px!important;overflow:hidden}
 .cx-videos .phone video,.phone video{aspect-ratio:432/900}
@@ -472,8 +466,8 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 .band.hero{min-height:calc(100svh - 63px + 28px);display:flex;flex-direction:column;justify-content:center}
 .contact .me{display:flex;gap:16px;align-items:center;margin-bottom:26px}
 .contact .me img{width:96px;height:96px;border-radius:10px;object-fit:cover;flex:none}
-.contact .me b{display:block;color:#fff;font-weight:500;font-size:19px}
-.contact .me span{display:block;color:#aaa;font-size:14px;line-height:1.45;max-width:34ch}
+.contact .me b{display:block;color:#fff;font-weight:500;}
+.contact .me span{display:block;color:#aaa;line-height:1.45;max-width:34ch}
 .burger{display:none}
 @media(max-width:860px){
  .hd .cta{margin-left:auto}
@@ -486,23 +480,23 @@ h2{font-size:clamp(28px,3.2vw,48px)}
  .hd.open .burger i::before{top:0;transform:rotate(45deg)}
  .hd.open .burger i::after{top:0;transform:rotate(-45deg)}
  .hd.open .nav{display:flex;flex-direction:column;gap:0;position:absolute;top:62px;left:0;right:0;background:var(--paperw);padding:4px var(--pad,20px) 16px;border-bottom:1px solid var(--line);box-shadow:0 12px 24px rgba(0,0,0,.06)}
- .hd.open .nav a{padding:15px 0;font-size:13px;border-bottom:1px solid var(--line)}
+ .hd.open .nav a{padding:15px 0;border-bottom:1px solid var(--line)}
  .hd.open .nav a:last-child{border-bottom:0}
 }
 .contact .row{grid-template-columns:1fr!important}
 /* hero + diagram */
 .hero-grid.dia{grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:center;gap:clamp(32px,5vw,80px)}
 .hero-grid.dia .cap{margin-bottom:clamp(12px,2vh,22px)}
-.hero-grid.dia h1{font-size:clamp(44px,6.3vw,112px)}
+
 .hero-grid.dia .hero-side{margin-top:clamp(18px,3vh,32px)}
 .hero-grid.dia .hero-side p{max-width:46ch;margin-bottom:20px}
 .hero-grid.dia .hero-side .hero-acts{flex-direction:row;align-items:center;gap:26px}
 .band.hero{padding-top:clamp(20px,4vh,72px);padding-bottom:calc(clamp(24px,5vh,80px) + 28px)}
 .hero-diagram{position:relative;justify-self:end;width:100%;max-width:520px;padding:clamp(18px,2.6vh,28px) clamp(18px,2vw,28px);border:1px solid #cbd3c9;border-radius:12px;background:#e9eee6;background-image:radial-gradient(#c5cec280 .7px,transparent .7px);background-size:16px 16px}
-.diagram-caption{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:clamp(14px,2.6vh,28px);font-size:10px;font-weight:600;color:#5f6c60;letter-spacing:.08em;text-transform:uppercase}
-.diagram-caption span:last-child{letter-spacing:0;text-transform:none;font-size:11px;font-weight:400}
+.diagram-caption{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:clamp(14px,2.6vh,28px);font-weight:600;color:#5f6c60;letter-spacing:.08em;text-transform:uppercase}
+.diagram-caption span:last-child{letter-spacing:0;text-transform:none;font-weight:400}
 .sources{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.source{padding:clamp(10px,1.6vh,15px) 6px clamp(9px,1.3vh,12px);border:1px solid #cbd4c7;border-radius:6px;background:#f8faf5;text-align:center;font-size:11.5px;line-height:1.3;color:#48574b}
+.source{padding:clamp(10px,1.6vh,15px) 6px clamp(9px,1.3vh,12px);border:1px solid #cbd4c7;border-radius:6px;background:#f8faf5;text-align:center;line-height:1.3;color:#48574b}
 .source svg{display:block;width:20px;height:20px;margin:0 auto 7px;stroke:#6f7e6e}
 .connector{display:block;width:100%;height:clamp(22px,3.6vh,40px);overflow:visible}
 .connector path{stroke:#95a58d;fill:none;stroke-width:1.25;vector-effect:non-scaling-stroke}
@@ -510,19 +504,19 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 @keyframes dflow{to{stroke-dashoffset:-272}}
 .agent-node{background:var(--inkbg);color:#fff;border-radius:8px;padding:clamp(14px,2.2vh,22px) 20px;box-shadow:0 12px 28px rgba(25,48,30,.12)}
 .agent-top{display:flex;gap:13px;align-items:center;margin-bottom:clamp(10px,1.8vh,16px)}
-.agent-symbol{width:32px;height:32px;display:grid;place-items:center;border:1px solid #79867b;color:#eab69d;font-size:21px;flex:none}
-.agent-top b{display:block;font-size:18px;font-weight:500;letter-spacing:-.025em}
-.agent-top small{display:block;color:#bbc6bd;font-size:11.5px;margin-top:2px}
-.agent-tasks{display:flex;justify-content:space-between;gap:7px;padding-top:12px;border-top:1px solid #46534a;font-size:11px;color:#d3dcd3}
+.agent-symbol{width:32px;height:32px;display:grid;place-items:center;border:1px solid #79867b;color:#eab69d;flex:none}
+.agent-top b{display:block;font-weight:500;letter-spacing:-.025em}
+.agent-top small{display:block;color:#bbc6bd;margin-top:2px}
+.agent-tasks{display:flex;justify-content:space-between;gap:7px;padding-top:12px;border-top:1px solid #46534a;color:#d3dcd3}
 .agent-tasks span{display:flex;align-items:center;gap:6px}
 .agent-tasks i{width:4px;height:4px;background:#dbbda9;border-radius:50%;flex:none}
 .outcomes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .outcome{padding:clamp(10px,1.6vh,14px) 12px;border:1px solid #b9c6b4;background:#f7faf3;border-radius:6px;line-height:1.4}
 .outcome.to-human{background:#f4e5db;border-color:#ddbbab}
-.outcome b{display:block;font-size:12.5px;font-weight:500}
-.outcome small{display:block;font-size:11px;color:#687461;margin-top:4px}
+.outcome b{display:block;font-weight:500}
+.outcome small{display:block;color:#687461;margin-top:4px}
 .outcome.to-human small{color:#836353}
-.diagram-foot{font-size:11.5px;line-height:1.5;color:#5f6e60;margin-top:16px;max-width:46ch}
+.diagram-foot{line-height:1.5;color:#5f6e60;margin-top:16px;max-width:46ch}
 @media(max-height:760px) and (min-width:861px){.diagram-foot{display:none}}
 @media(prefers-reduced-motion:reduce){.connector .flow{animation:none}}
 @media(max-width:860px){.hero-grid.dia{grid-template-columns:1fr;gap:36px}.hero-diagram{justify-self:stretch;max-width:none}.hero-grid.dia .hero-side .hero-acts{flex-wrap:wrap}}
@@ -556,13 +550,13 @@ h2{font-size:clamp(28px,3.2vw,48px)}
  .hd.open .nav .nav-tg{display:flex;justify-content:center;margin-top:12px;padding:14px 0;border:0;border-radius:999px;background:var(--ink);color:#fff;letter-spacing:.12em}
  .hero-diagram{display:none}
  .dia-mini{display:grid;gap:5px}
- .dia-mini .r{padding:10px 13px;border:1px solid #cbd3c9;border-radius:10px;background:#e9eee6;font-size:12.5px;line-height:1.35;color:#566357}
- .dia-mini .r b{display:block;font-weight:500;color:var(--ink);font-size:13.5px}
+ .dia-mini .r{padding:10px 13px;border:1px solid #cbd3c9;border-radius:10px;background:#e9eee6;line-height:1.35;color:#566357}
+ .dia-mini .r b{display:block;font-weight:500;color:var(--ink);}
  .dia-mini .r.ag{background:var(--inkbg);border-color:var(--inkbg);color:#bbc6bd}
  .dia-mini .r.ag b{color:#fff}
  .dia-mini .r.hu{background:#f4e5db;border-color:#ddbbab;color:#836353}
  .dia-mini .two{display:grid;grid-template-columns:1fr 1fr;gap:5px}
- .dia-mini .ar{text-align:center;color:#95a58d;font-size:13px;line-height:1}
+ .dia-mini .ar{text-align:center;color:#95a58d;line-height:1}
  .hero-grid.dia{gap:24px}
  .hero-grid.dia .hero-side .hero-acts{gap:14px 22px}
  .band.hero{min-height:0}
@@ -570,55 +564,50 @@ h2{font-size:clamp(28px,3.2vw,48px)}
  .board{display:block}
  .slide,.slide[hidden]{display:flex!important;flex-direction:column;animation:none;border:0;padding:16px 16px 18px;margin:0 0 10px;background:var(--paperw);border-radius:16px;gap:0;cursor:pointer}
  .slide .story{display:contents}
- .slide .story .cap{order:1;font-size:11px}
- .slide .story h3{order:2;font-size:20px;line-height:1.15;margin:8px 0 10px;max-width:none}
- .slide .story p{order:3;display:none;font-size:13.5px;margin-bottom:10px}
+ .slide .story .cap{order:1;}
+ .slide .story h3{order:2;line-height:1.15;margin:8px 0 10px;max-width:none}
+ .slide .story p{order:3;display:none;margin-bottom:10px}
  .slide:not(:has(.case-open)){cursor:default}
  .slide:not(:has(.case-open)) .story p{display:block}
  .slide .data{order:4;display:flex;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
  .slide .data>.cap,.slide .dstats,.slide .scheme{display:none}
- .slide .bignum{font-size:34px;margin:0}
- .slide .bignum.txt{font-size:19px;letter-spacing:-.02em;white-space:normal}
- .slide .dcap{margin:0;font-size:12.5px;max-width:none}
+ .slide .bignum{margin:0}
+ .slide .bignum.txt{letter-spacing:-.02em;white-space:normal}
+ .slide .dcap{margin:0;max-width:none}
  .slide .story .pill{order:5;align-self:flex-start;margin-top:14px}
  .dirs{grid-template-columns:1fr 1fr!important}
  .dir{padding:14px 12px 16px 0!important;margin-right:0!important;border-right:0}
  .dir:nth-child(odd){border-right-width:1px;border-right-style:solid;margin-right:12px!important}
  .dir:nth-child(n+3){border-bottom:0}
  .dir .n{margin-bottom:10px}
- .dir h3{font-size:16px;margin-bottom:6px}
- .dir p{font-size:13px}
+ .dir h3{margin-bottom:6px}
+
  .step{gap:8px}
- .step .t b{font-size:26px}
- .step p{font-size:14px}
+
  .tech{grid-template-columns:1fr 1fr!important}
  .tech>div{padding:14px 12px 14px 0!important;margin-right:0!important;border-right:0!important}
  .tech>div:nth-child(odd){border-right:1px solid var(--line)!important;margin-right:12px!important}
  .tech>div:nth-child(n+3){border-bottom:0!important}
- .tech h3{font-size:15.5px;margin-bottom:6px}
- .tech p{font-size:13px}
+ .tech h3{margin-bottom:6px}
+
  .human{padding-top:18px;gap:8px}
- .human h3{font-size:20px}
- .cap{font-size:11px}
- .items summary small{font-size:12px}
- .foot{font-size:11.5px}
- .mcta{display:flex;position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:25;height:52px;align-items:center;justify-content:center;border-radius:999px;background:var(--ink);color:#fff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.18);transform:translateY(160%);transition:transform .3s}
+
+ .mcta{display:flex;position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:25;height:52px;align-items:center;justify-content:center;border-radius:999px;background:var(--ink);color:#fff;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.18);transform:translateY(160%);transition:transform .3s}
  .mcta.show{transform:none}
 }
 @media(max-width:720px){
  .slide:not(:has(.case-open)) .story p{display:none}
  .slide .story .pill{display:none}
- .slide:has(.case-open)::after{content:'→';position:absolute;top:14px;right:16px;font-size:18px;color:var(--ink)}
+ .slide:has(.case-open)::after{content:'→';position:absolute;top:14px;right:16px;color:var(--ink)}
  .slide{position:relative}
  .slide .story .cap{padding-right:28px}
- .slide .story h3{font-size:18.5px;margin:6px 0 8px}
+ .slide .story h3{margin:6px 0 8px}
 }
 @media(max-width:720px){
  .slide,.slide[hidden]{padding:14px 14px 15px;margin-bottom:8px}
- .slide .bignum{font-size:30px}
- .slide .bignum.txt{font-size:17px}
+
  .step{padding:14px 0}
- .step .t b{font-size:23px}
+
  .offer{gap:10px}
 }
 @media(max-width:900px){.cm__bar{order:-5;flex:none}}
@@ -630,21 +619,21 @@ h2{font-size:clamp(28px,3.2vw,48px)}
  .sec{padding-bottom:44px!important}
  .band.hero{padding-bottom:40px!important}
  .sec-head{gap:10px!important;margin-bottom:22px!important}
- .sec-head h2{font-size:30px;line-height:1.08}
- .sec-head p{font-size:15px}
- .cgroup{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+ .sec-head h2{line-height:1.08}
+
+ .cgroup{display:block;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
  .main>.cgroup:first-child{margin-top:0}
- .slide .bignum.txt{font-size:15px!important;font-weight:500;color:var(--accent);letter-spacing:0}
+ .slide .bignum.txt{font-weight:500;color:var(--accent);letter-spacing:0}
  .dirs,.tech{grid-template-columns:1fr!important;border-top-width:1px}
  .dir{display:grid!important;grid-template-columns:30px 1fr;column-gap:6px;padding:14px 0!important;margin:0!important;border-right-width:0!important;border-bottom-width:1px!important;border-bottom-style:solid!important}
  .dir:last-child{border-bottom-width:0!important}
  .dir .n{grid-row:1/3;margin:3px 0 0!important}
- .dir h3{font-size:16.5px!important;margin-bottom:4px!important;max-width:none}
- .dir p{font-size:14px!important;max-width:none}
+ .dir h3{margin-bottom:4px!important;max-width:none}
+ .dir p{max-width:none}
  .tech>div{padding:13px 0!important;margin:0!important;border-right:0!important;border-bottom:1px solid var(--line)!important}
  .tech>div:last-child{border-bottom:0!important}
- .tech h3{font-size:16px!important;margin-bottom:4px!important}
- .tech p{font-size:14px!important}
+ .tech h3{margin-bottom:4px!important}
+
  .human{margin-top:0!important;padding-top:16px!important}
  .mcta{height:48px;left:20px;right:20px}
 }
@@ -654,8 +643,8 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 .ci{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;color:var(--ink);text-decoration:none;transition:background .15s}
 .ci svg{width:22px;height:22px;flex:none;color:var(--ink)}
 .ci span{display:flex;flex-direction:column;line-height:1.25}
-.ci b{font-weight:500;font-size:15px}
-.ci small{font-size:12.5px;color:var(--muted)}
+.ci b{font-weight:500;}
+.ci small{color:var(--muted)}
 .ci:hover,.ci:focus-visible{background:#f1f0ea;outline:none}
 .cpop{position:fixed;inset:0;z-index:120}
 .cpop[hidden]{display:none}
@@ -663,8 +652,8 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 .cpop__box{position:fixed;width:300px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.16);padding:8px;animation:cpin .16s ease}
 @keyframes cpin{from{opacity:0;transform:translateY(-4px)}}
 .cpop__hd{display:flex;justify-content:space-between;align-items:center;padding:8px 8px 6px 14px}
-.cpop__hd b{font-weight:500;font-size:13px;color:var(--muted)}
-.cpop__x{width:30px;height:30px;border:0;background:none;font-size:20px;line-height:1;color:var(--muted);cursor:pointer;border-radius:50%}
+.cpop__hd b{font-weight:500;color:var(--muted)}
+.cpop__x{width:30px;height:30px;border:0;background:none;line-height:1;color:var(--muted);cursor:pointer;border-radius:50%}
 .cpop.sheet .cpop__bg{background:rgba(0,0,0,.35)}
 .cpop.sheet .cpop__box{left:0;right:0;bottom:0;top:auto;width:auto;border-radius:20px 20px 0 0;padding:10px 12px calc(16px + env(safe-area-inset-bottom));animation:cpup .22s ease}
 @keyframes cpup{from{transform:translateY(100%)}}
@@ -680,7 +669,7 @@ h2{font-size:clamp(28px,3.2vw,48px)}
  html{scroll-padding-top:112px!important}
  .snav{display:flex;gap:6px;position:sticky;top:62px;z-index:29;overflow-x:auto;scrollbar-width:none;padding:8px 16px;background:rgba(245,244,239,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
  .snav::-webkit-scrollbar{display:none}
- .snav a{flex:none;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;color:var(--ink);white-space:nowrap;line-height:1.2}
+ .snav a{flex:none;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);white-space:nowrap;line-height:1.2}
  .snav a.on{background:var(--ink);border-color:var(--ink);color:#fff}
  .hd{border-bottom-color:transparent!important}
  .sec-head p{display:none}
@@ -690,166 +679,214 @@ h2{font-size:clamp(28px,3.2vw,48px)}
  .offer>div>p{display:none}
 }
 /* company groups */
-.tgroup{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.tgroup{letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
 .tabs .tgroup:first-child{margin-top:0}
 @media(max-width:860px){.tgroup{display:none}}
 @media(max-width:720px){.slide:has(.case-open) .story h3{padding-right:30px}.slide .story h3{margin-top:0!important}}
 /* telegram-like mock */
 .tgx{background:#0e1621;border-radius:16px;overflow:hidden;border:1px solid #1f2c3a;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Roboto,sans-serif}
 .tgx+.tgx{margin-top:0}
-.tgx__top{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#17212b;color:#fff;font-size:14px}
-.tgx__top b{display:block;font-weight:600;font-size:14px}
-.tgx__top small{display:block;color:#708499;font-size:12px}
-.tgx .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#ff7a59,#e0453a);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:12px;flex:none}
+.tgx__top{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#17212b;color:#fff;}
+.tgx__top b{display:block;font-weight:600;}
+.tgx__top small{display:block;color:#708499;}
+.tgx .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#ff7a59,#e0453a);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700;flex:none}
 .tgx__chat{padding:12px 12px 14px;background:#0e1621 radial-gradient(#1a2735 1px,transparent 1px) 0 0/18px 18px}
-.tgx__date{width:fit-content;margin:0 auto 10px;padding:3px 10px;border-radius:12px;background:rgba(0,0,0,.35);color:#c9d4df;font-size:12px}
-.tgx__msg{position:relative;background:#182533;color:#f5f5f5;border-radius:14px 14px 14px 4px;padding:8px 11px 20px;font-size:13.5px;line-height:1.42;max-width:100%;margin-bottom:6px}
+.tgx__date{width:fit-content;margin:0 auto 10px;padding:3px 10px;border-radius:12px;background:rgba(0,0,0,.35);color:#c9d4df;}
+.tgx__msg{position:relative;background:#182533;color:#f5f5f5;border-radius:14px 14px 14px 4px;padding:8px 11px 20px;line-height:1.42;max-width:100%;margin-bottom:6px}
 .tgx__msg b{font-weight:600}
 .tgx__msg.sm{padding:7px 11px 18px;width:fit-content}
-.tgx__name{color:#8774e1;font-weight:600;font-size:13.5px;margin-bottom:6px}
-.tgx__file{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13.5px}
-.tgx__file i{width:40px;height:40px;border-radius:50%;background:#5288c1;color:#fff;display:grid;place-items:center;font-style:normal;font-size:16px;flex:none}
-.tgx__file small{display:block;color:#708499;font-size:12px}
-.tgx__q{border-left:3px solid #8774e1;background:rgba(135,116,225,.13);border-radius:4px 8px 8px 4px;padding:6px 9px;margin:6px 0;font-size:13px}
-.tgx__t{position:absolute;right:10px;bottom:5px;font-size:11px;color:#6d8399}
-.tgx__kb{background:rgba(24,37,51,.85);color:#fff;border-radius:10px;padding:9px;text-align:center;font-size:13.5px;font-weight:500}
+.tgx__name{color:#8774e1;font-weight:600;margin-bottom:6px}
+.tgx__file{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.tgx__file i{width:40px;height:40px;border-radius:50%;background:#5288c1;color:#fff;display:grid;place-items:center;font-style:normal;flex:none}
+.tgx__file small{display:block;color:#708499;}
+.tgx__q{border-left:3px solid #8774e1;background:rgba(135,116,225,.13);border-radius:4px 8px 8px 4px;padding:6px 9px;margin:6px 0;}
+.tgx__t{position:absolute;right:10px;bottom:5px;color:#6d8399}
+.tgx__kb{background:rgba(24,37,51,.85);color:#fff;border-radius:10px;padding:9px;text-align:center;font-weight:500}
 .tgx__file>div{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:1200px){.cm .vizgrid:has(.tgx){display:grid;grid-template-columns:1fr!important;gap:14px}}
 .cm .vizgrid:has(.tgx){gap:14px}
+
+/* ===== typography: single scale (h1 96 / h2 48 / h3 32 / h4 24 / body 16 / small 14 / cap 12) ===== */
+:root{
+ --t-h1:clamp(44px,7vw,96px);
+ --t-h2:clamp(30px,3.6vw,48px);
+ --t-h3:clamp(22px,2.4vw,32px);
+ --t-h4:clamp(18px,1.7vw,24px);
+ --t-body:16px;
+ --t-small:14px;
+ --t-cap:12px;
+ --t-num:clamp(48px,5vw,80px);
+}
+@media(max-width:720px){:root{--t-num:34px}}
+body{font-size:var(--t-body);line-height:1.5}
+h1,.hero h1,.hero-grid.dia h1{font-size:var(--t-h1)}
+h2,.sec-head h2,.contact h2{font-size:var(--t-h2);line-height:1.02}
+.story h3,.main .story h3,.bignum.txt,.step .t b,.human h3,.cm__title,.cm__res strong{font-size:var(--t-h3);line-height:1.08}
+.dir h3,.offer h3,.tech h3,.dstats b,.paper b,.contact .me b,.logo,.stay b{font-size:var(--t-h4);line-height:1.2}
+.hero-side p,.hero-row p,.sec-head p,.story p,.step p,.stay p,.dir p,.offer>div>p,.items summary,.items .b,.tech p,.human p,.contact p,.cm__lede,.cm__info>p,.ci b,.hd.open .nav a,.agent-top b,.dia-mini .r b{font-size:var(--t-body)}
+.dcap,.dstats span,.scheme li b,.scheme li span,.branch,.tab,.items summary small,.terms span,.after-offers p,.lane,.lane span,.paper div,.paper small,.tech dl,.contact .mail,.contact .me span,.ci small,.cpop__hd b,.snav a,.dia-mini .r,.source,.outcome b,.agent-top small,.diagram-foot,.cm__tags span,.cm__res span,.cm__steps li,.cm .ba li,.cm .ba .sum,.cm .tg .hd,.cm .tg .bub,.cm .tg td,.cm .tg .btns span,.cm .levers span,.cm .rhythm div,.cm .rhythm b,.cm .tg .file,.cm .tg .q,.cm .tg .one,.cm .tg .ok,.cm .roles b,.cm .roles span,.cm .kb,.cm .tg .msg-me,.cm .viz-note,.cm .bars div i,.tgx__top,.tgx__top b,.tgx__msg,.tgx__name,.tgx__file,.tgx__q,.tgx__kb{font-size:var(--t-small)}
+.step .d{font-size:var(--t-small)}
+.cap,.btn,.lnk,.read,.pill,.replay,.nav a,.hd .cta,.dir .n,.step .t i,.scheme li i,.tab span,.cm__kind,.cm__info h4,.cm .back,.cm .ba .t,.cm .phone .play,.cm__steps i,.cm .button,.tgroup,.cgroup,.mcta,.cnav .pos,.foot,.lane i,.diagram-caption,.diagram-caption span:last-child,.agent-tasks,.outcome small,.paper div i,.cm__res small,.cm .tg .hd small,.cm .tg .file small,.cm .bars div b,.tgx__top small,.tgx__date,.tgx__file small,.tgx__t,.cm .ba li i,.dia-mini .ar{font-size:var(--t-cap)}
+.bignum{font-size:var(--t-num)}
+.bignum .before,.bignum .ar{font-size:.42em}
+.arrows button,.cm__x,.cpop__x,.items summary::after,.cm__nav button,.agent-symbol,.tgx__file i,.tgx .av{font-size:20px}
+@media(max-width:720px){.slide .bignum.txt{font-size:var(--t-h4)}.slide .story h3{font-size:var(--t-h4)}.dia-mini .r b{font-size:var(--t-small)}.dia-mini .r{font-size:var(--t-cap)}.items summary{grid-template-columns:1fr auto 18px;gap:12px}}
+/* no single word on the last line, balanced headings */
+h1,h2,h3{text-wrap:balance}
+p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res small{text-wrap:pretty}
+
+/* ===== layout fixes from design review ===== */
+/* formats: label on its own row, heading and list start on one line, durations on one vertical */
+.offer{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);grid-template-rows:auto auto;align-items:start;row-gap:10px}
+.offer>.cap{grid-column:1/-1}
+.offer h3{margin:0 0 8px}
+.items{margin-top:0}
+.items details:first-child summary{padding-top:0}
+.items summary{grid-template-columns:1fr 120px 18px}
+.items summary small{text-align:right;white-space:nowrap}
+/* cases: narrower story column, result heading on the same line as the story heading */
+.slide{align-items:start}
+.story h3,.main .story h3{max-width:16ch}
+.story p{max-width:40ch}
+.bignum.txt{margin-top:0;max-width:14ch}
+.slide .data>.cap:empty{display:none}
+@media(max-width:860px){.offer{grid-template-columns:1fr;grid-template-rows:auto}.offer>.cap{grid-column:auto}.story h3,.main .story h3,.story p{max-width:none}}
+/* mobile: bring back section intros, keep cards without a detail page readable */
+@media(max-width:720px){.sec-head p{display:block;color:var(--soft)}.slide:not(:has(.case-open)) .story p{display:block}}
 </style>
 </head>
 <body>
 <header class="hd" id="hd"><div class="wrap">
   <a class="logo" href="#top"><i><b></b><b></b><b></b></i>praxis</a>
-  <nav class="nav" id="nav"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Форматы</a><a href="#tech">Технологии</a><a class="nav-tg" href="#contact" data-contact>Связаться →</a></nav>
+  <nav class="nav" id="nav"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Услуги</a><a href="#tech">Технологии</a><a class="nav-tg" href="#contact" data-contact>Связаться →</a></nav>
   <a class="cta" href="#contact" data-contact>Обсудить задачу</a>
   <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><i></i></button>
 </div></header>
-<nav class="snav" id="snav" aria-label="Разделы"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Форматы</a><a href="#tech">Технологии</a><a href="#contact">Контакты</a></nav>
+<nav class="snav" id="snav" aria-label="Разделы"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Услуги</a><a href="#tech">Технологии</a><a href="#contact">Контакты</a></nav>
 <div class="sheet" id="top">
 
 <section class="hero band b-paper"><div class="wrap">
-  <div class="hero-grid dia"><div class="hero-main"><div class="cap">Внедрение ИИ в бизнес</div><h1><span>Агенты</span><span>для вашего</span><span><em>бизнеса</em></span></h1><div class="hero-side"><p>Находим работу, которую команда каждый день делает руками, и передаём её агентам: отчёты, заявки, расчёты. Всё работает в ваших системах</p><div class="hero-acts"><a class="btn" href="#contact" data-contact>Обсудить задачу →</a><a class="lnk" href="#cases">Посмотреть кейсы</a></div></div></div>
+  <div class="hero-grid dia"><div class="hero-main"><div class="cap">Внедрение ИИ в&nbsp;бизнес</div><h1><span>Агенты</span><span>для&nbsp;вашего</span><span><em>бизнеса</em></span></h1><div class="hero-side"><p>Находим работу, которую команда каждый день делает руками, и&nbsp;передаём её&nbsp;агентам: отчёты, заявки, расчёты. Всё работает в&nbsp;ваших системах</p><div class="hero-acts"><a class="btn" href="#contact" data-contact>Обсудить задачу →</a><a class="lnk" href="#cases">Посмотреть кейсы</a></div></div></div>
   <div class="hero-diagram" role="img" aria-label="Схема: агент берёт данные, задачи и знания из ваших систем, разбирает задачу, выполняет и проверяет. Типовое завершает сам, исключения передаёт человеку.">
-<div class="diagram-caption"><span>ИИ внутри вашего процесса</span><span>Схема подхода</span></div>
+<div class="diagram-caption"><span>ИИ внутри вашего&nbsp;процесса</span><span>Схема подхода</span></div>
 <div class="sources">
-<div class="source"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" aria-hidden="true"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v7c0 4 14 4 14 0V5M5 11v7c0 4 14 4 14 0v-7"/></svg>Данные и отчёты</div>
+<div class="source"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" aria-hidden="true"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v7c0 4 14 4 14 0V5M5 11v7c0 4 14 4 14 0v-7"/></svg>Данные и&nbsp;отчёты</div>
 <div class="source"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="m8 9 1.5 1.5L12 8m1 1h3m-8 6 1.5 1.5L12 14m1 1h3"/></svg>Задачи команды</div>
 <div class="source"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" aria-hidden="true"><path d="M3 4h6l3 2 3-2h6v15h-6l-3 2-3-2H3zM12 6v15"/></svg>База знаний</div>
 </div>
 <svg class="connector" viewBox="0 0 360 45" preserveAspectRatio="none" aria-hidden="true"><path d="M60 0v20h120v25M180 0v45M300 0v20H180"/><path class="flow" d="M60 0v20h120v25"/></svg>
-<div class="agent-node"><div class="agent-top"><div class="agent-symbol" aria-hidden="true">↳</div><div><b>Агент за работой</b><small>В ваших системах. По вашим правилам</small></div></div><div class="agent-tasks"><span><i></i>Разбирает задачу</span><span><i></i>Выполняет</span><span><i></i>Проверяет</span></div></div>
+<div class="agent-node"><div class="agent-top"><div class="agent-symbol" aria-hidden="true">↳</div><div><b>Агент за&nbsp;работой</b><small>В ваших системах. По вашим&nbsp;правилам</small></div></div><div class="agent-tasks"><span><i></i>Разбирает задачу</span><span><i></i>Выполняет</span><span><i></i>Проверяет</span></div></div>
 <svg class="connector" viewBox="0 0 360 45" preserveAspectRatio="none" aria-hidden="true"><path d="M180 0v20H85v25M180 20h95v25"/><path class="flow" d="M180 0v20H85v25"/></svg>
-<div class="outcomes"><div class="outcome"><b>Готовый результат</b><small>Отчёт, выполненная задача, решение в пределах лимита</small></div><div class="outcome to-human"><b>Вопрос человеку</b><small>Исключение или решение за пределами правил</small></div></div>
-<p class="diagram-foot">Автоматизируем повторяющуюся работу. Для спорных случаев заранее определяем, кто принимает решение</p>
+<div class="outcomes"><div class="outcome"><b>Готовый результат</b><small>Отчёт, выполненная задача, решение в&nbsp;пределах лимита</small></div><div class="outcome to-human"><b>Вопрос человеку</b><small>Исключение или&nbsp;решение за&nbsp;пределами правил</small></div></div>
+<p class="diagram-foot">Автоматизируем повторяющуюся работу. Для спорных случаев заранее определяем, кто принимает&nbsp;решение</p>
 </div>
-  <div class="dia-mini" role="img" aria-label="Схема: данные и задачи попадают к агенту, он выдаёт результат или передаёт вопрос человеку"><div class="r"><b>Ваши данные, задачи и знания</b></div><div class="ar">↓</div><div class="r ag"><b>Агент за работой</b>разбирает, выполняет, проверяет</div><div class="ar">↓</div><div class="two"><div class="r"><b>Готовый результат</b>в пределах правил</div><div class="r hu"><b>Вопрос человеку</b>исключения</div></div></div></div>
+  <div class="dia-mini" role="img" aria-label="Схема: данные и задачи попадают к агенту, он выдаёт результат или передаёт вопрос человеку"><div class="r"><b>Ваши данные, задачи&nbsp;и&nbsp;знания</b></div><div class="ar">↓</div><div class="r ag"><b>Агент за&nbsp;работой</b>разбирает, выполняет, проверяет</div><div class="ar">↓</div><div class="two"><div class="r"><b>Готовый результат</b>в&nbsp;пределах правил</div><div class="r hu"><b>Вопрос человеку</b>исключения</div></div></div></div>
 </div></section>
 
 <section class="sec band b-white" id="cases"><div class="wrap">
   <div class="sec-head"><div><div class="cap">Кейсы</div><h2>Что уже работает</h2></div></div>
-  <div class="board"><div class="side"><div class="tabs" role="tablist" id="tabs"><div class="tgroup">Яндекс Доставка</div><button type="button" class="tab on" role="tab" aria-selected="true"><span>01 Отчёты</span>Сводка и презентация</button><button type="button" class="tab" role="tab" aria-selected="false"><span>02 Команды</span>ИИ в работе команды</button><button type="button" class="tab" role="tab" aria-selected="false"><span>03 Претензии</span>Компенсации клиентам</button><div class="tgroup">Yango Delivery</div><button type="button" class="tab" role="tab" aria-selected="false"><span>04 Операции</span>Управление в 25 странах</button><button type="button" class="tab" role="tab" aria-selected="false"><span>05 Курьеры</span>Возврат ушедших</button><div class="tgroup">Еврокран</div><button type="button" class="tab" role="tab" aria-selected="false"><span>06 Собственник</span>Утро собственника</button><button type="button" class="tab" role="tab" aria-selected="false"><span>07 Бухгалтерия</span>Счета и акты</button><button type="button" class="tab" role="tab" aria-selected="false"><span>08 Финансы</span>Оплаты и долги</button><button type="button" class="tab" role="tab" aria-selected="false"><span>09 Сценарий</span>График выездов</button></div>
+  <div class="board"><div class="side"><div class="tabs" role="tablist" id="tabs"><div class="tgroup">Яндекс Доставка</div><button type="button" class="tab on" role="tab" aria-selected="true"><span>01 Отчёты</span>Сводка и&nbsp;презентация</button><button type="button" class="tab" role="tab" aria-selected="false"><span>02 Команды</span>ИИ в&nbsp;работе команды</button><button type="button" class="tab" role="tab" aria-selected="false"><span>03 Претензии</span>Компенсации клиентам</button><div class="tgroup">Yango Delivery</div><button type="button" class="tab" role="tab" aria-selected="false"><span>04 Операции</span>Управление в&nbsp;25 странах</button><button type="button" class="tab" role="tab" aria-selected="false"><span>05 Курьеры</span>Возврат ушедших</button><div class="tgroup">Еврокран</div><button type="button" class="tab" role="tab" aria-selected="false"><span>06 Собственник</span>Утро собственника</button><button type="button" class="tab" role="tab" aria-selected="false"><span>07 Бухгалтерия</span>Счета и&nbsp;акты</button><button type="button" class="tab" role="tab" aria-selected="false"><span>08 Финансы</span>Оплаты и&nbsp;долги</button><button type="button" class="tab" role="tab" aria-selected="false"><span>09 Сценарий</span>График выездов</button></div>
   <div class="cnav"><span class="pos"><b id="pos">01</b> / 09</span><div class="arrows"><button type="button" data-d="-1" aria-label="Предыдущий кейс">←</button><button type="button" data-d="1" aria-label="Следующий кейс">→</button></div></div></div>
   <div class="main" id="slides"><div class="cgroup">Яндекс Доставка</div>
 <article class="slide" role="tabpanel">
-  <div class="story"><h3>Управленческая отчётность без ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в Telegram. Ежемесячная презентация собирается из рабочих данных одной кнопкой</p><button type="button" class="pill case-open" data-case="reporting">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">5 ч</span><span class="ar">→</span>0</div><p class="dcap">на сбор отчётности</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Дашборды</b><span>откуда берутся цифры</span></li><li><i>02</i><b>Бот</b><span>сравнивает с планом и прошлой неделей</span></li><li><i>03</i><b>Telegram</b><span>сводка и презентация</span></li></ol></div>
+  <div class="story"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается из&nbsp;рабочих данных одной&nbsp;кнопкой</p><button type="button" class="pill case-open" data-case="reporting">Подробнее о&nbsp;кейсе →</button></div>
+  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">5 ч</span><span class="ar">→</span>0</div><p class="dcap">на&nbsp;сбор отчётности</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Дашборды</b><span>откуда берутся цифры</span></li><li><i>02</i><b>Бот</b><span>сравнивает с&nbsp;планом и&nbsp;прошлой неделей</span></li><li><i>03</i><b>Telegram</b><span>сводка и&nbsp;презентация</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Внедрение ИИ в ежедневную работу команды</h3><p>Помогаем сотрудникам использовать ИИ в повседневных задачах: даём готовые инструменты, подключаем знания компании и обучаем работе с ними</p><button type="button" class="pill case-open" data-case="ai-adoption">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Использование ИИ</span><div class="bignum">×5</div><p class="dcap">за полгода</p><div class="dstats"><div><b>×1,5</b><span>быстрее разработка</span></div><div><b>×2</b><span>быстрее задачи вне разработки</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Умения</b><span>общие для всех команд</span></li><li><i>02</i><b>Обучение</b><span>на задачах самих людей</span></li><li><i>03</i><b>Замер</b><span>кто как пользуется</span></li></ol></div>
+  <div class="story"><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><button type="button" class="pill case-open" data-case="ai-adoption">Подробнее о&nbsp;кейсе →</button></div>
+  <div class="data"><span class="cap">Использование ИИ</span><div class="bignum">×5</div><p class="dcap">за&nbsp;полгода</p><div class="dstats"><div><b>×1,5</b><span>быстрее разработка</span></div><div><b>×2</b><span>быстрее задачи вне&nbsp;разработки</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Умения</b><span>общие для&nbsp;всех команд</span></li><li><i>02</i><b>Обучение</b><span>на&nbsp;задачах самих людей</span></li><li><i>03</i><b>Замер</b><span>кто как&nbsp;пользуется</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Обработка претензий и расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и рассчитывает компенсации по правилам компании. Сотрудники подключаются к случаям, которые требуют проверки</p><button type="button" class="pill case-open" data-case="b2b-compensations">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Людей на процессе</span><div class="bignum"><span class="before">26</span><span class="ar">→</span>2</div><p class="dcap">сотрудника вместо 26</p><div class="dstats"><div><b>80%</b><span>заявок без человека</span></div><div><b>≈ 1 млрд ₽</b><span>компенсаций в год</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Реестр</b><span>в любом формате</span></li><li><i>02</i><b>Решение</b><span>по каждой заявке</span></li><li><i>03</i><b>Ответ</b><span>готовый реестр клиенту</span></li></ol></div>
+  <div class="story"><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><button type="button" class="pill case-open" data-case="b2b-compensations">Подробнее о&nbsp;кейсе →</button></div>
+  <div class="data"><span class="cap">Людей на&nbsp;процессе</span><div class="bignum"><span class="before">26</span><span class="ar">→</span>2</div><p class="dcap">сотрудника вместо 26</p><div class="dstats"><div><b>80%</b><span>заявок без&nbsp;человека</span></div><div><b>≈ 1 млрд&nbsp;₽</b><span>компенсаций в&nbsp;год</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Реестр</b><span>в&nbsp;любом формате</span></li><li><i>02</i><b>Решение</b><span>по&nbsp;каждой заявке</span></li><li><i>03</i><b>Ответ</b><span>готовый реестр клиенту</span></li></ol></div>
 </article>
 <div class="cgroup">Yango Delivery</div>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>ИИ-помощник для управления бизнесом</h3><p>Помощник находит отклонения в 25 странах, считает варианты и сам меняет цены и доплаты в пределах лимита. Что выше лимита, решает человек</p><button type="button" class="pill case-open" data-case="marketplace-manager">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">команды при той же эффективности бизнеса</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×5</b><span>быстрее решения</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Цифры</b><span>финансы и операции</span></li><li><i>02</i><b>Причина</b><span>что сломалось и почему</span></li><li><i>03</i><b>Действие</b><span>сам в пределах лимита</span></li></ol><p class="branch">↳ Если нужно больше лимита, решает человек</p></div>
+  <div class="story"><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><button type="button" class="pill case-open" data-case="marketplace-manager">Подробнее о&nbsp;кейсе →</button></div>
+  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">команды при&nbsp;той же&nbsp;эффективности бизнеса</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×5</b><span>быстрее решения</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Цифры</b><span>финансы и&nbsp;операции</span></li><li><i>02</i><b>Причина</b><span>что&nbsp;сломалось и&nbsp;почему</span></li><li><i>03</i><b>Действие</b><span>сам в&nbsp;пределах лимита</span></li></ol><p class="branch">↳ Если нужно больше лимита, решает&nbsp;человек</p></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Возвращение исполнителей к работе</h3><p>ИИ-помощник связывается с курьерами, которые перестали выполнять заказы. Выясняет причину ухода и помогает разобраться с вопросами, мешающими вернуться</p><button type="button" class="pill case-open" data-case="reactivation-bot">Подробнее о кейсе →</button></div>
-  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по сравнению с контрольной группой</p><div class="dstats"><div><b>$1</b><span>через помощника</span></div><div><b>≈ $20</b><span>обычное привлечение</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы, выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на линии</span></li></ol></div>
+  <div class="story"><h3>Возвращение исполнителей к&nbsp;работе</h3><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><button type="button" class="pill case-open" data-case="reactivation-bot">Подробнее о&nbsp;кейсе →</button></div>
+  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по&nbsp;сравнению с&nbsp;контрольной группой</p><div class="dstats"><div><b>$1</b><span>через помощника</span></div><div><b>≈ $20</b><span>обычное привлечение</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы,&nbsp;выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на&nbsp;линии</span></li></ol></div>
 </article>
 <div class="cgroup">Еврокран, аренда спецтехники</div>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Собственник видит простои и оплаты к началу дня</h3><p>Каждое утро видно, какая техника работает, где простой, какие оплаты пришли и что нужно решить сегодня</p></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Что решить сегодня</div><p class="dcap">простои, смены и оплаты в одном отчёте</p><div class="dstats"><div><b>Отклонения</b><span>видны сразу</span></div><div><b>Пропуски данных</b><span>помечены в отчёте</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Данные</b><span>смены, заявки, учёт</span></li><li><i>02</i><b>Сборка</b><span>по одним правилам</span></li><li><i>03</i><b>Сводка</b><span>что требует решения</span></li></ol></div>
+  <div class="story"><h3>Собственник видит простои и&nbsp;оплаты к&nbsp;началу&nbsp;дня</h3><p>Каждое утро видно, какая техника работает, где простой, какие оплаты пришли и&nbsp;что&nbsp;нужно решить&nbsp;сегодня</p></div>
+  <div class="data"><div class="bignum txt">Что решить сегодня</div><p class="dcap">простои, смены и&nbsp;оплаты в&nbsp;одном&nbsp;отчёте</p><div class="dstats"><div><b>Отклонения</b><span>видны сразу</span></div><div><b>Пропуски данных</b><span>помечены в&nbsp;отчёте</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Данные</b><span>смены, заявки, учёт</span></li><li><i>02</i><b>Сборка</b><span>по&nbsp;одним правилам</span></li><li><i>03</i><b>Сводка</b><span>что&nbsp;требует решения</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Счета и акты разбираются до бухгалтера</h3><p>ИИ переносит данные из счетов и актов в подготовленные записи для бухгалтерии. Сотрудники проверяют результат вместо перепечатывания документов</p></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Без перепечатки</div><p class="dcap">документ поступает на проверку уже разобранным</p><div class="dstats"><div><b>Ошибки</b><span>отмечены</span></div><div><b>Ответственный</b><span>за согласование виден</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Почта и сканы</b><span>одна очередь</span></li><li><i>02</i><b>Разбор</b><span>поля, договор, объект</span></li><li><i>03</i><b>Проверка</b><span>бухгалтер подтверждает</span></li></ol></div>
+  <div class="story"><h3>Счета и&nbsp;акты разбираются&nbsp;до бухгалтера</h3><p>ИИ переносит данные из&nbsp;счетов и&nbsp;актов в&nbsp;подготовленные записи для&nbsp;бухгалтерии. Сотрудники проверяют результат вместо перепечатывания документов</p></div>
+  <div class="data"><div class="bignum txt">Без перепечатки</div><p class="dcap">документ поступает на&nbsp;проверку уже&nbsp;разобранным</p><div class="dstats"><div><b>Ошибки</b><span>отмечены</span></div><div><b>Ответственный</b><span>за&nbsp;согласование виден</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Почта и&nbsp;сканы</b><span>одна очередь</span></li><li><i>02</i><b>Разбор</b><span>поля, договор, объект</span></li><li><i>03</i><b>Проверка</b><span>бухгалтер подтверждает</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Контроль оплат и задолженности клиентов</h3><p>Система сопоставляет поступившие деньги со счетами и показывает, кто оплатил полностью, кто частично, а кто задерживает платёж</p></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Статус каждого счёта</div><p class="dcap">задолженность видна без ожидания ручной сверки</p><div class="dstats"><div><b>Спорные платежи</b><span>проверяет бухгалтерия</span></div><div><b>Напоминания</b><span>согласует менеджер</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Выписка</b><span>и счета</span></li><li><i>02</i><b>Сверка</b><span>что кому пришло</span></li><li><i>03</i><b>Действие</b><span>оплачен, просрочен, напомнить</span></li></ol></div>
+  <div class="story"><h3>Контроль оплат и&nbsp;задолженности клиентов</h3><p>Система сопоставляет поступившие деньги со&nbsp;счетами и&nbsp;показывает, кто оплатил полностью, кто частично, а&nbsp;кто задерживает&nbsp;платёж</p></div>
+  <div class="data"><div class="bignum txt">Статус каждого счёта</div><p class="dcap">задолженность видна без&nbsp;ожидания ручной&nbsp;сверки</p><div class="dstats"><div><b>Спорные платежи</b><span>проверяет бухгалтерия</span></div><div><b>Напоминания</b><span>согласует менеджер</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Выписка</b><span>и&nbsp;счета</span></li><li><i>02</i><b>Сверка</b><span>что&nbsp;кому пришло</span></li><li><i>03</i><b>Действие</b><span>оплачен, просрочен, напомнить</span></li></ol></div>
 </article>
 <article class="slide" role="tabpanel" hidden>
-  <div class="story"><span class="cap">Сценарий</span><h3>Планирование выездов техники и бригад</h3><p>Система помогает распределить заказы между свободной техникой и бригадами. Диспетчер получает предложенный график и видит пересечения до подтверждения выезда</p></div>
-  <div class="data"><span class="cap">Ожидаемый результат</span><div class="bignum txt">Один график</div><p class="dcap">заказы, техника и бригады вместе</p><div class="dstats"><div><b>Пересечения</b><span>видны до выезда</span></div><div><b>Изменения</b><span>видно, что затронуто</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Заявки</b><span>и занятость</span></li><li><i>02</i><b>План</b><span>объекты, время, ограничения</span></li><li><i>03</i><b>Проверка</b><span>диспетчер подтверждает</span></li></ol></div>
+  <div class="story"><span class="cap">Сценарий</span><h3>Планирование выездов техники&nbsp;и бригад</h3><p>Система помогает распределить заказы между свободной техникой и&nbsp;бригадами. Диспетчер получает предложенный график и&nbsp;видит пересечения до&nbsp;подтверждения выезда</p></div>
+  <div class="data"><div class="bignum txt">Один график</div><p class="dcap">заказы, техника и&nbsp;бригады вместе</p><div class="dstats"><div><b>Пересечения</b><span>видны до&nbsp;выезда</span></div><div><b>Изменения</b><span>видно, что&nbsp;затронуто</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Заявки</b><span>и&nbsp;занятость</span></li><li><i>02</i><b>План</b><span>объекты, время, ограничения</span></li><li><i>03</i><b>Проверка</b><span>диспетчер подтверждает</span></li></ol></div>
 </article></div></div>
 </div></section>
 
 <section class="sec band b-ink" id="problems"><div class="wrap">
-  <div class="sec-head"><div><div class="cap">Что делаем</div><h2>Что можно отдать агенту</h2></div><p>Всё, что повторяется и съедает время, а решения не требует</p></div>
+  <div class="sec-head"><div><div class="cap">Что делаем</div><h2>Что можно отдать&nbsp;агенту</h2></div><p>Всё, что&nbsp;повторяется и&nbsp;съедает время, а&nbsp;решения&nbsp;не требует</p></div>
   <div class="dirs">
-    <div class="dir"><span class="n">01</span><h3>Отчёты</h3><p>Собираются из ваших дашбордов и приходят в чат уже с выводами</p></div>
-    <div class="dir"><span class="n">02</span><h3>Повторяющиеся задачи</h3><p>Заявки, расчёты, выгрузки, проверки. Спорное агент отдаёт человеку</p></div>
-    <div class="dir"><span class="n">03</span><h3>Решения с деньгами</h3><p>Агент находит проблему, считает варианты и предлагает действие. Лимиты задаём заранее</p></div>
-    <div class="dir"><span class="n">04</span><h3>ИИ, которым никто не пользуется</h3><p>Настраиваем помощника под команду, учим людей и смотрим, кто реально пользуется</p></div>
+    <div class="dir"><span class="n">01</span><h3>Отчёты</h3><p>Собираются из&nbsp;ваших дашбордов и&nbsp;приходят в&nbsp;чат уже&nbsp;с&nbsp;выводами</p></div>
+    <div class="dir"><span class="n">02</span><h3>Повторяющиеся задачи</h3><p>Заявки, расчёты, выгрузки, проверки. Спорное агент отдаёт&nbsp;человеку</p></div>
+    <div class="dir"><span class="n">03</span><h3>Решения с&nbsp;деньгами</h3><p>Агент находит проблему, считает варианты и&nbsp;предлагает действие. Лимиты&nbsp;задаём заранее</p></div>
+    <div class="dir"><span class="n">04</span><h3>ИИ, которым никто&nbsp;не пользуется</h3><p>Настраиваем помощника под&nbsp;команду, учим людей и&nbsp;смотрим, кто реально&nbsp;пользуется</p></div>
   </div>
 </div></section>
 
 <section class="sec band b-paper" id="method"><div class="wrap">
-  <div class="sec-head"><div><div class="cap">Как работаем</div><h2>Три шага</h2></div><p>Сначала разбираемся, потом делаем. После запуска не исчезаем</p></div>
+  <div class="sec-head"><div><div class="cap">Как работаем</div><h2>Три шага</h2></div><p>Сначала разбираемся, потом делаем. После запуска&nbsp;не исчезаем</p></div>
   <div class="steps">
-    <div class="step"><div class="t"><i>01</i><b>Разбираемся</b></div><div><p>Смотрим, как устроена работа: кто что делает и сколько на это уходит времени. Считаем, что даст автоматизация</p><div class="d">Понятно, что автоматизировать и сколько это сэкономит</div></div></div>
-    <div class="step"><div class="t"><i>02</i><b>Собираем</b></div><div><p>Подключаем ваши системы, пишем правила для агента, задаём лимиты. Сроки и цену называем до старта</p><div class="d">Схема решения, сроки и цена</div></div></div>
-    <div class="step"><div class="t"><i>03</i><b>Запускаем</b></div><div><p>Проверяем на ваших задачах, запускаем и учим команду. Дальше поддерживаем помесячно</p><div class="d">Работающий процесс и команда, которая им пользуется</div></div></div>
+    <div class="step"><div class="t"><i>01</i><b>Разбираемся</b></div><div><p>Смотрим, как&nbsp;устроена работа: кто что&nbsp;делает и&nbsp;сколько на&nbsp;это&nbsp;уходит времени. Считаем, что&nbsp;даст автоматизация</p><div class="d">Понятно, что&nbsp;автоматизировать и&nbsp;сколько&nbsp;это сэкономит</div></div></div>
+    <div class="step"><div class="t"><i>02</i><b>Собираем</b></div><div><p>Подключаем ваши системы, пишем правила для&nbsp;агента, задаём лимиты. Сроки и&nbsp;цену называем&nbsp;до старта</p><div class="d">Схема решения, сроки&nbsp;и&nbsp;цена</div></div></div>
+    <div class="step"><div class="t"><i>03</i><b>Запускаем</b></div><div><p>Проверяем на&nbsp;ваших задачах, запускаем и&nbsp;учим команду. Дальше поддерживаем помесячно</p><div class="d">Работающий процесс и&nbsp;команда, которая&nbsp;им пользуется</div></div></div>
   </div>
 </div></section>
 
 <section class="sec band b-white" id="formats"><div class="wrap">
-  <div class="sec-head"><div><div class="cap">Форматы</div><h2>С чего начать</h2></div><p>Можно взять одну задачу, а можно сразу всю команду</p></div>
-  <div class="offer"><div><span class="cap">Одна задача</span><h3>Снять рутину</h3><p>Когда понятно, что именно делают руками каждую неделю</p></div><div class="items">
-    <details><summary><span>Один процесс</span><small>1–2 недели</small></summary><div class="b">Разбираем процесс с тем, кто его ведёт, и передаём агенту. Проверяем на прошлых данных.<div class="terms"><span>Цена за процесс</span></div></div></details>
-    <details><summary><span>Отчёты без людей</span><small>2 недели</small></summary><div class="b">Отчёт и цифры приходят в чат сами, с выводами.<div class="terms"><span>Фикс в месяц</span></div></div></details>
-    <details><summary><span>Агент разбирает задачи</span><small>Tracker, Jira</small></summary><div class="b">Агент берёт задачу из трекера, делает и пишет результат. Человек смотрит только спорное.<div class="terms"><span>Фикс в месяц</span></div></div></details>
+  <div class="sec-head"><div><div class="cap">Услуги</div><h2>С чего начать</h2></div><p>Можно взять одну задачу, а&nbsp;можно сразу всю&nbsp;команду</p></div>
+  <div class="offer"><span class="cap">Автоматизация с&nbsp;ИИ</span><div><h3>Снять рутину</h3><p>Когда понятно, что&nbsp;именно делают руками каждую&nbsp;неделю</p></div><div class="items">
+    <details><summary><span>Один процесс</span><small>1–2 недели</small></summary><div class="b">Разбираем процесс с&nbsp;тем, кто его&nbsp;ведёт, и&nbsp;передаём агенту. Проверяем на&nbsp;прошлых данных.<div class="terms"><span>Цена за&nbsp;процесс</span></div></div></details>
+    <details><summary><span>Отчёты без&nbsp;людей</span><small>2 недели</small></summary><div class="b">Отчёт и&nbsp;цифры приходят в&nbsp;чат сами,&nbsp;с выводами.<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
+    <details><summary><span>Агент разбирает задачи</span><small>Tracker, Jira</small></summary><div class="b">Агент берёт задачу из&nbsp;трекера, делает и&nbsp;пишет результат. Человек смотрит только&nbsp;спорное.<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
   </div></div>
-  <div class="offer"><div><span class="cap">Вся команда</span><h3>ИИ в работе команды</h3><p>Когда нужно, чтобы ИИ пользовалась вся команда</p></div><div class="items">
-    <details><summary><span>Помощник для команды</span><small>3–4 недели</small></summary><div class="b">Агент с доступом к вашим системам и знаниям, свои умения под каждую роль. Работает на вашем сервере или подписке.<div class="terms"><span>До 10 человек</span><span>Поддержка помесячно</span></div></div></details>
-    <details><summary><span>ИИ в команде за квартал</span><small>3 месяца</small></summary><div class="b">Общие умения, обучение и замер, кто как пользуется.<div class="terms"><span>10–50 человек</span></div></div></details>
+  <div class="offer"><span class="cap">Обучение и&nbsp;внедрение ИИ&nbsp;в&nbsp;команду</span><div><h3>ИИ в&nbsp;работе команды</h3><p>Когда нужно, чтобы ИИ пользовалась вся&nbsp;команда</p></div><div class="items">
+    <details><summary><span>Помощник для&nbsp;команды</span><small>3–4 недели</small></summary><div class="b">Агент с&nbsp;доступом к&nbsp;вашим системам и&nbsp;знаниям, свои умения под&nbsp;каждую роль. Работает на&nbsp;вашем сервере&nbsp;или подписке.<div class="terms"><span>До 10 человек</span><span>Поддержка помесячно</span></div></div></details>
+    <details><summary><span>ИИ в&nbsp;команде за&nbsp;квартал</span><small>3 месяца</small></summary><div class="b">Общие умения, обучение и&nbsp;замер, кто&nbsp;как пользуется.<div class="terms"><span>10–50 человек</span></div></div></details>
   </div></div>
-  <div class="offer"><div><span class="cap">Агент уже есть</span><h3>Довести до запуска</h3><p>Когда пилот сделали, а в работе он не прижился</p></div><div class="items">
-    <details><summary><span>Пилот → рабочий процесс</span><small>3–4 недели</small></summary><div class="b">Ищем, где ломается: данные, доступы, процесс или люди. Если чинить нечего, так и скажем.<div class="terms"><span>Итог: продолжать или нет</span></div></div></details>
+  <div class="offer"><span class="cap">Агент уже есть</span><div><h3>Довести до&nbsp;запуска</h3><p>Когда пилот сделали, а&nbsp;в&nbsp;работе он&nbsp;не&nbsp;прижился</p></div><div class="items">
+    <details><summary><span>Пилот → рабочий&nbsp;процесс</span><small>3–4 недели</small></summary><div class="b">Ищем, где ломается: данные, доступы, процесс или&nbsp;люди. Если чинить нечего, так&nbsp;и&nbsp;скажем.<div class="terms"><span>Итог: продолжать или&nbsp;нет</span></div></div></details>
   </div></div>
-  <div class="after-offers"><a class="lnk" href="#contact" data-contact>Не знаете, с чего начать? Напишите</a></div>
+  <div class="after-offers"><a class="lnk" href="#contact" data-contact>Не знаете, с&nbsp;чего начать?&nbsp;Напишите</a></div>
 </div></section>
 
 <section class="sec band b-sand" id="tech"><div class="wrap">
-  <div class="sec-head"><div><div class="cap">Технологии</div><h2>На чём собираем</h2></div><p>Подбираем под задачу и под ваши требования к данным</p></div>
+  <div class="sec-head"><div><div class="cap">Технологии</div><h2>На чём собираем</h2></div><p>Подбираем под&nbsp;задачу и&nbsp;под&nbsp;ваши требования&nbsp;к данным</p></div>
   <div class="tech">
-    <div><h3>Агенты и модели</h3><p>Claude Code, Codex, Hermes Agent. Модели Claude, GPT или открытые</p></div>
-    <div><h3>Связь с системами</h3><p>Яндекс Трекер, Jira, Telegram, Яндекс Почта и Диск, Битрикс24, amoCRM, 1С</p></div>
-    <div><h3>Данные и отчёты</h3><p>SQL, ClickHouse, DataLens, Google Sheets, Excel</p></div>
-    <div><h3>Запуск</h3><p>По расписанию или по событию, на вашем сервере</p></div>
+    <div><h3>Агенты и&nbsp;модели</h3><p>Claude Code, Codex, Hermes Agent. Модели Claude, GPT&nbsp;или открытые</p></div>
+    <div><h3>Связь с&nbsp;системами</h3><p>Яндекс Трекер, Jira, Telegram, Яндекс Почта и&nbsp;Диск, Битрикс24, amoCRM,&nbsp;1С</p></div>
+    <div><h3>Данные и&nbsp;отчёты</h3><p>SQL, ClickHouse, DataLens, Google&nbsp;Sheets, Excel</p></div>
+    <div><h3>Запуск</h3><p>По расписанию или&nbsp;по&nbsp;событию, на&nbsp;вашем сервере</p></div>
   </div>
-  <div class="human"><h3>Решения за человеком</h3><p>Заранее договариваемся, что агент делает сам, а что только после согласия</p></div>
+  <div class="human"><h3>Решения за&nbsp;человеком</h3><p>Заранее договариваемся, что&nbsp;агент делает сам, а&nbsp;что&nbsp;только после&nbsp;согласия</p></div>
 </div></section>
 </div>
 
 <section class="contact" id="contact"><div class="wrap">
-  <div class="row"><div><div class="me"><b>Аделина Балицкая</b></div><p>За полчаса поймём, что можно отдать агенту и с чего начать</p><div class="cbtns"><a class="ci" href="https://telegram.me/adeleeeeeeeeee" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.8zM8.9 14l9.3-5.9c.4-.3.8-.1.5.2l-7.8 7-.3 3.3L8.9 14z"/></svg><span><b>Telegram</b><small>@adeleeeeeeeeee</small></span></a><a class="ci" href="https://wa.me/79652902877" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span><b>WhatsApp</b><small>+7 965 290-28-77</small></span></a><a class="ci" href="mailto:info.praxis.ai@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3.5 6.5h17v11h-17zM4 7l8 6 8-6"/></svg><span><b>Почта</b><small>info.praxis.ai@gmail.com</small></span></a></div><span class="mail">или по телефону <a href="tel:+79652902877">+7&nbsp;965&nbsp;290-28-77</a></span></div></div>
+  <div class="row"><div><div class="me"><b>Аделина Балицкая</b></div><p>За полчаса поймём, что&nbsp;можно отдать агенту и&nbsp;с&nbsp;чего начать</p><div class="cbtns"><a class="ci" href="https://telegram.me/adeleeeeeeeeee" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.8zM8.9 14l9.3-5.9c.4-.3.8-.1.5.2l-7.8 7-.3 3.3L8.9 14z"/></svg><span><b>Telegram</b><small>@adeleeeeeeeeee</small></span></a><a class="ci" href="https://wa.me/79652902877" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg><span><b>WhatsApp</b><small>+7 965 290-28-77</small></span></a><a class="ci" href="mailto:info.praxis.ai@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3.5 6.5h17v11h-17zM4 7l8 6 8-6"/></svg><span><b>Почта</b><small>info.praxis.ai@gmail.com</small></span></a></div><span class="mail">или&nbsp;по&nbsp;телефону <a href="tel:+79652902877">+7&nbsp;965 290-28-77</a></span></div></div>
   <div class="foot"><span>praxis, Аделина Балицкая</span><a href="#top">Наверх ↑</a><span>Москва, 2026</span></div>
 </div></section>
 <div class="cm" id="caseModal" hidden aria-hidden="true">
@@ -865,38 +902,38 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 <div>
 <div class="t"><span>Было, 9 шагов</span><span>люди</span></div>
 <ol>
-<li><i>1</i>Реестр приходит на почту или менеджеру</li>
+<li><i>1</i>Реестр приходит на&nbsp;почту&nbsp;или менеджеру</li>
 <li><i>2</i>Менеджер заводит тикет</li>
-<li><i>3</i>Тимлид режет Excel по 2 000 строк</li>
-<li><i>4</i>Рассылает ссылки в мессенджер</li>
-<li><i>5</i>Операторы перекладывают в шаблон и заводят тикеты</li>
-<li><i>6</i>Поддержка разбирает каждый тикет</li>
-<li><i>7</i>Операторы переносят решения обратно в Excel</li>
-<li><i>8</i>Согласование по цепочке очередей</li>
+<li><i>3</i>Тимлид режет Excel по&nbsp;2 000&nbsp;строк</li>
+<li><i>4</i>Рассылает ссылки в&nbsp;мессенджер</li>
+<li><i>5</i>Операторы перекладывают в&nbsp;шаблон и&nbsp;заводят тикеты</li>
+<li><i>6</i>Поддержка разбирает каждый&nbsp;тикет</li>
+<li><i>7</i>Операторы переносят решения обратно&nbsp;в&nbsp;Excel</li>
+<li><i>8</i>Согласование по&nbsp;цепочке очередей</li>
 <li><i>9</i>Выплата отдельным тикетом</li>
 </ol>
-<div class="sum"><b>26 сотрудников</b> на процессе</div>
+<div class="sum"><b>26 сотрудников</b> на&nbsp;процессе</div>
 </div>
 <div class="after">
 <div class="t"><span>Стало, 5 этапов</span><span>агенты</span></div>
 <ol>
-<li><i>A</i>Приём: любой формат → заявки</li>
-<li><i>A</i>Решение по матрице и лимиту</li>
+<li><i>A</i>Приём: любой формат →&nbsp;заявки</li>
+<li><i>A</i>Решение по&nbsp;матрице и&nbsp;лимиту</li>
 <li class="h"><i>Ч</i>Исключения: только спорное</li>
-<li><i>A</i>Сборка реестра с решениями</li>
-<li><i>A</i>Согласование и выплата зачётом</li>
+<li><i>A</i>Сборка реестра с&nbsp;решениями</li>
+<li><i>A</i>Согласование и&nbsp;выплата зачётом</li>
 </ol>
-<div class="sum"><b>2 сотрудника</b> на исключения, <b>80 %</b> заявок без людей</div>
+<div class="sum"><b>2 сотрудника</b> на&nbsp;исключения, <b>80 %</b> заявок без&nbsp;людей</div>
 </div>
 </div></div></div>
   <div class="cm__info">
-    <span class="cm__kind">Яндекс Доставка, 2026, Процесс целиком</span>
-    <h3 class="cm__title" id="cmTitle">Обработка претензий и расчёт компенсаций</h3>
-    <div class="cm__tags"><span>Excel → решения</span><span>80 % без людей</span><span>≈ 1 млрд ₽ в год</span></div>
-    <p class="cm__lede">Раньше сотрудники вручную разбирали реестры претензий и определяли размер компенсации. Теперь система извлекает сведения из полученных файлов, сопоставляет их с правилами компании и собирает результаты расчёта. Команда получает подготовленные решения вместо очереди необработанных документов</p>
-    <div class="cm__res"><div><strong>26 → 2</strong><span>Сотрудника на процессе</span><small>подключаются к случаям, которые требуют проверки</small></div><div><strong>80 %</strong><span>Заявок закрываются без человека</span><small>через процесс проходит ≈ 1 млрд ₽ компенсаций в год</small></div><div><strong>100</strong><span>Корпоративных клиентов в одном контуре</span><small>у каждого свой формат реестра, вход один</small></div></div>
-    <h4>Для кого</h4><p>Для компаний с корпоративными клиентами и потоком претензий: доставка, логистика, сервисы с SLA. Претензия приходит списком на тысячи строк, у каждого клиента свой формат, а деньги по ней ждут, пока люди перекладывают строки из Excel в тикеты и обратно</p>
-    <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Приём</b><span>Агент читает реестр в любом формате, приводит к восьми полям, режет на партии и заводит заявки. Строки без номера заказа отправляет на дозапрос, не выдумывает</span></li><li><i>02</i><b>Решение</b><span>По каждой заявке восстанавливает таймлайн доставки, сверяет с матрицей компенсаций и выносит решение: компенсировать, отказать или на ручной разбор. В пределах лимита закрывает сам и отвечает клиенту, выше лимита передаёт человеку</span></li><li><i>03</i><b>Исключения</b><span>Спорные заявки разбирает человек, но только их</span></li><li><i>04</i><b>Сборка</b><span>Планировщик следит за статусами, собирает решения в единый реестр и отправляет менеджеру на согласование с клиентом</span></li><li><i>05</i><b>Выплата</b><span>Пороги по сумме, согласующие по цепочке, выплата зачётом на лицевой счёт клиента</span></li></ol>
+    <span class="cm__kind">Яндекс Доставка, 2026, Процесс&nbsp;целиком</span>
+    <h3 class="cm__title" id="cmTitle">Обработка претензий и&nbsp;расчёт компенсаций</h3>
+    <div class="cm__tags"><span>Excel → решения</span><span>80 % без&nbsp;людей</span><span>≈ 1 млрд ₽&nbsp;в&nbsp;год</span></div>
+    <p class="cm__lede">Раньше сотрудники вручную разбирали реестры претензий и&nbsp;определяли размер компенсации. Теперь система извлекает сведения из&nbsp;полученных файлов, сопоставляет их&nbsp;с&nbsp;правилами компании и&nbsp;собирает результаты расчёта. Команда получает подготовленные решения вместо очереди необработанных документов</p>
+    <div class="cm__res"><div><strong>26 → 2</strong><span>Сотрудника на&nbsp;процессе</span><small>подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</small></div><div><strong>80 %</strong><span>Заявок закрываются без&nbsp;человека</span><small>через процесс проходит ≈ 1 млрд ₽ компенсаций&nbsp;в год</small></div><div><strong>100</strong><span>Корпоративных клиентов в&nbsp;одном&nbsp;контуре</span><small>у&nbsp;каждого свой формат реестра, вход&nbsp;один</small></div></div>
+    <h4>Для кого</h4><p>Для компаний с&nbsp;корпоративными клиентами и&nbsp;потоком претензий: доставка, логистика, сервисы с&nbsp;SLA. Претензия приходит списком на&nbsp;тысячи строк, у&nbsp;каждого клиента свой формат, а&nbsp;деньги по&nbsp;ней ждут, пока люди перекладывают строки из&nbsp;Excel в&nbsp;тикеты&nbsp;и обратно</p>
+    <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Приём</b><span>Агент читает реестр в&nbsp;любом формате, приводит к&nbsp;восьми полям, режет на&nbsp;партии и&nbsp;заводит заявки. Строки без&nbsp;номера заказа отправляет на&nbsp;дозапрос,&nbsp;не выдумывает</span></li><li><i>02</i><b>Решение</b><span>По каждой заявке восстанавливает таймлайн доставки, сверяет с&nbsp;матрицей компенсаций и&nbsp;выносит решение: компенсировать, отказать или&nbsp;на&nbsp;ручной разбор. В пределах лимита закрывает сам и&nbsp;отвечает клиенту, выше лимита передаёт&nbsp;человеку</span></li><li><i>03</i><b>Исключения</b><span>Спорные заявки разбирает человек, но&nbsp;только&nbsp;их</span></li><li><i>04</i><b>Сборка</b><span>Планировщик следит за&nbsp;статусами, собирает решения в&nbsp;единый реестр и&nbsp;отправляет менеджеру на&nbsp;согласование&nbsp;с клиентом</span></li><li><i>05</i><b>Выплата</b><span>Пороги по&nbsp;сумме, согласующие по&nbsp;цепочке, выплата зачётом на&nbsp;лицевой счёт&nbsp;клиента</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </template>
@@ -906,32 +943,32 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 <div class="bub">
 <b>Кот-д’Ивуар, неделя 28.09–04.10</b>
 <table>
-<tr><td>Доставки</td><td class="up">+2,6 %</td><td>к прошлой неделе</td></tr>
-<tr><td>Оборот</td><td class="up">+4,9 %</td><td>к прошлой неделе</td></tr>
-<tr><td>Доход</td><td class="dn">−3,6 %</td><td>к плану</td></tr>
+<tr><td>Доставки</td><td class="up">+2,6 %</td><td>к&nbsp;прошлой неделе</td></tr>
+<tr><td>Оборот</td><td class="up">+4,9 %</td><td>к&nbsp;прошлой неделе</td></tr>
+<tr><td>Доход</td><td class="dn">−3,6 %</td><td>к&nbsp;плану</td></tr>
 </table>
-<b>Что заметил:</b> в Абиджане выросла доля заказов, которые никто не взял. Похоже, часть курьеров из такси потеряла доступ к доставке<br/><br/>
+<b>Что заметил:</b> в&nbsp;Абиджане выросла доля заказов, которые никто не&nbsp;взял. Похоже, часть курьеров из&nbsp;такси потеряла доступ&nbsp;к доставке<br/><br/>
 <b>Предлагаю:</b><br/>
-            1. Проверить и вернуть доступ этим курьерам<br/>
-            2. В пятницу пересчитать бонусы, чтобы уложиться в бюджет<br/><br/>
+            1. Проверить и&nbsp;вернуть доступ этим&nbsp;курьерам<br/>
+            2. В пятницу пересчитать бонусы, чтобы уложиться&nbsp;в бюджет<br/><br/>
             Посчитать?
             <div class="btns"><span class="pri">Да</span><span>Есть вопрос</span><span>Подробнее</span></div>
 </div>
 </div>
-<div class="levers"><span>Бонусы курьерам</span><span>Тарифы</span><span>Скидки</span><span>Гарантии за заказ</span><span>Повышенный спрос</span><span>Распределение заказов</span></div>
+<div class="levers"><span>Бонусы курьерам</span><span>Тарифы</span><span>Скидки</span><span>Гарантии за&nbsp;заказ</span><span>Повышенный спрос</span><span>Распределение заказов</span></div>
 <div class="rhythm">
-<div><b>Каждый день</b>11:00, только что изменилось</div>
-<div><b>По пятницам</b>бонусы на следующую неделю</div>
-<div><b>Раз в месяц</b>пересмотр плана по стране</div>
+<div><b>Каждый день</b>11:00, только что&nbsp;изменилось</div>
+<div><b>По пятницам</b>бонусы на&nbsp;следующую неделю</div>
+<div><b>Раз в&nbsp;месяц</b>пересмотр плана по&nbsp;стране</div>
 </div></div></div>
   <div class="cm__info">
     <span class="cm__kind">Yango Delivery, 2026, Управление операциями</span>
-    <h3 class="cm__title" id="cmTitle">ИИ-помощник для управления бизнесом</h3>
-    <div class="cm__tags"><span>25 стран</span><span>×5 быстрее</span><span>Тарифы и бонусы</span></div>
-    <p class="cm__lede">Система получает актуальные данные о работе сервиса в 25 странах и находит участки, требующие внимания. Затем оценивает возможные действия: изменить цену услуги, размер доплат исполнителям или доступность курьеров. Для каждого варианта рассчитывает сценарий. В пределах согласованных полномочий система может выполнить действие сама, решения за пределами лимитов передаёт человеку</p>
-    <div class="cm__res"><div><strong>25 стран</strong><span>Решение работает</span><small>одни правила для всех рынков</small></div><div><strong>−60 %</strong><span>Размер команды</span><small>эффективность бизнеса не упала</small></div><div><strong>×5</strong><span>Быстрее принимаются решения</span><small>от замеченной проблемы до изменения</small></div></div>
-    <h4>Для кого</h4><p>Для бизнеса, где цены, скидки и бонусы исполнителям меняют вручную каждый день. Обычно один менеджер ведёт три-четыре рынка, всё утро сидит в дашбордах, а от проблемы до изменения проходит неделя</p>
-    <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Смотрит цифры</b><span>Дашборды, что меняли в настройках, задачи в трекере, записи встреч. Сравнивает с прошлой неделей и с планом</span></li><li><i>02</i><b>Ищет причину</b><span>Не хватает курьеров, упал спрос, дорогие субсидии или что-то ещё. Показывает, на каких цифрах это видно</span></li><li><i>03</i><b>Предлагает и считает</b><span>Сначала спрашивает, считать ли, потом показывает, сколько это даст и сколько стоит</span></li><li><i>04</i><b>Готовит и проверяет</b><span>В пределах лимита применяет изменение сам, остальное передаёт человеку. Через пару недель сверяет, что получилось на деле</span></li></ol>
+    <h3 class="cm__title" id="cmTitle">ИИ-помощник для&nbsp;управления бизнесом</h3>
+    <div class="cm__tags"><span>25 стран</span><span>×5 быстрее</span><span>Тарифы и&nbsp;бонусы</span></div>
+    <p class="cm__lede">Система получает актуальные данные о&nbsp;работе сервиса в&nbsp;25 странах и&nbsp;находит участки, требующие внимания. Затем оценивает возможные действия: изменить цену услуги, размер доплат исполнителям или&nbsp;доступность курьеров. Для каждого варианта рассчитывает сценарий. В пределах согласованных полномочий система может выполнить действие сама, решения за&nbsp;пределами лимитов передаёт&nbsp;человеку</p>
+    <div class="cm__res"><div><strong>25 стран</strong><span>Решение работает</span><small>одни правила для&nbsp;всех&nbsp;рынков</small></div><div><strong>−60 %</strong><span>Размер команды</span><small>эффективность бизнеса не&nbsp;упала</small></div><div><strong>×5</strong><span>Быстрее принимаются решения</span><small>от&nbsp;замеченной проблемы до&nbsp;изменения</small></div></div>
+    <h4>Для кого</h4><p>Для бизнеса, где цены, скидки и&nbsp;бонусы исполнителям меняют вручную каждый день. Обычно один менеджер ведёт три-четыре рынка, всё утро сидит в&nbsp;дашбордах, а&nbsp;от&nbsp;проблемы до&nbsp;изменения проходит&nbsp;неделя</p>
+    <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Смотрит цифры</b><span>Дашборды, что&nbsp;меняли в&nbsp;настройках, задачи в&nbsp;трекере, записи встреч. Сравнивает с&nbsp;прошлой неделей&nbsp;и&nbsp;с планом</span></li><li><i>02</i><b>Ищет причину</b><span>Не хватает курьеров, упал спрос, дорогие субсидии или&nbsp;что-то ещё. Показывает, на&nbsp;каких цифрах&nbsp;это видно</span></li><li><i>03</i><b>Предлагает и&nbsp;считает</b><span>Сначала спрашивает, считать ли, потом показывает, сколько это&nbsp;даст и&nbsp;сколько&nbsp;стоит</span></li><li><i>04</i><b>Готовит и&nbsp;проверяет</b><span>В пределах лимита применяет изменение сам, остальное передаёт человеку. Через пару недель сверяет, что&nbsp;получилось&nbsp;на деле</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </template>
@@ -942,13 +979,13 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 <div class="phone paused"><video style="aspect-ratio:432/900" loop="" muted="" playsinline="" poster="assets/video/return.jpg?v=9" preload="metadata" src="assets/video/return.mp4?v=9#t=0.5"></video><div class="play">▶ Смотреть</div></div>
 </div></div></div>
   <div class="cm__info">
-    <span class="cm__kind">Yango Delivery, 2026, Работа с курьерами</span>
-    <h3 class="cm__title" id="cmTitle">Возвращение исполнителей к работе</h3>
-    <div class="cm__tags"><span>WhatsApp</span><span>6 стран</span><span>$1 против ≈ $20</span></div>
-    <p class="cm__lede">Помощник ведёт переписку в WhatsApp: спрашивает о причинах перерыва, отвечает на вопросы об условиях работы, тарифах и выплатах. Вместо одинаковой массовой рассылки человек получает разговор по своей ситуации. Решение запущено в шести странах и переписывается на испанском, французском и английском. Эффект проверили сравнением с контрольной группой</p>
-    <div class="cm__res"><div><strong>6 стран</strong><span>Запуск сразу во всех шести</span><small>Боливия, Колумбия, Гана, Кот-д’Ивуар, Сенегал, Замбия</small></div><div><strong>+14 %</strong><span>Общий прирост вернувшихся курьеров</span><small>A/B-тест: 20,8 % в тесте против 18,3 % в контроле</small></div><div><strong>$1 против ≈ $20</strong><span>Привлечение через помощника против обычного</span><small>расходы на модель за одного вернувшегося</small></div></div>
-    <h4>Для кого</h4><p>Для бизнеса с полевыми исполнителями: курьеры, водители, клиенты. Люди уходят после смены тарифов, поломки транспорта или непонятного требования в приложении, и компания замолкает: колл-центра для них нет, рассылок для ушедших нет. Вернуть ушедшего дешевле, чем привлечь нового, если поговорить с ним про его город, тарифы и выплаты</p>
-    <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Выборка</b><span>Каждый день из данных платформы собирается список ушедших: сколько дней не выходил, город, транспорт</span></li><li><i>02</i><b>Диалог</b><span>Агент пишет первым от имени компании и спрашивает, что случилось. Отвечает про тарифы, комиссии, партнёров и выплаты на языке страны, с цифрами конкретного города</span></li><li><i>03</i><b>Эскалация</b><span>Спорный вопрос или жалобу передаёт человеку вместе с историей переписки</span></li><li><i>04</i><b>Замер</b><span>Курьеры заранее делятся на тест и контроль. Эффект считается по возвратам и часам на линии</span></li></ol>
+    <span class="cm__kind">Yango Delivery, 2026, Работа&nbsp;с курьерами</span>
+    <h3 class="cm__title" id="cmTitle">Возвращение исполнителей к&nbsp;работе</h3>
+    <div class="cm__tags"><span>WhatsApp</span><span>6 стран</span><span>$1 против ≈&nbsp;$20</span></div>
+    <p class="cm__lede">Помощник ведёт переписку в&nbsp;WhatsApp: спрашивает о&nbsp;причинах перерыва, отвечает на&nbsp;вопросы об&nbsp;условиях работы, тарифах и&nbsp;выплатах. Вместо одинаковой массовой рассылки человек получает разговор по&nbsp;своей ситуации. Решение запущено в&nbsp;шести странах и&nbsp;переписывается на&nbsp;испанском, французском и&nbsp;английском. Эффект проверили сравнением с&nbsp;контрольной группой</p>
+    <div class="cm__res"><div><strong>6 стран</strong><span>Запуск сразу во&nbsp;всех&nbsp;шести</span><small>Боливия, Колумбия, Гана, Кот-д’Ивуар, Сенегал,&nbsp;Замбия</small></div><div><strong>+14 %</strong><span>Общий прирост вернувшихся&nbsp;курьеров</span><small>A/B-тест: 20,8 % в&nbsp;тесте против 18,3 %&nbsp;в&nbsp;контроле</small></div><div><strong>$1 против ≈&nbsp;$20</strong><span>Привлечение через помощника против&nbsp;обычного</span><small>расходы на&nbsp;модель за&nbsp;одного вернувшегося</small></div></div>
+    <h4>Для кого</h4><p>Для бизнеса с&nbsp;полевыми исполнителями: курьеры, водители, клиенты. Люди уходят после смены тарифов, поломки транспорта или&nbsp;непонятного требования в&nbsp;приложении, и&nbsp;компания замолкает: колл-центра для&nbsp;них нет, рассылок для&nbsp;ушедших нет. Вернуть ушедшего дешевле, чем привлечь нового, если поговорить с&nbsp;ним про его&nbsp;город, тарифы&nbsp;и выплаты</p>
+    <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Выборка</b><span>Каждый день из&nbsp;данных платформы собирается список ушедших: сколько дней не&nbsp;выходил, город,&nbsp;транспорт</span></li><li><i>02</i><b>Диалог</b><span>Агент пишет первым от&nbsp;имени компании и&nbsp;спрашивает, что&nbsp;случилось. Отвечает про тарифы, комиссии, партнёров и&nbsp;выплаты на&nbsp;языке страны, с&nbsp;цифрами конкретного&nbsp;города</span></li><li><i>03</i><b>Эскалация</b><span>Спорный вопрос или&nbsp;жалобу передаёт человеку вместе с&nbsp;историей переписки</span></li><li><i>04</i><b>Замер</b><span>Курьеры заранее делятся на&nbsp;тест и&nbsp;контроль. Эффект считается по&nbsp;возвратам и&nbsp;часам&nbsp;на линии</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </template>
@@ -959,63 +996,63 @@ h2{font-size:clamp(28px,3.2vw,48px)}
 <div class="tgx__msg"><div class="tgx__name">Delivery AI Reports</div>
 <div class="tgx__file"><i>↓</i><div>delivery_daily_06_10.html<small>168,4 KB</small></div></div>
 📦 <b>Доставка, 6 октября</b><br/><b>Ключевые метрики</b>
-<div class="tgx__q"><b>Россия</b><br/>Доставки: к плану −3,1 %, к неделе +2,9 %<br/>Доход: к плану +1,4 %, к неделе +0,8 %</div>
-<div class="tgx__q"><b>СНГ</b><br/>Доставки: к плану +0,5 %, к году +10,6 %<br/>Доход: к плану −0,7 %, к неделе +1,2 %</div>
-<div class="tgx__q"><b>Международные рынки</b><br/>Доставки: к плану −4,2 %, к году +30,9 %<br/>Доход: к плану −2,3 %, к неделе +1,9 %</div>
-Детали в HTML-файле<span class="tgx__t">11:00</span></div>
-<div class="tgx__msg sm">✅ Отчёт за 06.10 отправлен в 11:00<span class="tgx__t">11:01</span></div>
+<div class="tgx__q"><b>Россия</b><br/>Доставки: к&nbsp;плану −3,1 %, к&nbsp;неделе +2,9&nbsp;%<br/>Доход: к&nbsp;плану +1,4 %, к&nbsp;неделе +0,8&nbsp;%</div>
+<div class="tgx__q"><b>СНГ</b><br/>Доставки: к&nbsp;плану +0,5 %, к&nbsp;году +10,6&nbsp;%<br/>Доход: к&nbsp;плану −0,7 %, к&nbsp;неделе +1,2&nbsp;%</div>
+<div class="tgx__q"><b>Международные рынки</b><br/>Доставки: к&nbsp;плану −4,2 %, к&nbsp;году +30,9&nbsp;%<br/>Доход: к&nbsp;плану −2,3 %, к&nbsp;неделе +1,9&nbsp;%</div>
+Детали в&nbsp;HTML-файле<span class="tgx__t">11:00</span></div>
+<div class="tgx__msg sm">✅ Отчёт за&nbsp;06.10 отправлен&nbsp;в 11:00<span class="tgx__t">11:01</span></div>
 </div></div>
 <div class="tgx"><div class="tgx__top"><i class="av">AI</i><div><b>Delivery AI Reports</b><small>бот</small></div></div><div class="tgx__chat">
 <div class="tgx__date">1 октября</div>
 <div class="tgx__msg"><div class="tgx__name">Delivery AI Reports</div>
 <div class="tgx__file"><i>↓</i><div>Международные рынки, сентябрь.html<small>4,1 MB</small></div></div>
-Привет!<br/><br/><b>Итоги сентября на международных рынках</b><br/>Доставки −10 % к плану, +16 % к прошлому году<br/>Доход −3 % к плану<br/><br/><b>Главное</b><br/>СНГ: −2 % по доставкам, в октябре растём на тарифе<br/>🇨🇮 Кот-д’Ивуар: −2 % по доставкам, экономика в плане<br/>Основной недобор дохода — одна страна, причина найдена: выросли субсидии<span class="tgx__t">10:00</span></div>
+Привет!<br/><br/><b>Итоги сентября на&nbsp;международных рынках</b><br/>Доставки −10 % к&nbsp;плану, +16 % к&nbsp;прошлому&nbsp;году<br/>Доход −3 %&nbsp;к&nbsp;плану<br/><br/><b>Главное</b><br/>СНГ: −2 % по&nbsp;доставкам, в&nbsp;октябре растём&nbsp;на тарифе<br/>🇨🇮 Кот-д’Ивуар: −2 % по&nbsp;доставкам, экономика&nbsp;в плане<br/>Основной недобор дохода — одна страна, причина найдена: выросли&nbsp;субсидии<span class="tgx__t">10:00</span></div>
 <div class="tgx__kb">Отчёт ↗</div>
 </div></div>
 </div>
-<p class="viz-note">Цифры в ежедневном сообщении условные</p></div></div>
+<p class="viz-note">Цифры в&nbsp;ежедневном сообщении&nbsp;условные</p></div></div>
   <div class="cm__info">
-    <span class="cm__kind">Яндекс Доставка, 2026, Отчёты</span>
-    <h3 class="cm__title" id="cmTitle">Управленческая отчётность без ручной сборки</h3>
+    <span class="cm__kind">Яндекс Доставка, 2026,&nbsp;Отчёты</span>
+    <h3 class="cm__title" id="cmTitle">Управленческая отчётность без&nbsp;ручной сборки</h3>
     <div class="cm__tags"><span>Telegram</span><span>3 региона</span><span>Каждый день 11:00</span></div>
-    <p class="cm__lede">Раньше сотрудники каждый день переносили цифры из отчётов и собирали сводку вручную. Теперь система получает данные из аналитических панелей, объединяет показатели и готовит регулярные материалы. Отчётность охватывает Россию, СНГ и международные рынки. Ежедневная сводка приходит к 11:00</p>
-    <div class="cm__res"><div><strong>5 ч → 0</strong><span>На сбор отчётности</span><small>показатели приходят по расписанию</small></div><div><strong>3 региона</strong><span>В одном сообщении каждый день</span><small>Россия, СНГ, международные рынки</small></div><div><strong>1 кнопка</strong><span>Месячная презентация по бизнесу</span><small>открывается прямо из чата</small></div></div>
-    <h4>Для кого</h4><p>Для руководителей и команд, которые начинают утро с пяти дашбордов, а итоги месяца собирают в презентацию по два дня. При этом цифры в чате, презентации и дашборде часто не сходятся</p>
-    <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Каждое утро</b><span>Бот берёт вчерашние цифры из дашбордов: доставки, оборот, доход. Сравнивает с планом, прошлой неделей и прошлым годом и присылает одним сообщением. Детали — в приложенном файле</span></li><li><i>02</i><b>Раз в месяц</b><span>Собирает презентацию по бизнесу: итоги месяца, где недобрали к плану и почему, что делаем дальше. Сверху короткая выжимка, ниже кнопка «Отчёт»</span></li><li><i>03</i><b>Проверка</b><span>Если источник не ответил, бот не шлёт отчёт с дырой, а пишет в чат, что сбор не прошёл</span></li><li><i>04</i><b>Подтверждение</b><span>После отправки отмечается в чате: отчёт за такое-то число ушёл в 11:00</span></li></ol>
+    <p class="cm__lede">Раньше сотрудники каждый день переносили цифры из&nbsp;отчётов и&nbsp;собирали сводку вручную. Теперь система получает данные из&nbsp;аналитических панелей, объединяет показатели и&nbsp;готовит регулярные материалы. Отчётность охватывает Россию, СНГ и&nbsp;международные рынки. Ежедневная сводка приходит&nbsp;к 11:00</p>
+    <div class="cm__res"><div><strong>5 ч →&nbsp;0</strong><span>На сбор отчётности</span><small>показатели приходят по&nbsp;расписанию</small></div><div><strong>3 региона</strong><span>В одном сообщении каждый&nbsp;день</span><small>Россия, СНГ, международные&nbsp;рынки</small></div><div><strong>1 кнопка</strong><span>Месячная презентация по&nbsp;бизнесу</span><small>открывается прямо из&nbsp;чата</small></div></div>
+    <h4>Для кого</h4><p>Для руководителей и&nbsp;команд, которые начинают утро с&nbsp;пяти дашбордов, а&nbsp;итоги месяца собирают в&nbsp;презентацию по&nbsp;два дня. При этом цифры в&nbsp;чате, презентации и&nbsp;дашборде часто&nbsp;не сходятся</p>
+    <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Каждое утро</b><span>Бот берёт вчерашние цифры из&nbsp;дашбордов: доставки, оборот, доход. Сравнивает с&nbsp;планом, прошлой неделей и&nbsp;прошлым годом и&nbsp;присылает одним сообщением. Детали — в&nbsp;приложенном файле</span></li><li><i>02</i><b>Раз в&nbsp;месяц</b><span>Собирает презентацию по&nbsp;бизнесу: итоги месяца, где недобрали к&nbsp;плану и&nbsp;почему, что&nbsp;делаем дальше. Сверху короткая выжимка, ниже кнопка&nbsp;«Отчёт»</span></li><li><i>03</i><b>Проверка</b><span>Если источник не&nbsp;ответил, бот не&nbsp;шлёт отчёт с&nbsp;дырой, а&nbsp;пишет в&nbsp;чат, что&nbsp;сбор&nbsp;не прошёл</span></li><li><i>04</i><b>Подтверждение</b><span>После отправки отмечается в&nbsp;чате: отчёт за&nbsp;такое-то число ушёл&nbsp;в&nbsp;11:00</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </template>
 <template id="case-ai-adoption">
   <div class="cm__vis"><div class="cm__visin"><div class="tg">
-<div class="hd"><i></i><div>ИИ-помощник, команда продаж<small>в рабочем чате</small></div></div>
-<div class="msg-me">Пришли заказы по Казани за прошлую неделю и что с ними не так</div>
+<div class="hd"><i></i><div>ИИ-помощник, команда продаж<small>в&nbsp;рабочем чате</small></div></div>
+<div class="msg-me">Пришли заказы по&nbsp;Казани за&nbsp;прошлую неделю и&nbsp;что&nbsp;с&nbsp;ними&nbsp;не так</div>
 <div class="bub">
 <b>Казань, 29.09–05.10</b>
 <table>
-<tr><td>Заказы</td><td>4 812</td><td class="up">+6 % к неделе</td></tr>
+<tr><td>Заказы</td><td>4 812</td><td class="up">+6 % к&nbsp;неделе</td></tr>
 <tr><td>Отмены</td><td>3,9 %</td><td class="dn">+1,2 п. п</td></tr>
-<tr><td>Средний чек</td><td>1 240 ₽</td><td>без изменений</td></tr>
+<tr><td>Средний чек</td><td>1 240 ₽</td><td>без&nbsp;изменений</td></tr>
 </table>
-<b>Что не так:</b> отмены выросли в пятницу вечером, почти все — из-за долгого поиска курьера в центре. В базе знаний это уже было в августе, тогда помог бонус за вечерние часы<br/><br/>
-            Таблица во вложении. Подготовить предложение по бонусу?
+<b>Что не&nbsp;так:</b> отмены выросли в&nbsp;пятницу вечером, почти все — из-за&nbsp;долгого поиска курьера в&nbsp;центре. В базе знаний это&nbsp;уже было в&nbsp;августе, тогда помог бонус за&nbsp;вечерние часы<br/><br/>
+            Таблица во&nbsp;вложении. Подготовить предложение&nbsp;по бонусу?
             <div class="btns"><span class="pri">Да</span><span>Позже</span><span>Подробнее</span></div>
 </div>
 </div>
 <div class="roles">
-<div><b>Менеджер</b><span>отчёты</span><span>задачи из встреч</span><span>письма</span></div>
+<div><b>Менеджер</b><span>отчёты</span><span>задачи из&nbsp;встреч</span><span>письма</span></div>
 <div><b>Аналитик</b><span>выгрузки</span><span>дашборды</span><span>проверка расчётов</span></div>
 <div><b>Поддержка</b><span>разбор заявок</span><span>ответы клиентам</span><span>эскалация</span></div>
 </div>
-<div class="kb"><span><b>База знаний</b>, метрики, регламенты, решения</span><span><b>1 800+</b> заметок</span></div>
-<p class="viz-note">Пример диалога и цифры условные</p></div></div>
+<div class="kb"><span><b>База знаний</b>, метрики, регламенты,&nbsp;решения</span><span><b>1 800+</b> заметок</span></div>
+<p class="viz-note">Пример диалога и&nbsp;цифры условные</p></div></div>
   <div class="cm__info">
-    <span class="cm__kind">Яндекс Доставка, 2026, Внедрение в командах</span>
-    <h3 class="cm__title" id="cmTitle">Внедрение ИИ в ежедневную работу команды</h3>
+    <span class="cm__kind">Яндекс Доставка, 2026, Внедрение&nbsp;в командах</span>
+    <h3 class="cm__title" id="cmTitle">Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3>
     <div class="cm__tags"><span>Роли</span><span>База знаний</span><span>×2 вне разработки</span></div>
-    <p class="cm__lede">Собрали общий набор готовых действий для повторяющихся задач, удобный доступ к помощникам и базу знаний на 1 800+ заметок. Обучали сотрудников, разбирали реальные задачи и измеряли, сколько рабочего времени освобождается. После пилота программу расширили на другие команды Доставки</p>
-    <div class="cm__res"><div><strong>×5</strong><span>Использование ИИ в командах</span><small>за полгода</small></div><div><strong>×1,5</strong><span>Быстрее разработка</span><small>по данным проекта</small></div><div><strong>×2</strong><span>Быстрее задачи вне разработки</span><small>у команд, которые не пишут код</small></div></div>
-    <h4>Для кого</h4><p>Для компаний, где ИИ вроде бы есть, а пользуются им единицы. Каждый настраивает что-то своё, знания не передаются, а руководитель не видит, дало ли это хоть что-то</p>
-    <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Роли</b><span>Для менеджера, аналитика, бухгалтера, поддержки свой набор умений. Человек получает помощника, уже настроенного под его работу</span></li><li><i>02</i><b>Процессы</b><span>Повторяющиеся задачи команды превращаются в готовые умения: «собери отчёт», «разбери заявку», «посчитай бонусы». Сделали один раз, пользуются все</span></li><li><i>03</i><b>Знания</b><span>Метрики, регламенты, где какие данные и кто за что отвечает, собраны в одну базу. Помощник читает её первым и не задаёт одни и те же вопросы</span></li><li><i>04</i><b>Замер</b><span>У каждого проекта посчитан эффект: сколько часов и людей он освобождает. Видно, кто и как пользуется. Руководитель видит это в цифрах</span></li></ol>
+    <p class="cm__lede">Собрали общий набор готовых действий для&nbsp;повторяющихся задач, удобный доступ к&nbsp;помощникам и&nbsp;базу знаний на&nbsp;1 800+ заметок. Обучали сотрудников, разбирали реальные задачи и&nbsp;измеряли, сколько рабочего времени освобождается. После пилота программу расширили на&nbsp;другие команды&nbsp;Доставки</p>
+    <div class="cm__res"><div><strong>×5</strong><span>Использование ИИ в&nbsp;командах</span><small>за&nbsp;полгода</small></div><div><strong>×1,5</strong><span>Быстрее разработка</span><small>по&nbsp;данным проекта</small></div><div><strong>×2</strong><span>Быстрее задачи вне&nbsp;разработки</span><small>у&nbsp;команд, которые не&nbsp;пишут&nbsp;код</small></div></div>
+    <h4>Для кого</h4><p>Для компаний, где ИИ вроде бы&nbsp;есть, а&nbsp;пользуются им&nbsp;единицы. Каждый настраивает что-то своё, знания не&nbsp;передаются, а&nbsp;руководитель не&nbsp;видит, дало ли это&nbsp;хоть&nbsp;что-то</p>
+    <h4>Как это&nbsp;работает</h4><ol class="cm__steps"><li><i>01</i><b>Роли</b><span>Для менеджера, аналитика, бухгалтера, поддержки свой набор умений. Человек получает помощника, уже настроенного&nbsp;под&nbsp;его работу</span></li><li><i>02</i><b>Процессы</b><span>Повторяющиеся задачи команды превращаются в&nbsp;готовые умения: «собери отчёт», «разбери заявку», «посчитай бонусы». Сделали один раз, пользуются&nbsp;все</span></li><li><i>03</i><b>Знания</b><span>Метрики, регламенты, где какие данные и&nbsp;кто за&nbsp;что&nbsp;отвечает, собраны в&nbsp;одну базу. Помощник читает её&nbsp;первым и&nbsp;не&nbsp;задаёт одни и&nbsp;те&nbsp;же вопросы</span></li><li><i>04</i><b>Замер</b><span>У каждого проекта посчитан эффект: сколько часов и&nbsp;людей он освобождает. Видно, кто и&nbsp;как&nbsp;пользуется. Руководитель видит&nbsp;это&nbsp;в цифрах</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </template>
@@ -1039,7 +1076,7 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
 (()=>{
  const m=document.getElementById('caseModal'),body=m.querySelector('.cm__body'),win=m.querySelector('.cm__win');
  const ids=[...new Set([...document.querySelectorAll('.case-open')].map(b=>b.dataset.case))];let cur=null,last=null;
- const play=()=>m.querySelectorAll('video').forEach(v=>{v.muted=true;v.play().then(()=>v.closest('.phone')&&v.closest('.phone').classList.remove('paused')).catch(()=>{})});
+ const play=()=>{const vs=[...m.querySelectorAll('video')];vs.forEach(v=>{v.muted=true;v.pause();if(v.closest('.phone'))v.closest('.phone').classList.add('paused')});const io=new IntersectionObserver(es=>es.forEach(x=>{const v=x.target,ph=v.closest('.phone');if(x.isIntersecting){v.play().then(()=>ph&&ph.classList.remove('paused')).catch(()=>{})}else{v.pause();ph&&ph.classList.add('paused')}}),{root:null,threshold:.5});vs.forEach(v=>io.observe(v))};
  const bindPhones=()=>m.querySelectorAll('.phone').forEach(p=>p.addEventListener('click',()=>{const v=p.querySelector('video');if(v.paused){v.play();p.classList.remove('paused')}else{v.pause();p.classList.add('paused')}}));
  const render=id=>{const t=document.getElementById('case-'+id);if(!t)return;body.innerHTML='';body.appendChild(t.content.cloneNode(true));cur=id;bindPhones();if(matchMedia('(max-width:900px)').matches){const v=body.querySelector('.cm__vis'),r=body.querySelector('.cm__res');if(v&&r)r.after(v)}play();const i=m.querySelector('.cm__info');if(i)i.scrollTop=0;win.scrollTop=0;history.replaceState(null,'','#case-'+id)};
  const open=id=>{last=document.activeElement;render(id);m.hidden=false;m.setAttribute('aria-hidden','false');document.body.classList.add('cm-lock');void m.offsetWidth;m.classList.add('is-open');m.querySelector('.cm__x').focus()};
