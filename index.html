@@ -745,20 +745,46 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
  .slide:not(:has(.case-open)) .dstats{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:0 0 100%;margin-top:12px;padding-top:12px}
 }
 .cm__body{display:contents}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.svc{display:flex;flex-direction:column;padding:28px 28px 32px 0;border-right:1px solid var(--line);margin-right:28px}
+.svc:last-child{border-right:0;margin-right:0}
+.svc .n{color:var(--muted);margin-bottom:22px;display:block}
+.svc h3{font-size:var(--t-h4);line-height:1.2;font-weight:500;letter-spacing:-.02em;margin-bottom:12px;max-width:18ch}
+.svc p{color:var(--soft);max-width:36ch;margin-bottom:22px}
+.svc .fact{margin-top:auto;padding-top:18px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.svc .fact b{font-size:var(--t-h3);line-height:1;font-weight:500;letter-spacing:-.03em;white-space:nowrap}
+.svc .fact b .before{color:#767676}
+.svc .fact span{color:var(--muted);font-size:var(--t-small);max-width:20ch}
+.svc .lnk{align-self:flex-start;margin-top:22px}
+.offer>.cap{color:var(--muted)}
+.offer h3{max-width:16ch}
+@media(max-width:1100px){
+ .svc .fact span{max-width:none}
+}
+@media(max-width:860px){
+ .svcs{grid-template-columns:1fr}
+ .svc{border-right:0;margin-right:0;padding:18px 0 22px;border-bottom:1px solid var(--line)}
+ .svc:last-child{border-bottom:0}
+ .svc .n{margin-bottom:10px}
+ .svc p{margin-bottom:14px;max-width:none}
+ .svc .fact{padding-top:12px}
+ .svc .lnk{margin-top:14px}
+ .offer h3{max-width:none}
+}
 </style>
 </head>
 <body>
 <header class="hd" id="hd"><div class="wrap">
   <a class="logo" href="#top"><i><b></b><b></b><b></b></i>praxis</a>
-  <nav class="nav" id="nav" aria-label="Разделы сайта"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Услуги</a><a href="#tech">Технологии</a><a class="nav-tg" href="#contact" data-contact>Связаться →</a></nav>
+  <nav class="nav" id="nav" aria-label="Разделы сайта"><a href="#services">Услуги</a><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Форматы</a><a href="#tech">Технологии</a><a class="nav-tg" href="#contact" data-contact>Связаться →</a></nav>
   <a class="cta" href="#contact" data-contact>Обсудить задачу</a>
   <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><i></i></button>
 </div></header>
-<nav class="snav" id="snav" aria-label="Разделы"><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Услуги</a><a href="#tech">Технологии</a><a href="#contact">Контакты</a></nav>
+<nav class="snav" id="snav" aria-label="Разделы"><a href="#services">Услуги</a><a href="#cases">Кейсы</a><a href="#problems">Что делаем</a><a href="#method">Как работаем</a><a href="#formats">Форматы</a><a href="#tech">Технологии</a><a href="#contact">Контакты</a></nav>
 <main class="sheet" id="top">
 
 <section class="hero band b-paper"><div class="wrap">
-  <div class="hero-grid dia"><div class="hero-main"><div class="cap">Внедрение ИИ в&nbsp;бизнес</div><h1><span>ИИ-агенты</span><span>для&nbsp;вашего</span><span><em>бизнеса</em></span></h1><div class="hero-side"><p>Находим работу, которую команда каждый день делает руками, и&nbsp;передаём её&nbsp;агентам: отчёты, заявки, расчёты. Всё работает в&nbsp;ваших системах</p><div class="hero-acts"><a class="btn" href="#contact" data-contact>Обсудить задачу →</a><a class="lnk" href="#cases">Посмотреть кейсы</a></div></div></div>
+  <div class="hero-grid dia"><div class="hero-main"><div class="cap">Агентство внедрения ИИ в&nbsp;бизнес</div><h1><span>ИИ-агенты</span><span>для&nbsp;вашего</span><span><em>бизнеса</em></span></h1><div class="hero-side"><p>Автоматизируем процессы, внедряем ИИ в&nbsp;работу команды и&nbsp;доводим начатые пилоты до&nbsp;запуска. Всё работает в&nbsp;ваших системах, спорные решения остаются за&nbsp;человеком</p><div class="hero-acts"><a class="btn" href="#contact" data-contact>Обсудить задачу →</a><a class="lnk" href="#services">Смотреть услуги</a></div></div></div>
   <div class="hero-diagram" role="img" aria-label="Схема: агент берёт данные, задачи и знания из ваших систем, разбирает задачу, выполняет и проверяет. Типовое завершает сам, исключения передаёт человеку.">
 <div class="diagram-caption"><span>ИИ внутри вашего&nbsp;процесса</span><span>Схема подхода</span></div>
 <div class="sources">
@@ -773,6 +799,15 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <p class="diagram-foot">Автоматизируем повторяющуюся работу. Для спорных случаев заранее определяем, кто принимает&nbsp;решение</p>
 </div>
   <div class="dia-mini" role="img" aria-label="Схема: данные и задачи попадают к агенту, он выдаёт результат или передаёт вопрос человеку"><div class="r"><b>Ваши данные, задачи&nbsp;и&nbsp;знания</b></div><div class="ar">↓</div><div class="r ag"><b>Агент за&nbsp;работой</b>разбирает, выполняет, проверяет</div><div class="ar">↓</div><div class="two"><div class="r"><b>Готовый результат</b>в&nbsp;пределах правил</div><div class="r hu"><b>Вопрос человеку</b>исключения</div></div></div></div>
+</div></section>
+
+<section class="sec band b-sand" id="services"><div class="wrap">
+  <div class="sec-head"><div><div class="cap">Услуги</div><h2>Три направления</h2></div><p>Берёмся за&nbsp;один процесс или за&nbsp;всю команду. В&nbsp;каждом направлении сроки и&nbsp;цену называем до&nbsp;старта</p></div>
+  <div class="svcs">
+    <div class="svc"><span class="cap n">01</span><h3>Автоматизация процессов</h3><p>Отчёты, заявки, расчёты и&nbsp;проверки, которые команда делает руками, переходят к&nbsp;ИИ-агенту. Спорные случаи он&nbsp;отдаёт&nbsp;человеку</p><div class="fact"><b><span class="before">26 →</span> 2</b><span>сотрудника на&nbsp;процессе компенсаций</span></div><a class="lnk" href="#f-auto">Форматы и&nbsp;сроки</a></div>
+    <div class="svc"><span class="cap n">02</span><h3>Внедрение ИИ в&nbsp;команду</h3><p>Настраиваем помощника под&nbsp;роли, подключаем знания компании и&nbsp;учим людей на&nbsp;их&nbsp;задачах. Замеряем, кто реально&nbsp;пользуется</p><div class="fact"><b>×5</b><span>использование ИИ за&nbsp;полгода</span></div><a class="lnk" href="#f-team">Форматы и&nbsp;сроки</a></div>
+    <div class="svc"><span class="cap n">03</span><h3>Пилот до&nbsp;рабочего процесса</h3><p>Агента уже сделали, а&nbsp;в&nbsp;работе он&nbsp;не&nbsp;прижился. Находим, где ломается: данные, доступы, процесс или&nbsp;люди. Если чинить нечего, так и&nbsp;скажем</p><div class="fact"><b>3–4 нед.</b><span>до&nbsp;решения: продолжать или&nbsp;нет</span></div><a class="lnk" href="#f-pilot">Форматы и&nbsp;сроки</a></div>
+  </div>
 </div></section>
 
 <section class="sec band b-white" id="cases"><div class="wrap">
@@ -849,17 +884,17 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 </div></section>
 
 <section class="sec band b-white" id="formats"><div class="wrap">
-  <div class="sec-head"><div><div class="cap">Услуги</div><h2>С чего начать</h2></div><p>Можно взять одну задачу, а&nbsp;можно сразу всю&nbsp;команду</p></div>
-  <div class="offer"><span class="cap">Автоматизация с&nbsp;ИИ</span><div><h3>Снять рутину</h3><p>Когда понятно, что&nbsp;именно делают руками каждую&nbsp;неделю</p></div><div class="items">
+  <div class="sec-head"><div><div class="cap">Форматы и&nbsp;сроки</div><h2>С чего начать</h2></div><p>Можно взять одну задачу, а&nbsp;можно сразу всю&nbsp;команду. Сроки ориентировочные, точные называем после&nbsp;разбора</p></div>
+  <div class="offer" id="f-auto"><span class="cap">01 · Автоматизация процессов</span><div><h3>Снять рутину с&nbsp;команды</h3><p>Когда понятно, что&nbsp;именно делают руками каждую&nbsp;неделю</p></div><div class="items">
     <details><summary><span>Один процесс</span><small>1–2 недели</small></summary><div class="b">Разбираем процесс с&nbsp;тем, кто его&nbsp;ведёт, и&nbsp;передаём агенту. Проверяем на&nbsp;прошлых данных<div class="terms"><span>Цена за&nbsp;процесс</span></div></div></details>
     <details><summary><span>Отчёты без&nbsp;людей</span><small>2 недели</small></summary><div class="b">Отчёт и&nbsp;цифры приходят в&nbsp;чат сами, с&nbsp;выводами<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
     <details><summary><span>Агент разбирает задачи</span><small>Трекер, Jira</small></summary><div class="b">Агент берёт задачу из&nbsp;трекера, делает и&nbsp;пишет результат. Человек смотрит только&nbsp;спорное<div class="terms"><span>Фикс в&nbsp;месяц</span></div></div></details>
   </div></div>
-  <div class="offer"><span class="cap">Обучение и&nbsp;внедрение ИИ&nbsp;в&nbsp;команду</span><div><h3>ИИ в&nbsp;работе команды</h3><p>Когда нужно, чтобы ИИ пользовалась вся&nbsp;команда</p></div><div class="items">
+  <div class="offer" id="f-team"><span class="cap">02 · Внедрение ИИ в&nbsp;команду</span><div><h3>ИИ в&nbsp;работе всей команды</h3><p>Когда нужно, чтобы ИИ пользовалась вся&nbsp;команда, а&nbsp;не&nbsp;два энтузиаста</p></div><div class="items">
     <details><summary><span>Помощник для&nbsp;команды</span><small>3–4 недели</small></summary><div class="b">Агент с&nbsp;доступом к&nbsp;вашим системам и&nbsp;знаниям, свои умения под&nbsp;каждую роль. Работает на&nbsp;вашем сервере или&nbsp;подписке<div class="terms"><span>До 10 человек</span><span>Поддержка помесячно</span></div></div></details>
     <details><summary><span>ИИ в&nbsp;команде за&nbsp;квартал</span><small>3 месяца</small></summary><div class="b">Общие умения, обучение и&nbsp;замер, кто как&nbsp;пользуется<div class="terms"><span>10–50 человек</span></div></div></details>
   </div></div>
-  <div class="offer"><span class="cap">Агент уже есть</span><div><h3>Довести до&nbsp;запуска</h3><p>Когда пилот сделали, а&nbsp;в&nbsp;работе он&nbsp;не&nbsp;прижился</p></div><div class="items">
+  <div class="offer" id="f-pilot"><span class="cap">03 · Пилот до&nbsp;рабочего процесса</span><div><h3>Довести до&nbsp;запуска</h3><p>Когда пилот сделали, а&nbsp;в&nbsp;работе он&nbsp;не&nbsp;прижился</p></div><div class="items">
     <details><summary><span>Пилот → рабочий&nbsp;процесс</span><small>3–4 недели</small></summary><div class="b">Ищем, где ломается: данные, доступы, процесс или&nbsp;люди. Если чинить нечего, так&nbsp;и&nbsp;скажем<div class="terms"><span>Итог: продолжать или&nbsp;нет</span></div></div></details>
   </div></div>
   <div class="after-offers"><a class="lnk" href="#contact" data-contact>Не знаете, с&nbsp;чего начать? Напишите</a></div>
