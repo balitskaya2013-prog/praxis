@@ -1,5 +1,14 @@
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// run decorative animations only while their block is on screen
+const inView = new WeakMap(), waiters = new WeakMap();
+const viewIO = new IntersectionObserver(es => es.forEach(e => {
+  inView.set(e.target, e.isIntersecting); e.target.classList.toggle('inview', e.isIntersecting);
+  if (e.isIntersecting && waiters.get(e.target)) { waiters.get(e.target)(); waiters.delete(e.target); }
+}), {threshold: .15});
+const watch = el => { if (el) viewIO.observe(el); return el; };
+const whenVisible = el => inView.get(el) ? Promise.resolve() : new Promise(r => waiters.set(el, r));
+
 // mobile menu
 const hdr = document.querySelector('header'), burger = document.querySelector('.burger');
 const setMenu = o => {
@@ -59,7 +68,9 @@ async function heroLoop(){
     rT.textContent = tasks[0].r[0]; rS.textContent = tasks[0].r[1]; result.classList.add('show'); mark.classList.remove('logo-live');
     return;
   }
+  const stageEl = watch(document.querySelector('.stage'));
   for (let k = 0; ; k = (k + 1) % tasks.length) {
+    await whenVisible(stageEl);
     const {t, r} = tasks[k];
     steps.forEach(s => s.className = ''); result.classList.remove('show');
     rT.textContent = 'Готовый результат'; rS.textContent = 'Отчёт, выполненная задача, решение в пределах лимита';
@@ -89,7 +100,8 @@ function layoutOrbit(){
 layoutOrbit(); addEventListener('resize', layoutOrbit);
 const chips = [...document.querySelectorAll('#orbit .chip')]; let ci = 0;
 chips[0].classList.add('on');
-if (!reduce) setInterval(() => { chips[ci].classList.remove('on'); ci = (ci + 1) % chips.length; chips[ci].classList.add('on'); }, 1800);
+const orbitEl = watch(document.getElementById('orbit'));
+if (!reduce) setInterval(() => { if (!inView.get(orbitEl)) return; chips[ci].classList.remove('on'); ci = (ci + 1) % chips.length; chips[ci].classList.add('on'); }, 1800);
 
 // ladder + steps
 const ms = [...document.querySelectorAll('#msteps .mstep')]; let li = 0;
@@ -99,7 +111,8 @@ function setStep(i){
   document.querySelectorAll('#ladder [data-i]').forEach(n => n.classList.toggle('on', +n.dataset.i === i));
 }
 setStep(0);
-let auto = reduce ? null : setInterval(() => setStep((li + 1) % 3), 2600);
+const ladderEl = watch(document.querySelector('.method'));
+let auto = reduce ? null : setInterval(() => { if (inView.get(ladderEl)) setStep((li + 1) % 3); }, 2600);
 ms.forEach((m, i) => m.addEventListener('mouseenter', () => { clearInterval(auto); setStep(i); }));
 
 // tech network lines
@@ -113,6 +126,7 @@ function drawNet(){
   }).join('');
 }
 drawNet(); addEventListener('resize', drawNet);
+watch(document.getElementById('net')); watch(document.querySelector('.cta'));
 
 // belt: duplicate for seamless loop
 const belt = document.getElementById('belt'); belt.innerHTML += belt.innerHTML;

@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>praxis — ИИ-агенты и автоматизация процессов для бизнеса</title>
@@ -27,9 +27,13 @@
 <meta name="twitter:description" content="Внедрение ИИ в бизнес: находим работу, которую команда делает руками, и передаём её ИИ-агентам. Отчёты, заявки, расчёты. Кейсы Яндекс Доставки и Еврокрана.">
 <meta name="twitter:image" content="https://praxisai.ru/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/onest-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/onest-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/onest-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 600;font-display:swap;src:url(assets/fonts/onest-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F}
+
 :root{
   --bg:#f4f4f2; --card:#fff; --ink:#111; --soft:#555; --muted:#6f6f6a; --line:#e6e5e0;
   --accent:#b94629; --accent-2:#cf5534; --sand:#ebe9e1;
@@ -90,12 +94,12 @@ header.open .burger i::after{transform:translateY(-5px) rotate(-45deg)}
 .hero h1{max-width:900px;margin:0 auto}
 .hero .actions{display:flex;gap:10px;justify-content:center;margin-top:36px;flex-wrap:wrap}
 
-.stage{margin-top:clamp(48px,7vw,88px);border-radius:var(--r);overflow:hidden;position:relative;min-height:520px;
+.stage{margin-top:clamp(48px,7vw,80px);border-radius:var(--r);overflow:hidden;position:relative;min-height:440px;
   background:
     radial-gradient(60% 80% at 15% 110%,rgba(207,85,52,.55),transparent 60%),
     radial-gradient(50% 70% at 90% -10%,rgba(185,70,41,.25),transparent 60%),
     linear-gradient(180deg,#efe9e2,#e6ddd3);
-  display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:32px;padding:clamp(24px,4vw,56px)}
+  display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:32px;padding:clamp(24px,4vw,48px) clamp(24px,5vw,72px)}
 .stage>*{min-width:0}
 .prompt{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-radius:999px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 26px;box-shadow:0 20px 50px -20px rgba(80,30,10,.35);max-width:500px}
 .prompt span{flex:1;font-size:clamp(16px,1.6vw,22px);letter-spacing:-.02em;min-height:1.4em;white-space:nowrap;overflow:hidden}
@@ -173,6 +177,7 @@ section{padding:clamp(80px,11vw,140px) 0 0}
 .dcard h3{font-size:clamp(22px,2vw,28px)}
 .dcard p{margin-top:8px;max-width:380px;font-size:15px}
 .dcard .art{display:grid;place-items:center;min-height:180px}
+.dhint{display:none;text-align:center;font-size:14px;color:var(--dark-muted);margin-top:16px}
 .dcard .art svg{width:100%;max-width:340px;height:auto;overflow:visible}
 
 /* method ladder */
@@ -266,6 +271,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visi
   .fnote a{display:inline-block;padding:8px 0}
 }
 
+
+/* pause decorative motion off screen */
+.cta:not(.inview) .belt,.net:not(.inview) .logo-live i b{animation-play-state:paused}
+
 /* animated logo */
 .logo i b{transform-origin:50% 100%;animation:lg-in .7s cubic-bezier(.2,.9,.25,1.25) both}
 .logo i b:nth-child(2){animation-delay:.12s}.logo i b:nth-child(3){animation-delay:.24s}
@@ -355,6 +364,13 @@ a.logo:hover i b:nth-child(2){animation-delay:.08s}a.logo:hover i b:nth-child(3)
   .tech .net{order:-1;min-height:320px}
   .net .node{font-size:12px}
   section{padding-top:clamp(64px,16vw,80px)}
+  .ladder{display:none}
+  .dgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 calc(-1 * var(--pad));padding:0 var(--pad) 8px;scrollbar-width:none}
+  .dgrid::-webkit-scrollbar{display:none}
+  .dcard{flex:0 0 84%;scroll-snap-align:center;min-height:0}
+  .dcard .art{min-height:140px}
+  .badge,.split-text .num,.fcard .k,.mstep b small,.foot a,.foot span,.copy,.ui-sub,.mm-contacts,.cta .tel{font-size:14px}
+  .dhint{display:block}
   .stage,.split,.method,.tech,.dgrid{grid-template-columns:1fr}
   .agent{justify-self:stretch;max-width:none}
   .stage{min-height:0}
@@ -575,16 +591,20 @@ body.menu-lock{overflow:hidden}
       <div class="dcard rv">
         <div class="art">
           <svg aria-hidden="true" viewBox="0 0 320 170">
-            <defs><radialGradient id="g3"><stop offset="0" stop-color="#cf5534" stop-opacity=".8"/><stop offset="1" stop-color="#b94629" stop-opacity="0"/></radialGradient></defs>
-            <circle cx="160" cy="170" r="150" fill="none" stroke="#333"/>
-            <circle cx="160" cy="170" r="100" fill="none" stroke="#444"/>
-            <circle cx="160" cy="170" r="50" fill="url(#g3)" stroke="#b94629"/>
-            <g font-size="11" font-family="Onest" fill="#aaa" text-anchor="middle"><text x="160" y="34">вся команда</text><text x="160" y="84">отдел</text><text x="160" y="150" fill="#fff">2 энтузиаста</text></g>
+            <g fill="#1f1f1f" stroke="#444"><rect x="34" y="34" width="70" height="92" rx="8"/><rect x="24" y="24" width="70" height="92" rx="8"/><rect x="14" y="14" width="70" height="92" rx="8"/></g>
+            <g stroke="#555" stroke-width="2" stroke-linecap="round"><line x1="26" y1="34" x2="66" y2="34"/><line x1="26" y1="48" x2="72" y2="48"/><line x1="26" y1="62" x2="58" y2="62"/><line x1="26" y1="76" x2="68" y2="76"/></g>
+            <path d="M96,66 C140,66 150,84 190,84" fill="none" stroke="#b94629" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <g font-size="11" font-family="Onest">
+              <rect x="190" y="40" width="120" height="26" rx="6" fill="#222"/><text x="200" y="57" fill="#bbb">Счёт № 214</text>
+              <rect x="190" y="72" width="120" height="26" rx="6" fill="#222"/><text x="200" y="89" fill="#bbb">Договор, объект</text>
+              <rect x="190" y="104" width="120" height="26" rx="6" fill="#b94629"/><text x="200" y="121" fill="#fff">Проверить сумму</text>
+            </g>
           </svg>
         </div>
-        <div><h3>ИИ, которым никто не&nbsp;пользуется</h3><p>Настраиваем помощника под команду, учим людей и&nbsp;смотрим, кто им&nbsp;пользуется на&nbsp;самом деле</p></div>
+        <div><h3>Документы и&nbsp;почта</h3><p>Счета, акты, письма и&nbsp;звонки. Агент переносит данные в&nbsp;ваши системы и&nbsp;отмечает, что нужно проверить человеку</p></div>
       </div>
     </div>
+    <p class="dhint" aria-hidden="true">Листайте →</p>
   </div>
 </div>
 
@@ -1106,6 +1126,6 @@ body.menu-lock{overflow:hidden}
   </div>
 </footer>
 
-<script src="assets/site.js?v=6" defer></script>
+<script src="assets/site.js?v=7" defer></script>
 </body>
 </html>
