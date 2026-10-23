@@ -31,7 +31,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f4f2; --card:#fff; --ink:#111; --soft:#555; --muted:#8a8a86; --line:#e6e5e0;
+  --bg:#f4f4f2; --card:#fff; --ink:#111; --soft:#555; --muted:#6f6f6a; --line:#e6e5e0;
   --accent:#b94629; --accent-2:#cf5534; --sand:#ebe9e1;
   --dark:#0e0e0e; --dark-card:#171717; --dark-line:#2a2a2a; --dark-muted:#9a9a94;
   --r:24px; --r-s:16px;
@@ -66,7 +66,7 @@ p{color:var(--soft)}
 /* header */
 header{position:sticky;top:0;z-index:20;background:rgba(244,244,242,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px)}
 .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
-.logo{display:flex;align-items:center;gap:9px;font-weight:500;letter-spacing:-.04em;font-size:22px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:500;letter-spacing:-.04em;font-size:22px;justify-self:start}
 .logo i{display:grid;grid-template-columns:repeat(3,4px);gap:2px;align-items:end;height:18px}
 .logo i b{background:currentColor;height:11px}.logo i b:nth-child(2){height:18px}.logo i b:nth-child(3){height:14px}
 .menu{display:flex;gap:4px}
@@ -100,8 +100,8 @@ header.open .burger i::after{transform:translateY(-5px) rotate(-45deg)}
 .prompt{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);border-radius:999px;display:flex;align-items:center;gap:12px;padding:10px 10px 10px 26px;box-shadow:0 20px 50px -20px rgba(80,30,10,.35);max-width:500px}
 .prompt span{flex:1;font-size:clamp(16px,1.6vw,22px);letter-spacing:-.02em;min-height:1.4em;white-space:nowrap;overflow:hidden}
 .prompt span::after{content:"";display:inline-block;width:2px;height:1em;background:var(--ink);margin-left:2px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
-.prompt button{all:unset;width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
-.prompt button svg{width:18px;height:18px;stroke:#fff}
+.prompt .go{width:44px;height:44px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
+.prompt .go svg{width:18px;height:18px;stroke:#fff}
 @keyframes blink{50%{opacity:0}}
 .stage-note{margin-top:18px;font-size:14px;color:#6b5a50;max-width:420px}
 .agent{background:#fff;border-radius:20px;padding:22px;box-shadow:0 30px 60px -30px rgba(60,20,5,.45);max-width:440px;justify-self:end;width:100%}
@@ -111,7 +111,7 @@ header.open .burger i::after{transform:translateY(-5px) rotate(-45deg)}
 .live i{width:7px;height:7px;border-radius:50%;background:#2fa36b;animation:pulse 1.6s infinite}
 @keyframes pulse{50%{opacity:.35}}
 .steps{list-style:none;display:grid;gap:8px}
-.steps li{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#f6f5f2;font-size:14px;color:#999;transition:all .35s}
+.steps li{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#f6f5f2;font-size:14px;color:#6f6f6a;transition:all .35s}
 .steps li .dot{width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;flex:none;display:grid;place-items:center;transition:all .35s}
 .steps li.on{color:var(--ink);background:#fbeee9}
 .steps li.on .dot{border-color:var(--accent);border-top-color:transparent;animation:spin .8s linear infinite}
@@ -245,9 +245,9 @@ section{padding:clamp(80px,11vw,140px) 0 0}
 
 /* cta */
 .cta{margin-top:clamp(80px,11vw,140px);background:var(--accent);border-radius:var(--r);color:#fff;text-align:center;padding:clamp(48px,7vw,88px) 0 0;overflow:hidden}
-.cta p{color:rgba(255,255,255,.8);margin:14px auto 0;max-width:560px;padding:0 var(--pad)}
+.cta p{color:rgba(255,255,255,.94);margin:14px auto 0;max-width:560px;padding:0 var(--pad)}
 .cta .actions{display:flex;gap:10px;justify-content:center;margin-top:30px;flex-wrap:wrap}
-.cta .tel{font-size:14px;color:rgba(255,255,255,.75);margin-top:16px}
+.cta .tel{font-size:14px;color:#fff;margin-top:16px}
 .cta .tel a{color:#fff}
 .belt{margin-top:56px;display:flex;gap:12px;width:max-content;animation:belt 40s linear infinite;padding-bottom:40px}
 .msg{width:280px;background:#fff;color:var(--ink);border-radius:16px;padding:16px;text-align:left;box-shadow:0 20px 40px -20px rgba(40,10,0,.6);flex:none}
@@ -265,6 +265,18 @@ footer{padding:64px 0 40px}
 .foot .logo{color:var(--ink);display:flex}
 .copy{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:48px}
 
+
+
+/* a11y */
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-size:14px}
+.skip:focus{top:12px}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
+.belt:hover{animation-play-state:paused}
+@media (max-width:900px){
+  .split-text .more{padding:10px 0}
+  .foot a{padding:6px 0;margin-bottom:2px}
+  .fnote a{display:inline-block;padding:8px 0}
+}
 
 /* animated logo */
 .logo i b{transform-origin:50% 100%;animation:lg-in .7s cubic-bezier(.2,.9,.25,1.25) both}
@@ -358,6 +370,7 @@ body.menu-lock{overflow:hidden}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Перейти к содержанию</a>
 
 
 <header>
@@ -390,10 +403,10 @@ body.menu-lock{overflow:hidden}
   </nav>
 </header>
 
-<main id="top">
+<main id="main">
 
 <!-- HERO -->
-<div class="wrap hero center">
+<div class="wrap hero center" id="top">
   <div class="badge"><i></i>Агентство внедрения ИИ в бизнес</div>
   <h1>ИИ-агенты для&nbsp;вашего бизнеса</h1>
   <p class="lead">Находим работу, которую команда каждый день делает руками, и&nbsp;передаём её&nbsp;агентам: отчёты, заявки, расчёты. Всё работает в&nbsp;ваших системах</p>
@@ -404,7 +417,7 @@ body.menu-lock{overflow:hidden}
 
   <div class="stage rv" style="text-align:left">
     <div>
-      <div class="prompt"><span id="typed"></span><button aria-label="Отправить"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></div>
+      <div class="prompt" aria-hidden="true"><span id="typed"></span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></div>
       <p class="stage-note">ИИ-агент — программа, которая сама делает рутинную работу в&nbsp;ваших системах и&nbsp;по&nbsp;вашим правилам. Спорные случаи она передаёт человеку</p>
     </div>
     <div class="agent">
@@ -435,8 +448,8 @@ body.menu-lock{overflow:hidden}
         <a class="more" href="#formats">Форматы и&nbsp;сроки →</a>
       </div>
       <div class="panel">
-        <div class="orbit" id="orbit">
-          <svg id="orbitsvg"></svg>
+        <div class="orbit" id="orbit" aria-hidden="true">
+          <svg aria-hidden="true" id="orbitsvg"></svg>
           <div class="chip" data-a="-36">Отчёты<i></i></div>
           <div class="chip" data-a="-12">Заявки<i></i></div>
           <div class="chip" data-a="12">Расчёты<i></i></div>
@@ -458,7 +471,7 @@ body.menu-lock{overflow:hidden}
             <div class="ui-tag">◆ Помощник команды</div>
             <div class="ui-title">Пользуется вся команда</div>
             <div class="ui-sub">а&nbsp;не&nbsp;два энтузиаста</div>
-            <svg class="chart" viewBox="0 0 300 120" preserveAspectRatio="none">
+            <svg aria-hidden="true" class="chart" viewBox="0 0 300 120" preserveAspectRatio="none">
               <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b94629" stop-opacity=".25"/><stop offset="1" stop-color="#b94629" stop-opacity="0"/></linearGradient></defs>
               <g stroke="#eee" stroke-width="1"><line x1="0" y1="30" x2="300" y2="30"/><line x1="0" y1="60" x2="300" y2="60"/><line x1="0" y1="90" x2="300" y2="90"/></g>
               <path d="M0,104 C40,100 60,96 90,88 S150,72 180,56 S250,26 300,12 L300,120 L0,120Z" fill="url(#g1)"/>
@@ -506,7 +519,7 @@ body.menu-lock{overflow:hidden}
     <div class="dgrid">
       <div class="dcard rv">
         <div class="art">
-          <svg viewBox="0 0 320 170">
+          <svg aria-hidden="true" viewBox="0 0 320 170">
             <g fill="none" stroke="#3a3a3a" stroke-width="1">
               <rect x="10" y="20" width="70" height="44" rx="8"/><rect x="10" y="74" width="70" height="44" rx="8"/><rect x="10" y="128" width="70" height="34" rx="8"/>
             </g>
@@ -521,7 +534,7 @@ body.menu-lock{overflow:hidden}
       </div>
       <div class="dcard rv">
         <div class="art">
-          <svg viewBox="0 0 320 170">
+          <svg aria-hidden="true" viewBox="0 0 320 170">
             <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b94629" stop-opacity="0"/><stop offset="1" stop-color="#cf5534" stop-opacity=".9"/></linearGradient></defs>
             <path d="M100,20 L100,150 A60,14 0 0 0 220,150 L220,20" fill="url(#g2)" stroke="#444"/>
             <ellipse cx="160" cy="20" rx="60" ry="14" fill="none" stroke="#555"/>
@@ -535,7 +548,7 @@ body.menu-lock{overflow:hidden}
       </div>
       <div class="dcard rv">
         <div class="art">
-          <svg viewBox="0 0 320 170">
+          <svg aria-hidden="true" viewBox="0 0 320 170">
             <path d="M50,150 A110,110 0 0 1 270,150" fill="none" stroke="#2f2f2f" stroke-width="14" stroke-linecap="round"/>
             <path d="M50,150 A110,110 0 0 1 222,72" fill="none" stroke="#b94629" stroke-width="14" stroke-linecap="round"/>
             <line x1="236" y1="62" x2="252" y2="44" stroke="#fff" stroke-width="1.5"/>
@@ -548,7 +561,7 @@ body.menu-lock{overflow:hidden}
       </div>
       <div class="dcard rv">
         <div class="art">
-          <svg viewBox="0 0 320 170">
+          <svg aria-hidden="true" viewBox="0 0 320 170">
             <defs><radialGradient id="g3"><stop offset="0" stop-color="#cf5534" stop-opacity=".8"/><stop offset="1" stop-color="#b94629" stop-opacity="0"/></radialGradient></defs>
             <circle cx="160" cy="170" r="150" fill="none" stroke="#333"/>
             <circle cx="160" cy="170" r="100" fill="none" stroke="#444"/>
@@ -570,8 +583,8 @@ body.menu-lock{overflow:hidden}
       <p class="lead">Сначала разбираемся, потом делаем. После запуска не&nbsp;исчезаем</p>
     </div>
     <div class="method rv">
-      <div class="ladder">
-        <svg viewBox="0 0 300 360" id="ladder">
+      <div class="ladder" aria-hidden="true">
+        <svg aria-hidden="true" viewBox="0 0 300 360" id="ladder">
           <g stroke="#222" stroke-width="1.2"><line x1="70" y1="10" x2="70" y2="350"/><line x1="230" y1="10" x2="230" y2="350"/></g>
           <polygon class="rh" data-i="2" points="150,40 270,90 150,140 30,90"/>
           <text data-i="2" x="150" y="86" text-anchor="middle">ЗАПУСКАЕМ</text><text data-i="2" x="150" y="104" text-anchor="middle">(03)</text>
@@ -720,7 +733,7 @@ body.menu-lock{overflow:hidden}
         </div>
       </div>
       <div class="net" id="net">
-        <svg id="netsvg"></svg>
+        <svg aria-hidden="true" id="netsvg"></svg>
         <div class="core" aria-hidden="true"><span class="logo logo-live"><i><b></b><b></b><b></b></i></span></div>
         <div class="node" style="left:22%;top:18%"><i></i>Яндекс Трекер</div>
         <div class="node" style="left:70%;top:14%"><i></i>Jira</div>
@@ -761,7 +774,7 @@ body.menu-lock{overflow:hidden}
       <a class="btn btn-line" href="mailto:info@praxisai.ru">Почта</a>
     </div>
     <div class="tel">или по телефону <a href="tel:+79652902877">+7 965 290-28-77</a></div>
-    <div class="belt" id="belt">
+    <div class="belt" id="belt" aria-hidden="true">
       <div class="msg"><div class="h"><span>Агент · отчёты</span><span>09:00</span></div><b>Утренняя сводка готова</b><span>Показатели и выводы в чате</span></div>
       <div class="msg"><div class="h"><span>Агент · заявки</span><span>10:12</span></div><b>Новые заявки разобраны</b><span>Две спорные — передал менеджеру</span></div>
       <div class="msg"><div class="h"><span>Агент · бухгалтерия</span><span>11:30</span></div><b>Документы проверены</b><span>Один вопрос бухгалтеру</span></div>
@@ -1092,6 +1105,6 @@ body.menu-lock{overflow:hidden}
   </div>
 </footer>
 
-<script src="assets/site.js?v=5" defer></script>
+<script src="assets/site.js?v=6" defer></script>
 </body>
 </html>

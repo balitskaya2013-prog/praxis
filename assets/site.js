@@ -54,6 +54,11 @@ const mark = document.getElementById('agentMark');
 const result = document.getElementById('result'), rT = document.getElementById('resTitle'), rS = document.getElementById('resSub');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function heroLoop(){
+  if (reduce) {
+    typed.textContent = tasks[0].t; steps.forEach(s => s.className = 'done');
+    rT.textContent = tasks[0].r[0]; rS.textContent = tasks[0].r[1]; result.classList.add('show'); mark.classList.remove('logo-live');
+    return;
+  }
   for (let k = 0; ; k = (k + 1) % tasks.length) {
     const {t, r} = tasks[k];
     steps.forEach(s => s.className = ''); result.classList.remove('show');
@@ -84,7 +89,7 @@ function layoutOrbit(){
 layoutOrbit(); addEventListener('resize', layoutOrbit);
 const chips = [...document.querySelectorAll('#orbit .chip')]; let ci = 0;
 chips[0].classList.add('on');
-setInterval(() => { chips[ci].classList.remove('on'); ci = (ci + 1) % chips.length; chips[ci].classList.add('on'); }, 1800);
+if (!reduce) setInterval(() => { chips[ci].classList.remove('on'); ci = (ci + 1) % chips.length; chips[ci].classList.add('on'); }, 1800);
 
 // ladder + steps
 const ms = [...document.querySelectorAll('#msteps .mstep')]; let li = 0;
@@ -94,7 +99,7 @@ function setStep(i){
   document.querySelectorAll('#ladder [data-i]').forEach(n => n.classList.toggle('on', +n.dataset.i === i));
 }
 setStep(0);
-let auto = setInterval(() => setStep((li + 1) % 3), 2600);
+let auto = reduce ? null : setInterval(() => setStep((li + 1) % 3), 2600);
 ms.forEach((m, i) => m.addEventListener('mouseenter', () => { clearInterval(auto); setStep(i); }));
 
 // tech network lines
