@@ -807,6 +807,42 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 .cm .ec-result strong{display:inline;font-size:inherit;letter-spacing:normal;color:var(--ink);font-weight:600}
 @media(max-width:860px){.slide .euro-data{border-left:0;border-top:1px solid var(--line);padding:12px 0 0}.slide .euro-route{max-width:none;margin:7px 0;font-size:22px}}
 @media(max-width:720px){.slide .euro-data{display:block;order:4}.slide .euro-data .cap{display:block}.slide .euro-route{font-size:17px;margin:4px 0}.slide .euro-data .dcap{font-size:12px}.slide:has(.euro-data) .story p{display:block;order:3}.cm .ec-panel{padding:17px}.cm .ec-table{font-size:11px}}
+
+/* Eurocran only: reuse the Yandex/Yango case structure and dark demo components. */
+.slide.ec-case .data{align-self:start}
+.slide.ec-case .bignum.txt{margin-top:10px}
+.slide.ec-case .dstats b{font-size:var(--t-h4)}
+.cm .ec-case .cm__res strong{font-size:clamp(20px,1.8vw,26px);line-height:1.12;letter-spacing:-.035em;overflow-wrap:anywhere}
+.cm .ec-demo{max-width:600px;margin:auto;min-width:0}
+.cm .ec-demo-note{color:#a6a6a6;font-size:12px;line-height:1.45;margin:0 0 14px}
+.cm .ec-demo-panel .tg-hd{font-size:12px;line-height:1.4}
+.cm .ec-demo-panel .tg-hd i{flex:0 0 30px}
+.cm .ec-demo-body{overflow-wrap:anywhere}
+.cm .ec-demo-body h4{font-size:19px;font-weight:500;line-height:1.25;letter-spacing:-.025em;color:#fff;margin:0 0 16px}
+.cm .ec-demo-row,.cm .ec-demo-line{display:grid;grid-template-columns:minmax(90px,.6fr) minmax(0,1fr);gap:14px;padding:12px 0;border-top:1px solid #3b3b3b;font-size:var(--t-small);line-height:1.45}
+.cm .ec-demo-row>span:first-child,.cm .ec-demo-line>span{color:#b8b8b8}
+.cm .ec-demo-row b,.cm .ec-demo-line b{font-weight:500}
+.cm .ec-demo-alert{border-top:1px solid #525252;padding-top:14px;margin-top:12px;color:#e5e5e5;font-size:var(--t-small);line-height:1.5}
+.cm .ec-demo-alert b{display:block;margin-bottom:4px}
+.cm .ec-demo-mail{font-size:var(--t-small);line-height:1.6}
+.cm .ec-demo-mail p{margin:0 0 12px}
+.cm .ec-demo-mail p:last-child{margin:0}
+.cm .ec-demo-label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#a6a6a6;margin:22px 0 8px}
+.cm .ec-demo-panel .ec-demo-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;line-height:1.45;margin:8px 0 12px}
+.cm .ec-demo-panel .ec-demo-table th,.cm .ec-demo-panel .ec-demo-table td{padding:10px 6px;border-top:1px solid #3b3b3b;text-align:left;vertical-align:top;white-space:normal;overflow-wrap:anywhere}
+.cm .ec-demo-panel .ec-demo-table th{color:#b8b8b8;font-weight:400}
+.cm .ec-demo-conflict{background:#3b3b3b}
+.cm .ec-demo-foot{font-size:12px;color:#b8b8b8;margin:14px 0 0}
+@media(max-width:720px){
+ .slide.ec-case .story p{display:block;order:3}
+ .slide.ec-case .data{order:4;display:block}
+ .slide.ec-case .data .cap,.slide.ec-case .dcap{display:block}
+ .slide.ec-case .data .cap{margin-bottom:5px}
+ .slide.ec-case .bignum.txt{margin:0;max-width:none}
+ .slide.ec-case .dcap{font-size:12px;margin:5px 0 0}
+ .slide.ec-case .scheme{display:none}
+ .cm .ec-demo-row,.cm .ec-demo-line{grid-template-columns:minmax(80px,.55fr) minmax(0,1fr);gap:10px}
+}
 </style>
 </head>
 <body>
@@ -878,29 +914,35 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
   <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы,&nbsp;выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на&nbsp;линии</span></li></ol></div>
 </article>
 <div class="cgroup">Еврокран, аренда спецтехники</div>
-<article class="slide" role="tabpanel" hidden>
+<article class="slide ec-case" role="tabpanel" hidden>
   <div class="story"><h3>Собственник начинает день с&nbsp;готовой сводки</h3><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><button type="button" class="pill case-open" data-case="eurocran-owner" aria-label="Подробнее о кейсе: Утренняя сводка собственника">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data euro-data"><span class="cap">Утренняя сводка</span><p class="euro-route">Смены · заявки · оплаты <span aria-hidden="true">→</span> один обзор на&nbsp;утро</p><p class="dcap">Пропуски в&nbsp;данных отмечены отдельно.</p></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">К началу дня</div><p class="dcap">готовая картина по технике и деньгам</p><div class="dstats"><div><b>Техника</b><span>работа, простой и ремонт</span></div><div><b>Оплаты</b><span>поступления и просрочки</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Данные</b><span>смены, заявки и оплаты</span></li><li><i>02</i><b>Сверка</b><span>связи и пропуски</span></li><li><i>03</i><b>Сводка</b><span>собственнику к началу дня</span></li></ol></div>
 </article>
-<article class="slide" role="tabpanel" hidden>
+<article class="slide ec-case" role="tabpanel" hidden>
   <div class="story"><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><button type="button" class="pill case-open" data-case="eurocran-documents" aria-label="Подробнее о кейсе: Проверка счетов и актов">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data euro-data"><span class="cap">Маршрут документа</span><p class="euro-route">Почта и&nbsp;сканы <span aria-hidden="true">→</span> подготовленная запись <span aria-hidden="true">→</span> проверка бухгалтера</p></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Готовая запись</div><p class="dcap">вместо ручного переноса данных</p><div class="dstats"><div><b>Счета и акты</b><span>из почты и сканов</span></div><div><b>Бухгалтер</b><span>проверяет и подтверждает</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Документ</b><span>почта или скан</span></li><li><i>02</i><b>Запись</b><span>поля, договор и объект</span></li><li><i>03</i><b>Проверка</b><span>подтверждает бухгалтер</span></li></ol></div>
 </article>
-<article class="slide" role="tabpanel" hidden>
+<article class="slide ec-case" role="tabpanel" hidden>
   <div class="story"><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><p>Агент сверяет банковскую выписку со&nbsp;счетами, находит частичные оплаты и&nbsp;просрочки и&nbsp;сам отправляет клиентам письма-напоминания. Спорные платежи проверяет бухгалтерия.</p><button type="button" class="pill case-open" data-case="eurocran-payments" aria-label="Подробнее о кейсе: Автоматические напоминания об оплате">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data euro-data"><span class="cap">Маршрут оплаты</span><p class="euro-route">Выписка и&nbsp;счета <span aria-hidden="true">→</span> сверка <span aria-hidden="true">→</span> автоматическое письмо</p><p class="dcap">Неоднозначные поступления — в&nbsp;проверку бухгалтерии.</p></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Автоматически</div><p class="dcap">письма клиентам по просроченным счетам</p><div class="dstats"><div><b>Сверка</b><span>выписка со счетами</span></div><div><b>Исключения</b><span>проверяет бухгалтерия</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Выписка</b><span>сопоставление со счетами</span></li><li><i>02</i><b>Просрочка</b><span>полная и частичная оплата</span></li><li><i>03</i><b>Письмо</b><span>агент отправляет сам</span></li></ol></div>
 </article>
-<article class="slide" role="tabpanel" hidden>
+<article class="slide ec-case" role="tabpanel" hidden>
   <div class="story"><h3>Планирование выездов техники и&nbsp;бригад</h3><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><button type="button" class="pill case-open" data-case="eurocran-dispatch" aria-label="Подробнее о кейсе: Планирование выездов техники и бригад">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data euro-data"><span class="cap">Маршрут выезда</span><p class="euro-route">Заявки и&nbsp;занятость <span aria-hidden="true">→</span> предложенный график <span aria-hidden="true">→</span> подтверждение диспетчера</p></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">План выездов</div><p class="dcap">по заявкам, технике и бригадам</p><div class="dstats"><div><b>Пересечения</b><span>видны до подтверждения</span></div><div><b>Диспетчер</b><span>проверяет и утверждает</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Заявки</b><span>доступная техника и бригады</span></li><li><i>02</i><b>График</b><span>пересечения и изменения</span></li><li><i>03</i><b>Выезд</b><span>подтверждает диспетчер</span></li></ol></div>
 </article>
-<article class="slide" role="tabpanel" hidden>
+<article class="slide ec-case" role="tabpanel" hidden>
   <div class="story"><h3>Контроль заявок от обращения до заказа</h3><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><button type="button" class="pill case-open" data-case="eurocran-sales" aria-label="Подробнее о кейсе: Контроль заявок от обращения до заказа">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data euro-data"><span class="cap">Контроль обращений</span><p class="euro-route">Заявка → следующий шаг → напоминание</p><p class="dcap">Опробовано в Еврокране.</p></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Следующий шаг</div><p class="dcap">по обращениям, требующим внимания</p><div class="dstats"><div><b>Менеджеру</b><span>контекст и напоминание</span></div><div><b>Еврокран</b><span>сценарий опробован</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Обращение</b><span>клиент, задача и дата</span></li><li><i>02</i><b>Действие</b><span>ответственный и срок</span></li><li><i>03</i><b>Напоминание</b><span>если работа остановилась</span></li></ol></div>
 </article>
-<article class="slide" role="tabpanel" hidden>
+<article class="slide ec-case" role="tabpanel" hidden>
   <div class="story"><h3>Из звонка — в готовую заявку на технику</h3><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><button type="button" class="pill case-open" data-case="eurocran-call-intake" aria-label="Подробнее о кейсе: Из звонка — в готовую заявку на технику">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data euro-data"><span class="cap">Обработка разговора</span><p class="euro-route">Звонок → черновик заявки → уточнения</p><p class="dcap">Опробовано в Еврокране.</p></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Готовая заявка</div><p class="dcap">черновик после разговора с клиентом</p><div class="dstats"><div><b>Требования</b><span>факты и договорённости</span></div><div><b>Еврокран</b><span>сценарий опробован</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Разговор</b><span>требования клиента</span></li><li><i>02</i><b>Черновик</b><span>известные параметры</span></li><li><i>03</i><b>Уточнения</b><span>вопросы менеджеру</span></li></ol></div>
 </article></div></div>
 </div></section>
 
@@ -1125,135 +1167,135 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 </div>
 
 <div class="case-src" id="case-eurocran-owner" hidden>
-  <div class="cm__vis"><div class="cm__visin"><div class="ec-example">
-    <p class="ec-note">Демонстрационный пример. Данные условные.</p>
-    <div class="ec-panel" aria-label="Пример утренней сводки для собственника">
-      <div class="ec-panel-hd">Еврокран · 22 октября, 09:00 · утренняя сводка</div>
+  <div class="cm__vis ec-case-vis"><div class="cm__visin"><div class="ec-demo">
+    <p class="viz-note ec-demo-note">Демонстрационный пример. Данные условные.</p>
+    <div class="tg ec-demo-panel" aria-label="Пример утренней сводки для собственника">
+      <div class="tg-hd"><i aria-hidden="true"></i><div>Еврокран · 22 октября, 09:00 · утренняя сводка</div></div><div class="bub ec-demo-body">
       <h4>Техника, смены и деньги</h4>
-      <div class="ec-line"><b>6 единиц техники</b><span>4 работают · 1 свободна · 1 в ремонте</span></div>
-      <div class="ec-line"><b>К-05</b><span>свободна, заказа нет</span></div>
-      <div class="ec-line"><b>Поступило вчера</b><span>420&nbsp;000&nbsp;₽</span></div>
-      <div class="ec-line"><b>Просрочено</b><span>290&nbsp;000&nbsp;₽ · 2 счета</span></div>
-      <div class="ec-alert"><b>Проверить:</b> счёт №&nbsp;184 на 180&nbsp;000&nbsp;₽ просрочен на 4 дня. По одной вчерашней смене нет часов — она не включена в итог часов.</div>
+      <div class="ec-demo-line"><b>6 единиц техники</b><span>4 работают · 1 свободна · 1 в ремонте</span></div>
+      <div class="ec-demo-line"><b>К-05</b><span>свободна, заказа нет</span></div>
+      <div class="ec-demo-line"><b>Поступило вчера</b><span>420&nbsp;000&nbsp;₽</span></div>
+      <div class="ec-demo-line"><b>Просрочено</b><span>290&nbsp;000&nbsp;₽ · 2 счета</span></div>
+      <div class="ec-demo-alert"><b>Проверить:</b> счёт №&nbsp;184 на 180&nbsp;000&nbsp;₽ просрочен на 4 дня. По одной вчерашней смене нет часов — она не включена в итог часов.</div>
     </div>
-  </div></div></div>
-  <div class="cm__info">
+  </div></div></div></div>
+  <div class="cm__info ec-case">
     <span class="cm__kind">Еврокран · утренняя сводка</span>
     <h3 class="cm__title" id="cmTitle-case-eurocran-owner">Собственник начинает день с готовой сводки</h3>
     <div class="cm__tags"><span>Смены</span><span>Заявки</span><span>Учёт и оплаты</span></div>
     <p class="cm__lede"><b>Задача.</b> К началу дня собрать сведения о технике, простоях и поступлениях без ручной сверки нескольких источников. <b>Что сделали.</b> Агент объединяет данные по сменам, заявкам, учёту и оплатам; пропуски отмечает явно.</p>
-    <div class="cm__res ec-result"><div><span><strong>Что изменилось.</strong> Собственник видит работающую и свободную технику, простои и поступления в одной сводке, а неполные данные не маскируются под итог.</span></div></div>
+    <div class="cm__res"><div><strong>Сводка</strong><span>В одном обзоре</span><small>техника, простои и поступления</small></div><div><strong>Контекст</strong><span>По каждой смене</span><small>связь с техникой и заказом</small></div><div><strong>Пропуски</strong><span>Отмечены явно</span><small>не включаются в итог часов</small></div></div>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Сбор</b><span>Агент получает данные о вчерашних сменах, заявках, технике и оплатах.</span></li><li><i>02</i><b>Сверка</b><span>Связывает смены с техникой и заказами, отдельно показывает поступления и просроченные счета.</span></li><li><i>03</i><b>Исключения</b><span>Если часы по смене отсутствуют, помечает пропуск и не включает эту смену в итог часов.</span></li><li><i>04</i><b>Сводка</b><span>К началу дня показывает собственнику картину по технике, простоям и деньгам.</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </div>
 
 <div class="case-src" id="case-eurocran-documents" hidden>
-  <div class="cm__vis"><div class="cm__visin"><div class="ec-example">
-    <p class="ec-note">Демонстрационный пример. Данные условные.</p>
-    <div class="ec-panel" aria-label="Пример подготовленной записи по счёту">
-      <div class="ec-panel-hd">Почта и скан → подготовленная запись</div>
+  <div class="cm__vis ec-case-vis"><div class="cm__visin"><div class="ec-demo">
+    <p class="viz-note ec-demo-note">Демонстрационный пример. Данные условные.</p>
+    <div class="tg ec-demo-panel" aria-label="Пример подготовленной записи по счёту">
+      <div class="tg-hd"><i aria-hidden="true"></i><div>Почта и скан → подготовленная запись</div></div><div class="bub ec-demo-body">
       <h4>Счёт №&nbsp;184 · аренда спецтехники</h4>
-      <div class="ec-row"><span>Сумма</span><b>180&nbsp;000&nbsp;₽</b></div>
-      <div class="ec-row"><span>Объект</span><b>«Северный»</b></div>
-      <div class="ec-row"><span>Договор</span><b>связь с объектом «Северный»</b></div>
-      <div class="ec-row"><span>Согласующий</span><b>определён по документу</b></div>
-      <div class="ec-alert"><b>Нужно проверить бухгалтеру:</b> извлечённые поля и связь с договором перед подтверждением записи.</div>
+      <div class="ec-demo-row"><span>Сумма</span><b>180&nbsp;000&nbsp;₽</b></div>
+      <div class="ec-demo-row"><span>Объект</span><b>«Северный»</b></div>
+      <div class="ec-demo-row"><span>Договор</span><b>связь с объектом «Северный»</b></div>
+      <div class="ec-demo-row"><span>Согласующий</span><b>определён по документу</b></div>
+      <div class="ec-demo-alert"><b>Нужно проверить бухгалтеру:</b> извлечённые поля и связь с договором перед подтверждением записи.</div>
     </div>
-  </div></div></div>
-  <div class="cm__info">
+  </div></div></div></div>
+  <div class="cm__info ec-case">
     <span class="cm__kind">Еврокран · счета и акты</span>
     <h3 class="cm__title" id="cmTitle-case-eurocran-documents">Бухгалтер проверяет данные вместо перепечатки документов</h3>
     <div class="cm__tags"><span>Почта и сканы</span><span>Подготовленная запись</span><span>Проверка бухгалтерии</span></div>
     <p class="cm__lede"><b>Задача.</b> Убрать ручной перенос данных из счетов и актов и связать документы с договорами и объектами. <b>Что сделали.</b> Агент извлекает данные из почты и сканов, готовит запись, отмечает спорные поля и показывает согласующего.</p>
-    <div class="cm__res ec-result"><div><span><strong>Что изменилось.</strong> Бухгалтер получает подготовленные данные, проверяет их и только после этого подтверждает запись.</span></div></div>
+    <div class="cm__res"><div><strong>Поля</strong><span>Из документа</span><small>сумма, реквизиты и назначение</small></div><div><strong>Связи</strong><span>Договор и объект</span><small>контекст для проверки</small></div><div><strong>Контроль</strong><span>За бухгалтером</span><small>спорные поля отмечены</small></div></div>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Приём</b><span>Счёт или акт поступает из почты либо скана.</span></li><li><i>02</i><b>Извлечение</b><span>Агент распознаёт реквизиты документа, сумму и назначение.</span></li><li><i>03</i><b>Контекст</b><span>Подтягивает связь с договором и объектом, отмечает сомнительные места и согласующего.</span></li><li><i>04</i><b>Проверка</b><span>Бухгалтер сверяет подготовленную запись с документом и подтверждает её.</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </div>
 
 <div class="case-src" id="case-eurocran-payments" hidden>
-  <div class="cm__vis"><div class="cm__visin"><div class="ec-example">
-    <p class="ec-note">Демонстрационный пример. Данные условные.</p>
-    <div class="ec-panel" aria-label="Пример автоматически отправленного напоминания и отчёта команде">
-      <div class="ec-panel-hd">Макет отправленного напоминания · без адреса клиента</div>
-      <div class="ec-mail-body"><p><b>Тема:</b> Оплата по счёту №&nbsp;184 — Еврокран</p><p>Добрый день!</p><p>Напоминаем об оплате 180&nbsp;000&nbsp;₽ по счёту №&nbsp;184 от 15 октября. Срок оплаты — 18 октября. По состоянию на утро 22 октября поступление не найдено.</p><p>Подскажите, пожалуйста, дату платежа. Если уже оплатили, пришлите платёжное поручение.</p><p>Команда Еврокрана</p></div>
-      <p class="ec-label">Короткий отчёт команде</p>
-      <div class="ec-row"><span>09:02 · №&nbsp;184</span><b>180&nbsp;000&nbsp;₽ · 4 дня просрочки · письмо отправлено автоматически</b></div>
-      <div class="ec-row"><span>09:03 · №&nbsp;179</span><b>110&nbsp;000&nbsp;₽ · 2 дня просрочки · письмо отправлено автоматически</b></div>
-      <div class="ec-alert"><b>На проверку бухгалтерии:</b> спорный платёж 65&nbsp;000&nbsp;₽.</div>
+  <div class="cm__vis ec-case-vis"><div class="cm__visin"><div class="ec-demo">
+    <p class="viz-note ec-demo-note">Демонстрационный пример. Данные условные.</p>
+    <div class="tg ec-demo-panel" aria-label="Пример автоматически отправленного напоминания и отчёта команде">
+      <div class="tg-hd"><i aria-hidden="true"></i><div>Макет отправленного напоминания · без адреса клиента</div></div><div class="bub ec-demo-body">
+      <div class="ec-demo-mail"><p><b>Тема:</b> Оплата по счёту №&nbsp;184 — Еврокран</p><p>Добрый день!</p><p>Напоминаем об оплате 180&nbsp;000&nbsp;₽ по счёту №&nbsp;184 от 15 октября. Срок оплаты — 18 октября. По состоянию на утро 22 октября поступление не найдено.</p><p>Подскажите, пожалуйста, дату платежа. Если уже оплатили, пришлите платёжное поручение.</p><p>Команда Еврокрана</p></div>
+      <p class="ec-demo-label">Короткий отчёт команде</p>
+      <div class="ec-demo-row"><span>09:02 · №&nbsp;184</span><b>180&nbsp;000&nbsp;₽ · 4 дня просрочки · письмо отправлено автоматически</b></div>
+      <div class="ec-demo-row"><span>09:03 · №&nbsp;179</span><b>110&nbsp;000&nbsp;₽ · 2 дня просрочки · письмо отправлено автоматически</b></div>
+      <div class="ec-demo-alert"><b>На проверку бухгалтерии:</b> спорный платёж 65&nbsp;000&nbsp;₽.</div>
     </div>
-  </div></div></div>
-  <div class="cm__info">
+  </div></div></div></div>
+  <div class="cm__info ec-case">
     <span class="cm__kind">Еврокран · оплаты клиентов</span>
     <h3 class="cm__title" id="cmTitle-case-eurocran-payments">Агент сам напоминает клиентам об оплате</h3>
     <div class="cm__tags"><span>Банковская выписка</span><span>Счета</span><span>Автоматические письма</span></div>
     <p class="cm__lede"><b>Задача.</b> Находить неоплаченные и частично оплаченные счета после сверки с выпиской. <b>Что сделали.</b> Агент сопоставляет поступления со счетами и сам отправляет клиентам письма по просрочкам, без согласования каждого письма.</p>
-    <div class="cm__res ec-result"><div><span><strong>Что изменилось.</strong> Клиенты получают напоминания автоматически; спорные поступления уходят бухгалтерии на проверку.</span></div></div>
+    <div class="cm__res"><div><strong>Сверка</strong><span>Оплаты и счета</span><small>включая частичные поступления</small></div><div><strong>Письма</strong><span>Без согласования</span><small>каждого напоминания</small></div><div><strong>Спорное</strong><span>Бухгалтерии</span><small>неоднозначные платежи</small></div></div>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Сверка</b><span>Агент сопоставляет банковскую выписку с выставленными счетами.</span></li><li><i>02</i><b>Статус</b><span>Отличает полную, частичную и отсутствующую оплату; выделяет просрочку.</span></li><li><i>03</i><b>Напоминание</b><span>Сам отправляет письмо клиенту по просроченному счёту и фиксирует отправку в отчёте команде.</span></li><li><i>04</i><b>Исключение</b><span>Неоднозначные платежи передаёт на проверку бухгалтерии.</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </div>
 
 <div class="case-src" id="case-eurocran-dispatch" hidden>
-  <div class="cm__vis"><div class="cm__visin"><div class="ec-example">
-    <p class="ec-note">Демонстрационный пример. Данные условные.</p>
-    <div class="ec-panel" aria-label="Пример предложенного графика выездов с пересечением">
-      <div class="ec-panel-hd">Предложенный график выездов · на проверку диспетчеру</div>
+  <div class="cm__vis ec-case-vis"><div class="cm__visin"><div class="ec-demo">
+    <p class="viz-note ec-demo-note">Демонстрационный пример. Данные условные.</p>
+    <div class="tg ec-demo-panel" aria-label="Пример предложенного графика выездов с пересечением">
+      <div class="tg-hd"><i aria-hidden="true"></i><div>Предложенный график выездов · на проверку диспетчеру</div></div><div class="bub ec-demo-body">
       <h4>Техника и бригады на день</h4>
-      <table class="ec-table"><thead><tr><th>Заявка</th><th>Время</th><th>Ресурсы</th></tr></thead><tbody><tr><td>№&nbsp;201</td><td>09:00–12:00</td><td>К-03 · бригада А</td></tr><tr class="ec-conflict"><td>№&nbsp;202</td><td>11:00–14:00</td><td>К-03 · бригада Б</td></tr><tr><td>№&nbsp;203</td><td>13:00–15:00</td><td>К-06 · бригада В</td></tr></tbody></table>
-      <div class="ec-alert"><b>Пересечение:</b> К-03 одновременно в заявках №&nbsp;201 и №&nbsp;202 с 11:00 до 12:00. При изменении времени видны затронутые заявки.</div>
-      <p class="ec-foot">Диспетчер проверяет пересечение и подтверждает выезды.</p>
+      <table class="ec-demo-table"><thead><tr><th>Заявка</th><th>Время</th><th>Ресурсы</th></tr></thead><tbody><tr><td>№&nbsp;201</td><td>09:00–12:00</td><td>К-03 · бригада А</td></tr><tr class="ec-demo-conflict"><td>№&nbsp;202</td><td>11:00–14:00</td><td>К-03 · бригада Б</td></tr><tr><td>№&nbsp;203</td><td>13:00–15:00</td><td>К-06 · бригада В</td></tr></tbody></table>
+      <div class="ec-demo-alert"><b>Пересечение:</b> К-03 одновременно в заявках №&nbsp;201 и №&nbsp;202 с 11:00 до 12:00. При изменении времени видны затронутые заявки.</div>
+      <p class="ec-demo-foot">Диспетчер проверяет пересечение и подтверждает выезды.</p>
     </div>
-  </div></div></div>
-  <div class="cm__info">
+  </div></div></div></div>
+  <div class="cm__info ec-case">
     <span class="cm__kind">Еврокран · выезды техники и бригад</span>
     <h3 class="cm__title" id="cmTitle-case-eurocran-dispatch">Планирование выездов техники и бригад</h3>
     <div class="cm__tags"><span>Заявки</span><span>Занятость</span><span>Подтверждение диспетчера</span></div>
     <p class="cm__lede"><b>Задача.</b> Совместить заявки со свободной техникой и бригадами без накладок в графике. <b>Что сделали.</b> Агент предлагает план выездов, показывает пересечения и последствия изменений до подтверждения.</p>
-    <div class="cm__res ec-result"><div><span><strong>Что изменилось.</strong> Диспетчер видит предложенный график и затронутые заявки, проверяет его и подтверждает выезды.</span></div></div>
+    <div class="cm__res"><div><strong>График</strong><span>Предлагает агент</span><small>по доступным ресурсам</small></div><div><strong>Накладки</strong><span>Видны заранее</span><small>вместе с затронутыми заявками</small></div><div><strong>Выезды</strong><span>За диспетчером</span><small>проверка и подтверждение</small></div></div>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Вход</b><span>Агент получает заявки и данные о занятости техники и бригад.</span></li><li><i>02</i><b>Предложение</b><span>Составляет график по доступности техники и бригад.</span></li><li><i>03</i><b>Проверка</b><span>Показывает пересечения и какие заявки затронет изменение графика.</span></li><li><i>04</i><b>Подтверждение</b><span>Диспетчер проверяет план и подтверждает выезды.</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </div>
 
 <div class="case-src" id="case-eurocran-sales" hidden>
-  <div class="cm__vis"><div class="cm__visin"><div class="ec-example">
-    <p class="ec-note">Демонстрационный пример. Данные условные.</p>
-    <div class="ec-panel" aria-label="Пример результата: Контроль заявок от обращения до заказа">
-      <div class="ec-panel-hd">Еврокран · пример работы агента</div>
+  <div class="cm__vis ec-case-vis"><div class="cm__visin"><div class="ec-demo">
+    <p class="viz-note ec-demo-note">Демонстрационный пример. Данные условные.</p>
+    <div class="tg ec-demo-panel" aria-label="Пример результата: Контроль заявок от обращения до заказа">
+      <div class="tg-hd"><i aria-hidden="true"></i><div>Еврокран · пример работы агента</div></div><div class="bub ec-demo-body">
       <h4>Нужно вернуться к клиенту</h4>
-      <div class="ec-row"><span>Запрос</span><b>Кран на объект «Северный», работы в четверг</b></div><div class="ec-row"><span>Статус</span><b>Предложение отправлено, ответа нет</b></div><div class="ec-row"><span>Договорённость</span><b>Клиент уточняет дату у прораба</b></div>
-      <div class="ec-alert"><b>Следующий шаг:</b> Уточнить согласование и актуальную дату выезда.</div>
+      <div class="ec-demo-row"><span>Запрос</span><b>Кран на объект «Северный», работы в четверг</b></div><div class="ec-demo-row"><span>Статус</span><b>Предложение отправлено, ответа нет</b></div><div class="ec-demo-row"><span>Договорённость</span><b>Клиент уточняет дату у прораба</b></div>
+      <div class="ec-demo-alert"><b>Следующий шаг:</b> Уточнить согласование и актуальную дату выезда.</div>
     </div>
-  </div></div></div>
-  <div class="cm__info">
+  </div></div></div></div>
+  <div class="cm__info ec-case">
     <span class="cm__kind">Еврокран · продажи · опробовано</span>
     <h3 class="cm__title" id="cmTitle-case-eurocran-sales">Контроль заявок от обращения до заказа</h3>
     <div class="cm__tags"><span>Заявки</span><span>Следующий шаг</span><span>Напоминания</span></div>
     <p class="cm__lede"><b>Задача.</b> Следить за обращениями, по которым остановилась работа. <b>Что сделали.</b> Агент фиксирует договорённости и следующий шаг, напоминает менеджеру о зависших заявках.</p>
-    <div class="cm__res ec-result"><div><span><strong>Что изменилось.</strong> Менеджер видит, кому нужно вернуться, с каким вопросом и в какой срок.</span></div></div>
+    <div class="cm__res"><div><strong>Контекст</strong><span>В одной заявке</span><small>клиент, задача и дата работ</small></div><div><strong>Действие</strong><span>Со сроком</span><small>и ответственным менеджером</small></div><div><strong>Сигнал</strong><span>Менеджеру</span><small>по зависшим обращениям</small></div></div>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Заявка</b><span>Собирает сведения о клиенте, задаче и предполагаемой дате работ.</span></li><li><i>02</i><b>Следующий шаг</b><span>Фиксирует действие, ответственного и срок.</span></li><li><i>03</i><b>Напоминание</b><span>Показывает менеджеру обращения, требующие внимания, вместе с контекстом.</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
 </div>
 
 <div class="case-src" id="case-eurocran-call-intake" hidden>
-  <div class="cm__vis"><div class="cm__visin"><div class="ec-example">
-    <p class="ec-note">Демонстрационный пример. Данные условные.</p>
-    <div class="ec-panel" aria-label="Пример результата: Из звонка — в готовую заявку на технику">
-      <div class="ec-panel-hd">Еврокран · пример работы агента</div>
+  <div class="cm__vis ec-case-vis"><div class="cm__visin"><div class="ec-demo">
+    <p class="viz-note ec-demo-note">Демонстрационный пример. Данные условные.</p>
+    <div class="tg ec-demo-panel" aria-label="Пример результата: Из звонка — в готовую заявку на технику">
+      <div class="tg-hd"><i aria-hidden="true"></i><div>Еврокран · пример работы агента</div></div><div class="bub ec-demo-body">
       <h4>Черновик заявки после звонка</h4>
-      <div class="ec-row"><span>Задача</span><b>Разгрузить оборудование в четверг</b></div><div class="ec-row"><span>Известно</span><b>Груз около 8 тонн, ориентировочно одна смена</b></div><div class="ec-row"><span>Договорённость</span><b>Клиент пришлёт фотографии площадки</b></div>
-      <div class="ec-alert"><b>Следующий шаг:</b> Уточнить адрес, расстояние подачи груза, условия подъезда и время начала.</div>
+      <div class="ec-demo-row"><span>Задача</span><b>Разгрузить оборудование в четверг</b></div><div class="ec-demo-row"><span>Известно</span><b>Груз около 8 тонн, ориентировочно одна смена</b></div><div class="ec-demo-row"><span>Договорённость</span><b>Клиент пришлёт фотографии площадки</b></div>
+      <div class="ec-demo-alert"><b>Следующий шаг:</b> Уточнить адрес, расстояние подачи груза, условия подъезда и время начала.</div>
     </div>
-  </div></div></div>
-  <div class="cm__info">
+  </div></div></div></div>
+  <div class="cm__info ec-case">
     <span class="cm__kind">Еврокран · обработка звонков · опробовано</span>
     <h3 class="cm__title" id="cmTitle-case-eurocran-call-intake">Из звонка — в готовую заявку на технику</h3>
     <div class="cm__tags"><span>Разговор с клиентом</span><span>Черновик заявки</span><span>Уточнения</span></div>
     <p class="cm__lede"><b>Задача.</b> Переносить требования клиента из разговора в заявку без повторного прослушивания. <b>Что сделали.</b> Агент собирает факты и договорённости, отмечает, что нужно уточнить.</p>
-    <div class="cm__res ec-result"><div><span><strong>Что изменилось.</strong> Менеджер проверяет черновик и дополняет недостающие сведения. Подбор техники подтверждает специалист.</span></div></div>
+    <div class="cm__res"><div><strong>Факты</strong><span>Из разговора</span><small>требования и договорённости</small></div><div><strong>Пробелы</strong><span>На уточнение</span><small>вопросы для менеджера</small></div><div><strong>Подбор</strong><span>За специалистом</span><small>после проверки заявки</small></div></div>
     <h4>Как это работает</h4><ol class="cm__steps"><li><i>01</i><b>Разговор</b><span>Разбирает запись звонка и выделяет требования клиента.</span></li><li><i>02</i><b>Черновик</b><span>Собирает известные параметры работ и договорённости.</span></li><li><i>03</i><b>Уточнения</b><span>Отмечает пробелы и готовит вопросы для менеджера.</span></li></ol>
     <div class="cm__act"><a class="button" href="#contact" data-contact>Обсудить похожую задачу <span class="arrow">↗</span></a></div>
   </div>
@@ -1265,4 +1307,5 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <script src="assets/app.js" defer></script>
 </body>
 </html>
+
 
