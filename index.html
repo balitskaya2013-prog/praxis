@@ -106,7 +106,7 @@ header.open .burger i::after{transform:translateY(-5px) rotate(-45deg)}
 .stage-note{margin-top:18px;font-size:14px;color:#6b5a50;max-width:420px}
 .agent{background:#fff;border-radius:20px;padding:22px;box-shadow:0 30px 60px -30px rgba(60,20,5,.45);max-width:440px;justify-self:end;width:100%}
 .agent-head{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-bottom:14px}
-.agent-head b{font-weight:500;color:var(--ink);font-size:15px}
+.agent-head>b{font-weight:500;color:var(--ink);font-size:15px}
 .live{display:inline-flex;align-items:center;gap:6px}
 .live i{width:7px;height:7px;border-radius:50%;background:#2fa36b;animation:pulse 1.6s infinite}
 @keyframes pulse{50%{opacity:.35}}
@@ -265,6 +265,21 @@ footer{padding:64px 0 40px}
 .foot .logo{color:var(--ink);display:flex}
 .copy{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:48px}
 
+
+/* animated logo */
+.logo i b{transform-origin:50% 100%;animation:lg-in .7s cubic-bezier(.2,.9,.25,1.25) both}
+.logo i b:nth-child(2){animation-delay:.12s}.logo i b:nth-child(3){animation-delay:.24s}
+@keyframes lg-in{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+a.logo:hover i b{animation:lg-hop .7s ease-in-out}
+a.logo:hover i b:nth-child(2){animation-delay:.08s}a.logo:hover i b:nth-child(3){animation-delay:.16s}
+@keyframes lg-hop{0%,100%{transform:scaleY(1)}40%{transform:scaleY(.45)}70%{transform:scaleY(1.12)}}
+.logo-live i b{animation:lg-eq 1.1s ease-in-out infinite}
+.logo-live i b:nth-child(1){animation-delay:-.2s}.logo-live i b:nth-child(2){animation-delay:-.65s}.logo-live i b:nth-child(3){animation-delay:-.4s}
+@keyframes lg-eq{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.35)}}
+.agent-mark{display:inline-flex;margin-right:8px;color:var(--accent);vertical-align:-2px}
+.agent-mark i{transform-origin:left bottom}
+.agent-head>b{display:inline-flex;align-items:center}
+
 /* ===== ported cases block (from praxisai.ru) ===== */
 #cases,#caseModal{--bg:#fafafa;--white:#fff;--ink:#111;--muted:#666;--soft:#555;--line:#e6e6e6;--pad:clamp(20px,3vw,44px);--f:'Onest',system-ui,sans-serif;--orange:#111;--paper:#f4f4f2;--dark:#111;--accent:#b94629;--paperw:#f5f4ef;--sand:#ebe9e1;--inkbg:#141716;--t-h1:clamp(44px,7vw,96px);
  --t-h2:clamp(30px,3.6vw,48px);
@@ -393,7 +408,7 @@ body.menu-lock{overflow:hidden}
       <p class="stage-note">ИИ-агент — программа, которая сама делает рутинную работу в&nbsp;ваших системах и&nbsp;по&nbsp;вашим правилам. Спорные случаи она передаёт человеку</p>
     </div>
     <div class="agent">
-      <div class="agent-head"><b>Агент за работой</b><span class="live"><i></i>в работе</span></div>
+      <div class="agent-head"><b><span class="logo agent-mark" id="agentMark" aria-hidden="true"><i><b></b><b></b><b></b></i></span>Агент за работой</b><span class="live"><i></i>в работе</span></div>
       <ul class="steps" id="steps">
         <li><span class="dot"></span>Разбирает задачу</li>
         <li><span class="dot"></span>Выполняет в ваших системах</li>
@@ -706,7 +721,7 @@ body.menu-lock{overflow:hidden}
       </div>
       <div class="net" id="net">
         <svg id="netsvg"></svg>
-        <div class="core"><span class="logo"><i><b></b><b></b><b></b></i></span></div>
+        <div class="core" aria-hidden="true"><span class="logo logo-live"><i><b></b><b></b><b></b></i></span></div>
         <div class="node" style="left:22%;top:18%"><i></i>Яндекс Трекер</div>
         <div class="node" style="left:70%;top:14%"><i></i>Jira</div>
         <div class="node" style="left:86%;top:38%"><i></i>Telegram</div>
@@ -1077,6 +1092,6 @@ body.menu-lock{overflow:hidden}
   </div>
 </footer>
 
-<script src="assets/site.js?v=4" defer></script>
+<script src="assets/site.js?v=5" defer></script>
 </body>
 </html>

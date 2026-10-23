@@ -50,6 +50,7 @@ const tasks = [
   {t:'Проверь документы поставщиков', r:['Документы проверены','Один вопрос бухгалтеру']},
 ];
 const typed = document.getElementById('typed'), steps = [...document.querySelectorAll('#steps li')];
+const mark = document.getElementById('agentMark');
 const result = document.getElementById('result'), rT = document.getElementById('resTitle'), rS = document.getElementById('resSub');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function heroLoop(){
@@ -60,7 +61,9 @@ async function heroLoop(){
     typed.textContent = '';
     for (const ch of t) { typed.textContent += ch; await sleep(reduce ? 0 : 38); }
     await sleep(500);
+    mark.classList.add('logo-live');
     for (const s of steps) { s.className = 'on'; await sleep(1100); s.className = 'done'; }
+    mark.classList.remove('logo-live');
     rT.textContent = r[0]; rS.textContent = r[1]; result.classList.add('show');
     await sleep(3200);
   }
