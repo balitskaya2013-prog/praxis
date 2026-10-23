@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-YQj3VhlzFubhUZMT5IENNqQxdoagWy7Yz9p2zDCXQMY='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>praxis — ИИ-агенты и автоматизация процессов для бизнеса</title>
@@ -843,6 +843,89 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
  .slide.ec-case .scheme{display:none}
  .cm .ec-demo-row,.cm .ec-demo-line{grid-template-columns:minmax(80px,.55fr) minmax(0,1fr);gap:10px}
 }
+.mobile-cases,.mobile-how{display:none}
+@media(max-width:720px){
+ html{scroll-padding-top:82px!important}
+ body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+ .snav{display:none!important}
+ .hd{height:64px;border-bottom:1px solid var(--line)!important}
+ .hd>.wrap{min-height:64px}
+ .hd .logo{font-size:24px}
+ .hd .burger{width:44px;height:44px}
+ main.sheet{display:flex;flex-direction:column}
+ main.sheet>.hero{order:0}
+ main.sheet>#cases{order:1}
+ main.sheet>#services{order:2}
+ main.sheet>#problems{order:3}
+ main.sheet>#method{order:4}
+ main.sheet>#formats{order:5}
+ main.sheet>#tech{order:6}
+ .band.hero{padding-top:36px!important;padding-bottom:28px!important}
+ .hero-grid.dia{gap:0}
+ .hero-grid.dia h1{font-size:clamp(40px,11.5vw,70px);letter-spacing:-.055em;line-height:1.02;margin:0}
+ .hero-grid.dia .cap{font-size:10px;letter-spacing:.1em;margin-bottom:20px}
+ .hero-grid.dia .hero-side{margin-top:22px}
+ .hero-grid.dia .hero-side p{font-size:16px;line-height:1.55;margin-bottom:22px;max-width:35ch}
+ .hero-grid.dia .hero-acts{display:block}
+ .hero-acts .btn{display:flex;justify-content:center;width:100%;min-height:52px;font-size:12px}
+ .hero-acts .lnk{display:none}
+ .hero-grid>.dia-mini{display:none!important}
+ .mobile-how{display:block;margin-top:18px;border-top:1px solid var(--line)}
+ .mobile-how summary{min-height:48px;display:flex;justify-content:space-between;align-items:center;list-style:none;font-size:13px;cursor:pointer}
+ .mobile-how summary::-webkit-details-marker{display:none}
+ .mobile-how summary::after{content:'+';font-size:22px;font-weight:400}
+ .mobile-how[open] summary::after{content:'−'}
+ .mobile-how .dia-mini{display:grid!important;margin:0 0 12px}
+ #cases .board{display:none!important}
+ #cases{background:#f9f9f6}
+ #cases .sec-head{margin-bottom:24px!important}
+ #cases .sec-head h2{font-size:32px;line-height:1.08}
+ .mobile-cases{display:block}
+ .mobile-case{display:block;width:100%;border:1px solid #d9ddd5;border-radius:16px;text-align:left;padding:20px;background:#fff;color:var(--ink);font:inherit;cursor:pointer;margin:0 0 12px}
+ .mobile-case:focus-visible,.mobile-all:focus-visible{outline:3px solid #759169;outline-offset:3px}
+ .mobile-case-brand{display:flex;justify-content:space-between;gap:10px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#747c73;margin-bottom:12px}
+ .mobile-case-brand i{font-size:20px;font-style:normal;color:#232a23;line-height:1}
+ .mobile-case h3{font-size:22px;line-height:1.15;font-weight:500;letter-spacing:-.035em;text-wrap:pretty;margin:0 0 12px}
+ .mobile-case p{font-size:14px;line-height:1.5;color:#657062;margin:0}
+ .mobile-case-result{display:flex;align-items:center;gap:14px;border-top:1px solid #e6e9e2;margin-top:18px;padding-top:14px}
+ .mobile-case-result strong{font-size:27px;font-weight:500;letter-spacing:-.04em;line-height:1.08;flex:none;max-width:55%}
+ .mobile-case-result strong span{font-size:inherit}
+ .mobile-case-result small{font-size:12px;line-height:1.35;color:#657062}
+ .mobile-case--text .mobile-case-result strong{font-size:18px;max-width:60%}
+ .mobile-all{min-height:52px;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 20px;border:1px solid #c5cbbf;border-radius:12px;background:transparent;font:inherit;font-size:14px;color:var(--ink);cursor:pointer;margin-top:18px}
+ .mobile-all span:last-child{font-size:12px;color:#6b7668}
+ .mobile-more{margin-top:20px}
+ .mobile-more[hidden]{display:none}
+ .svcs{gap:0!important}
+ .svc{padding:22px 0!important;min-height:0!important;border-bottom:1px solid var(--line);border-right:0!important}
+ .svc h3{font-size:24px;margin:10px 0}
+ .svc p{line-height:1.5;font-size:14px}
+ .svc .fact{margin-top:18px}
+ .svc .fact b{font-size:28px}
+ .cm .cm__win{width:100%;height:100dvh;max-height:100dvh;top:0;border-radius:0}
+ .cm .cm__info{padding:20px 20px 40px;gap:16px}
+ .cm .cm__kind{font-size:10px;line-height:1.5}
+ .cm .cm__title{font-size:28px;line-height:1.1;letter-spacing:-.04em;max-width:none;width:100%;text-wrap:pretty;padding-right:0}
+ .cm .cm__tags{display:flex;flex-wrap:wrap;gap:6px}
+ .cm .cm__tags span{font-size:11px;padding:5px 8px}
+ .cm .cm__res{grid-template-columns:1fr;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+ .cm .cm__res>div{display:grid;grid-template-columns:minmax(80px,.7fr) minmax(0,1.3fr);column-gap:14px;border:0;border-radius:0;border-bottom:1px solid var(--line);padding:12px;background:transparent}
+ .cm .cm__res>div:last-child{border-bottom:0}
+ .cm .cm__res strong,.cm .ec-case .cm__res strong{font-size:23px;grid-row:1 / span 2;align-self:center;overflow-wrap:anywhere}
+ .cm .cm__res span{font-size:12px;margin:0}
+ .cm .cm__res small{font-size:11px;margin-top:3px}
+ .cm .cm__info>.cm__vis{margin:0 -20px}
+ .cm .cm__info>.cm__vis .cm__visin{padding:22px 20px}
+ .cm .cm__lede{font-size:15px;line-height:1.6}
+ .cm .cm__steps{gap:16px}
+ .cm .cm__bar{min-height:56px;padding:8px 16px;border-bottom:1px solid var(--line);background:#fff}
+ .cm .cm__bar button{min-width:44px;min-height:40px}
+ .mcta{left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom));height:48px;border-radius:12px;box-shadow:0 6px 24px #0002}
+ body:has(.cpop:not([hidden])) .mcta{display:none}
+ .contact{padding-bottom:36px}
+}
+@media(prefers-reduced-motion:reduce){.mobile-case,.mobile-all{transition:none}}
+
 </style>
 </head>
 <body>
@@ -856,7 +939,7 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <main class="sheet" id="top">
 
 <section class="hero band b-paper"><div class="wrap">
-  <div class="hero-grid dia"><div class="hero-main"><div class="cap">Агентство внедрения ИИ в&nbsp;бизнес</div><h1><span>ИИ-агенты</span><span>для&nbsp;вашего</span><span><em>бизнеса</em></span></h1><div class="hero-side"><p>Находим работу, которую команда каждый день делает руками, и&nbsp;передаём её&nbsp;агентам: отчёты, заявки, расчёты. Всё работает в&nbsp;ваших системах</p><div class="hero-acts"><a class="btn" href="#contact" data-contact>Обсудить задачу →</a><a class="lnk" href="#services">Смотреть услуги</a></div></div></div>
+  <div class="hero-grid dia"><div class="hero-main"><div class="cap">Агентство внедрения ИИ в&nbsp;бизнес</div><h1><span>ИИ-агенты</span><span>для&nbsp;вашего</span><span><em>бизнеса</em></span></h1><div class="hero-side"><p>Находим работу, которую команда каждый день делает руками, и&nbsp;передаём её&nbsp;агентам: отчёты, заявки, расчёты. Всё работает в&nbsp;ваших системах</p><div class="hero-acts"><a class="btn" href="#contact" data-contact>Обсудить задачу →</a><a class="lnk" href="#services">Смотреть услуги</a></div><details class="mobile-how"><summary>Как работает агент</summary><div class="dia-mini" role="img" aria-label="Схема: данные и задачи попадают к агенту, он выдаёт результат или передаёт вопрос человеку"><div class="r"><b>Ваши данные, задачи&nbsp;и&nbsp;знания</b></div><div class="ar">↓</div><div class="r ag"><b>Агент за&nbsp;работой</b>разбирает, выполняет, проверяет</div><div class="ar">↓</div><div class="two"><div class="r"><b>Готовый результат</b>в&nbsp;пределах правил</div><div class="r hu"><b>Вопрос человеку</b>исключения</div></div></div></details></div></div>
   <div class="hero-diagram" role="img" aria-label="Схема: агент берёт данные, задачи и знания из ваших систем, разбирает задачу, выполняет и проверяет. Типовое завершает сам, исключения передаёт человеку.">
 <div class="diagram-caption"><span>ИИ внутри вашего&nbsp;процесса</span><span>Схема подхода</span></div>
 <div class="sources">
@@ -883,7 +966,7 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 </div></section>
 
 <section class="sec band b-white" id="cases"><div class="wrap">
-  <div class="sec-head"><div><div class="cap">Кейсы</div><h2>Что уже работает</h2></div></div>
+  <div class="sec-head"><div><div class="cap">Кейсы</div><h2>Что уже работает</h2></div></div><div class="mobile-cases"><button class="mobile-case case-open" type="button" data-case="reporting"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">↗</i></span><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><span class="mobile-case-result"><strong><span class="before">5 ч</span><span class="ar">→</span>0</strong><small>в неделю на&nbsp;сбор отчётности</small></span></button><button class="mobile-case case-open" type="button" data-case="marketplace-manager"><span class="mobile-case-brand"><span>Yango Delivery</span><i aria-hidden="true">↗</i></span><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><span class="mobile-case-result"><strong>−60%</strong><small>команды при&nbsp;той же&nbsp;эффективности бизнеса</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-payments"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">↗</i></span><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><p>Агент сверяет банковскую выписку со&nbsp;счетами, находит частичные оплаты и&nbsp;просрочки и&nbsp;сам отправляет клиентам письма-напоминания. Спорные платежи проверяет бухгалтерия.</p><span class="mobile-case-result"><strong>Автоматически</strong><small>письма клиентам по просроченным счетам</small></span></button><div class="mobile-more" id="mobile-more" hidden><button class="mobile-case case-open" type="button" data-case="ai-adoption"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">↗</i></span><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><span class="mobile-case-result"><strong>×5</strong><small>за&nbsp;полгода</small></span></button><button class="mobile-case case-open" type="button" data-case="b2b-compensations"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">↗</i></span><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><span class="mobile-case-result"><strong><span class="before">26</span><span class="ar">→</span>2</strong><small>сотрудника вместо 26</small></span></button><button class="mobile-case case-open" type="button" data-case="reactivation-bot"><span class="mobile-case-brand"><span>Yango Delivery</span><i aria-hidden="true">↗</i></span><h3>Возвращение исполнителей к&nbsp;работе</h3><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><span class="mobile-case-result"><strong>+14%</strong><small>по&nbsp;сравнению с&nbsp;контрольной группой</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-owner"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">↗</i></span><h3>Собственник начинает день с&nbsp;готовой сводки</h3><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><span class="mobile-case-result"><strong>К началу дня</strong><small>готовая картина по технике и деньгам</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-documents"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">↗</i></span><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><span class="mobile-case-result"><strong>Готовая запись</strong><small>вместо ручного переноса данных</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-dispatch"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">↗</i></span><h3>Планирование выездов техники и&nbsp;бригад</h3><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><span class="mobile-case-result"><strong>План выездов</strong><small>по заявкам, технике и бригадам</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-sales"><span class="mobile-case-brand"><span>Еврокран · опробовано</span><i aria-hidden="true">↗</i></span><h3>Контроль заявок от обращения до заказа</h3><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><span class="mobile-case-result"><strong>Следующий шаг</strong><small>по обращениям, требующим внимания</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-call-intake"><span class="mobile-case-brand"><span>Еврокран · опробовано</span><i aria-hidden="true">↗</i></span><h3>Из звонка — в готовую заявку на технику</h3><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><span class="mobile-case-result"><strong>Готовая заявка</strong><small>черновик после разговора с клиентом</small></span></button></div><button type="button" class="mobile-all" aria-expanded="false" aria-controls="mobile-more"><span>Все кейсы</span><span>11 кейсов ↗</span></button></div>
   <div class="board"><div class="side"><div class="tabs" role="tablist" id="tabs"><div class="tgroup">Яндекс Доставка</div><button type="button" class="tab on" role="tab" aria-selected="true"><span>01 Отчёты</span>Сводка и&nbsp;презентация</button><button type="button" class="tab" role="tab" aria-selected="false"><span>02 Команды</span>ИИ в&nbsp;работе команды</button><button type="button" class="tab" role="tab" aria-selected="false"><span>03 Претензии</span>Компенсации клиентам</button><div class="tgroup">Yango Delivery</div><button type="button" class="tab" role="tab" aria-selected="false"><span>04 Операции</span>Управление в&nbsp;25 странах</button><button type="button" class="tab" role="tab" aria-selected="false"><span>05 Курьеры</span>Возврат ушедших</button><div class="tgroup">Еврокран</div><button type="button" class="tab" role="tab" aria-selected="false"><span>06 Собственник</span>Утренняя сводка</button><button type="button" class="tab" role="tab" aria-selected="false"><span>07 Бухгалтерия</span>Проверка документов</button><button type="button" class="tab" role="tab" aria-selected="false"><span>08 Финансы</span>Напоминания об&nbsp;оплате</button><button type="button" class="tab" role="tab" aria-selected="false"><span>09 Выезды</span>Техника и&nbsp;бригады</button><button type="button" class="tab" role="tab" aria-selected="false"><span>10 Продажи</span>Контроль заявок</button><button type="button" class="tab" role="tab" aria-selected="false"><span>11 Звонки</span>Из звонка в заявку</button></div>
   <div class="cnav"><span class="pos"><b id="pos">01</b> / 11</span><div class="arrows"><button type="button" data-d="-1" aria-label="Предыдущий кейс">←</button><button type="button" data-d="1" aria-label="Следующий кейс">→</button></div></div></div>
   <div class="main" id="slides"><div class="cgroup">Яндекс Доставка</div>
@@ -1304,9 +1387,63 @@ p,li,summary,.dcap,.dstats span,.step .d,.scheme li span,.cm__res span,.cm__res 
 <a class="mcta" href="#contact" data-contact>Связаться →</a>
 <div class="cpop" id="cpop" hidden><div class="cpop__bg" data-cclose></div><div class="cpop__box" role="dialog" aria-modal="true" aria-label="Связаться"><div class="cpop__hd"><b>Как удобнее связаться?</b><button type="button" class="cpop__x" data-cclose aria-label="Закрыть">×</button></div><a class="ci" href="https://t.me/praxisai_team" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.4 4.3 2.9 11.4c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.8zM8.9 14l9.3-5.9c.4-.3.8-.1.5.2l-7.8 7-.3 3.3L8.9 14z"/></svg><span><b>Telegram</b><small>@praxisai_team</small></span></a><a class="ci" href="mailto:info@praxisai.ru"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M3.5 6.5h17v11h-17zM4 7l8 6 8-6"/></svg><span><b>Почта</b><small>info@praxisai.ru</small></span></a></div></div>
 
-<script src="assets/app.js" defer></script>
+<script>
+const setLocalHash=hash=>{try{history.replaceState(null,'',hash)}catch{location.hash=hash}};
+(()=>{const y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();const hd=document.getElementById('hd');const s=()=>hd.classList.toggle('scrolled',scrollY>10);addEventListener('scroll',s,{passive:true});s();
+
+
+const tabs=[...document.querySelectorAll('.tab')],slides=[...document.querySelectorAll('.slide')],pos=document.getElementById('pos'),tl=document.getElementById('tabs');let cur=0;
+const narrow=()=>matchMedia('(max-width:860px)').matches;
+const sel=(i,scroll)=>{cur=(i+tabs.length)%tabs.length;tabs.forEach((t,k)=>{t.classList.toggle('on',k===cur);t.setAttribute('aria-selected',String(k===cur))});slides.forEach((x,k)=>x.hidden=k!==cur);pos.textContent=String(cur+1).padStart(2,'0');
+ if(narrow()){tl.scrollLeft=tabs[cur].offsetLeft-tl.offsetLeft-20;if(scroll){const r=slides[cur].getBoundingClientRect();if(r.top<70||r.top>innerHeight*.6)window.scrollTo({top:scrollY+r.top-140,behavior:'smooth'})}}};
+tabs.forEach((t,k)=>t.addEventListener('click',()=>sel(k,true)));document.querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>sel(cur+Number(b.dataset.d),false)));
+let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});sl.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>60)sel(cur+(dx<0?1:-1),false);x0=null},{passive:true});})();
+(()=>{
+ const m=document.getElementById('caseModal'),body=m.querySelector('.cm__body'),win=m.querySelector('.cm__win');
+ const ids=[...new Set([...document.querySelectorAll('#slides .case-open')].map(b=>b.dataset.case))];let cur=null,last=null;
+ let io=null;const play=()=>{if(io)io.disconnect();const vs=[...m.querySelectorAll('video')];vs.forEach(v=>{v.muted=true;v.pause();if(v.closest('.phone'))v.closest('.phone').classList.add('paused')});if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;io=new IntersectionObserver(es=>es.forEach(x=>{const v=x.target,ph=v.closest('.phone');if(x.isIntersecting){v.play().then(()=>ph&&ph.classList.remove('paused')).catch(()=>{})}else{v.pause();ph&&ph.classList.add('paused')}}),{root:null,threshold:.5});vs.forEach(v=>io.observe(v))};
+ const bindPhones=()=>m.querySelectorAll('.phone').forEach(p=>{const tog=()=>{const v=p.querySelector('video');if(v.paused){v.play().catch(()=>{});p.classList.remove('paused')}else{v.pause();p.classList.add('paused')}};p.addEventListener('click',tog);p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}})});
+ const render=id=>{const t=document.getElementById('case-'+id);if(!t)return;body.innerHTML='';[...t.children].forEach(n=>body.appendChild(n.cloneNode(true)));win.setAttribute('aria-labelledby','cmTitle-case-'+id);body.querySelectorAll('video').forEach(v=>v.preload='metadata');cur=id;bindPhones();if(matchMedia('(max-width:900px)').matches){const v=body.querySelector('.cm__vis'),r=body.querySelector('.cm__res');if(v&&r)r.after(v);if(matchMedia('(max-width:720px)').matches){const title=body.querySelector('.cm__title');if(title&&r)title.after(r);if(r&&v)r.after(v)}}play();const i=m.querySelector('.cm__info');if(i)i.scrollTop=0;win.scrollTop=0;setLocalHash('#case-'+id)};
+ let closeT=null;const open=id=>{clearTimeout(closeT);last=document.activeElement;render(id);m.hidden=false;m.setAttribute('aria-hidden','false');document.body.classList.add('cm-lock');void m.offsetWidth;m.classList.add('is-open');const closeButton=m.querySelector('.cm__x');if(matchMedia('(max-width:720px)').matches){closeButton.focus({preventScroll:true});win.scrollTop=0}else closeButton.focus()};
+ const close=()=>{m.classList.remove('is-open');document.body.classList.remove('cm-lock');m.querySelectorAll('video').forEach(v=>v.pause());if(io)io.disconnect();closeT=setTimeout(()=>{m.hidden=true;m.setAttribute('aria-hidden','true');body.innerHTML=''},300);setLocalHash('#cases');if(last)last.focus()};
+ const step=d=>{const i=ids.indexOf(cur);render(ids[(i+d+ids.length)%ids.length])};
+ document.querySelectorAll('.case-open').forEach(b=>b.addEventListener('click',()=>open(b.dataset.case)));
+ const bar=document.createElement('div');bar.className='cm__bar';win.prepend(bar);bar.append(m.querySelector('.cm__nav'),m.querySelector('.cm__x'));
+ let y0=null;win.addEventListener('touchstart',e=>{y0=(e.target.closest('.cm__bar')||win.scrollTop<=0)?e.touches[0].clientY:null},{passive:true});
+ win.addEventListener('touchend',e=>{if(y0===null)return;const dy=e.changedTouches[0].clientY-y0;if(dy>90)close();y0=null},{passive:true});
+ const phone=()=>matchMedia('(max-width:720px)').matches;
+ document.querySelectorAll('.slide').forEach(sl=>{const b=sl.querySelector('.case-open');if(b)sl.addEventListener('click',e=>{if(phone()&&!e.target.closest('.case-open'))open(b.dataset.case)})});
+ m.addEventListener('click',e=>{if(e.target.closest('[data-close]'))close();const s=e.target.closest('[data-step]');if(s)step(+s.dataset.step)});
+ document.addEventListener('keydown',e=>{if(m.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+ const h=location.hash.match(/^#case-(.+)$/);if(h&&ids.includes(h[1]))open(h[1]);
+})();
+(()=>{const hd=document.getElementById('hd'),b=hd.querySelector('.burger');
+ const set=o=>{hd.classList.toggle('open',o);b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Закрыть меню':'Открыть меню')};
+ b.addEventListener('click',()=>set(!hd.classList.contains('open')));
+ hd.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>set(false)));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
+ document.addEventListener('click',e=>{if(!e.target.closest('#hd'))set(false)});})();
+(()=>{const b=document.querySelector('.mcta'),hero=document.querySelector('.band.hero'),ct=document.getElementById('contact');
+ let ly=scrollY,up=false;const u=()=>{const y=scrollY;if(Math.abs(y-ly)>6){up=y<ly;ly=y}const on=(matchMedia('(max-width:720px)').matches||up)&&hero.getBoundingClientRect().bottom<60&&ct.getBoundingClientRect().top>innerHeight-40&&!document.body.classList.contains('cm-lock');b.classList.toggle('show',on)};
+ addEventListener('scroll',u,{passive:true});addEventListener('resize',u);new MutationObserver(u).observe(document.body,{attributes:true,attributeFilter:['class']});u();})();
+(()=>{const p=document.getElementById('cpop'),box=p.querySelector('.cpop__box');let last=null;
+ const close=()=>{p.hidden=true;p.classList.remove('sheet');if(last)last.focus()};
+ const open=a=>{last=a;p.hidden=false;const phone=matchMedia('(max-width:720px)').matches;p.classList.toggle('sheet',phone);
+  if(!phone){const r=a.getBoundingClientRect(),w=box.offsetWidth,h=box.offsetHeight;let x=Math.min(Math.max(16,r.left),innerWidth-w-16),y=r.bottom+10;if(y+h>innerHeight-12)y=Math.max(12,r.top-h-10);box.style.left=x+'px';box.style.top=y+'px'}else{box.style.left='';box.style.top=''}
+  box.querySelector('.ci').focus()};
+ document.addEventListener('click',e=>{const a=e.target.closest('[data-contact]');if(a){e.preventDefault();e.stopPropagation();const hd=document.getElementById('hd');if(hd)hd.classList.remove('open');open(a)}else if(e.target.closest('[data-cclose]'))close()},true);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!p.hidden){e.stopImmediatePropagation();close()}},true);
+ addEventListener('resize',()=>{if(!p.hidden)close()});
+ p.querySelectorAll('.ci').forEach(c=>c.addEventListener('click',()=>setTimeout(close,100)));
+ if(matchMedia('(pointer:coarse)').matches)document.querySelectorAll('.ci').forEach(c=>c.removeAttribute('target'));})();
+(()=>{const n=document.getElementById('snav'),links=[...n.querySelectorAll('a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));let cur=-1;
+ const u=()=>{if(getComputedStyle(n).display==='none')return;const y=n.getBoundingClientRect().bottom+12;let k=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<=y)k=i});
+  if(k!==cur){cur=k;links.forEach((a,i)=>a.classList.toggle('on',i===k));if(k>=0){const a=links[k];n.scrollTo({left:a.offsetLeft-16,behavior:'smooth'})}}};
+ addEventListener('scroll',u,{passive:true});addEventListener('resize',u);u();})();
+
+
+(()=>{const b=document.querySelector('.mobile-all'),more=document.getElementById('mobile-more');b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));more.hidden=!open;b.firstElementChild.textContent=open?'Свернуть кейсы':'Все кейсы';b.lastElementChild.textContent=open?'3 из 11 ↑':'11 кейсов ↗';if(open)more.querySelector('button').focus();else document.querySelector('.mobile-cases').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});})();
+
+</script>
 </body>
 </html>
-
-
-
