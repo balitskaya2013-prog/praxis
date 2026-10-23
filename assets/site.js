@@ -2,8 +2,32 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // mobile menu
 const hdr = document.querySelector('header'), burger = document.querySelector('.burger');
-burger.addEventListener('click', () => { const o = hdr.classList.toggle('open'); burger.setAttribute('aria-expanded', o); });
-document.querySelectorAll('.mmenu a').forEach(a => a.addEventListener('click', () => { hdr.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
+const setMenu = o => {
+  hdr.classList.toggle('open', o); document.body.classList.toggle('menu-lock', o);
+  burger.setAttribute('aria-expanded', o); burger.setAttribute('aria-label', o ? 'Закрыть меню' : 'Открыть меню');
+};
+burger.addEventListener('click', () => setMenu(!hdr.classList.contains('open')));
+document.querySelectorAll('.mmenu a').forEach(a => a.addEventListener('click', e => {
+  const href = a.getAttribute('href');
+  setMenu(false);
+  if (href.startsWith('#')) {
+    e.preventDefault();
+    const t = document.querySelector(href);
+    setTimeout(() => { t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); history.replaceState(null, '', href); }, 0);
+  }
+}));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && hdr.classList.contains('open')) { setMenu(false); burger.focus(); } });
+matchMedia('(min-width:901px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+// sticky "discuss" button on phones: after the hero, hidden near the contact block and while menu/case is open
+const mcta = document.querySelector('.mcta'), heroEl = document.querySelector('.hero .actions'), contactEl = document.getElementById('contact');
+function toggleMcta(){
+  const on = heroEl.getBoundingClientRect().bottom < 0 && contactEl.getBoundingClientRect().top > innerHeight - 40
+    && !document.body.classList.contains('cm-lock') && !document.body.classList.contains('menu-lock');
+  mcta.classList.toggle('show', on);
+}
+addEventListener('scroll', toggleMcta, {passive:true}); addEventListener('resize', toggleMcta);
+new MutationObserver(toggleMcta).observe(document.body, {attributes:true, attributeFilter:['class']}); toggleMcta();
 
 // highlight current section in menu
 const menuLinks = [...document.querySelectorAll('.menu a')];
