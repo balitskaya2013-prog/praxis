@@ -89,7 +89,7 @@ heroLoop();
 // orbit chips: place on the arc of a big circle whose centre sits right of the panel
 function layoutOrbit(){
   const o = document.getElementById('orbit'), b = o.getBoundingClientRect(), svg = document.getElementById('orbitsvg');
-  const R = Math.max(b.height * .62, 220), cx = b.width * .72 + R, cy = b.height / 2;
+  const R = b.width < 600 ? b.height * .62 : Math.max(b.height * .62, 220), cx = b.width * .72 + R, cy = b.height / 2;
   svg.setAttribute('viewBox', `0 0 ${b.width} ${b.height}`);
   svg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgba(255,255,255,.45)"/>`;
   o.querySelectorAll('.chip').forEach(c => {
