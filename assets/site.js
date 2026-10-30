@@ -160,8 +160,45 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
   if(narrow.matches&&res){res.after(vis);if(phone.matches&&title){title.after(res);res.after(vis)}}
   else body.insertBefore(vis,info);
  };
- const play=()=>{if(io)io.disconnect();const vs=[...m.querySelectorAll('video')];vs.forEach(v=>{v.muted=true;v.pause();if(v.closest('.phone'))v.closest('.phone').classList.add('paused')});if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;io=new IntersectionObserver(es=>es.forEach(x=>{const v=x.target,ph=v.closest('.phone');if(x.isIntersecting){v.play().then(()=>ph&&ph.classList.remove('paused')).catch(()=>{})}else{v.pause();ph&&ph.classList.add('paused')}}),{root:null,threshold:.5});vs.forEach(v=>io.observe(v))};
- const bindPhones=()=>m.querySelectorAll('.phone').forEach(p=>{const tog=()=>{const v=p.querySelector('video');if(v.paused){v.play().catch(()=>{});p.classList.remove('paused')}else{v.pause();p.classList.add('paused')}};p.addEventListener('click',tog);p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}})});
+ const manualPause=new WeakSet(),visibleVideos=new WeakSet(),playRequests=new WeakMap();
+ const motionQuery=matchMedia('(prefers-reduced-motion:reduce)');
+ const syncVideo=v=>{
+  const p=v.closest('.phone');if(!p)return;
+  p.classList.toggle('paused',v.paused);
+  p.setAttribute('aria-label',v.paused?'Воспроизвести демо':'Приостановить демо');
+ };
+ const pauseVideo=v=>{playRequests.set(v,{});v.pause();syncVideo(v)};
+ const canAutoplay=v=>isOpen&&visibleVideos.has(v)&&!manualPause.has(v)&&!motionQuery.matches;
+ const startVideo=(v,automatic=false)=>{
+  const request={};playRequests.set(v,request);
+  v.play().then(()=>{
+   if(playRequests.get(v)!==request)return;
+   if(automatic&&!canAutoplay(v)){pauseVideo(v);return}
+   syncVideo(v);
+  }).catch(()=>{if(playRequests.get(v)===request)syncVideo(v)});
+ };
+ const play=()=>{
+  if(io)io.disconnect();
+  const vs=[...m.querySelectorAll('video')];
+  vs.forEach(v=>{v.muted=true;pauseVideo(v)});
+  io=new IntersectionObserver(es=>es.forEach(x=>{
+   const v=x.target;
+   if(x.isIntersecting){visibleVideos.add(v);if(canAutoplay(v))startVideo(v,true)}
+   else{visibleVideos.delete(v);pauseVideo(v)}
+  }),{root:null,threshold:.5});
+  vs.forEach(v=>io.observe(v));
+ };
+ const bindPhones=()=>m.querySelectorAll('.phone').forEach(p=>{
+  const v=p.querySelector('video');if(!v)return;
+  v.addEventListener('play',()=>syncVideo(v));v.addEventListener('pause',()=>syncVideo(v));
+  const tog=()=>{
+   if(v.paused){manualPause.delete(v);startVideo(v)}
+   else{manualPause.add(v);pauseVideo(v)}
+  };
+  p.addEventListener('click',tog);
+  p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+ });
+ motionQuery.addEventListener('change',e=>{if(e.matches)m.querySelectorAll('video').forEach(pauseVideo)});
  const render=id=>{
   const t=document.getElementById('case-'+id);if(!t)return;
   body.replaceChildren(...[...t.children].map(n=>n.cloneNode(true)));
