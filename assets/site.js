@@ -115,18 +115,7 @@ const ladderEl = watch(document.querySelector('.method'));
 let auto = reduce ? null : setInterval(() => { if (inView.get(ladderEl)) setStep((li + 1) % 3); }, 2600);
 ms.forEach((m, i) => m.addEventListener('mouseenter', () => { clearInterval(auto); setStep(i); }));
 
-// tech network lines
-function drawNet(){
-  const net = document.getElementById('net'), svg = document.getElementById('netsvg');
-  const b = net.getBoundingClientRect(), cx = b.width / 2, cy = b.height / 2;
-  svg.setAttribute('viewBox', `0 0 ${b.width} ${b.height}`);
-  svg.innerHTML = [...net.querySelectorAll('.node')].map(n => {
-    const x = parseFloat(n.style.left) / 100 * b.width, y = parseFloat(n.style.top) / 100 * b.height;
-    return `<path d="M${cx},${cy} Q${(cx + x) / 2 + (y - cy) * .15},${(cy + y) / 2 - (x - cx) * .15} ${x},${y}" fill="none" stroke="rgba(255,255,255,.18)" stroke-dasharray="2 5"/>`;
-  }).join('');
-}
-drawNet(); addEventListener('resize', drawNet);
-watch(document.getElementById('net')); watch(document.querySelector('.cta'));
+watch(document.querySelector('.cta'));
 
 // belt: duplicate for seamless loop
 const belt = document.getElementById('belt'); belt.innerHTML += belt.innerHTML;
