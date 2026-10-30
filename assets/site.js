@@ -135,10 +135,27 @@ const belt = document.getElementById('belt'); belt.innerHTML += belt.innerHTML;
 const setLocalHash=hash=>{try{history.replaceState(null,'',hash)}catch{location.hash=hash}};
 (()=>{const tabs=[...document.querySelectorAll('.tab')],slides=[...document.querySelectorAll('.slide')],pos=document.getElementById('pos'),tl=document.getElementById('tabs');let cur=0;
 const narrow=()=>matchMedia('(max-width:860px)').matches;
-const sel=(i,scroll)=>{cur=(i+tabs.length)%tabs.length;tabs.forEach((t,k)=>{t.classList.toggle('on',k===cur);t.setAttribute('aria-selected',String(k===cur))});slides.forEach((x,k)=>x.hidden=k!==cur);pos.textContent=String(cur+1).padStart(2,'0');
+tl.setAttribute('aria-label','Кейсы клиентов');tl.setAttribute('aria-orientation','vertical');
+tabs.forEach((t,k)=>{
+ const slug=slides[k].querySelector('.case-open').dataset.case;
+ t.id='case-tab-'+slug;t.tabIndex=k===cur?0:-1;t.setAttribute('aria-controls','case-panel-'+slug);
+ slides[k].id='case-panel-'+slug;slides[k].setAttribute('aria-labelledby',t.id);
+});
+const sel=(i,scroll)=>{cur=(i+tabs.length)%tabs.length;tabs.forEach((t,k)=>{t.classList.toggle('on',k===cur);t.setAttribute('aria-selected',String(k===cur));t.tabIndex=k===cur?0:-1});slides.forEach((x,k)=>x.hidden=k!==cur);pos.textContent=String(cur+1).padStart(2,'0');
  if(narrow())tl.scrollLeft=tabs[cur].offsetLeft-tl.offsetLeft-20;
  if(scroll&&slides[cur].getClientRects().length){const panel=slides[cur].getBoundingClientRect(),heading=slides[cur].querySelector('h3').getBoundingClientRect(),top=document.querySelector('header').getBoundingClientRect().bottom+20;if(heading.top<top||heading.top>innerHeight*.6)window.scrollTo({top:scrollY+panel.top-top,behavior:reduce?'auto':'smooth'})}};
-tabs.forEach((t,k)=>t.addEventListener('click',()=>sel(k,true)));document.querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>sel(cur+Number(b.dataset.d),true)));
+tabs.forEach((t,k)=>{
+ t.addEventListener('click',()=>sel(k,true));
+ t.addEventListener('keydown',e=>{
+  let next;
+  if(e.key==='ArrowDown'||e.key==='ArrowRight')next=k+1;
+  else if(e.key==='ArrowUp'||e.key==='ArrowLeft')next=k-1;
+  else if(e.key==='Home')next=0;
+  else if(e.key==='End')next=tabs.length-1;
+  else return;
+  e.preventDefault();sel(next,false);tabs[cur].focus();
+ });
+});document.querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>sel(cur+Number(b.dataset.d),true)));
 let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});sl.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>60)sel(cur+(dx<0?1:-1),false);x0=null},{passive:true});})();
 (()=>{
  const m=document.getElementById('caseModal'),body=m.querySelector('.cm__body'),win=m.querySelector('.cm__win');
@@ -228,7 +245,7 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
   const ownsEntry=history.state?.praxisCaseEntry===true;hide();
   if(ownsEntry)history.back();else writeHistory('replaceState','#cases',{...(history.state||{}),praxisCaseEntry:false});
  };
- const step=d=>{const id=ids[(ids.indexOf(cur)+d+ids.length)%ids.length];writeHistory('replaceState','#case-'+id,history.state);render(id)};
+ const step=d=>{const focused=document.activeElement,id=ids[(ids.indexOf(cur)+d+ids.length)%ids.length];writeHistory('replaceState','#case-'+id,history.state);render(id);if(!focused.isConnected)m.querySelector('.cm__x').focus({preventScroll:true})};
  const syncHistory=()=>{const id=locationCase();if(id){if(!isOpen||cur!==id)show(id)}else hide()};
  const contact=()=>{
   hide(false);writeHistory('replaceState','#contact',{...(history.state||{}),praxisCaseEntry:false});
@@ -263,4 +280,4 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
  syncHistory();
 })();
 
-(()=>{const b=document.querySelector('.mobile-all'),more=document.getElementById('mobile-more');b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));more.hidden=!open;b.firstElementChild.textContent=open?'Свернуть кейсы':'Все кейсы';b.lastElementChild.textContent=open?'3 из 11 ↑':'11 кейсов ↗';if(open)more.querySelector('button').focus();else document.querySelector('.mobile-cases').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});})();
+(()=>{const b=document.querySelector('.mobile-all'),more=document.getElementById('mobile-more');b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));more.hidden=!open;b.firstElementChild.textContent=open?'Свернуть кейсы':'Все кейсы';b.lastElementChild.textContent=open?'11 из 11 ↑':'11 кейсов ↓';if(open)more.querySelector('button').focus();else document.querySelector('.mobile-cases').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});})();
