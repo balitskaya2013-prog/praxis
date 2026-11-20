@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-rogDwCe+gSrjyJndTmoTk/9tnMp4sklzOXVlZqtdvi0='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>praxis — ИИ-агенты и автоматизация процессов для бизнеса</title>
@@ -10,8 +10,8 @@
 <meta name="theme-color" content="#f4f4f2">
 <link rel="canonical" href="https://praxisai.ru/">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "praxis", "alternateName": "praxis — внедрение ИИ в бизнес", "url": "https://praxisai.ru/", "logo": "https://praxisai.ru/favicon-192.png", "image": "https://praxisai.ru/assets/og.jpg?v=2", "description": "Внедрение ИИ в бизнес: находим работу, которую команда делает руками, и передаём её ИИ-агентам. Отчёты, заявки, расчёты. Кейсы Яндекс Доставки и Еврокрана.", "email": "info@praxisai.ru", "telephone": "+79652902877", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "addressCountry": "RU"}, "areaServed": ["RU", "KZ", "UZ"], "sameAs": ["https://t.me/praxisai_team"], "knowsAbout": ["ИИ-агенты", "автоматизация бизнес-процессов", "внедрение ИИ", "управленческая отчётность"], "serviceType": ["Автоматизация процессов с ИИ", "Внедрение ИИ в команду и обучение сотрудников", "Доведение ИИ-пилота до рабочего процесса"]}</script>
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 0 18 18'%3E%3Crect x='0' y='7' width='4' height='11' fill='%23111'/%3E%3Crect x='6' y='0' width='4' height='18' fill='%23111'/%3E%3Crect x='12' y='4' width='4' height='14' fill='%23111'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
@@ -438,6 +438,267 @@ body.menu-lock{overflow:hidden}
 #cases .tab{scroll-margin-top:100px;scroll-margin-bottom:24px}
 #cases .mobile-case:focus-visible,#cases .mobile-all:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 </style>
+<style>
+/* Case presentation only. Other blocks use production styles unchanged. */
+.proof-section{padding:0 0 80px}
+.proof-heading{display:flex;justify-content:space-between;align-items:end;gap:28px;border-top:1px solid #d9d9d3;padding-top:28px;margin-bottom:28px}
+.proof-heading h2{font-size:clamp(32px,3.3vw,44px);line-height:1.1}
+.proof-heading>p{font-size:14px;line-height:1.5}
+.proof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.proof-card{background:white;border:1px solid #e3e3dc;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.proof-brand{padding:22px 24px 18px;font-size:14px;font-weight:500}
+.proof-copy{padding:24px;display:flex;flex:1;flex-direction:column}
+.proof-copy h3{font-size:25px;line-height:1.16;letter-spacing:-.035em;min-height:87px;text-wrap:pretty}
+.proof-copy>p{font-size:14px;line-height:1.65;color:#66665f;margin-bottom:22px}
+.proof-result{display:flex;align-items:center;gap:14px;margin:22px 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);min-height:92px}
+.proof-result strong{font-weight:500;font-size:38px;line-height:1.05;letter-spacing:-.04em;white-space:nowrap}
+.proof-result strong .before{color:#94948c}
+.proof-result strong .ar{font-size:24px;padding:0 3px;color:#94948c}
+.proof-result small{font-size:12px;line-height:1.45;color:#66665f}
+.proof-card:has([data-case="eurocran-payments"]) .proof-result{display:block}
+.proof-card:has([data-case="eurocran-payments"]) .proof-result strong{font-size:24px;letter-spacing:-.035em;display:block;margin-bottom:7px}
+.proof-open{background:none;border:none;border-top:1px solid var(--line);padding:17px 0 0;display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto;font:inherit;font-size:14px;min-height:44px;text-align:left;cursor:pointer;color:var(--ink)}
+.proof-open svg{width:24px;height:24px;transition:transform .18s}
+.proof-open:hover{color:var(--accent)}
+.proof-open:hover svg{transform:translateX(3px)}
+.output-demo{margin:0 12px;background:#edeee9;border-radius:10px;padding:18px 14px 12px;height:238px;display:flex;flex-direction:column;overflow:hidden}
+.output-top{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:500;min-height:34px;margin-bottom:12px}
+.output-top small{display:block;color:#74786e;font-size:10px;font-weight:400}
+.output-avatar{width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:#d5ddd2;display:grid;place-items:center;color:#485742;font-size:11px}
+.output-message{background:#fff;border:1px solid #dedfd8;padding:12px;border-radius:0 10px 10px 10px;font-size:10px;line-height:1.5;flex:1}
+.output-message>b{font-size:11px;font-weight:500}
+.output-message p{font-size:10px;line-height:1.5;color:#575b53;margin:8px 0 0}
+.output-row{display:flex;gap:12px;justify-content:space-between;margin:9px 0;font-size:9px;color:#676d61}
+.output-row b{display:block;font-size:15px;font-weight:500;color:#3f513b;margin-top:4px}
+.output-file{border-radius:4px;background:#eef1eb;font-size:11px;padding:8px;display:flex;justify-content:space-between;margin-top:8px}
+.output-caption{font-size:9px;color:#686d62;margin-top:9px}
+.output-status{font-size:9px;border-top:1px solid #e6e6df;margin-top:9px;padding-top:6px;color:#42563c}
+.sent{margin-left:auto;background:#e0e7da;border-radius:4px;color:#42563c;padding:4px 6px;font-size:9px}
+.more-cases{margin-top:18px;scroll-margin-top:96px}
+.proof-extra .proof-copy{padding-top:4px}
+.proof-extra .proof-copy h3{font-size:23px;min-height:80px}
+.proof-extra .proof-result{display:block;min-height:105px}
+.proof-extra .proof-result strong{display:block;white-space:normal;font-size:26px;margin-bottom:8px}
+.all-proof{width:100%;display:flex;align-items:center;justify-content:space-between;margin-top:24px;padding:18px 24px;border:1px solid #c6c6bd;border-radius:12px;background:transparent;color:var(--ink);font:inherit;font-size:16px;cursor:pointer;min-height:60px}
+.all-proof:hover{background:#eaeae4}
+.all-proof-mark{font-size:26px;font-weight:400;line-height:1}
+@media(min-width:1450px){
+.proof-copy h3{font-size:26px}
+}
+@media(max-width:1050px){
+.proof-copy{padding:20px}
+.proof-brand{padding:20px}
+.proof-copy h3{font-size:22px}
+.proof-result{gap:10px}
+.proof-result strong{font-size:30px}
+.output-demo{padding:12px 10px;height:238px}
+.proof-card:has([data-case="eurocran-payments"]) .proof-result strong{font-size:21px}
+.proof-copy>p{font-size:13px}
+}
+@media(max-width:760px){
+.proof-heading{display:block;padding-top:24px;margin-bottom:22px}
+.proof-heading h2{font-size:32px}
+.proof-heading>p{margin-top:13px;font-size:13px}
+.proof-heading>p br{display:none}
+.proof-grid{grid-template-columns:1fr;gap:18px}
+.proof-section{padding-bottom:44px}
+.proof-brand{padding:22px 24px 18px;font-size:14px}
+.proof-copy{padding:22px 24px}
+.proof-copy h3{font-size:26px;min-height:0;max-width:550px}
+.proof-copy>p{font-size:14px;line-height:1.6}
+.proof-result{margin:20px 0;min-height:0;padding:18px 0;gap:22px}
+.proof-result strong{font-size:40px}
+.proof-result small{max-width:160px}
+.proof-card:has([data-case="eurocran-payments"]) .proof-result strong{font-size:26px}
+.output-demo{height:222px;padding:16px;margin:0 12px}
+.output-message{font-size:11px}
+.output-message p{font-size:11px}
+.output-top{font-size:12px}
+.output-caption{font-size:10px}
+.output-row{font-size:10px}
+.output-file{font-size:12px}
+.output-message>b{font-size:12px}
+.output-status{font-size:10px}
+.proof-extra .proof-copy h3{min-height:0;font-size:25px}
+.proof-extra .proof-result{min-height:0}
+.all-proof{margin-top:18px}
+}
+@media(prefers-reduced-motion:reduce){
+.proof-open svg{transition:none}
+}
+.proof-feature .proof-copy{padding-top:0}
+.proof-feature .output-demo{margin:0 -10px 20px;flex-shrink:0}
+.proof-feature .proof-result{margin-top:18px}
+@media(max-width:760px){
+.proof-card .output-demo,.proof-copy>p{display:none}
+.proof-grid{gap:12px}
+.proof-brand{padding:18px 20px 12px;font-size:12px;color:#66665f}
+.proof-card .proof-copy{padding:0 20px 12px}
+.proof-card .proof-copy h3{font-size:23px;line-height:1.18;min-height:0}
+.proof-card .proof-result{margin:16px 0 0;padding:16px 0;min-height:0;border-bottom:0;gap:16px}
+.proof-card .proof-result strong{font-size:32px}
+.proof-extra .proof-result strong,.proof-card:has([data-case="eurocran-payments"]) .proof-result strong{font-size:22px}
+.proof-card .proof-result small{font-size:12px}
+.proof-open{padding:12px 0 4px;min-height:44px;font-size:13px}
+}
+.more-cases[hidden]{display:none!important}
+
+</style><style>
+/* Visual cleanup only: section inventory and case wording are preserved. */
+:root{--section-gap:clamp(64px,6.7vw,96px);--pad:clamp(20px,2.4vw,32px)}
+html{scroll-padding-top:96px}
+h1,h2,h3{hyphens:none;word-break:normal;overflow-wrap:normal;text-wrap:balance}
+p,.lead,.when,.stage-note,.proof-result small,.cm__steps span{text-wrap:pretty}
+.type-unit{white-space:nowrap}
+h2{line-height:1.16}h3{line-height:1.22}
+.hero{padding-top:clamp(48px,6vw,80px)}
+.hero h1{font-size:clamp(42px,5.6vw,80px);line-height:1.08;max-width:1000px}
+.hero .lead{max-width:560px;line-height:1.65;margin-top:24px}
+.hero .actions{margin-top:28px;gap:12px}
+.hero .badge{margin-bottom:24px}
+.stage{margin-top:48px;min-height:400px;gap:32px;padding:40px}
+.stage-note{font-size:15px;line-height:1.6;max-width:44ch}
+.agent-head{gap:12px}.agent-head>b{display:flex;align-items:center;gap:8px}
+.prompt #typed{white-space:normal;line-height:1.4;min-height:2.8em;display:block;overflow:visible;font-size:18px}
+.prompt{align-items:center;border-radius:20px;padding:14px 12px 14px 20px;gap:12px}
+.prompt .go{min-height:44px;flex:0 0 44px}
+section{padding-top:var(--section-gap)}
+#cases.proof-section{padding:var(--section-gap) 0 0}
+.proof-heading{border-top:0;padding-top:0;margin-bottom:32px}
+.sec-head{margin-bottom:40px}
+.sec-head .lead{margin-top:16px;max-width:600px;line-height:1.6}
+.dark{margin-top:var(--section-gap);padding:64px 0}
+.dark .wrap{padding-left:32px;padding-right:32px}
+.split{min-height:400px}.split+.split{margin-top:20px}
+.split-text{padding:40px}.split-text p{line-height:1.65;max-width:38ch}.split-text h3{max-width:18ch}
+.split-text .more{margin-top:24px}
+.panel{min-height:340px}
+.dcard{padding:32px;gap:20px;min-height:310px}
+.dcard p{line-height:1.6}.dcard h3{max-width:20ch}
+.msteps{padding:32px;gap:12px}.mstep{padding:18px 20px}.mstep p{line-height:1.6}.mstep .out{line-height:1.5}
+.fgrid{gap:20px}.fcard{padding:28px;min-width:0}.fcard h3{min-height:2.44em;line-height:1.22;text-wrap:balance}.fcard .when{line-height:1.6;margin:16px 0 24px}.fcard .term{padding-top:20px}
+.tech-text,.integrations{padding:40px}.tech-text>p{max-width:45ch;line-height:1.65}.tech-list div{line-height:1.6;color:#b5b5af}.tech-list b{margin-bottom:4px}.integrations h3{max-width:22ch}.integrations ul{margin-top:24px}.integrations li{padding:16px 0}
+.faq summary{line-height:1.45;min-height:64px}.faq details p{line-height:1.65}.faq summary i{flex:0 0 14px}
+.cta{margin-top:var(--section-gap);padding-top:64px}.cta h2{padding:0 28px;line-height:1.16}.cta>p{line-height:1.6}.cta .actions{gap:12px}
+.belt{margin-top:40px}.msg{min-height:126px}.msg b{line-height:1.4}
+footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
+/* One shared row grid aligns all three featured case cards. */
+.proof-grid{gap:20px;align-items:stretch}
+.proof-feature{display:grid;grid-template-rows:subgrid;grid-row:span 6;row-gap:0;padding:24px}
+.proof-feature .proof-copy{display:contents}
+.proof-feature .proof-brand{padding:0 0 18px;font-size:14px}
+.proof-feature .proof-copy h3{min-height:0;font-size:25px;line-height:1.24;max-width:24ch}
+.proof-feature .proof-result{margin:20px 0;padding:18px 0;min-height:0;gap:16px;align-items:center}
+.proof-result strong{font-variant-numeric:tabular-nums}
+.proof-feature .proof-result small{font-size:13px;line-height:1.45}
+.proof-feature .output-demo{height:auto;min-height:260px;margin:0 0 20px;padding:14px 12px 12px;flex-shrink:0}
+.output-top{font-size:12px;gap:8px}.output-top small{font-size:11px}.output-row{font-size:10px}
+.output-message{font-size:11px;padding:12px}.output-message>b{font-size:12px}.output-message p{font-size:11px;line-height:1.55}.output-file{font-size:11px;overflow-wrap:anywhere;gap:6px}.output-status{font-size:10px}.output-caption{font-size:10px;line-height:1.4;flex-shrink:0}.sent{font-size:10px}
+.proof-feature .proof-copy>p{font-size:14px;line-height:1.65;margin:0}
+.proof-feature .proof-open{padding:16px 0 0;margin-top:24px;min-height:44px}
+.proof-extra .proof-copy h3{min-height:3.66em;line-height:1.22}.proof-extra .proof-copy>p{line-height:1.65}.all-proof{margin-top:24px}
+/* Dialogs: prevent narrow result columns from chopping ordinary words. */
+.cm .cm__title{line-height:1.18;text-wrap:balance;word-break:normal;overflow-wrap:normal}
+.cm .cm__lede,.cm .cm__info p,.cm .cm__steps span{line-height:1.6}
+.cm .cm__res strong,.cm .ec-case .cm__res strong{overflow-wrap:normal;word-break:normal;font-variant-numeric:tabular-nums}
+.cm .ec-demo-mail p{color:#e6e6e6}
+@media(min-width:761px) and (max-width:1100px){
+ .proof-feature{padding:20px}.proof-feature .proof-copy h3{font-size:22px}.proof-feature .proof-result{flex-direction:column;align-items:flex-start;gap:8px}.proof-feature .output-demo{padding:12px 10px}.sent{display:none}.proof-feature .output-top{font-size:11px}
+}
+@media(max-width:900px){
+ :root{--section-gap:64px}
+ .hero{padding-top:40px}.hero h1{font-size:clamp(40px,7vw,60px);max-width:700px}
+ .stage{min-height:0;padding:24px;gap:24px}.stage .agent{max-width:none}.split{min-height:0}.split+.split{margin-top:20px}.split-text{padding:28px 24px 32px}.split-text h3{max-width:22ch}.split-text p{font-size:16px;line-height:1.6}
+ .dark{padding:48px 0}.dark .wrap{padding:0 var(--pad)}.dcard{padding:24px;min-height:0}
+ .msteps{padding:20px;gap:8px}.mstep{padding:18px 16px}.fgrid{gap:16px}.fcard{padding:24px}.fcard h3{min-height:0;max-width:22ch}
+ .tech-text{padding:28px}.integrations{padding:28px 0;margin:0 28px}.integrations li{overflow-wrap:normal}
+ .cta{padding-top:48px}.cta h2{padding:0 24px}.cta .tel{padding:0 24px;line-height:1.6}.foot{gap:28px 20px}
+ .cm .cm__res>div{min-width:0}
+}
+@media(max-width:760px){
+ .proof-heading{margin-bottom:24px}.proof-heading h2{font-size:32px}.proof-heading>p{margin-top:12px;font-size:14px;line-height:1.6}
+ .proof-grid{gap:12px}.proof-feature{display:flex;padding:20px;grid-row:auto}
+ .proof-feature .proof-copy{display:flex;padding:0;flex-direction:column}
+ .proof-feature .proof-brand{padding:0 0 12px;font-size:12px}
+ .proof-card .proof-copy h3{font-size:23px;line-height:1.24;min-height:0;max-width:none}
+ .proof-feature .proof-result{flex-direction:row;margin:16px 0 0;padding:16px 0;gap:16px;border-bottom:0}
+ .proof-feature .proof-result strong{font-size:32px}.proof-feature .proof-result small{font-size:12px}
+ .proof-card:has([data-case="eurocran-payments"]) .proof-result strong{font-size:22px}
+ .proof-feature .output-demo,.proof-feature .proof-copy>p{display:none}
+ .proof-feature .proof-open{padding:12px 0 0;margin-top:0;min-height:44px}
+ .proof-extra .proof-copy h3{min-height:0}.proof-extra .proof-result{min-height:0}
+ .cm .cm__res>div{grid-template-columns:minmax(105px,.85fr) minmax(0,1.15fr);gap:4px 12px;padding:14px}
+ .cm .cm__res strong,.cm .ec-case .cm__res strong{font-size:22px}
+ .cm .cm__title{font-size:28px;line-height:1.22}
+ .cm .ec-demo-row,.cm .ec-demo-line{grid-template-columns:minmax(75px,.55fr) minmax(0,1fr)}
+}
+@media(max-width:520px){
+ .hero h1{font-size:40px;max-width:350px;line-height:1.12}.hero .lead{font-size:16px;line-height:1.65;margin-top:20px}.badge{font-size:12px;max-width:100%;padding:7px 12px}.hero .actions{margin-top:24px}
+ .stage{margin-top:32px;padding:20px;gap:20px}.prompt #typed{font-size:15px;line-height:1.45;min-height:4.35em}.prompt{padding:12px;border-radius:16px}.prompt .go{width:36px;height:36px;min-height:36px;flex-basis:36px}.stage-note{font-size:14px;line-height:1.6}.agent-head{font-size:11px;gap:8px}.agent-head>b{font-size:13px}.steps li{font-size:13px;padding:12px 10px;gap:8px}.result{font-size:13px}
+ h2{font-size:32px;line-height:1.18}.sec-head{margin-bottom:28px}.sec-head .lead{font-size:16px;max-width:32ch}
+ .tech-text{padding:24px}.integrations{margin:0 24px;padding:24px 0}.integrations h3{font-size:23px}.integrations ul{column-gap:12px}.integrations li{font-size:14px}
+ .faq details{padding:0 20px}.faq summary{font-size:15px;padding:18px 0;gap:14px}.faq details p{font-size:14px}
+ .cta h2{font-size:32px}.cta .actions{padding:0 20px}.copy{align-items:flex-start;gap:20px}.foot a{overflow-wrap:anywhere}
+}
+@media(max-width:359px){
+ .hero h1{font-size:36px}.badge{font-size:11px}.stage{padding:16px}.agent{padding:14px}.agent-head .live{font-size:10px}.agent-head>b{font-size:12px}.proof-feature{padding:18px}.proof-card .proof-copy h3{font-size:21px}.proof-feature .proof-result{gap:12px}.proof-result small{font-size:11px}
+ .proof-card:has([data-case="eurocran-payments"]) .proof-result strong{font-size:21px}.cm .cm__res strong,.cm .ec-case .cm__res strong{font-size:20px}
+}
+
+/* Mobile reading order: context before the result, details on demand. */
+@media(max-width:760px){
+ .proof-card .proof-copy>h3{order:0}
+ .proof-card .proof-copy>p{display:block;order:1;font-size:14px;line-height:1.6;margin:12px 0 0;color:var(--soft)}
+ .proof-card .proof-copy>.proof-result{order:2;margin-top:18px}
+ .proof-card .proof-copy>.proof-open{order:3}
+ /* Give the brand its own row instead of reserving an empty half-column. */
+ footer{padding:36px 0 24px}
+ .foot{grid-template-columns:minmax(0,1fr);gap:0}
+ .foot>div{min-width:0}
+ .foot>div:first-child{padding-bottom:24px}
+ .foot .logo{width:max-content;font-size:23px;line-height:1.2;margin:0;padding:0;min-height:44px}
+ .foot>div:not(:first-child){border-top:1px solid var(--line);padding:20px 0}
+ .foot>div:last-child{padding-bottom:0}
+ .foot h4{font-size:12px;color:var(--muted);font-weight:400;line-height:1.5;margin:0 0 8px}
+ .foot a{font-size:14px;line-height:1.5;color:var(--ink);margin:0;padding:10px 0;min-height:44px;overflow-wrap:normal}
+ .foot>div:nth-child(3){display:flex;flex-wrap:wrap;column-gap:24px;align-items:center}
+ .foot>div:nth-child(3) h4{flex-basis:100%}
+ .foot>div:nth-child(4) a{white-space:nowrap}
+ .copy{border-top:1px solid var(--line);padding-top:16px;margin-top:24px;gap:12px;align-items:center;font-size:12px;line-height:1.5}
+ .copy a{min-height:44px;display:flex;align-items:center;white-space:nowrap}
+}
+
+/* Plain positioning line, without a status indicator or button treatment. */
+.hero .hero-eyebrow{margin:0 0 24px;padding:0;border:0;background:none;box-shadow:none;color:var(--muted);font-size:14px;font-weight:400;line-height:1.5;letter-spacing:0;text-align:center}
+@media(max-width:520px){.hero .hero-eyebrow{font-size:13px;margin-bottom:24px}}
+/* Keep the mobile hero focused on its main heading. */
+@media(max-width:760px){.hero .hero-eyebrow{display:none}}
+
+/* A landing page needs a compact contact strip, not a second sitemap. */
+.footer-compact{padding:24px 0}
+.footer-compact .wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.footer-compact .logo{font-size:23px;line-height:1.2;flex:none;min-height:44px}
+.footer-note{font-size:12px;color:var(--muted);white-space:nowrap}
+.footer-contact{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-left:auto}
+.footer-contact a,.footer-top{display:flex;align-items:center;min-height:44px;font-size:13px;line-height:1.5;white-space:nowrap}
+.footer-contact a{color:var(--ink)}
+.footer-top{color:var(--muted)}
+@media(max-width:1100px) and (min-width:761px){
+ .footer-compact .wrap{gap:12px 20px}
+ .footer-note{order:3;flex-basis:100%}
+ .footer-contact{gap:18px}
+}
+@media(max-width:760px){
+ .footer-compact{padding:20px 0}
+ .footer-compact .wrap{gap:8px 20px}
+ .footer-compact .logo{flex-basis:100%}
+ .footer-contact{flex-basis:100%;margin-left:0;gap:0 20px}
+ .footer-contact a{font-size:14px}
+ .footer-note{order:3}
+ .footer-top{order:3;margin-left:auto}
+}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержанию</a>
@@ -477,7 +738,7 @@ body.menu-lock{overflow:hidden}
 
 <!-- HERO -->
 <div class="wrap hero center" id="top">
-  <div class="badge"><i></i>Агентство внедрения ИИ в бизнес</div>
+  <p class="hero-eyebrow">Консалтинг и внедрение ИИ</p>
   <h1>ИИ-агенты для&nbsp;вашего бизнеса</h1>
   <p class="lead">Находим работу, которую команда каждый день делает руками, и&nbsp;передаём её&nbsp;агентам: отчёты, заявки, расчёты. Всё работает в&nbsp;ваших системах</p>
   <div class="actions">
@@ -503,6 +764,80 @@ body.menu-lock{overflow:hidden}
   </div>
 </div>
 
+<section id="cases" class="proof-section"><div class="wrap"><div class="proof-heading"><h2>Что уже работает</h2><p>11 процессов в Яндекс Доставке,<br>Yango Delivery и Еврокране</p></div><div class="proof-grid"><article class="proof-card proof-feature"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><div class="proof-result"><strong><span class="before">5 ч</span><span class="ar">→</span>0</strong><small>в неделю на&nbsp;сбор отчётности</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">AI</span><span>Delivery AI Reports<small>бот · 11:00</small></span></div><div class="output-message"><b>Ключевые метрики</b><div class="output-row"><span>Россия</span><span>СНГ</span><span>Международные рынки</span></div><div class="output-file">delivery_daily_06_10.html <span>↓</span></div><p>Отчёт за 06.10 отправлен в 11:00</p></div><div class="output-caption">Пример результата · данные условные</div></div><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><button class="proof-open case-open" type="button" data-case="reporting" aria-label="Подробнее: Управленческая отчётность без ручной сборки">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-feature"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><div class="proof-result"><strong>Автоматически</strong><small>письма клиентам по просроченным счетам</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">@</span><span>Напоминание об оплате<small>Письмо клиенту</small></span><span class="sent">Отправлено</span></div><div class="output-message"><b>Оплата по счёту № 184 — Еврокран</b><p>Добрый день!<br>Напоминаем об оплате 180 000 ₽ по счёту № 184. Подскажите, пожалуйста, дату платежа.</p><div class="output-status">Отправлено автоматически · 09:02</div></div><div class="output-caption">Пример результата · данные условные</div></div><p>Агент сверяет оплаты со счетами, находит задолженности и сам отправляет клиентам напоминания. Спорные платежи передаёт бухгалтерии.</p><button class="proof-open case-open" type="button" data-case="eurocran-payments" aria-label="Подробнее: Агент сам напоминает клиентам об оплате">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-feature"><div class="proof-brand">Yango Delivery</div><div class="proof-copy"><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><div class="proof-result"><strong>−60%</strong><small>команды при&nbsp;той же&nbsp;эффективности бизнеса</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">AI</span><span>Маркетплейс, Африка<small>сегодня, 11:00</small></span></div><div class="output-message"><div class="output-row"><span>Доставки <b>+2,6%</b></span><span>Оборот <b>+4,9%</b></span><span>Доход <b>−3,6%</b></span></div><p><b>Предлагаю:</b><br>В пятницу пересчитать бонусы, чтобы уложиться в бюджет</p><div class="output-status">Посчитать?</div></div><div class="output-caption">Пример результата · данные условные</div></div><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><button class="proof-open case-open" type="button" data-case="marketplace-manager" aria-label="Подробнее: ИИ-помощник для управления бизнесом">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article></div><div id="more-cases" class="proof-grid more-cases" hidden><article class="proof-card proof-extra"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><div class="proof-result"><strong>×5</strong><small>за&nbsp;полгода</small></div><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><button class="proof-open case-open" type="button" data-case="ai-adoption" aria-label="Подробнее: Внедрение ИИ в ежедневную работу команды">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><div class="proof-result"><strong><span class="before">26</span><span class="ar">→</span>2</strong><small>сотрудника вместо 26</small></div><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><button class="proof-open case-open" type="button" data-case="b2b-compensations" aria-label="Подробнее: Обработка претензий и расчёт компенсаций">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Yango Delivery</div><div class="proof-copy"><h3>Возвращение исполнителей к&nbsp;работе</h3><div class="proof-result"><strong>+14%</strong><small>по&nbsp;сравнению с&nbsp;контрольной группой</small></div><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><button class="proof-open case-open" type="button" data-case="reactivation-bot" aria-label="Подробнее: Возвращение исполнителей к работе">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Собственник начинает день с&nbsp;готовой сводки</h3><div class="proof-result"><strong>К началу дня</strong><small>готовая картина по технике и деньгам</small></div><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><button class="proof-open case-open" type="button" data-case="eurocran-owner" aria-label="Подробнее: Собственник начинает день с готовой сводки">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><div class="proof-result"><strong>Готовая запись</strong><small>вместо ручного переноса данных</small></div><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><button class="proof-open case-open" type="button" data-case="eurocran-documents" aria-label="Подробнее: Бухгалтер проверяет данные вместо перепечатки документов">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Планирование выездов техники и&nbsp;бригад</h3><div class="proof-result"><strong>План выездов</strong><small>по заявкам, технике и бригадам</small></div><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><button class="proof-open case-open" type="button" data-case="eurocran-dispatch" aria-label="Подробнее: Планирование выездов техники и бригад">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран · опробовано</div><div class="proof-copy"><h3>Контроль заявок от обращения до заказа</h3><div class="proof-result"><strong>Следующий шаг</strong><small>по обращениям, требующим внимания</small></div><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><button class="proof-open case-open" type="button" data-case="eurocran-sales" aria-label="Подробнее: Контроль заявок от обращения до заказа">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран · опробовано</div><div class="proof-copy"><h3>Из звонка — в готовую заявку на технику</h3><div class="proof-result"><strong>Готовая заявка</strong><small>черновик после разговора с клиентом</small></div><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><button class="proof-open case-open" type="button" data-case="eurocran-call-intake" aria-label="Подробнее: Из звонка — в готовую заявку на технику">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article></div><button class="all-proof" type="button" aria-expanded="false" aria-controls="more-cases"><span>Все 11 кейсов</span><span class="all-proof-mark" aria-hidden="true">+</span></button></div></section><div hidden>
+<section id="legacy-cases">
+  <div class="wrap">
+    <div class="sec-head center">
+      <h2>Что уже работает</h2>
+      <p class="lead">11 процессов в&nbsp;Яндекс Доставке, Yango Delivery и&nbsp;Еврокране</p>
+    </div>
+    <div class="mobile-cases"><button class="mobile-case case-open" type="button" data-case="reporting"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">→</i></span><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><span class="mobile-case-result"><strong><span class="before">5 ч</span><span class="ar">→</span>0</strong><small>в неделю на&nbsp;сбор отчётности</small></span></button><button class="mobile-case case-open" type="button" data-case="marketplace-manager"><span class="mobile-case-brand"><span>Yango Delivery</span><i aria-hidden="true">→</i></span><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><span class="mobile-case-result"><strong>−60%</strong><small>команды при&nbsp;той же&nbsp;эффективности бизнеса</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-payments"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><p>Агент сверяет банковскую выписку со&nbsp;счетами, находит частичные оплаты и&nbsp;просрочки и&nbsp;сам отправляет клиентам письма-напоминания. Спорные платежи проверяет бухгалтерия.</p><span class="mobile-case-result"><strong>Автоматически</strong><small>письма клиентам по просроченным счетам</small></span></button><div class="mobile-more" id="mobile-more" hidden><button class="mobile-case case-open" type="button" data-case="ai-adoption"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">→</i></span><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><span class="mobile-case-result"><strong>×5</strong><small>за&nbsp;полгода</small></span></button><button class="mobile-case case-open" type="button" data-case="b2b-compensations"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">→</i></span><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><span class="mobile-case-result"><strong><span class="before">26</span><span class="ar">→</span>2</strong><small>сотрудника вместо 26</small></span></button><button class="mobile-case case-open" type="button" data-case="reactivation-bot"><span class="mobile-case-brand"><span>Yango Delivery</span><i aria-hidden="true">→</i></span><h3>Возвращение исполнителей к&nbsp;работе</h3><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><span class="mobile-case-result"><strong>+14%</strong><small>по&nbsp;сравнению с&nbsp;контрольной группой</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-owner"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Собственник начинает день с&nbsp;готовой сводки</h3><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><span class="mobile-case-result"><strong>К началу дня</strong><small>готовая картина по технике и деньгам</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-documents"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><span class="mobile-case-result"><strong>Готовая запись</strong><small>вместо ручного переноса данных</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-dispatch"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Планирование выездов техники и&nbsp;бригад</h3><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><span class="mobile-case-result"><strong>План выездов</strong><small>по заявкам, технике и бригадам</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-sales"><span class="mobile-case-brand"><span>Еврокран · опробовано</span><i aria-hidden="true">→</i></span><h3>Контроль заявок от обращения до заказа</h3><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><span class="mobile-case-result"><strong>Следующий шаг</strong><small>по обращениям, требующим внимания</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-call-intake"><span class="mobile-case-brand"><span>Еврокран · опробовано</span><i aria-hidden="true">→</i></span><h3>Из звонка — в готовую заявку на технику</h3><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><span class="mobile-case-result"><strong>Готовая заявка</strong><small>черновик после разговора с клиентом</small></span></button></div><button type="button" class="mobile-all" aria-expanded="false" aria-controls="mobile-more"><span>Все кейсы</span><span>11 кейсов ↓</span></button></div>
+  <div class="board"><div class="side"><div class="tabs" role="tablist" id="tabs"><div class="tgroup">Яндекс Доставка</div><button type="button" class="tab on" role="tab" aria-selected="true"><span>01 Отчёты</span>Сводка и&nbsp;презентация</button><button type="button" class="tab" role="tab" aria-selected="false"><span>02 Команды</span>ИИ в&nbsp;работе команды</button><button type="button" class="tab" role="tab" aria-selected="false"><span>03 Претензии</span>Компенсации клиентам</button><div class="tgroup">Yango Delivery</div><button type="button" class="tab" role="tab" aria-selected="false"><span>04 Операции</span>Управление в&nbsp;25 странах</button><button type="button" class="tab" role="tab" aria-selected="false"><span>05 Курьеры</span>Возврат ушедших</button><div class="tgroup">Еврокран</div><button type="button" class="tab" role="tab" aria-selected="false"><span>06 Собственник</span>Утренняя сводка</button><button type="button" class="tab" role="tab" aria-selected="false"><span>07 Бухгалтерия</span>Проверка документов</button><button type="button" class="tab" role="tab" aria-selected="false"><span>08 Финансы</span>Напоминания об&nbsp;оплате</button><button type="button" class="tab" role="tab" aria-selected="false"><span>09 Выезды</span>Техника и&nbsp;бригады</button><button type="button" class="tab" role="tab" aria-selected="false"><span>10 Продажи</span>Контроль заявок</button><button type="button" class="tab" role="tab" aria-selected="false"><span>11 Звонки</span>Из звонка в заявку</button></div>
+  <div class="cnav"><span class="pos"><b id="pos">01</b> / 11</span><div class="arrows"><button type="button" data-d="-1" aria-label="Предыдущий кейс"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button><button type="button" data-d="1" aria-label="Следующий кейс"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button></div></div></div>
+  <div class="main" id="slides"><div class="cgroup">Яндекс Доставка</div>
+<article class="slide" role="tabpanel">
+  <div class="story"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><button type="button" class="pill case-open" data-case="reporting" aria-label="Подробнее о кейсе: Управленческая отчётность без ручной сборки">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">5 ч</span><span class="ar">→</span>0</div><p class="dcap">в неделю на&nbsp;сбор отчётности</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Дашборды</b><span>откуда берутся цифры</span></li><li><i>02</i><b>Бот</b><span>сравнивает с&nbsp;планом и&nbsp;прошлой неделей</span></li><li><i>03</i><b>Telegram</b><span>сводка и&nbsp;презентация</span></li></ol></div>
+</article>
+<article class="slide" role="tabpanel" hidden>
+  <div class="story"><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><button type="button" class="pill case-open" data-case="ai-adoption" aria-label="Подробнее о кейсе: Внедрение ИИ в ежедневную работу команды">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Использование ИИ</span><div class="bignum">×5</div><p class="dcap">за&nbsp;полгода</p><div class="dstats"><div><b>×1,5</b><span>быстрее разработка</span></div><div><b>×2</b><span>быстрее задачи вне&nbsp;разработки</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Умения</b><span>общие для&nbsp;всех команд</span></li><li><i>02</i><b>Обучение</b><span>на&nbsp;задачах самих людей</span></li><li><i>03</i><b>Замер</b><span>кто как&nbsp;пользуется</span></li></ol></div>
+</article>
+<article class="slide" role="tabpanel" hidden>
+  <div class="story"><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><button type="button" class="pill case-open" data-case="b2b-compensations" aria-label="Подробнее о кейсе: Обработка претензий и расчёт компенсаций">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Людей на&nbsp;процессе</span><div class="bignum"><span class="before">26</span><span class="ar">→</span>2</div><p class="dcap">сотрудника вместо 26</p><div class="dstats"><div><b>80%</b><span>заявок без&nbsp;человека</span></div><div><b>≈ 1 млрд&nbsp;₽</b><span>компенсаций в&nbsp;год</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Реестр</b><span>в&nbsp;любом формате</span></li><li><i>02</i><b>Решение</b><span>по&nbsp;каждой заявке</span></li><li><i>03</i><b>Ответ</b><span>готовый реестр клиенту</span></li></ol></div>
+</article>
+<div class="cgroup">Yango Delivery</div>
+<article class="slide" role="tabpanel" hidden>
+  <div class="story"><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><button type="button" class="pill case-open" data-case="marketplace-manager" aria-label="Подробнее о кейсе: ИИ-помощник для управления бизнесом">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">команды при&nbsp;той же&nbsp;эффективности бизнеса</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×5</b><span>быстрее решения</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Цифры</b><span>финансы и&nbsp;операции</span></li><li><i>02</i><b>Причина</b><span>что&nbsp;сломалось и&nbsp;почему</span></li><li><i>03</i><b>Действие</b><span>сам в&nbsp;пределах лимита</span></li></ol><p class="branch">↳ Если нужно больше лимита, решает&nbsp;человек</p></div>
+</article>
+<article class="slide" role="tabpanel" hidden>
+  <div class="story"><h3>Возвращение исполнителей к&nbsp;работе</h3><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><button type="button" class="pill case-open" data-case="reactivation-bot" aria-label="Подробнее о кейсе: Возвращение исполнителей к работе">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по&nbsp;сравнению с&nbsp;контрольной группой</p><div class="dstats"><div><b>$1</b><span>вернуть курьера через&nbsp;помощника</span></div><div><b>≈&nbsp;$20</b><span>привлечь нового&nbsp;курьера</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы,&nbsp;выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на&nbsp;линии</span></li></ol></div>
+</article>
+<div class="cgroup">Еврокран, аренда спецтехники</div>
+<article class="slide ec-case" role="tabpanel" hidden>
+  <div class="story"><h3>Собственник начинает день с&nbsp;готовой сводки</h3><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><button type="button" class="pill case-open" data-case="eurocran-owner" aria-label="Подробнее о кейсе: Утренняя сводка собственника">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">К началу дня</div><p class="dcap">готовая картина по технике и деньгам</p><div class="dstats"><div><b>Техника</b><span>работа, простой и ремонт</span></div><div><b>Оплаты</b><span>поступления и просрочки</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Данные</b><span>смены, заявки и оплаты</span></li><li><i>02</i><b>Сверка</b><span>связи и пропуски</span></li><li><i>03</i><b>Сводка</b><span>собственнику к началу дня</span></li></ol></div>
+</article>
+<article class="slide ec-case" role="tabpanel" hidden>
+  <div class="story"><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><button type="button" class="pill case-open" data-case="eurocran-documents" aria-label="Подробнее о кейсе: Проверка счетов и актов">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Готовая запись</div><p class="dcap">вместо ручного переноса данных</p><div class="dstats"><div><b>Счета и акты</b><span>из почты и сканов</span></div><div><b>Бухгалтер</b><span>проверяет и подтверждает</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Документ</b><span>почта или скан</span></li><li><i>02</i><b>Запись</b><span>поля, договор и объект</span></li><li><i>03</i><b>Проверка</b><span>подтверждает бухгалтер</span></li></ol></div>
+</article>
+<article class="slide ec-case" role="tabpanel" hidden>
+  <div class="story"><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><p>Агент сверяет банковскую выписку со&nbsp;счетами, находит частичные оплаты и&nbsp;просрочки и&nbsp;сам отправляет клиентам письма-напоминания. Спорные платежи проверяет бухгалтерия.</p><button type="button" class="pill case-open" data-case="eurocran-payments" aria-label="Подробнее о кейсе: Автоматические напоминания об оплате">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Автоматически</div><p class="dcap">письма клиентам по просроченным счетам</p><div class="dstats"><div><b>Сверка</b><span>выписка со счетами</span></div><div><b>Исключения</b><span>проверяет бухгалтерия</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Выписка</b><span>сопоставление со счетами</span></li><li><i>02</i><b>Просрочка</b><span>полная и частичная оплата</span></li><li><i>03</i><b>Письмо</b><span>агент отправляет сам</span></li></ol></div>
+</article>
+<article class="slide ec-case" role="tabpanel" hidden>
+  <div class="story"><h3>Планирование выездов техники и&nbsp;бригад</h3><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><button type="button" class="pill case-open" data-case="eurocran-dispatch" aria-label="Подробнее о кейсе: Планирование выездов техники и бригад">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">План выездов</div><p class="dcap">по заявкам, технике и бригадам</p><div class="dstats"><div><b>Пересечения</b><span>видны до подтверждения</span></div><div><b>Диспетчер</b><span>проверяет и утверждает</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Заявки</b><span>доступная техника и бригады</span></li><li><i>02</i><b>График</b><span>пересечения и изменения</span></li><li><i>03</i><b>Выезд</b><span>подтверждает диспетчер</span></li></ol></div>
+</article>
+<article class="slide ec-case" role="tabpanel" hidden>
+  <div class="story"><h3>Контроль заявок от обращения до заказа</h3><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><button type="button" class="pill case-open" data-case="eurocran-sales" aria-label="Подробнее о кейсе: Контроль заявок от обращения до заказа">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Следующий шаг</div><p class="dcap">по обращениям, требующим внимания</p><div class="dstats"><div><b>Менеджеру</b><span>контекст и напоминание</span></div><div><b>Еврокран</b><span>сценарий опробован</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Обращение</b><span>клиент, задача и дата</span></li><li><i>02</i><b>Действие</b><span>ответственный и срок</span></li><li><i>03</i><b>Напоминание</b><span>если работа остановилась</span></li></ol></div>
+</article>
+<article class="slide ec-case" role="tabpanel" hidden>
+  <div class="story"><h3>Из звонка — в готовую заявку на технику</h3><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><button type="button" class="pill case-open" data-case="eurocran-call-intake" aria-label="Подробнее о кейсе: Из звонка — в готовую заявку на технику">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
+  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Готовая заявка</div><p class="dcap">черновик после разговора с клиентом</p><div class="dstats"><div><b>Требования</b><span>факты и договорённости</span></div><div><b>Еврокран</b><span>сценарий опробован</span></div></div></div>
+  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Разговор</b><span>требования клиента</span></li><li><i>02</i><b>Черновик</b><span>известные параметры</span></li><li><i>03</i><b>Уточнения</b><span>вопросы менеджеру</span></li></ol></div>
+</article></div></div>
+
+
+  </div>
+</section>
+
+</div>
 <!-- SERVICES -->
 <section id="services">
   <div class="wrap">
@@ -675,79 +1010,6 @@ body.menu-lock{overflow:hidden}
         <div class="mstep"><b>Запускаем <small>03</small></b><p>Проверяем на&nbsp;ваших задачах, запускаем и&nbsp;учим команду. Дальше поддерживаем помесячно</p><div class="out">→ Работающий процесс и&nbsp;команда, которая им&nbsp;пользуется</div></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CASES -->
-<section id="cases">
-  <div class="wrap">
-    <div class="sec-head center">
-      <h2>Что уже работает</h2>
-      <p class="lead">11 процессов в&nbsp;Яндекс Доставке, Yango Delivery и&nbsp;Еврокране</p>
-    </div>
-    <div class="mobile-cases"><button class="mobile-case case-open" type="button" data-case="reporting"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">→</i></span><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><span class="mobile-case-result"><strong><span class="before">5 ч</span><span class="ar">→</span>0</strong><small>в неделю на&nbsp;сбор отчётности</small></span></button><button class="mobile-case case-open" type="button" data-case="marketplace-manager"><span class="mobile-case-brand"><span>Yango Delivery</span><i aria-hidden="true">→</i></span><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><span class="mobile-case-result"><strong>−60%</strong><small>команды при&nbsp;той же&nbsp;эффективности бизнеса</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-payments"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><p>Агент сверяет банковскую выписку со&nbsp;счетами, находит частичные оплаты и&nbsp;просрочки и&nbsp;сам отправляет клиентам письма-напоминания. Спорные платежи проверяет бухгалтерия.</p><span class="mobile-case-result"><strong>Автоматически</strong><small>письма клиентам по просроченным счетам</small></span></button><div class="mobile-more" id="mobile-more" hidden><button class="mobile-case case-open" type="button" data-case="ai-adoption"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">→</i></span><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><span class="mobile-case-result"><strong>×5</strong><small>за&nbsp;полгода</small></span></button><button class="mobile-case case-open" type="button" data-case="b2b-compensations"><span class="mobile-case-brand"><span>Яндекс Доставка</span><i aria-hidden="true">→</i></span><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><span class="mobile-case-result"><strong><span class="before">26</span><span class="ar">→</span>2</strong><small>сотрудника вместо 26</small></span></button><button class="mobile-case case-open" type="button" data-case="reactivation-bot"><span class="mobile-case-brand"><span>Yango Delivery</span><i aria-hidden="true">→</i></span><h3>Возвращение исполнителей к&nbsp;работе</h3><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><span class="mobile-case-result"><strong>+14%</strong><small>по&nbsp;сравнению с&nbsp;контрольной группой</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-owner"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Собственник начинает день с&nbsp;готовой сводки</h3><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><span class="mobile-case-result"><strong>К началу дня</strong><small>готовая картина по технике и деньгам</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-documents"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><span class="mobile-case-result"><strong>Готовая запись</strong><small>вместо ручного переноса данных</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-dispatch"><span class="mobile-case-brand"><span>Еврокран</span><i aria-hidden="true">→</i></span><h3>Планирование выездов техники и&nbsp;бригад</h3><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><span class="mobile-case-result"><strong>План выездов</strong><small>по заявкам, технике и бригадам</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-sales"><span class="mobile-case-brand"><span>Еврокран · опробовано</span><i aria-hidden="true">→</i></span><h3>Контроль заявок от обращения до заказа</h3><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><span class="mobile-case-result"><strong>Следующий шаг</strong><small>по обращениям, требующим внимания</small></span></button><button class="mobile-case case-open mobile-case--text" type="button" data-case="eurocran-call-intake"><span class="mobile-case-brand"><span>Еврокран · опробовано</span><i aria-hidden="true">→</i></span><h3>Из звонка — в готовую заявку на технику</h3><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><span class="mobile-case-result"><strong>Готовая заявка</strong><small>черновик после разговора с клиентом</small></span></button></div><button type="button" class="mobile-all" aria-expanded="false" aria-controls="mobile-more"><span>Все кейсы</span><span>11 кейсов ↓</span></button></div>
-  <div class="board"><div class="side"><div class="tabs" role="tablist" id="tabs"><div class="tgroup">Яндекс Доставка</div><button type="button" class="tab on" role="tab" aria-selected="true"><span>01 Отчёты</span>Сводка и&nbsp;презентация</button><button type="button" class="tab" role="tab" aria-selected="false"><span>02 Команды</span>ИИ в&nbsp;работе команды</button><button type="button" class="tab" role="tab" aria-selected="false"><span>03 Претензии</span>Компенсации клиентам</button><div class="tgroup">Yango Delivery</div><button type="button" class="tab" role="tab" aria-selected="false"><span>04 Операции</span>Управление в&nbsp;25 странах</button><button type="button" class="tab" role="tab" aria-selected="false"><span>05 Курьеры</span>Возврат ушедших</button><div class="tgroup">Еврокран</div><button type="button" class="tab" role="tab" aria-selected="false"><span>06 Собственник</span>Утренняя сводка</button><button type="button" class="tab" role="tab" aria-selected="false"><span>07 Бухгалтерия</span>Проверка документов</button><button type="button" class="tab" role="tab" aria-selected="false"><span>08 Финансы</span>Напоминания об&nbsp;оплате</button><button type="button" class="tab" role="tab" aria-selected="false"><span>09 Выезды</span>Техника и&nbsp;бригады</button><button type="button" class="tab" role="tab" aria-selected="false"><span>10 Продажи</span>Контроль заявок</button><button type="button" class="tab" role="tab" aria-selected="false"><span>11 Звонки</span>Из звонка в заявку</button></div>
-  <div class="cnav"><span class="pos"><b id="pos">01</b> / 11</span><div class="arrows"><button type="button" data-d="-1" aria-label="Предыдущий кейс"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button><button type="button" data-d="1" aria-label="Следующий кейс"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></button></div></div></div>
-  <div class="main" id="slides"><div class="cgroup">Яндекс Доставка</div>
-<article class="slide" role="tabpanel">
-  <div class="story"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><button type="button" class="pill case-open" data-case="reporting" aria-label="Подробнее о кейсе: Управленческая отчётность без ручной сборки">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Сборка сводки</span><div class="bignum"><span class="before">5 ч</span><span class="ar">→</span>0</div><p class="dcap">в неделю на&nbsp;сбор отчётности</p><div class="dstats"><div><b>3 региона</b><span>Россия, СНГ, международные</span></div><div><b>11:00</b><span>сводка каждый день</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Дашборды</b><span>откуда берутся цифры</span></li><li><i>02</i><b>Бот</b><span>сравнивает с&nbsp;планом и&nbsp;прошлой неделей</span></li><li><i>03</i><b>Telegram</b><span>сводка и&nbsp;презентация</span></li></ol></div>
-</article>
-<article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><button type="button" class="pill case-open" data-case="ai-adoption" aria-label="Подробнее о кейсе: Внедрение ИИ в ежедневную работу команды">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Использование ИИ</span><div class="bignum">×5</div><p class="dcap">за&nbsp;полгода</p><div class="dstats"><div><b>×1,5</b><span>быстрее разработка</span></div><div><b>×2</b><span>быстрее задачи вне&nbsp;разработки</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Умения</b><span>общие для&nbsp;всех команд</span></li><li><i>02</i><b>Обучение</b><span>на&nbsp;задачах самих людей</span></li><li><i>03</i><b>Замер</b><span>кто как&nbsp;пользуется</span></li></ol></div>
-</article>
-<article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><button type="button" class="pill case-open" data-case="b2b-compensations" aria-label="Подробнее о кейсе: Обработка претензий и расчёт компенсаций">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Людей на&nbsp;процессе</span><div class="bignum"><span class="before">26</span><span class="ar">→</span>2</div><p class="dcap">сотрудника вместо 26</p><div class="dstats"><div><b>80%</b><span>заявок без&nbsp;человека</span></div><div><b>≈ 1 млрд&nbsp;₽</b><span>компенсаций в&nbsp;год</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Реестр</b><span>в&nbsp;любом формате</span></li><li><i>02</i><b>Решение</b><span>по&nbsp;каждой заявке</span></li><li><i>03</i><b>Ответ</b><span>готовый реестр клиенту</span></li></ol></div>
-</article>
-<div class="cgroup">Yango Delivery</div>
-<article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><button type="button" class="pill case-open" data-case="marketplace-manager" aria-label="Подробнее о кейсе: ИИ-помощник для управления бизнесом">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Команда</span><div class="bignum">−60%</div><p class="dcap">команды при&nbsp;той же&nbsp;эффективности бизнеса</p><div class="dstats"><div><b>25 стран</b><span>работает решение</span></div><div><b>×5</b><span>быстрее решения</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Цифры</b><span>финансы и&nbsp;операции</span></li><li><i>02</i><b>Причина</b><span>что&nbsp;сломалось и&nbsp;почему</span></li><li><i>03</i><b>Действие</b><span>сам в&nbsp;пределах лимита</span></li></ol><p class="branch">↳ Если нужно больше лимита, решает&nbsp;человек</p></div>
-</article>
-<article class="slide" role="tabpanel" hidden>
-  <div class="story"><h3>Возвращение исполнителей к&nbsp;работе</h3><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><button type="button" class="pill case-open" data-case="reactivation-bot" aria-label="Подробнее о кейсе: Возвращение исполнителей к работе">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Вернулось курьеров</span><div class="bignum">+14%</div><p class="dcap">по&nbsp;сравнению с&nbsp;контрольной группой</p><div class="dstats"><div><b>$1</b><span>вернуть курьера через&nbsp;помощника</span></div><div><b>≈&nbsp;$20</b><span>привлечь нового&nbsp;курьера</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Сообщение</b><span>агент пишет первым</span></li><li><i>02</i><b>Разговор</b><span>причина ухода, тарифы,&nbsp;выплаты</span></li><li><i>03</i><b>Возврат</b><span>курьер снова на&nbsp;линии</span></li></ol></div>
-</article>
-<div class="cgroup">Еврокран, аренда спецтехники</div>
-<article class="slide ec-case" role="tabpanel" hidden>
-  <div class="story"><h3>Собственник начинает день с&nbsp;готовой сводки</h3><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><button type="button" class="pill case-open" data-case="eurocran-owner" aria-label="Подробнее о кейсе: Утренняя сводка собственника">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">К началу дня</div><p class="dcap">готовая картина по технике и деньгам</p><div class="dstats"><div><b>Техника</b><span>работа, простой и ремонт</span></div><div><b>Оплаты</b><span>поступления и просрочки</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Данные</b><span>смены, заявки и оплаты</span></li><li><i>02</i><b>Сверка</b><span>связи и пропуски</span></li><li><i>03</i><b>Сводка</b><span>собственнику к началу дня</span></li></ol></div>
-</article>
-<article class="slide ec-case" role="tabpanel" hidden>
-  <div class="story"><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><button type="button" class="pill case-open" data-case="eurocran-documents" aria-label="Подробнее о кейсе: Проверка счетов и актов">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Готовая запись</div><p class="dcap">вместо ручного переноса данных</p><div class="dstats"><div><b>Счета и акты</b><span>из почты и сканов</span></div><div><b>Бухгалтер</b><span>проверяет и подтверждает</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Документ</b><span>почта или скан</span></li><li><i>02</i><b>Запись</b><span>поля, договор и объект</span></li><li><i>03</i><b>Проверка</b><span>подтверждает бухгалтер</span></li></ol></div>
-</article>
-<article class="slide ec-case" role="tabpanel" hidden>
-  <div class="story"><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><p>Агент сверяет банковскую выписку со&nbsp;счетами, находит частичные оплаты и&nbsp;просрочки и&nbsp;сам отправляет клиентам письма-напоминания. Спорные платежи проверяет бухгалтерия.</p><button type="button" class="pill case-open" data-case="eurocran-payments" aria-label="Подробнее о кейсе: Автоматические напоминания об оплате">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Автоматически</div><p class="dcap">письма клиентам по просроченным счетам</p><div class="dstats"><div><b>Сверка</b><span>выписка со счетами</span></div><div><b>Исключения</b><span>проверяет бухгалтерия</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Выписка</b><span>сопоставление со счетами</span></li><li><i>02</i><b>Просрочка</b><span>полная и частичная оплата</span></li><li><i>03</i><b>Письмо</b><span>агент отправляет сам</span></li></ol></div>
-</article>
-<article class="slide ec-case" role="tabpanel" hidden>
-  <div class="story"><h3>Планирование выездов техники и&nbsp;бригад</h3><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><button type="button" class="pill case-open" data-case="eurocran-dispatch" aria-label="Подробнее о кейсе: Планирование выездов техники и бригад">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">План выездов</div><p class="dcap">по заявкам, технике и бригадам</p><div class="dstats"><div><b>Пересечения</b><span>видны до подтверждения</span></div><div><b>Диспетчер</b><span>проверяет и утверждает</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Заявки</b><span>доступная техника и бригады</span></li><li><i>02</i><b>График</b><span>пересечения и изменения</span></li><li><i>03</i><b>Выезд</b><span>подтверждает диспетчер</span></li></ol></div>
-</article>
-<article class="slide ec-case" role="tabpanel" hidden>
-  <div class="story"><h3>Контроль заявок от обращения до заказа</h3><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><button type="button" class="pill case-open" data-case="eurocran-sales" aria-label="Подробнее о кейсе: Контроль заявок от обращения до заказа">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Следующий шаг</div><p class="dcap">по обращениям, требующим внимания</p><div class="dstats"><div><b>Менеджеру</b><span>контекст и напоминание</span></div><div><b>Еврокран</b><span>сценарий опробован</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Обращение</b><span>клиент, задача и дата</span></li><li><i>02</i><b>Действие</b><span>ответственный и срок</span></li><li><i>03</i><b>Напоминание</b><span>если работа остановилась</span></li></ol></div>
-</article>
-<article class="slide ec-case" role="tabpanel" hidden>
-  <div class="story"><h3>Из звонка — в готовую заявку на технику</h3><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><button type="button" class="pill case-open" data-case="eurocran-call-intake" aria-label="Подробнее о кейсе: Из звонка — в готовую заявку на технику">Подробнее о&nbsp;кейсе <span aria-hidden="true">→</span></button></div>
-  <div class="data"><span class="cap">Результат</span><div class="bignum txt">Готовая заявка</div><p class="dcap">черновик после разговора с клиентом</p><div class="dstats"><div><b>Требования</b><span>факты и договорённости</span></div><div><b>Еврокран</b><span>сценарий опробован</span></div></div></div>
-  <div class="scheme"><span class="cap">Как устроено</span><ol><li><i>01</i><b>Разговор</b><span>требования клиента</span></li><li><i>02</i><b>Черновик</b><span>известные параметры</span></li><li><i>03</i><b>Уточнения</b><span>вопросы менеджеру</span></li></ol></div>
-</article></div></div>
-
-
   </div>
 </section>
 
@@ -1153,18 +1415,296 @@ body.menu-lock{overflow:hidden}
 
 
 
-<footer>
+<footer id="footer" class="footer-compact">
   <div class="wrap">
-    <div class="foot">
-      <div><a class="logo" href="#top"><i><b></b><b></b><b></b></i>praxis</a></div>
-      <div><h4>Услуги</h4><a href="#services">Автоматизация процессов</a><a href="#services">Внедрение ИИ в команду</a><a href="#services">Пилот до рабочего процесса</a></div>
-      <div><h4>Агентство</h4><a href="#method">Как работаем</a><a href="#cases">Кейсы</a><a href="#faq">Вопросы</a></div>
-      <div><h4>Контакты</h4><a href="https://t.me/praxisai_team">Telegram</a><a href="mailto:info@praxisai.ru">info@praxisai.ru</a><a href="tel:+79652902877">+7 965 290-28-77</a></div>
-    </div>
-    <div class="copy"><span>© praxis, Москва, 2026</span><a href="#top">Наверх ↑</a></div>
+    <a class="logo" href="#top" aria-label="praxis — наверх"><i><b></b><b></b><b></b></i>praxis</a>
+    <span class="footer-note">© praxis, Москва, 2026</span>
+    <nav class="footer-contact" aria-label="Контакты">
+      <a href="https://t.me/praxisai_team">Telegram</a>
+      <a href="mailto:info@praxisai.ru">info@praxisai.ru</a>
+      <a href="tel:+79652902877">+7 965 290-28-77</a>
+    </nav>
+    <a class="footer-top" href="#top">Наверх ↑</a>
   </div>
 </footer>
 
-<script src="assets/site.js?v=12" defer></script>
+<script>
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// run decorative animations only while their block is on screen
+const inView = new WeakMap(), waiters = new WeakMap();
+const viewIO = new IntersectionObserver(es => es.forEach(e => {
+  inView.set(e.target, e.isIntersecting); e.target.classList.toggle('inview', e.isIntersecting);
+  if (e.isIntersecting && waiters.get(e.target)) { waiters.get(e.target)(); waiters.delete(e.target); }
+}), {threshold: .15});
+const watch = el => { if (el) viewIO.observe(el); return el; };
+const whenVisible = el => inView.get(el) ? Promise.resolve() : new Promise(r => waiters.set(el, r));
+
+// mobile menu
+const hdr = document.querySelector('header'), burger = document.querySelector('.burger');
+const setMenu = o => {
+  hdr.classList.toggle('open', o); document.body.classList.toggle('menu-lock', o);
+  burger.setAttribute('aria-expanded', o); burger.setAttribute('aria-label', o ? 'Закрыть меню' : 'Открыть меню');
+};
+burger.addEventListener('click', () => setMenu(!hdr.classList.contains('open')));
+document.querySelectorAll('.mmenu a').forEach(a => a.addEventListener('click', e => {
+  const href = a.getAttribute('href');
+  setMenu(false);
+  if (href.startsWith('#')) {
+    e.preventDefault();
+    const t = document.querySelector(href);
+    setTimeout(() => { t.scrollIntoView({behavior: reduce ? 'auto' : 'smooth'}); history.replaceState(null, '', href); }, 0);
+  }
+}));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && hdr.classList.contains('open')) { setMenu(false); burger.focus(); } });
+matchMedia('(min-width:901px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+// sticky "discuss" button on phones: after the hero, hidden near the contact block and while menu/case is open
+const mcta = document.querySelector('.mcta'), heroEl = document.querySelector('.hero .actions'), contactEl = document.getElementById('contact');
+function toggleMcta(){
+  const on = heroEl.getBoundingClientRect().bottom < 0 && contactEl.getBoundingClientRect().top > innerHeight - 40
+    && !document.body.classList.contains('cm-lock') && !document.body.classList.contains('menu-lock');
+  mcta.classList.toggle('show', on);
+}
+addEventListener('scroll', toggleMcta, {passive:true}); addEventListener('resize', toggleMcta);
+new MutationObserver(toggleMcta).observe(document.body, {attributes:true, attributeFilter:['class']}); toggleMcta();
+
+// highlight current section in menu
+const menuLinks = [...document.querySelectorAll('.menu a')];
+const secs = ['cases','services','problems','method','formats','tech','faq','contact'].map(id => document.getElementById(id));
+function markMenu(){
+  const y = innerHeight * .4; let cur = null;
+  secs.forEach(sec => { if (sec.getBoundingClientRect().top <= y) cur = sec.id; });
+  menuLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur));
+}
+addEventListener('scroll', markMenu, {passive:true}); markMenu();
+
+// reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// hero: typed task + agent steps
+const tasks = [
+  {t:'Собери утреннюю сводку по продажам', r:['Сводка отправлена в Telegram','Показатели, сравнение с планом и выводы']},
+  {t:'Разбери новые заявки в Трекере', r:['Заявки разобраны','Две спорные переданы человеку']},
+  {t:'Проверь документы поставщиков', r:['Документы проверены','Один вопрос бухгалтеру']},
+];
+const typed = document.getElementById('typed'), steps = [...document.querySelectorAll('#steps li')];
+const mark = document.getElementById('agentMark');
+const result = document.getElementById('result'), rT = document.getElementById('resTitle'), rS = document.getElementById('resSub');
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function heroLoop(){
+  if (reduce) {
+    typed.textContent = tasks[0].t; steps.forEach(s => s.className = 'done');
+    rT.textContent = tasks[0].r[0]; rS.textContent = tasks[0].r[1]; result.classList.add('show'); mark.classList.remove('logo-live');
+    return;
+  }
+  const stageEl = watch(document.querySelector('.stage'));
+  for (let k = 0; ; k = (k + 1) % tasks.length) {
+    await whenVisible(stageEl);
+    const {t, r} = tasks[k];
+    steps.forEach(s => s.className = ''); result.classList.remove('show');
+    rT.textContent = 'Готовый результат'; rS.textContent = 'Отчёт, выполненная задача, решение в пределах лимита';
+    typed.textContent = '';
+    for (const ch of t) { typed.textContent += ch; await sleep(reduce ? 0 : 38); }
+    await sleep(500);
+    mark.classList.add('logo-live');
+    for (const s of steps) { s.className = 'on'; await sleep(1100); s.className = 'done'; }
+    mark.classList.remove('logo-live');
+    rT.textContent = r[0]; rS.textContent = r[1]; result.classList.add('show');
+    await sleep(3200);
+  }
+}
+heroLoop();
+
+// orbit chips: place on the arc of a big circle whose centre sits right of the panel
+function layoutOrbit(){
+  const o = document.getElementById('orbit'), b = o.getBoundingClientRect(), svg = document.getElementById('orbitsvg');
+  const R = b.width < 600 ? b.height * .62 : Math.max(b.height * .62, 220), cx = b.width * .72 + R, cy = b.height / 2;
+  svg.setAttribute('viewBox', `0 0 ${b.width} ${b.height}`);
+  svg.innerHTML = `<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="rgba(255,255,255,.45)"/>`;
+  o.querySelectorAll('.chip').forEach(c => {
+    const a = (180 - c.dataset.a) * Math.PI / 180;
+    c.style.left = (cx + R * Math.cos(a)) + 'px'; c.style.top = (cy + R * Math.sin(a)) + 'px';
+  });
+}
+layoutOrbit(); addEventListener('resize', layoutOrbit);
+const chips = [...document.querySelectorAll('#orbit .chip')]; let ci = 0;
+chips[0].classList.add('on');
+const orbitEl = watch(document.getElementById('orbit'));
+if (!reduce) setInterval(() => { if (!inView.get(orbitEl)) return; chips[ci].classList.remove('on'); ci = (ci + 1) % chips.length; chips[ci].classList.add('on'); }, 1800);
+
+// ladder + steps
+const ms = [...document.querySelectorAll('#msteps .mstep')]; let li = 0;
+function setStep(i){
+  li = i;
+  ms.forEach((m, j) => m.classList.toggle('on', j === i));
+  document.querySelectorAll('#ladder [data-i]').forEach(n => n.classList.toggle('on', +n.dataset.i === i));
+}
+setStep(0);
+const ladderEl = watch(document.querySelector('.method'));
+let auto = reduce ? null : setInterval(() => { if (inView.get(ladderEl)) setStep((li + 1) % 3); }, 2600);
+ms.forEach((m, i) => m.addEventListener('mouseenter', () => { clearInterval(auto); setStep(i); }));
+
+watch(document.querySelector('.cta'));
+
+// belt: duplicate for seamless loop
+const belt = document.getElementById('belt'); belt.innerHTML += belt.innerHTML;
+
+// ===== ported cases logic =====
+const setLocalHash=hash=>{try{history.replaceState(null,'',hash)}catch{location.hash=hash}};
+(()=>{const tabs=[...document.querySelectorAll('.tab')],slides=[...document.querySelectorAll('.slide')],pos=document.getElementById('pos'),tl=document.getElementById('tabs');let cur=0;
+const narrow=()=>matchMedia('(max-width:860px)').matches;
+tl.setAttribute('aria-label','Кейсы клиентов');tl.setAttribute('aria-orientation','vertical');
+tabs.forEach((t,k)=>{
+ const slug=slides[k].querySelector('.case-open').dataset.case;
+ t.id='case-tab-'+slug;t.tabIndex=k===cur?0:-1;t.setAttribute('aria-controls','case-panel-'+slug);
+ slides[k].id='case-panel-'+slug;slides[k].setAttribute('aria-labelledby',t.id);
+});
+const sel=(i,scroll)=>{cur=(i+tabs.length)%tabs.length;tabs.forEach((t,k)=>{t.classList.toggle('on',k===cur);t.setAttribute('aria-selected',String(k===cur));t.tabIndex=k===cur?0:-1});slides.forEach((x,k)=>x.hidden=k!==cur);pos.textContent=String(cur+1).padStart(2,'0');
+ if(narrow())tl.scrollLeft=tabs[cur].offsetLeft-tl.offsetLeft-20;
+ if(scroll&&slides[cur].getClientRects().length){const panel=slides[cur].getBoundingClientRect(),heading=slides[cur].querySelector('h3').getBoundingClientRect(),top=document.querySelector('header').getBoundingClientRect().bottom+20;if(heading.top<top||heading.top>innerHeight*.6)window.scrollTo({top:scrollY+panel.top-top,behavior:reduce?'auto':'smooth'})}};
+tabs.forEach((t,k)=>{
+ t.addEventListener('click',()=>sel(k,true));
+ t.addEventListener('keydown',e=>{
+  let next;
+  if(e.key==='ArrowDown'||e.key==='ArrowRight')next=k+1;
+  else if(e.key==='ArrowUp'||e.key==='ArrowLeft')next=k-1;
+  else if(e.key==='Home')next=0;
+  else if(e.key==='End')next=tabs.length-1;
+  else return;
+  e.preventDefault();sel(next,false);tabs[cur].focus();
+ });
+});document.querySelectorAll('[data-d]').forEach(b=>b.addEventListener('click',()=>sel(cur+Number(b.dataset.d),true)));
+let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});sl.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>60)sel(cur+(dx<0?1:-1),false);x0=null},{passive:true});})();
+(()=>{
+ const m=document.getElementById('caseModal'),body=m.querySelector('.cm__body'),win=m.querySelector('.cm__win');
+ const ids=[...new Set([...document.querySelectorAll('#slides .case-open')].map(b=>b.dataset.case))];
+ const narrow=matchMedia('(max-width:900px)'),phone=matchMedia('(max-width:720px)');
+ let cur=null,last=null,io=null,closeT=null,isOpen=false;
+ const background=new Map();
+ const writeHistory=(method,hash,state=history.state)=>history[method](state,'',hash);
+ const locationCase=()=>{const h=location.hash.match(/^#case-(.+)$/);return h&&ids.includes(h[1])?h[1]:null};
+ const isolate=on=>{
+  if(on){for(const el of document.body.children){if(el===m||el.contains(m)||background.has(el))continue;background.set(el,el.inert);el.inert=true}}
+  else {for(const [el,wasInert] of background)el.inert=wasInert;background.clear()}
+ };
+ const resetScroll=()=>{win.scrollTop=0;const info=body.querySelector('.cm__info');if(info)info.scrollTop=0;const vis=body.querySelector('.cm__vis');if(vis)vis.scrollTop=0};
+ const layout=()=>{
+  const info=body.querySelector('.cm__info'),vis=body.querySelector('.cm__vis'),res=body.querySelector('.cm__res'),lede=body.querySelector('.cm__lede'),title=body.querySelector('.cm__title');
+  if(!info||!vis)return;
+  if(res&&lede)lede.after(res);
+  if(narrow.matches&&res){res.after(vis);if(phone.matches&&title){title.after(res);res.after(vis)}}
+  else body.insertBefore(vis,info);
+ };
+ const manualPause=new WeakSet(),visibleVideos=new WeakSet(),playRequests=new WeakMap();
+ const motionQuery=matchMedia('(prefers-reduced-motion:reduce)');
+ const syncVideo=v=>{
+  const p=v.closest('.phone');if(!p)return;
+  p.classList.toggle('paused',v.paused);
+  p.setAttribute('aria-label',v.paused?'Воспроизвести демо':'Приостановить демо');
+ };
+ const pauseVideo=v=>{playRequests.set(v,{});v.pause();syncVideo(v)};
+ const canAutoplay=v=>isOpen&&visibleVideos.has(v)&&!manualPause.has(v)&&!motionQuery.matches;
+ const startVideo=(v,automatic=false)=>{
+  const request={};playRequests.set(v,request);
+  v.play().then(()=>{
+   if(playRequests.get(v)!==request)return;
+   if(automatic&&!canAutoplay(v)){pauseVideo(v);return}
+   syncVideo(v);
+  }).catch(()=>{if(playRequests.get(v)===request)syncVideo(v)});
+ };
+ const play=()=>{
+  if(io)io.disconnect();
+  const vs=[...m.querySelectorAll('video')];
+  vs.forEach(v=>{v.muted=true;pauseVideo(v)});
+  io=new IntersectionObserver(es=>es.forEach(x=>{
+   const v=x.target;
+   if(x.isIntersecting){visibleVideos.add(v);if(canAutoplay(v))startVideo(v,true)}
+   else{visibleVideos.delete(v);pauseVideo(v)}
+  }),{root:null,threshold:.5});
+  vs.forEach(v=>io.observe(v));
+ };
+ const bindPhones=()=>m.querySelectorAll('.phone').forEach(p=>{
+  const v=p.querySelector('video');if(!v)return;
+  v.addEventListener('play',()=>syncVideo(v));v.addEventListener('pause',()=>syncVideo(v));
+  const tog=()=>{
+   if(v.paused){manualPause.delete(v);startVideo(v)}
+   else{manualPause.add(v);pauseVideo(v)}
+  };
+  p.addEventListener('click',tog);
+  p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();tog()}});
+ });
+ motionQuery.addEventListener('change',e=>{if(e.matches)m.querySelectorAll('video').forEach(pauseVideo)});
+ const render=id=>{
+  const t=document.getElementById('case-'+id);if(!t)return;
+  body.replaceChildren(...[...t.children].map(n=>n.cloneNode(true)));
+  win.setAttribute('aria-labelledby','cmTitle-case-'+id);body.querySelectorAll('video').forEach(v=>v.preload='metadata');cur=id;
+  layout();bindPhones();play();resetScroll();
+ };
+ const show=id=>{
+  clearTimeout(closeT);if(!isOpen)last=document.activeElement;
+  render(id);m.hidden=false;m.setAttribute('aria-hidden','false');isOpen=true;
+  document.body.classList.add('cm-lock');isolate(true);void m.offsetWidth;m.classList.add('is-open');
+  m.querySelector('.cm__x').focus({preventScroll:true});resetScroll();
+ };
+ const hide=(restoreFocus=true)=>{
+  if(!isOpen)return;
+  isOpen=false;m.classList.remove('is-open');m.setAttribute('aria-hidden','true');document.body.classList.remove('cm-lock');isolate(false);
+  m.querySelectorAll('video').forEach(v=>v.pause());if(io)io.disconnect();
+  closeT=setTimeout(()=>{m.hidden=true;body.replaceChildren();cur=null},300);
+  if(restoreFocus&&last?.isConnected)last.focus({preventScroll:true});
+ };
+ const open=id=>{
+  if(!ids.includes(id))return;
+  const state={...(history.state||{}),praxisCaseEntry:true};
+  writeHistory(isOpen?'replaceState':'pushState','#case-'+id,state);show(id);
+ };
+ const close=()=>{
+  if(!isOpen)return;
+  const ownsEntry=history.state?.praxisCaseEntry===true;hide();
+  if(ownsEntry)history.back();else writeHistory('replaceState','#cases',{...(history.state||{}),praxisCaseEntry:false});
+ };
+ const step=d=>{const focused=document.activeElement,id=ids[(ids.indexOf(cur)+d+ids.length)%ids.length];writeHistory('replaceState','#case-'+id,history.state);render(id);if(!focused.isConnected)m.querySelector('.cm__x').focus({preventScroll:true})};
+ const syncHistory=()=>{const id=locationCase();if(id){if(!isOpen||cur!==id)show(id)}else hide()};
+ const contact=()=>{
+  hide(false);writeHistory('replaceState','#contact',{...(history.state||{}),praxisCaseEntry:false});
+  const target=document.getElementById('contact'),focusTarget=target.querySelector('h2')||target;
+  focusTarget.setAttribute('tabindex','-1');
+  requestAnimationFrame(()=>{target.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});focusTarget.focus({preventScroll:true})});
+ };
+ document.querySelectorAll('.case-open').forEach(b=>b.addEventListener('click',()=>open(b.dataset.case)));
+ const bar=document.createElement('div');bar.className='cm__bar';win.prepend(bar);bar.append(m.querySelector('.cm__nav'),m.querySelector('.cm__x'));
+ let y0=null;win.addEventListener('touchstart',e=>{y0=(e.target.closest('.cm__bar')||win.scrollTop<=0)?e.touches[0].clientY:null},{passive:true});
+ win.addEventListener('touchend',e=>{if(y0===null)return;const dy=e.changedTouches[0].clientY-y0;if(dy>90)close();y0=null},{passive:true});
+ document.querySelectorAll('.slide').forEach(sl=>{const b=sl.querySelector('.case-open');if(b)sl.addEventListener('click',e=>{if(phone.matches&&!e.target.closest('.case-open'))open(b.dataset.case)})});
+ m.addEventListener('click',e=>{
+  if(e.target.closest('a[data-contact]')){e.preventDefault();contact();return}
+  if(e.target.closest('[data-close]')){close();return}
+  const s=e.target.closest('[data-step]');if(s)step(+s.dataset.step);
+ });
+ document.addEventListener('keydown',e=>{
+  if(!isOpen)return;
+  if(e.key==='Escape'){e.preventDefault();close();return}
+  if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);
+  if(e.key==='Tab'){
+   const nodes=[...win.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(el=>el.getClientRects().length&&!el.closest('[inert]'));
+   const first=nodes[0],end=nodes[nodes.length-1];if(!first)return;
+   if(e.shiftKey&&(document.activeElement===first||!win.contains(document.activeElement))){e.preventDefault();end.focus()}
+   else if(!e.shiftKey&&(document.activeElement===end||!win.contains(document.activeElement))){e.preventDefault();first.focus()}
+  }
+ });
+ addEventListener('popstate',syncHistory);addEventListener('hashchange',syncHistory);
+ const relayout=()=>{if(isOpen){layout();resetScroll()}};
+ narrow.addEventListener('change',relayout);phone.addEventListener('change',relayout);
+ syncHistory();
+})();
+
+(()=>{const b=document.querySelector('.mobile-all'),more=document.getElementById('mobile-more');b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));more.hidden=!open;b.firstElementChild.textContent=open?'Свернуть кейсы':'Все кейсы';b.lastElementChild.textContent=open?'11 из 11 ↑':'11 кейсов ↓';if(open)more.querySelector('button').focus();else document.querySelector('.mobile-cases').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});})();
+
+const toggle=document.querySelector('.all-proof'), more=document.getElementById('more-cases');
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));more.hidden=!open;toggle.firstElementChild.textContent=open?'Свернуть кейсы':'Все 11 кейсов';toggle.lastElementChild.textContent=open?'−':'+';if(open){more.querySelector('button').focus({preventScroll:true});more.scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});}else toggle.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});});
+
+</script>
 </body>
 </html>
