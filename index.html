@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-rogDwCe+gSrjyJndTmoTk/9tnMp4sklzOXVlZqtdvi0='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-ixw5mC55N37oN/UP/Ox86zVXhzqj5cMkGV4nGhFNH28=' 'sha256-6SQGg8ybT8GOYp2j+06MGnpYn1f2G4St4UxYeaP3bMs='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>praxis — ИИ-агенты и автоматизация процессов для бизнеса</title>
@@ -699,6 +699,131 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
 }
 
 </style>
+<style>
+/* Five scoped fixes to the published landing, 20 November 2026. */
+.prompt{padding:10px 12px 10px 20px;align-items:center;min-height:64px}
+.prompt>.prompt-text{flex:1;min-width:0;min-height:44px;display:flex;align-items:center;white-space:normal;overflow:visible}
+.prompt #typed{flex:initial;min-height:0;white-space:normal;line-height:1.4;display:block}
+.prompt .go{height:44px;min-height:44px;max-height:44px;flex:0 0 44px}
+.all-proof{width:max-content;max-width:100%;min-height:44px;gap:14px;margin:24px auto 0;padding:10px 18px;font-size:15px;justify-content:center}
+.all-proof-mark{font-size:20px;flex:none}
+#problems .art-flow{animation:praxis-flow 1.2s linear infinite}
+#problems .art-bars rect{transform-box:fill-box;transform-origin:center bottom;animation:praxis-bars 2.4s ease-in-out infinite alternate}
+#problems .art-bars rect:nth-child(2){animation-delay:-.6s}
+#problems .art-bars rect:nth-child(3){animation-delay:-1.2s}
+#problems .art-bars rect:nth-child(4){animation-delay:-1.8s}
+#problems .art-ring{animation:praxis-ring 2.8s ease-in-out infinite}
+#problems .art-ring:nth-of-type(3){animation-delay:-1.4s}
+#problems .art-gauge{stroke-dasharray:100;animation:praxis-gauge 3.6s ease-in-out infinite}
+#problems .art-fields{animation:praxis-fields 3s ease-in-out infinite}
+#problems .dcard :is(.art-flow,.art-bars rect,.art-ring,.art-gauge,.art-fields){animation-play-state:paused}
+#problems .dcard.inview :is(.art-flow,.art-bars rect,.art-ring,.art-gauge,.art-fields){animation-play-state:running}
+@keyframes praxis-flow{to{stroke-dashoffset:-14}}
+@keyframes praxis-bars{from{transform:scaleY(.55)}to{transform:scaleY(1)}}
+@keyframes praxis-ring{0%,100%{opacity:.45}50%{opacity:1;stroke:#b94629}}
+@keyframes praxis-gauge{0%,100%{stroke-dashoffset:25}50%{stroke-dashoffset:0}}
+@keyframes praxis-fields{0%,100%{opacity:.65;transform:translateY(2px)}50%{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){
+ .prompt{padding:10px 12px;gap:10px}
+ .prompt>.prompt-text{min-height:63px}
+ .prompt #typed{font-size:15px;line-height:1.4;min-height:0}
+ .prompt .go{height:36px;min-height:36px;max-height:36px;flex-basis:36px}
+ .all-proof{margin-top:16px;font-size:14px;padding:10px 16px}
+}
+@media(prefers-reduced-motion:reduce){
+ #problems .dcard :is(.art-flow,.art-bars rect,.art-ring,.art-gauge,.art-fields){animation:none;transform:none}
+}
+
+/* Approved text-only process layout: shared rows on desktop, stacked on phones. */
+#method .method{display:block;background:transparent;border-radius:0;overflow:visible}
+#method .msteps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:0}
+#method .mstep{display:grid;grid-template-rows:subgrid;grid-row:span 3;row-gap:0;min-width:0;padding:0 32px;border-radius:0;background:none;transition:none}
+#method .mstep:first-child{padding-left:0}
+#method .mstep:last-child{padding-right:0}
+#method .mstep+.mstep{border-left:1px solid var(--line)}
+#method .mstep b{display:flex;flex-direction:column;align-items:flex-start;gap:12px;font-size:clamp(24px,2.4vw,32px);line-height:1.2;font-weight:500}
+#method .mstep b small{order:-1;color:var(--accent);font-size:18px;font-weight:500;line-height:1.3}
+#method .mstep p{font-size:17px;line-height:1.6;margin:24px 0 28px;text-wrap:pretty}
+#method .mstep .out{margin:0;border-top:1px solid var(--line);padding-top:18px;font-size:16px;line-height:1.5;font-weight:500;text-wrap:pretty}
+@media(max-width:900px){
+ #method .mstep{padding-left:20px;padding-right:20px}
+ #method .mstep p{font-size:16px}
+}
+@media(max-width:760px){
+ #method .msteps{grid-template-columns:minmax(0,1fr);gap:24px}
+ #method .mstep,#method .mstep:first-child,#method .mstep:last-child{grid-row:auto;grid-template-rows:auto;padding:0;border-left:0}
+ #method .mstep+.mstep{padding-top:24px;border-left:0;border-top:1px solid var(--line)}
+ #method .mstep b{gap:10px;font-size:26px}
+ #method .mstep b small{font-size:16px}
+ #method .mstep p{margin:16px 0 18px}
+ #method .mstep .out{padding-top:14px;font-size:15px}
+}
+
+/* Anchor offsets: target the heading, not the section's empty top padding. */
+html{--anchor-clearance:96px;scroll-padding-top:var(--anchor-clearance)}
+:is(#cases,#services,#method,#formats,#tech,#faq){scroll-margin-top:calc(0px - var(--section-gap))}
+#problems{scroll-margin-top:-64px}
+@media(max-width:900px){html{--anchor-clearance:84px}#problems{scroll-margin-top:-48px}}
+
+/* Compact contact panel: keep all contact options and animated examples. */
+#contact .cta{padding-top:36px}
+#contact .cta h2{font-size:clamp(30px,3vw,42px);line-height:1.15}
+#contact .cta>p{margin-top:10px}
+#contact .cta .actions{margin-top:20px}
+#contact .cta .tel{margin-top:8px}
+#contact .cta .tel a{display:inline-flex;align-items:center;min-height:44px}
+#contact .belt{margin-top:20px;padding-bottom:24px}
+#contact .msg{padding:12px 16px;min-height:104px}
+#contact .msg .h{margin-bottom:4px}
+@media(max-width:760px){
+ #contact .cta{padding-top:28px}
+ #contact .cta h2{font-size:30px}
+ #contact .cta .actions{margin-top:16px}
+ #contact .belt{margin-top:16px;padding-bottom:20px}
+}
+
+/* Visible task processing; static source icons never disappear. */
+#problems .art-scan{animation:praxis-scan 3.2s linear infinite;animation-play-state:paused}
+#problems .dcard.inview .art-scan{animation-play-state:running}
+@keyframes praxis-scan{
+ 0%{transform:translateY(0);opacity:0}
+ 12%{opacity:1}
+ 88%{opacity:1}
+ 100%{transform:translateY(130px);opacity:0}
+}
+@media(prefers-reduced-motion:reduce){
+ #problems .dcard .art-scan{animation:none;transform:translateY(64px);opacity:.6}
+}
+
+/* Equal source tiles, with a readable activity loop inside every tile. */
+#problems .art-table rect{animation:praxis-table 2.4s ease-in-out infinite}
+#problems .art-table rect:nth-child(2){animation-delay:-1.6s}
+#problems .art-table rect:nth-child(3){animation-delay:-.8s}
+#problems .art-mail{animation:praxis-mail 2.4s ease-in-out infinite}
+#problems .dcard :is(.art-table rect,.art-mail){animation-play-state:paused}
+#problems .dcard.inview :is(.art-table rect,.art-mail){animation-play-state:running}
+@keyframes praxis-table{0%,100%{opacity:.25}35%,65%{opacity:1}}
+@keyframes praxis-mail{0%,100%{transform:translateX(0)}45%,65%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){
+ #problems .dcard :is(.art-table rect,.art-mail){animation:none;transform:none;opacity:1}
+}
+
+/* Bring the hero closer to the header after removing the eyebrow. */
+.hero{padding-top:32px}
+@media(max-width:760px){.hero{padding-top:24px}}
+
+/* Contact channels live in the CTA; footer only closes the page. */
+.footer-compact{padding:16px 0}
+.footer-compact .wrap{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:0 24px;align-items:center}
+.footer-compact .logo,.footer-compact .footer-note,.footer-compact .footer-top{order:0;margin:0}
+.footer-compact .footer-top{justify-self:end}
+@media(max-width:760px){
+ .footer-compact .wrap{grid-template-columns:minmax(0,1fr) auto;gap:4px 16px}
+ .footer-compact .logo{grid-column:1/-1}
+ .footer-compact .footer-note{white-space:normal}
+}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержанию</a>
@@ -707,26 +832,22 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
 <header>
   <div class="wrap nav">
     <a class="logo" href="#top"><i><b></b><b></b><b></b></i>praxis</a>
-    <nav class="menu">
-      <a href="#services">Услуги</a>
-      <a href="#method">Как работаем</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#formats">Форматы</a>
-      <a href="#faq">Вопросы</a>
-    </nav>
+    <nav class="menu"><a href="#cases">Кейсы</a>
+<a href="#services">Услуги</a>
+<a href="#method">Как работаем</a>
+<a href="#formats">Форматы</a>
+<a href="#faq">Вопросы</a></nav>
     <div class="nav-r">
       <a class="btn btn-ink btn-sm" href="#contact">Обсудить задачу</a>
       <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mmenu"><i></i></button>
     </div>
   </div>
   <nav class="mmenu" id="mmenu" aria-label="Разделы сайта">
-    <div class="mm-links">
-      <a href="#services">Услуги</a>
-      <a href="#method">Как работаем</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#formats">Форматы</a>
-      <a href="#faq">Вопросы</a>
-    </div>
+    <div class="mm-links"><a href="#cases">Кейсы</a>
+<a href="#services">Услуги</a>
+<a href="#method">Как работаем</a>
+<a href="#formats">Форматы</a>
+<a href="#faq">Вопросы</a></div>
     <div class="mm-foot">
       <a class="btn btn-ink" href="#contact">Обсудить задачу</a>
       <div class="mm-contacts"><a href="https://t.me/praxisai_team">Telegram</a><a href="mailto:info@praxisai.ru">info@praxisai.ru</a><a href="tel:+79652902877">+7 965 290-28-77</a></div>
@@ -738,7 +859,7 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
 
 <!-- HERO -->
 <div class="wrap hero center" id="top">
-  <p class="hero-eyebrow">Консалтинг и внедрение ИИ</p>
+  
   <h1>ИИ-агенты для&nbsp;вашего бизнеса</h1>
   <p class="lead">Находим работу, которую команда каждый день делает руками, и&nbsp;передаём её&nbsp;агентам: отчёты, заявки, расчёты. Всё работает в&nbsp;ваших системах</p>
   <div class="actions">
@@ -749,7 +870,7 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
   <div class="stage rv" style="text-align:left">
     <div>
       <p class="demo-caption">Пример работы агента</p>
-      <div class="prompt" aria-hidden="true"><span id="typed"></span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></div>
+      <div class="prompt" aria-hidden="true"><span class="prompt-text"><span id="typed"></span></span><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></span></div>
       <p class="stage-note">ИИ-агент — программа, которая сама делает рутинную работу в&nbsp;ваших системах и&nbsp;по&nbsp;вашим правилам. Спорные случаи она передаёт человеку</p>
     </div>
     <div class="agent">
@@ -764,7 +885,7 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
   </div>
 </div>
 
-<section id="cases" class="proof-section"><div class="wrap"><div class="proof-heading"><h2>Что уже работает</h2><p>11 процессов в Яндекс Доставке,<br>Yango Delivery и Еврокране</p></div><div class="proof-grid"><article class="proof-card proof-feature"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><div class="proof-result"><strong><span class="before">5 ч</span><span class="ar">→</span>0</strong><small>в неделю на&nbsp;сбор отчётности</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">AI</span><span>Delivery AI Reports<small>бот · 11:00</small></span></div><div class="output-message"><b>Ключевые метрики</b><div class="output-row"><span>Россия</span><span>СНГ</span><span>Международные рынки</span></div><div class="output-file">delivery_daily_06_10.html <span>↓</span></div><p>Отчёт за 06.10 отправлен в 11:00</p></div><div class="output-caption">Пример результата · данные условные</div></div><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><button class="proof-open case-open" type="button" data-case="reporting" aria-label="Подробнее: Управленческая отчётность без ручной сборки">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-feature"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><div class="proof-result"><strong>Автоматически</strong><small>письма клиентам по просроченным счетам</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">@</span><span>Напоминание об оплате<small>Письмо клиенту</small></span><span class="sent">Отправлено</span></div><div class="output-message"><b>Оплата по счёту № 184 — Еврокран</b><p>Добрый день!<br>Напоминаем об оплате 180 000 ₽ по счёту № 184. Подскажите, пожалуйста, дату платежа.</p><div class="output-status">Отправлено автоматически · 09:02</div></div><div class="output-caption">Пример результата · данные условные</div></div><p>Агент сверяет оплаты со счетами, находит задолженности и сам отправляет клиентам напоминания. Спорные платежи передаёт бухгалтерии.</p><button class="proof-open case-open" type="button" data-case="eurocran-payments" aria-label="Подробнее: Агент сам напоминает клиентам об оплате">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-feature"><div class="proof-brand">Yango Delivery</div><div class="proof-copy"><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><div class="proof-result"><strong>−60%</strong><small>команды при&nbsp;той же&nbsp;эффективности бизнеса</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">AI</span><span>Маркетплейс, Африка<small>сегодня, 11:00</small></span></div><div class="output-message"><div class="output-row"><span>Доставки <b>+2,6%</b></span><span>Оборот <b>+4,9%</b></span><span>Доход <b>−3,6%</b></span></div><p><b>Предлагаю:</b><br>В пятницу пересчитать бонусы, чтобы уложиться в бюджет</p><div class="output-status">Посчитать?</div></div><div class="output-caption">Пример результата · данные условные</div></div><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><button class="proof-open case-open" type="button" data-case="marketplace-manager" aria-label="Подробнее: ИИ-помощник для управления бизнесом">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article></div><div id="more-cases" class="proof-grid more-cases" hidden><article class="proof-card proof-extra"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><div class="proof-result"><strong>×5</strong><small>за&nbsp;полгода</small></div><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><button class="proof-open case-open" type="button" data-case="ai-adoption" aria-label="Подробнее: Внедрение ИИ в ежедневную работу команды">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><div class="proof-result"><strong><span class="before">26</span><span class="ar">→</span>2</strong><small>сотрудника вместо 26</small></div><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><button class="proof-open case-open" type="button" data-case="b2b-compensations" aria-label="Подробнее: Обработка претензий и расчёт компенсаций">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Yango Delivery</div><div class="proof-copy"><h3>Возвращение исполнителей к&nbsp;работе</h3><div class="proof-result"><strong>+14%</strong><small>по&nbsp;сравнению с&nbsp;контрольной группой</small></div><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><button class="proof-open case-open" type="button" data-case="reactivation-bot" aria-label="Подробнее: Возвращение исполнителей к работе">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Собственник начинает день с&nbsp;готовой сводки</h3><div class="proof-result"><strong>К началу дня</strong><small>готовая картина по технике и деньгам</small></div><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><button class="proof-open case-open" type="button" data-case="eurocran-owner" aria-label="Подробнее: Собственник начинает день с готовой сводки">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><div class="proof-result"><strong>Готовая запись</strong><small>вместо ручного переноса данных</small></div><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><button class="proof-open case-open" type="button" data-case="eurocran-documents" aria-label="Подробнее: Бухгалтер проверяет данные вместо перепечатки документов">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Планирование выездов техники и&nbsp;бригад</h3><div class="proof-result"><strong>План выездов</strong><small>по заявкам, технике и бригадам</small></div><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><button class="proof-open case-open" type="button" data-case="eurocran-dispatch" aria-label="Подробнее: Планирование выездов техники и бригад">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран · опробовано</div><div class="proof-copy"><h3>Контроль заявок от обращения до заказа</h3><div class="proof-result"><strong>Следующий шаг</strong><small>по обращениям, требующим внимания</small></div><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><button class="proof-open case-open" type="button" data-case="eurocran-sales" aria-label="Подробнее: Контроль заявок от обращения до заказа">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран · опробовано</div><div class="proof-copy"><h3>Из звонка — в готовую заявку на технику</h3><div class="proof-result"><strong>Готовая заявка</strong><small>черновик после разговора с клиентом</small></div><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><button class="proof-open case-open" type="button" data-case="eurocran-call-intake" aria-label="Подробнее: Из звонка — в готовую заявку на технику">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article></div><button class="all-proof" type="button" aria-expanded="false" aria-controls="more-cases"><span>Все 11 кейсов</span><span class="all-proof-mark" aria-hidden="true">+</span></button></div></section><div hidden>
+<section id="cases" class="proof-section"><div class="wrap"><div class="proof-heading"><h2>Что уже работает</h2><p>11 процессов в Яндекс Доставке,<br>Yango Delivery и Еврокране</p></div><div class="proof-grid"><article class="proof-card proof-feature"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Управленческая отчётность без&nbsp;ручной сборки</h3><div class="proof-result"><strong><span class="before">5 ч</span><span class="ar">→</span>0</strong><small>в неделю на&nbsp;сбор отчётности</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">AI</span><span>Delivery AI Reports<small>бот · 11:00</small></span></div><div class="output-message"><b>Ключевые метрики</b><div class="output-row"><span>Россия</span><span>СНГ</span><span>Международные рынки</span></div><div class="output-file">delivery_daily_06_10.html <span>↓</span></div><p>Отчёт за 06.10 отправлен в 11:00</p></div><div class="output-caption">Пример результата · данные условные</div></div><p>Руководители каждое утро получают ключевые показатели бизнеса в&nbsp;Telegram. Ежемесячная презентация собирается сама и&nbsp;открывается из&nbsp;чата</p><button class="proof-open case-open" type="button" data-case="reporting" aria-label="Подробнее: Управленческая отчётность без ручной сборки">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-feature"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Агент сам напоминает клиентам об&nbsp;оплате</h3><div class="proof-result"><strong>Автоматически</strong><small>письма клиентам по просроченным счетам</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">@</span><span>Напоминание об оплате<small>Письмо клиенту</small></span><span class="sent">Отправлено</span></div><div class="output-message"><b>Оплата по счёту № 184 — Еврокран</b><p>Добрый день!<br>Напоминаем об оплате 180 000 ₽ по счёту № 184. Подскажите, пожалуйста, дату платежа.</p><div class="output-status">Отправлено автоматически · 09:02</div></div><div class="output-caption">Пример результата · данные условные</div></div><p>Агент сверяет оплаты со счетами, находит задолженности и сам отправляет клиентам напоминания. Спорные платежи передаёт бухгалтерии.</p><button class="proof-open case-open" type="button" data-case="eurocran-payments" aria-label="Подробнее: Агент сам напоминает клиентам об оплате">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-feature"><div class="proof-brand">Yango Delivery</div><div class="proof-copy"><h3>ИИ-помощник для&nbsp;управления бизнесом</h3><div class="proof-result"><strong>−60%</strong><small>команды при&nbsp;той же&nbsp;эффективности бизнеса</small></div><div class="output-demo"><div class="output-top"><span class="output-avatar">AI</span><span>Маркетплейс, Африка<small>сегодня, 11:00</small></span></div><div class="output-message"><div class="output-row"><span>Доставки <b>+2,6%</b></span><span>Оборот <b>+4,9%</b></span><span>Доход <b>−3,6%</b></span></div><p><b>Предлагаю:</b><br>В пятницу пересчитать бонусы, чтобы уложиться в бюджет</p><div class="output-status">Посчитать?</div></div><div class="output-caption">Пример результата · данные условные</div></div><p>Помощник находит отклонения в&nbsp;25 странах, считает варианты и&nbsp;сам меняет цены и&nbsp;доплаты в&nbsp;пределах лимита. Что выше лимита, решает&nbsp;человек</p><button class="proof-open case-open" type="button" data-case="marketplace-manager" aria-label="Подробнее: ИИ-помощник для управления бизнесом">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article></div><div id="more-cases" class="proof-grid more-cases" hidden><article class="proof-card proof-extra"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Внедрение ИИ в&nbsp;ежедневную работу&nbsp;команды</h3><div class="proof-result"><strong>×5</strong><small>за&nbsp;полгода</small></div><p>Помогаем сотрудникам использовать ИИ в&nbsp;повседневных задачах: даём готовые инструменты, подключаем знания компании и&nbsp;обучаем работе&nbsp;с&nbsp;ними</p><button class="proof-open case-open" type="button" data-case="ai-adoption" aria-label="Подробнее: Внедрение ИИ в ежедневную работу команды">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Яндекс Доставка</div><div class="proof-copy"><h3>Обработка претензий и&nbsp;расчёт компенсаций</h3><div class="proof-result"><strong><span class="before">26</span><span class="ar">→</span>2</strong><small>сотрудника вместо 26</small></div><p>ИИ разбирает обращения клиентов и&nbsp;рассчитывает компенсации по&nbsp;правилам компании. Сотрудники подключаются к&nbsp;случаям, которые требуют&nbsp;проверки</p><button class="proof-open case-open" type="button" data-case="b2b-compensations" aria-label="Подробнее: Обработка претензий и расчёт компенсаций">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Yango Delivery</div><div class="proof-copy"><h3>Возвращение исполнителей к&nbsp;работе</h3><div class="proof-result"><strong>+14%</strong><small>по&nbsp;сравнению с&nbsp;контрольной группой</small></div><p>ИИ-помощник связывается с&nbsp;курьерами, которые перестали выполнять заказы. Выясняет причину ухода и&nbsp;помогает разобраться с&nbsp;вопросами, мешающими&nbsp;вернуться</p><button class="proof-open case-open" type="button" data-case="reactivation-bot" aria-label="Подробнее: Возвращение исполнителей к работе">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Собственник начинает день с&nbsp;готовой сводки</h3><div class="proof-result"><strong>К началу дня</strong><small>готовая картина по технике и деньгам</small></div><p>Агент собирает смены, заявки, учёт и&nbsp;оплаты. К&nbsp;началу дня видно, какая техника работает, где простой и&nbsp;какие деньги поступили; пропуски данных отмечены отдельно.</p><button class="proof-open case-open" type="button" data-case="eurocran-owner" aria-label="Подробнее: Собственник начинает день с готовой сводки">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Бухгалтер проверяет данные вместо перепечатки документов</h3><div class="proof-result"><strong>Готовая запись</strong><small>вместо ручного переноса данных</small></div><p>Агент читает счета и&nbsp;акты из&nbsp;почты и&nbsp;сканов, готовит поля записи, связь с&nbsp;договором и&nbsp;объектом, отмечает спорное и&nbsp;согласующего. Бухгалтер проверяет и&nbsp;подтверждает запись.</p><button class="proof-open case-open" type="button" data-case="eurocran-documents" aria-label="Подробнее: Бухгалтер проверяет данные вместо перепечатки документов">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран</div><div class="proof-copy"><h3>Планирование выездов техники и&nbsp;бригад</h3><div class="proof-result"><strong>План выездов</strong><small>по заявкам, технике и бригадам</small></div><p>Агент предлагает график по&nbsp;заявкам, свободной технике и&nbsp;бригадам, заранее показывает пересечения и&nbsp;последствия изменений. Диспетчер проверяет и&nbsp;подтверждает выезды.</p><button class="proof-open case-open" type="button" data-case="eurocran-dispatch" aria-label="Подробнее: Планирование выездов техники и бригад">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран · опробовано</div><div class="proof-copy"><h3>Контроль заявок от обращения до заказа</h3><div class="proof-result"><strong>Следующий шаг</strong><small>по обращениям, требующим внимания</small></div><p>Агент собирает обращения, фиксирует следующий шаг и напоминает менеджеру о зависших расчётах и предложениях. Видно, кому и когда вернуться.</p><button class="proof-open case-open" type="button" data-case="eurocran-sales" aria-label="Подробнее: Контроль заявок от обращения до заказа">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article><article class="proof-card proof-extra"><div class="proof-brand">Еврокран · опробовано</div><div class="proof-copy"><h3>Из звонка — в готовую заявку на технику</h3><div class="proof-result"><strong>Готовая заявка</strong><small>черновик после разговора с клиентом</small></div><p>Агент разбирает разговор с клиентом, собирает требования и договорённости, отмечает недостающие данные. Менеджер получает черновик заявки и вопросы для уточнения.</p><button class="proof-open case-open" type="button" data-case="eurocran-call-intake" aria-label="Подробнее: Из звонка — в готовую заявку на технику">Подробнее о кейсе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></div></article></div><button class="all-proof" type="button" aria-expanded="false" aria-controls="more-cases"><span>Другие кейсы</span><span class="all-proof-mark" aria-hidden="true">+</span></button></div></section><div hidden>
 <section id="legacy-cases">
   <div class="wrap">
     <div class="sec-head center">
@@ -927,10 +1048,23 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
         <div class="art">
           <svg aria-hidden="true" viewBox="0 0 320 170">
             <g fill="none" stroke="#3a3a3a" stroke-width="1">
-              <rect x="10" y="20" width="70" height="44" rx="8"/><rect x="10" y="74" width="70" height="44" rx="8"/><rect x="10" y="128" width="70" height="34" rx="8"/>
+              <rect class="source-frame" x="10" y="10" width="70" height="44" rx="8"/><rect class="source-frame" x="10" y="64" width="70" height="44" rx="8"/><rect class="source-frame" x="10" y="118" width="70" height="44" rx="8"/>
             </g>
-            <g fill="#4a4a4a"><rect x="22" y="44" width="8" height="12"/><rect x="34" y="36" width="8" height="20"/><rect x="46" y="40" width="8" height="16"/><rect x="58" y="30" width="8" height="26"/></g>
-            <path d="M80,42 C150,42 150,90 210,90 M80,96 C150,96 150,90 210,90 M80,145 C150,145 150,90 210,90" fill="none" stroke="#b94629" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <g fill="#999" transform="translate(0 -10)" class="art-bars"><rect x="22" y="44" width="8" height="12"/><rect x="34" y="36" width="8" height="20"/><rect x="46" y="40" width="8" height="16"/><rect x="58" y="30" width="8" height="26"/></g>
+            <g fill="none" stroke="#999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="24" y="74" width="42" height="24" rx="2"/>
+              <path d="M24 82H66 M24 90H66 M38 74V98 M52 74V98"/>
+              <g class="art-table" fill="#b94629" stroke="none">
+                <rect x="26" y="76" width="10" height="4" rx="1"/>
+                <rect x="40" y="84" width="10" height="4" rx="1"/>
+                <rect x="54" y="92" width="10" height="4" rx="1"/>
+              </g>
+              <g class="art-mail">
+                <rect x="24" y="128" width="42" height="24" rx="2"/>
+                <path d="M25 130L45 143L65 130"/>
+              </g>
+            </g>
+            <path d="M80,32 C150,32 150,90 210,90 M80,86 C150,86 150,90 210,90 M80,140 C150,140 150,90 210,90" fill="none" stroke="#b94629" stroke-width="1.2" stroke-dasharray="3 4" class="art-flow"/>
             <rect x="210" y="58" width="104" height="64" rx="14" fill="#b94629"/>
             <text x="224" y="84" fill="#fff" font-size="12" font-family="Onest">Сводка готова</text>
             <text x="224" y="102" fill="rgba(255,255,255,.75)" font-size="11" font-family="Onest">с выводами</text>
@@ -943,9 +1077,11 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
           <svg aria-hidden="true" viewBox="0 0 320 170">
             <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b94629" stop-opacity="0"/><stop offset="1" stop-color="#cf5534" stop-opacity=".9"/></linearGradient></defs>
             <path d="M100,20 L100,150 A60,14 0 0 0 220,150 L220,20" fill="url(#g2)" stroke="#444"/>
+            <defs><clipPath id="task-cylinder-clip"><path d="M100 20 A60 14 0 0 1 220 20 L220 150 A60 14 0 0 1 100 150 Z"/></clipPath></defs>
+            <g clip-path="url(#task-cylinder-clip)"><ellipse class="art-scan" cx="160" cy="20" rx="59" ry="14" fill="#b94629" fill-opacity=".35" stroke="#fff" stroke-opacity=".7" stroke-width="1.5"/></g>
             <ellipse cx="160" cy="20" rx="60" ry="14" fill="none" stroke="#555"/>
-            <ellipse cx="160" cy="62" rx="60" ry="14" fill="none" stroke="#666" stroke-dasharray="2 4"/>
-            <ellipse cx="160" cy="104" rx="60" ry="14" fill="none" stroke="#888" stroke-dasharray="2 4"/>
+            <ellipse cx="160" cy="62" rx="60" ry="14" fill="none" stroke="#666" stroke-dasharray="2 4" class="art-ring"/>
+            <ellipse cx="160" cy="104" rx="60" ry="14" fill="none" stroke="#888" stroke-dasharray="2 4" class="art-ring"/>
             <g font-size="11" font-family="Onest" fill="#999"><text x="20" y="66">заявки</text><text x="236" y="108">расчёты</text><text x="236" y="24">проверки</text></g>
             <g stroke="#555"><line x1="60" y1="62" x2="100" y2="62"/><line x1="220" y1="104" x2="232" y2="104"/><line x1="220" y1="20" x2="232" y2="20"/></g>
           </svg>
@@ -956,7 +1092,7 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
         <div class="art">
           <svg aria-hidden="true" viewBox="0 0 320 170">
             <path d="M50,150 A110,110 0 0 1 270,150" fill="none" stroke="#2f2f2f" stroke-width="14" stroke-linecap="round"/>
-            <path d="M50,150 A110,110 0 0 1 222,72" fill="none" stroke="#b94629" stroke-width="14" stroke-linecap="round"/>
+            <path class="art-gauge" pathLength="100" d="M50,150 A110,110 0 0 1 222,72" fill="none" stroke="#b94629" stroke-width="14" stroke-linecap="round"/>
             <line x1="236" y1="62" x2="252" y2="44" stroke="#fff" stroke-width="1.5"/>
             <text x="252" y="38" fill="#fff" font-size="11" font-family="Onest">лимит</text>
             <text x="160" y="140" fill="#fff" font-size="13" font-family="Onest" text-anchor="middle">в пределах лимита</text>
@@ -970,8 +1106,8 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
           <svg aria-hidden="true" viewBox="0 0 320 170">
             <g fill="#1f1f1f" stroke="#444"><rect x="34" y="34" width="70" height="92" rx="8"/><rect x="24" y="24" width="70" height="92" rx="8"/><rect x="14" y="14" width="70" height="92" rx="8"/></g>
             <g stroke="#555" stroke-width="2" stroke-linecap="round"><line x1="26" y1="34" x2="66" y2="34"/><line x1="26" y1="48" x2="72" y2="48"/><line x1="26" y1="62" x2="58" y2="62"/><line x1="26" y1="76" x2="68" y2="76"/></g>
-            <path d="M96,66 C140,66 150,84 190,84" fill="none" stroke="#b94629" stroke-width="1.2" stroke-dasharray="3 4"/>
-            <g font-size="11" font-family="Onest">
+            <path d="M96,66 C140,66 150,84 190,84" fill="none" stroke="#b94629" stroke-width="1.2" stroke-dasharray="3 4" class="art-flow"/>
+            <g font-size="11" font-family="Onest" class="art-fields">
               <rect x="190" y="40" width="120" height="26" rx="6" fill="#222"/><text x="200" y="57" fill="#bbb">Счёт № 214</text>
               <rect x="190" y="72" width="120" height="26" rx="6" fill="#222"/><text x="200" y="89" fill="#bbb">Договор, объект</text>
               <rect x="190" y="104" width="120" height="26" rx="6" fill="#b94629"/><text x="200" y="121" fill="#fff">Проверить сумму</text>
@@ -993,21 +1129,11 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
       <p class="lead">Сначала разбираемся, потом делаем. После запуска не&nbsp;исчезаем</p>
     </div>
     <div class="method rv">
-      <div class="ladder" aria-hidden="true">
-        <svg aria-hidden="true" viewBox="0 0 300 360" id="ladder">
-          <g stroke="#222" stroke-width="1.2"><line x1="70" y1="10" x2="70" y2="350"/><line x1="230" y1="10" x2="230" y2="350"/></g>
-          <polygon class="rh" data-i="0" points="150,40 270,90 150,140 30,90"/>
-          <text data-i="0" x="150" y="86" text-anchor="middle">РАЗБИРАЕМСЯ</text><text data-i="0" x="150" y="104" text-anchor="middle">(01)</text>
-          <polygon class="rh" data-i="1" points="150,130 270,180 150,230 30,180"/>
-          <text data-i="1" x="150" y="176" text-anchor="middle">СОБИРАЕМ</text><text data-i="1" x="150" y="194" text-anchor="middle">(02)</text>
-          <polygon class="rh" data-i="2" points="150,220 270,270 150,320 30,270"/>
-          <text data-i="2" x="150" y="266" text-anchor="middle">ЗАПУСКАЕМ</text><text data-i="2" x="150" y="284" text-anchor="middle">(03)</text>
-        </svg>
-      </div>
+      
       <div class="msteps" id="msteps">
-        <div class="mstep"><b>Разбираемся <small>01</small></b><p>Смотрим, как устроена работа: кто что делает и&nbsp;сколько на&nbsp;это уходит времени. Считаем, что даст автоматизация</p><div class="out">→ Понятно, что автоматизировать и&nbsp;сколько это сэкономит</div></div>
-        <div class="mstep"><b>Собираем <small>02</small></b><p>Подключаем ваши системы, пишем правила для агента, задаём лимиты. Сроки и&nbsp;цену называем до&nbsp;старта</p><div class="out">→ Схема решения, сроки и&nbsp;цена</div></div>
-        <div class="mstep"><b>Запускаем <small>03</small></b><p>Проверяем на&nbsp;ваших задачах, запускаем и&nbsp;учим команду. Дальше поддерживаем помесячно</p><div class="out">→ Работающий процесс и&nbsp;команда, которая им&nbsp;пользуется</div></div>
+        <div class="mstep"><b>Разбираемся <small>01</small></b><p>Смотрим, как устроена работа: кто что делает и&nbsp;сколько на&nbsp;это уходит времени. Считаем, что даст автоматизация</p><div class="out">Понятно, что автоматизировать и&nbsp;сколько это сэкономит</div></div>
+        <div class="mstep"><b>Собираем <small>02</small></b><p>Подключаем ваши системы, пишем правила для агента, задаём лимиты. Сроки и&nbsp;цену называем до&nbsp;старта</p><div class="out">Схема решения, сроки и&nbsp;цена</div></div>
+        <div class="mstep"><b>Запускаем <small>03</small></b><p>Проверяем на&nbsp;ваших задачах, запускаем и&nbsp;учим команду. Дальше поддерживаем помесячно</p><div class="out">Работающий процесс и&nbsp;команда, которая им&nbsp;пользуется</div></div>
       </div>
     </div>
   </div>
@@ -1419,11 +1545,6 @@ footer{padding:48px 0 32px}.foot a,.copy{line-height:1.6}.copy{margin-top:32px}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="praxis — наверх"><i><b></b><b></b><b></b></i>praxis</a>
     <span class="footer-note">© praxis, Москва, 2026</span>
-    <nav class="footer-contact" aria-label="Контакты">
-      <a href="https://t.me/praxisai_team">Telegram</a>
-      <a href="mailto:info@praxisai.ru">info@praxisai.ru</a>
-      <a href="tel:+79652902877">+7 965 290-28-77</a>
-    </nav>
     <a class="footer-top" href="#top">Наверх ↑</a>
   </div>
 </footer>
@@ -1483,6 +1604,9 @@ addEventListener('scroll', markMenu, {passive:true}); markMenu();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
+// Pause dark-block motion while the individual card is off screen.
+document.querySelectorAll('#problems .dcard').forEach(watch);
+
 // hero: typed task + agent steps
 const tasks = [
   {t:'Собери утреннюю сводку по продажам', r:['Сводка отправлена в Telegram','Показатели, сравнение с планом и выводы']},
@@ -1533,18 +1657,6 @@ const chips = [...document.querySelectorAll('#orbit .chip')]; let ci = 0;
 chips[0].classList.add('on');
 const orbitEl = watch(document.getElementById('orbit'));
 if (!reduce) setInterval(() => { if (!inView.get(orbitEl)) return; chips[ci].classList.remove('on'); ci = (ci + 1) % chips.length; chips[ci].classList.add('on'); }, 1800);
-
-// ladder + steps
-const ms = [...document.querySelectorAll('#msteps .mstep')]; let li = 0;
-function setStep(i){
-  li = i;
-  ms.forEach((m, j) => m.classList.toggle('on', j === i));
-  document.querySelectorAll('#ladder [data-i]').forEach(n => n.classList.toggle('on', +n.dataset.i === i));
-}
-setStep(0);
-const ladderEl = watch(document.querySelector('.method'));
-let auto = reduce ? null : setInterval(() => { if (inView.get(ladderEl)) setStep((li + 1) % 3); }, 2600);
-ms.forEach((m, i) => m.addEventListener('mouseenter', () => { clearInterval(auto); setStep(i); }));
 
 watch(document.querySelector('.cta'));
 
@@ -1703,8 +1815,9 @@ let x0=null;const sl=document.getElementById('slides');sl.addEventListener('touc
 (()=>{const b=document.querySelector('.mobile-all'),more=document.getElementById('mobile-more');b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));more.hidden=!open;b.firstElementChild.textContent=open?'Свернуть кейсы':'Все кейсы';b.lastElementChild.textContent=open?'11 из 11 ↑':'11 кейсов ↓';if(open)more.querySelector('button').focus();else document.querySelector('.mobile-cases').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})});})();
 
 const toggle=document.querySelector('.all-proof'), more=document.getElementById('more-cases');
-toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));more.hidden=!open;toggle.firstElementChild.textContent=open?'Свернуть кейсы':'Все 11 кейсов';toggle.lastElementChild.textContent=open?'−':'+';if(open){more.querySelector('button').focus({preventScroll:true});more.scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});}else toggle.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});});
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));more.hidden=!open;toggle.firstElementChild.textContent=open?'Скрыть дополнительные кейсы':'Другие кейсы';toggle.lastElementChild.textContent=open?'−':'+';if(open){more.querySelector('button').focus({preventScroll:true});more.scrollIntoView({block:'start',behavior:reduce?'auto':'smooth'});}else toggle.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});});
 
 </script>
 </body>
 </html>
+
